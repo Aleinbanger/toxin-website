@@ -1,0 +1,38 @@
+@include fontFace('Montserrat', '../fonts/montserrat-v14-latin_cyrillic/montserrat-v14-latin_cyrillic-regular');
+@include fontFace('Montserrat', '../fonts/montserrat-v14-latin_cyrillic/montserrat-v14-latin_cyrillic-italic', italic, normal);
+@include fontFace('Montserrat', '../fonts/montserrat-v14-latin_cyrillic/montserrat-v14-latin_cyrillic-700', normal, bold);
+@include fontFace('Montserrat', '../fonts/montserrat-v14-latin_cyrillic/montserrat-v14-latin_cyrillic-700italic', italic, bold);
+
+@include fontFace('Open Sans', '../fonts/open-sans-v17-latin_cyrillic/open-sans-v17-latin_cyrillic-regular');
+@include fontFace('Open Sans', '../fonts/open-sans-v17-latin_cyrillic/open-sans-v17-latin_cyrillic-italic', italic, normal);
+@include fontFace('Open Sans', '../fonts/open-sans-v17-latin_cyrillic/open-sans-v17-latin_cyrillic-700', normal, bold);
+@include fontFace('Open Sans', '../fonts/open-sans-v17-latin_cyrillic/open-sans-v17-latin_cyrillic-700italic', italic, bold);
+
+@include fontFace('Quicksand', '../fonts/quicksand-v19-latin/quicksand-v19-latin-regular');
+@include fontFace('Quicksand', '../fonts/quicksand-v19-latin/quicksand-v19-latin-700', normal, bold);
+
+@include fontFace('Material Icons', '../fonts/material-design-icons-3.0.1/MaterialIcons-Regular');
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}

@@ -1,0 +1,8 @@
+mixin input-toggle({labelText=""})
+  - attributes.type = "checkbox"
+  - let labelClass = ["input-toggle__wrapper"]
+
+  label(class=labelClass) #{labelText}
+    input&attributes(attributes)
+    .input-toggle
+      .input-toggle__checkmark

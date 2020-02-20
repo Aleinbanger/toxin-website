@@ -1,0 +1,9 @@
+mixin input-radio({labelText=""})
+  - attributes.type = "radio"
+  - let labelClass = ["input-radio__wrapper"]
+
+  label(class=labelClass)
+    input&attributes(attributes)
+    span #{labelText}
+    .input-radio
+      .input-radio__checkmark

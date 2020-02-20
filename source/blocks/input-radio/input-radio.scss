@@ -1,0 +1,72 @@
+.input-radio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: $color_back;
+  border: 1px solid $color_main-25;
+  border-radius: 50%;
+
+  &__checkmark {
+    display: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: $color-grad_prim;
+  }
+
+  &__wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    min-height: 20px;
+    padding-left: 20px + 10px;
+    font-family: $font-family_body;
+    font-size: $font-size_body;
+    line-height: 20px;
+    color: $color_main-50;
+    cursor: pointer;
+
+    &:hover {
+      .input-radio {
+        border-color: $color_main-50;
+      }
+    }
+
+    input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      opacity: 0;
+
+      &:focus {
+        ~ .input-radio {
+          border-color: $color_main-50;
+        }
+      }
+
+      &:checked {
+        ~ .input-radio {
+          border-color: $color_prim;
+
+          .input-radio__checkmark {
+            display: block;
+          }
+        }
+
+        ~ span {
+          color: $color_main-75;
+        }
+      }
+
+    }
+
+  }
+
+}

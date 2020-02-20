@@ -1,0 +1,89 @@
+extends ./_layout.pug
+
+block append variables
+  - const pageTitle = "Form Elements"
+
+block content
+
+  .form-elements
+    .form-elements__column
+      .form-elements__item
+        .form-elements__text-field
+          +input-field({inpType: "email", labelText: "Text field"})
+        .form-elements__text-field
+          +input-field({labelText: "Text field"})(value="This is pretty awesome")
+        .form-elements__text-field
+          //-Dropdown later
+          +input-field({labelText: "Dropdown", withExpand: true})(value="Сколько гостей")
+
+
+    .form-elements__column.form-elements__column_shifted
+      .form-elements__item
+        h3.form-elements__title Checkbox Buttons
+        .form-elements__checkbox
+          +input-checkbox({labelText: "Можно курить"})
+        .form-elements__checkbox
+          +input-checkbox({labelText: "Можно с питомцами"})(checked)
+        .form-elements__checkbox
+          +input-checkbox({labelText: "Можно пригласить гостей (до 10 человек)"})(checked)
+
+      .form-elements__item
+        h3.form-elements__title Radio Buttons
+        .form-elements__radio
+          +input-radio({labelText: "Мужчина"})(name="sex" checked)
+        .form-elements__radio
+          +input-radio({labelText: "Женщина"})(name="sex")
+
+      .form-elements__item
+        h3.form-elements__title Toggle
+        .form-elements__toggle
+          +input-toggle({labelText: "Получать спецпредложения"})(checked)
+        .form-elements__toggle
+          +input-toggle({labelText: "Получать спецпредложения"})
+    
+      .form-elements__item
+        h3.form-elements__title Like Button
+        .form-elements__like-button
+          +button-like({likeCount: 2})
+        .form-elements__like-button
+          +button-like({likeCount: 12, isActive: true})
+
+    .form-elements__column
+      .form-elements__item
+        h3.form-elements__title Buttons
+        .form-elements__button.form-elements__button_small
+          +button({btnText: "Click me"})
+        .form-elements__button.form-elements__button_small
+          +button({btnText: "Click me", btnStyle: "ghost"})
+        .form-elements__button.form-elements__button_inline
+          +button({btnText: "Click me", btnStyle: "as-text"})
+        .form-elements__button.form-elements__button_inline
+          +button({btnText: "Click me", btnStyle: "as-text as-text_faint"})
+        .form-elements__button
+          +button({btnText: "Перейти к оплате", withArrow: true})
+
+        .form-elements__button
+          +button({btnStyle: "as-text as-text_gradient", withArrow: true})
+
+      .form-elements__item
+        h3.form-elements__title Pagination
+        //-Pagination later
+        .form-elements__button.form-elements__button_inline
+          +button({btnText: "1", btnStyle: "page"})
+        .form-elements__button.form-elements__button_inline
+          +button({btnStyle: "page page_alt", withArrow: true})
+        
+
+    .form-elements__column
+      .form-elements__item
+        h3.form-elements__title Rich Checkbox Buttons
+        .form-elements__checkbox.form-elements__checkbox_rich
+          +input-checkbox({inpStyle: "rich",
+            labelText: "Широкий коридор",
+            labelDescription: "Ширина коридоров в номере не менее 91 см."
+          })
+        .form-elements__checkbox.form-elements__checkbox_rich
+          +input-checkbox({inpStyle: "rich",
+            labelText: "Помощник для инвалидов",
+            labelDescription: "На 1 этаже вас встретит специалист  и проводит до номера."
+          })

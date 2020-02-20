@@ -1,0 +1,18 @@
+mixin button({btnType="button", btnText="", withArrow=false, btnStyle})
+  - let btnTag
+  - attributes.class = ["button"]
+  if btnStyle
+    each style in btnStyle.split(" ")
+      - attributes.class.push(`button_${style}`)
+
+  case btnType
+    when "link"
+      - btnTag = "a"
+    default
+      - btnTag = "button"
+      - attributes.type = btnType
+
+  if (withArrow)
+    - btnText += '<i class="material-icons button__arrow">arrow_forward</i>'
+
+  #{btnTag}&attributes(attributes) !{btnText}

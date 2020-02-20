@@ -1,0 +1,33 @@
+{
+  "name": "fsd-website",
+  "version": "0.0.1",
+  "description": "",
+  "main": "source/pages/website/index.pug",
+  "scripts": {
+    "dev": "parcel source/pages/ui-kit/form-elements.pug",
+    "build": "parcel build source/pages/website/index.pug --public-url ./"
+  },
+  "author": "Aleinbanger",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-preset-airbnb": "^4.4.0",
+    "cssnano": "^4.1.10",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "pug": "^2.0.4",
+    "sass": "^1.25.1-test.1",
+    "stylelint": "^13.2.0",
+    "stylelint-config-sass-guidelines": "^7.0.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.0.0",
+    "stylelint-scss": "^3.14.2"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.7.4",
+    "postcss-modules": "^1.5.0"
+  },
+  "browserslist": [
+    "defaults"
+  ]
+}

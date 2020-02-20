@@ -1,0 +1,36 @@
+.button-like {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 40px;
+  height: 20px;
+  padding: 0 5px;
+  background: $color_back;
+  background-origin: border-box;
+  border: solid 1px $color_main-25;
+  border-radius: 10px;
+  font-family: $font-family_body;
+  font-size: 10px;
+  color: $color_main-25;
+  outline: none;
+  cursor: pointer;
+
+  &:focus,
+  &:hover {
+    border-color: $color_main-50;
+  }
+
+  &__icon {
+    margin-right: 5px;
+    font-size: 10px;
+  }
+
+  &_active {
+    background-image: linear-gradient($color_back, $color_back), $color-grad_prim;
+    -webkit-background-clip: padding-box, border-box;
+    background-clip: padding-box, border-box;
+    border-color: transparent;
+    color: $color_prim;
+  }
+
+}

@@ -1,0 +1,12 @@
+mixin button-like({likeCount=0, isActive=false})
+  - attributes.type = "button"
+  - attributes.class = ["button-like"]
+  - let icon = "favorite_border"
+
+  if (isActive)
+    - attributes.class.push("button-like_active")
+    - icon = "favorite"
+
+  button&attributes(attributes)
+    i(class="material-icons button-like__icon") #{icon}
+    span.button-like__counter #{likeCount}

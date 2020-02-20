@@ -1,0 +1,26 @@
+block variables
+
+block mixins
+  include ../../blocks/input-field/input-field.pug
+  include ../../blocks/input-checkbox/input-checkbox.pug
+  include ../../blocks/input-radio/input-radio.pug
+  include ../../blocks/input-toggle/input-toggle.pug
+  include ../../blocks/button/button.pug
+  include ../../blocks/button-like/button-like.pug
+
+doctype html
+html(lang="en")
+
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    link(rel="stylesheet", href="../../styles/style.scss")
+    title #{pageTitle}
+
+  body
+
+    block content
+
+    block scripts
+      script(src="../../scripts/main.js")

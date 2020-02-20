@@ -1,0 +1,76 @@
+.form-elements {
+  display: flex;
+  justify-content: space-between;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1440px;
+  max-height: 1853px;
+  padding: 140px;
+  background: url('../img/ui-kit__logo.svg') no-repeat 30px 30px;
+  background-size: 48px 48px;
+
+  &__column {
+    width: 320px;
+
+    &_shifted {
+      margin-left: 50px;
+    }
+  }
+
+  &__item {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    font-family: $font-family_h3;
+    font-size: $font-size_h3;
+    color: $color_main;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+  }
+
+  &__text-field {
+    margin-bottom: 20px;
+  }
+
+  &__checkbox {
+    width: 222px;
+    margin-bottom: 10px;
+
+    &_rich {
+      width: 260px;
+    }
+  }
+
+  &__radio {
+    display: inline-block;
+    margin-right: 20px;
+  }
+
+  &__toggle {
+    margin-bottom: 14px;
+  }
+
+  &__like-button {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  &__button {
+    height: 44px;
+    margin-bottom: 30px;
+
+    &_small {
+      width: 99px;
+    }
+
+    &_inline {
+      display: inline-block;
+      margin-right: 20px;
+      margin-bottom: 0;
+    }
+  }
+
+}

@@ -1,0 +1,23 @@
+mixin input-field({inpType="text", withExpand=false, inpStyle, labelText})
+  - attributes.type = inpType
+  - attributes.class = ["input-field"]
+  - let iconClass = ["material-icons", "input-field__expand"]
+
+  case inpType
+    when "email"
+      - attributes.placeholder = "Email"
+    when "password"
+      - attributes.placeholder = "Пароль"
+    default
+      - attributes.type = "text"
+
+  if (/dark/g.test(inpStyle))
+    - iconClass.push("input-field__expand_dark")
+
+  .input-field__wrapper
+    if (labelText)
+      label.input-field__label #{labelText}
+    input&attributes(attributes)
+    if (withExpand)
+      i(class=iconClass) expand_more
+      //- move to dropdown
