@@ -1,13 +1,17 @@
-mixin input-checkbox({labelText="", labelDescription, inpStyle})
-  - attributes.type = "checkbox"
-  - let labelClass = ["input-checkbox__wrapper"]
+mixin input-checkbox({labelText="", labelDescription, inpStyle, addAttributes})
+  -
+    let wrapperClass = ["input-checkbox"]
+    attributes.type = "checkbox"
+    for (let attr in addAttributes) {
+      attributes[attr] = addAttributes[attr]
+    }
 
   if (/rich/gi.test(inpStyle))
-    - labelClass.push("input-checkbox__wrapper_rich")
+    - wrapperClass.push(`${wrapperClass[0]}_rich`)
 
-  label(class=labelClass) #{labelText}
-    if (labelDescription)
+  label(class=wrapperClass) #{labelText}
+    if (labelDescription && /rich/gi.test(inpStyle))
       span #{labelDescription}
     input&attributes(attributes)
-    .input-checkbox
-      .input-checkbox__checkmark
+    .input-checkbox__box
+      .input-checkbox__mark

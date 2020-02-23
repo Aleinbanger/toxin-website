@@ -1,0 +1,20 @@
+include ../../blocks/input-checkbox/input-checkbox.pug
+
+mixin list-checkbox({listItems=[], listTitle="", expandable=false})
+  -
+    let wrapperClass = ["list-checkbox"]
+    let iconClass = ["material-icons", "list-checkbox__icon"]
+    let listClass = ["list-checkbox__list"]
+
+  if (expandable)
+    - wrapperClass.push(`js-${wrapperClass[0]}`)
+
+  div(class=wrapperClass)
+    .list-checkbox__header
+      span.list-checkbox__title #{listTitle}
+      if (expandable)
+        i(class=iconClass) expand_more
+    ul(class=listClass)
+      each item in listItems
+        li
+          +input-checkbox(item)

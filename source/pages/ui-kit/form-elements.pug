@@ -16,16 +16,17 @@ block content
           //-Dropdown later
           +input-field({labelText: "Dropdown", withExpand: true})(value="Сколько гостей")
 
-
     .form-elements__column.form-elements__column_shifted
       .form-elements__item
-        h3.form-elements__title Checkbox Buttons
-        .form-elements__checkbox
-          +input-checkbox({labelText: "Можно курить"})
-        .form-elements__checkbox
-          +input-checkbox({labelText: "Можно с питомцами"})(checked)
-        .form-elements__checkbox
-          +input-checkbox({labelText: "Можно пригласить гостей (до 10 человек)"})(checked)
+        .form-elements__checkbox-list
+          +list-checkbox({
+            listTitle: "Checkbox Buttons",
+            listItems: [
+              {labelText: "Можно курить"},
+              {labelText: "Можно с питомцами", addAttributes: {checked: true, name: "test"}},
+              {labelText: "Можно пригласить гостей (до 10 человек)", addAttributes: {checked: true}}
+            ]
+          })
 
       .form-elements__item
         h3.form-elements__title Radio Buttons
@@ -40,7 +41,7 @@ block content
           +input-toggle({labelText: "Получать спецпредложения"})(checked)
         .form-elements__toggle
           +input-toggle({labelText: "Получать спецпредложения"})
-    
+
       .form-elements__item
         h3.form-elements__title Like Button
         .form-elements__like-button
@@ -72,20 +73,42 @@ block content
           +button({btnText: "1", btnStyle: "page"})
         .form-elements__button.form-elements__button_inline
           +button({btnStyle: "page page_alt", withArrow: true})
-        
 
     .form-elements__column
       .form-elements__item
-        h3.form-elements__title Rich Checkbox Buttons
-        .form-elements__checkbox.form-elements__checkbox_rich
-          +input-checkbox({inpStyle: "rich",
-            labelText: "Широкий коридор",
-            labelDescription: "Ширина коридоров в номере не менее 91 см."
+        .form-elements__checkbox-list.form-elements__checkbox-list_wide
+          +list-checkbox({
+            expandable: true,
+            listTitle: "Expandable Checkbox List",
+            listItems: [
+              {labelText: "Завтрак"},
+              {labelText: "Письменный стол", addAttributes: {checked: true}},
+              {labelText: "Стул для кормления", addAttributes: {checked: true}},
+              {labelText: "Кроватка", addAttributes: {checked: true}},
+              {labelText: "Телевизор"},
+              {labelText: "Шампунь"},
+              {labelText: "Телевизор"},
+              {labelText: "Шампунь"}
+            ]
           })
-        .form-elements__checkbox.form-elements__checkbox_rich
-          +input-checkbox({inpStyle: "rich",
-            labelText: "Помощник для инвалидов",
-            labelDescription: "На 1 этаже вас встретит специалист  и проводит до номера."
+
+    .form-elements__column
+      .form-elements__item
+        .form-elements__checkbox-list.form-elements__checkbox-list_wide
+          +list-checkbox({
+            listTitle: "Rich Checkbox Buttons",
+            listItems: [
+              {
+                inpStyle: "rich",
+                labelText: "Широкий коридор",
+                labelDescription: "Ширина коридоров в номере не менее 91 см."
+              },
+              {
+                inpStyle: "rich",
+                labelText: "Помощник для инвалидов",
+                labelDescription: "На 1 этаже вас встретит специалист  и проводит до номера."
+              }
+            ]
           })
 
     .form-elements__column

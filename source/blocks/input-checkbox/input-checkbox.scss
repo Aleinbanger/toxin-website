@@ -1,17 +1,78 @@
 .input-checkbox {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
+  position: relative;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
-  background: $color_back;
-  border: 1px solid $color_main-25;
-  border-radius: 4px;
+  width: 100%;
+  min-height: 20px;
+  padding-left: 20px + 10px;
+  font-family: $font-family_body;
+  font-size: $font-size_body;
+  line-height: 20px;
+  color: $color_main-50;
+  cursor: pointer;
 
-  &__checkmark {
+  &:hover {
+    .input-checkbox__box {
+      border-color: $color_main-50;
+    }
+  }
+
+  &_rich {
+    flex-direction: column;
+    align-items: flex-start;
+    height: max-content;
+    font-weight: bold;
+    color: $color_main-75;
+
+    span {
+      padding-top: 5px;
+      font-size: $font-size_h3;
+      font-weight: normal;
+      line-height: 1rem;
+      color: $color_main-50;
+    }
+  }
+
+  input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+
+    &:focus {
+      ~ .input-checkbox__box {
+        border-color: $color_main-50;
+      }
+    }
+
+    &:checked {
+      ~ .input-checkbox__box {
+        border-color: $color_prim;
+
+        .input-checkbox__mark {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background: $color_back;
+    border: 1px solid $color_main-25;
+    border-radius: 4px;
+  }
+
+  &__mark {
     display: none;
     width: 6px;
     height: 8px;
@@ -25,71 +86,6 @@
     border-left: 0;
     transform: rotate(45deg);
     -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    // engaging a more accurate render in the graphics engine to avoid outlines
+    backface-visibility: hidden; // engaging a more accurate render in the graphics engine to avoid outlines
   }
-
-  &__wrapper {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    width: 100%;
-    min-height: 20px;
-    padding-left: 20px + 10px;
-    font-family: $font-family_body;
-    font-size: $font-size_body;
-    line-height: 20px;
-    color: $color_main-50;
-    cursor: pointer;
-
-    &:hover {
-      .input-checkbox {
-        border-color: $color_main-50;
-      }
-    }
-
-    &_rich {
-      flex-direction: column;
-      align-items: flex-start;
-      height: max-content;
-      font-weight: bold;
-      color: $color_main-75;
-
-      span {
-        padding-top: 5px;
-        font-size: $font-size_h3;
-        font-weight: normal;
-        line-height: 1rem;
-        color: $color_main-50;
-      }
-    }
-
-    input {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 0;
-      height: 0;
-      opacity: 0;
-
-      &:focus {
-        ~ .input-checkbox {
-          border-color: $color_main-50;
-        }
-      }
-
-      &:checked {
-        ~ .input-checkbox {
-          border-color: $color_prim;
-
-          .input-checkbox__checkmark {
-            display: block;
-          }
-        }
-      }
-
-    }
-
-  }
-
 }
