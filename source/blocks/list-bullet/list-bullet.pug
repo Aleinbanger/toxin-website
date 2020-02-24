@@ -1,5 +1,8 @@
 mixin list-bullet({listItems=[]})
+  -
+    const blockName = "list-bullet";
+    const wrapperClass = [blockName];
 
-  ul.list-bullet
+  ul(class=wrapperClass)
     each item in listItems
       li #{item}

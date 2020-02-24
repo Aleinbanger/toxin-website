@@ -17,22 +17,6 @@
     }
   }
 
-  &_rich {
-    flex-direction: column;
-    align-items: flex-start;
-    height: max-content;
-    font-weight: bold;
-    color: $color_main-75;
-
-    span {
-      padding-top: 5px;
-      font-size: $font-size_h3;
-      font-weight: normal;
-      line-height: 1rem;
-      color: $color_main-50;
-    }
-  }
-
   input {
     position: absolute;
     top: 0;
@@ -87,5 +71,21 @@
     transform: rotate(45deg);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden; // engaging a more accurate render in the graphics engine to avoid outlines
+  }
+
+  &_rich {
+    flex-direction: column;
+    align-items: flex-start;
+    height: max-content;
+    font-weight: bold;
+    color: $color_main-75;
+
+    span {
+      padding-top: 5px;
+      font-size: $font-size_h3;
+      font-weight: normal;
+      line-height: 1rem;
+      color: $color_main-50;
+    }
   }
 }

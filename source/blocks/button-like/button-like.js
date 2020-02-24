@@ -1,32 +1,36 @@
 class ButtonLike {
   constructor(element) {
-    this._element = element;
-    this._attachEventHandlers();
+    this.element = element;
+    this._initialize();
+    this._bindEventListeners();
   }
 
-  _attachEventHandlers() {
-    this._element
+  _initialize() {
+    this.blockName = 'button-like';
+    this.counter = this.element.querySelector(`.${this.blockName}__counter`);
+    this.icon = this.element.querySelector(`.${this.blockName}__icon`);
+  }
+
+  _bindEventListeners() {
+    this.element
       .addEventListener('click', () => this._handleButtonClick());
   }
 
   _handleButtonClick() {
-    const btn = this._element;
-    const counter = btn.querySelector('.button-like__counter');
-    const icon = btn.querySelector('.button-like__icon');
-    if (btn.classList.contains('button-like_active')) {
-      counter.textContent = Number(counter.textContent) - 1;
-      icon.textContent = 'favorite_border';
+    if (this.element.classList.contains(`${this.blockName}_active`)) {
+      this.counter.textContent = Number(this.counter.textContent) - 1;
+      this.icon.textContent = 'favorite_border';
     } else {
-      counter.textContent = Number(counter.textContent) + 1;
-      icon.textContent = 'favorite';
+      this.counter.textContent = Number(this.counter.textContent) + 1;
+      this.icon.textContent = 'favorite';
     }
-    btn.classList.toggle('button-like_active');
+    this.element.classList.toggle(`${this.blockName}_active`);
   }
 }
 
 function renderElements() {
-  const buttons = document.querySelectorAll('.button-like');
-  buttons.forEach((button) => new ButtonLike(button));
+  const elements = document.querySelectorAll('.js-button-like');
+  elements.forEach((element) => new ButtonLike(element));
 }
 
 export default renderElements();

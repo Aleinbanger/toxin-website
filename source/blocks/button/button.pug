@@ -1,9 +1,12 @@
 mixin button({btnType="button", btnText="", withArrow=false, btnStyle})
-  - let btnTag
-  - attributes.class = ["button"]
-  if btnStyle
+  -
+    const blockName = "button";
+    let btnTag;
+    attributes.class = [blockName];
+
+  if (btnStyle)
     each style in btnStyle.split(" ")
-      - attributes.class.push(`button_${style}`)
+      - attributes.class.push(`${blockName}_${style}`)
 
   case btnType
     when "link"
@@ -12,7 +15,6 @@ mixin button({btnType="button", btnText="", withArrow=false, btnStyle})
       - btnTag = "button"
       - attributes.type = btnType
 
-  if (withArrow)
-    - btnText += '<i class="material-icons button__arrow">arrow_forward</i>'
-
-  #{btnTag}&attributes(attributes) !{btnText}
+  #{btnTag}&attributes(attributes) #{btnText}
+    if (withArrow)
+      i(class=`material-icons ${blockName}__arrow`) arrow_forward

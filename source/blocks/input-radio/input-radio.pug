@@ -1,9 +1,11 @@
 mixin input-radio({labelText=""})
-  - attributes.type = "radio"
-  - let labelClass = ["input-radio__wrapper"]
+  -
+    const blockName = "input-radio";
+    const wrapperClass = [blockName];
+    attributes.type = "radio";
 
-  label(class=labelClass)
+  label(class=wrapperClass)
     input&attributes(attributes)
     span #{labelText}
-    .input-radio
-      .input-radio__checkmark
+    div(class=`${blockName}__box`)
+      div(class=`${blockName}__mark`)
