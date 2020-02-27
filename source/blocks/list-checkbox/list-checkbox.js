@@ -9,8 +9,8 @@ class ListCheckbox {
     this.blockName = 'list-checkbox';
     this.btn = this.element.querySelector(`.${this.blockName}__header`);
     this.icon = this.element.querySelector(`.${this.blockName}__icon`);
-    this.item = this.element.querySelector(`.${this.blockName}__list`);
-    this.item.classList.add(`${this.blockName}__list_inactive`);
+    this.list = this.element.querySelector(`.${this.blockName}__list`);
+    this.list.classList.add(`${this.blockName}__list_inactive`);
   }
 
   _bindEventListeners() {
@@ -20,7 +20,7 @@ class ListCheckbox {
 
   _handleButtonClick() {
     this.icon.classList.toggle(`${this.blockName}__icon_rotated`);
-    this.item.classList.toggle(`${this.blockName}__list_inactive`);
+    this.list.classList.toggle(`${this.blockName}__list_inactive`);
   }
 }
 

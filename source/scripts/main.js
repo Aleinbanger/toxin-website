@@ -1,5 +1,8 @@
 // Imports Only
 
-import ButtonLike from '../blocks/button-like/button-like';
-import ListCheckbox from '../blocks/list-checkbox/list-checkbox';
-import Rating from '../blocks/rating/rating';
+import './import-jquery';
+
+import '../blocks/input-field/input-field';
+import '../blocks/button-like/button-like';
+import '../blocks/list-checkbox/list-checkbox';
+import '../blocks/rating/rating';

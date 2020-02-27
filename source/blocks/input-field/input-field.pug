@@ -1,28 +1,29 @@
-mixin input-field({inpType="text", withExpand=false, inpStyle, labelText})
+mixin input-field({inpType="text", labelText})
   -
     const blockName = "input-field";
     const wrapperClass = [blockName];
-    const iconClass = ["material-icons", `${blockName}__expand`];
-    attributes.type = inpType;
     attributes.class = [`${blockName}__field`];
 
   case inpType
     when "email"
-      - attributes.placeholder = "Email"
+      - attributes.type = inpType
       - attributes.name = "email"
+      - attributes.placeholder = "Email"
     when "password"
-      - attributes.placeholder = "Пароль"
+      - attributes.type = inpType
       - attributes.name = "password"
+      - attributes.placeholder = "Пароль"
+    when "mask-date"
+      - wrapperClass.push(`js-${blockName}`)
+      - attributes.type = "text"
+      - attributes.placeholder = "ДД.ММ.ГГГГ"
+      - attributes["data-inputmask"] = "'alias': 'datetime'"
+      - attributes["data-inputmask-inputFormat"] = "dd.mm.yyyy"
+      - attributes["data-inputmask-placeholder"] = "ДД.ММ.ГГГГ"
     default
       - attributes.type = "text"
-
-  if (/dark/gi.test(inpStyle))
-    - iconClass.push(`${blockName}__expand_dark`)
 
   div(class=wrapperClass)
     if (labelText)
       label(class=`${blockName}__label`) #{labelText}
     input&attributes(attributes)
-    if (withExpand)
-      i(class=iconClass) expand_more
-      //- move to dropdown
