@@ -49,6 +49,13 @@ block content
         .form-elements__like-button
           +button-like({likeCount: 12, active: true})
 
+      .form-elements__item
+        h3.form-elements__title Rate Button
+        .form-elements__rate-button
+          +rating({value: 4})
+        .form-elements__rate-button
+          +rating({value: 5})
+
     .form-elements__column
       .form-elements__item
         h3.form-elements__title Buttons

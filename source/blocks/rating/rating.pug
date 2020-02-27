@@ -1,0 +1,14 @@
+mixin rating({value=0})
+  -
+    const blockName = "rating";
+    const wrapperClass = [blockName, `js-${blockName}`];
+    let icon = "star_border";
+
+  span(class=wrapperClass title=`${value}`)
+    - for (let i = 0, j = value; i < 5; i++, j--) {
+        if (j > 0)
+          - icon = "star"
+        else
+          - icon = "star_border"
+        i(class=`material-icons ${blockName}__icon`) #{icon}
+    - }
