@@ -33,20 +33,20 @@
     list-style: none;
     transition: all 0.3s ease-in-out;
 
-    li {
-      margin-bottom: 0.71rem;
-      transition: all 0.3s ease-in-out;
-    }
-    
     &_inactive {
       visibility: hidden;
       height: 0;
       opacity: 0;
 
-      li {
+      .list-checkbox__item {
         margin-bottom: 0;
       }
     }
+  }
+
+  &__item {
+    margin-bottom: 0.71rem;
+    transition: all 0.3s ease-in-out;
   }
 }
 

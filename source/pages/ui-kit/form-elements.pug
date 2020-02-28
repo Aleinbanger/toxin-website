@@ -71,9 +71,6 @@ block content
         .form-elements__button
           +button({btnText: "Перейти к оплате", withArrow: true})
 
-        .form-elements__button
-          +button({btnStyle: "as-text as-text_gradient", withArrow: true})
-
       .form-elements__item
         h3.form-elements__title Pagination
         //-Pagination later
@@ -127,5 +124,14 @@ block content
             "Нельзя с питомцами",
             "Без вечеринок и мероприятий",
             "Время прибытия — после 13:00, а выезд до 12:00"
+          ]
+        })
+
+    .form-elements__column
+      .form-elements__item
+        +list-feature({
+          listItems: [
+            {text: "Комфорт", description: "Шумопоглощающие стены"},
+            {text: "Удобство", description: "Окно в каждой из спален"}
           ]
         })

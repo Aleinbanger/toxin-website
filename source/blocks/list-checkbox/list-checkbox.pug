@@ -15,5 +15,5 @@ mixin list-checkbox({listItems=[], listTitle="", expandable=false})
         i(class=`material-icons ${blockName}__icon`) expand_more
     ul(class=`${blockName}__list`)
       each item in listItems
-        li
+        li(class=`${blockName}__item`)
           +input-checkbox(item)

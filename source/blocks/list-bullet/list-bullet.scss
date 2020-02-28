@@ -3,7 +3,7 @@
   padding: 0;
   list-style: none;
 
-  li {
+  &__item {
     display: flex;
     align-items: baseline;
     margin-bottom: 10px;
