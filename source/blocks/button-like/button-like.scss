@@ -12,6 +12,7 @@
   font-family: $font-family_body;
   font-size: 10px;
   color: $color_main-25;
+  user-select: none;
   outline: none;
   cursor: pointer;
 
@@ -32,5 +33,4 @@
     border-color: transparent;
     color: $color_prim;
   }
-
 }
