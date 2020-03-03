@@ -1,0 +1,25 @@
+include ../../blocks/button/button.pug
+
+mixin pagination({ itemsNumber=1, itemsPerPage=1, baseHref="", addDescription="" })
+  -
+    const blockName = "pagination";
+    const wrapperClass = [blockName, `js-${blockName}`];
+    const pagesNumber = Math.ceil(itemsNumber / itemsPerPage);
+
+  div(class=wrapperClass data-items-number=itemsNumber data-items-per-page=itemsPerPage)
+    div(class=`${blockName}__pages`)
+      - for (let i = 1; i <= pagesNumber; i++) {
+          a(class=`${blockName}__page js-${blockName}__page` href=`${baseHref}/page-${i}`) #{i}
+          if (i === 1 || i === pagesNumber - 1)
+            i(class=`${blockName}__dots js-${blockName}__dots`) ...
+      - }
+      span(class=`${blockName}__button-next js-${blockName}__button-next`)
+        +button({btnStyle: "page page_alt", withArrow: true})
+    div(class=`${blockName}__description`)
+      span(class=`${blockName}__counter js-${blockName}__counter`) 1 &ndash; #{itemsPerPage}
+      |  из
+      if (itemsNumber > 100)
+        |  100+
+      else
+        |  #{itemsNumber}
+      |  #{addDescription}

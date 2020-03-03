@@ -1,12 +1,12 @@
 include ../../blocks/input-field/input-field.pug
 include ../../blocks/button/button.pug
 
-mixin subscription({labelText})
+mixin subscription({ labelText })
   -
     const blockName = "subscription";
     const wrapperClass = [blockName];
 
-  form(action="/mock-address/change-me" method="post" class=wrapperClass)
+  form(action="#mock-address" method="post" class=wrapperClass)
     +input-field({inpType: "email", labelText: labelText})(required)
     div(class=`${blockName}__button`)
       +button({btnType: "submit", btnStyle: "as-text as-text_gradient", withArrow: true})

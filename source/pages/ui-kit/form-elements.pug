@@ -73,11 +73,7 @@ block content
 
       .form-elements__item
         h3.form-elements__title Pagination
-        //-Pagination later
-        .form-elements__button.form-elements__button_inline
-          +button({btnText: "1", btnStyle: "page"})
-        .form-elements__button.form-elements__button_inline
-          +button({btnStyle: "page page_alt", withArrow: true})
+        +pagination({itemsNumber: 180, itemsPerPage: 12, baseHref: "#mock-address", addDescription: "вариантов аренды"})
 
     .form-elements__column
       .form-elements__item

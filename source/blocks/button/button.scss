@@ -30,6 +30,11 @@
     opacity: 0.5;
   }
 
+  &:disabled {
+    opacity: 0.25;
+    cursor: auto;
+  }
+
   &__arrow {
     position: absolute;
     right: 1rem;
@@ -43,8 +48,14 @@
 
     &:focus,
     &:hover {
-      opacity: 1;
       background-image: linear-gradient($color_back, $color_back), $color-grad_prim-50;
+      opacity: 1;
+    }
+
+    &:disabled {
+      background-image: linear-gradient($color_back, $color_back), $color-grad_prim-50;
+      opacity: 0.25;
+      cursor: auto;
     }
   }
 
