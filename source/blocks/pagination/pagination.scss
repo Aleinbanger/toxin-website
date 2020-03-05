@@ -37,6 +37,10 @@
         background: $color-grad_prim;
       }
     }
+
+    &_hidden {
+      display: none;
+    }
   }
 
   &__button-next {

@@ -1,18 +1,18 @@
 class Pagination {
-  constructor(element) {
-    this.element = element;
+  constructor(block) {
+    this.block = block;
     this._initialize();
     this._bindEventListeners();
   }
 
   _initialize() {
     this.blockName = 'pagination';
-    this.pageBtns = this.element.querySelectorAll(`.js-${this.blockName}__page`);
-    this.dots = this.element.querySelectorAll(`.js-${this.blockName}__dots`);
-    this.nextBtn = this.element.querySelector(`.js-${this.blockName}__button-next`);
-    this.counter = this.element.querySelector(`.js-${this.blockName}__counter`);
-    this.itemsNumber = this.element.dataset.itemsNumber;
-    this.itemsPerPage = this.element.dataset.itemsPerPage;
+    this.pageBtns = this.block.querySelectorAll(`.js-${this.blockName}__page`);
+    this.dots = this.block.querySelectorAll(`.js-${this.blockName}__dots`);
+    this.nextBtn = this.block.querySelector(`.js-${this.blockName}__button-next`);
+    this.counter = this.block.querySelector(`.js-${this.blockName}__counter`);
+    this.itemsNumber = this.block.dataset.itemsNumber;
+    this.itemsPerPage = this.block.dataset.itemsPerPage;
     this.pagesNumber = Math.ceil(this.itemsNumber / this.itemsPerPage);
     this._displayPageButtons();
   }
@@ -29,13 +29,12 @@ class Pagination {
     this.pageBtns.forEach((pageBtn) => {
       pageBtn.addEventListener('click', (event) => this._handlePageButtonClick(event));
     });
-    this.nextBtn
-      .addEventListener('click', () => this._handleNextButtonClick());
+    this.nextBtn.addEventListener('click', () => this._handleNextButtonClick());
   }
 
   _handlePageButtonClick(event) {
     const pageBtn = event.currentTarget;
-    this._removeCurrentClass();
+    this._clearCurrentState();
     pageBtn.classList.add(`${this.blockName}__page_current`);
     this.currentPage = Array.from(this.pageBtns).indexOf(pageBtn) + 1;
     this._updateCounter();
@@ -50,7 +49,7 @@ class Pagination {
     }
   }
 
-  _removeCurrentClass() {
+  _clearCurrentState() {
     this.pageBtns.forEach((pageBtn) => {
       pageBtn.classList.remove(`${this.blockName}__page_current`);
     });
@@ -76,46 +75,54 @@ class Pagination {
       switch (this.currentPage) {
         case 1:
         case 2:
-          this.dots[1].classList.add(`${this.blockName}__dots_active`);
-          this.dots[0].classList.remove(`${this.blockName}__dots_active`);
-          this._togglePageButtons(1, this.pagesNumber - 3, 'inline-flex');
-          this._togglePageButtons(3, this.pagesNumber - 1, 'none');
+          this._toggleDots({ onIndexes: [1], offIndexes: [0] });
+          this._togglePageButtons(1, this.pagesNumber - 3, true);
+          this._togglePageButtons(3, this.pagesNumber - 1, false);
           break;
         case this.pagesNumber:
         case this.pagesNumber - 1:
-          this.dots[0].classList.add(`${this.blockName}__dots_active`);
-          this.dots[1].classList.remove(`${this.blockName}__dots_active`);
-          this._togglePageButtons(3, this.pagesNumber - 1, 'inline-flex');
-          this._togglePageButtons(1, this.pagesNumber - 3, 'none');
+          this._toggleDots({ onIndexes: [0], offIndexes: [1] });
+          this._togglePageButtons(3, this.pagesNumber - 1, true);
+          this._togglePageButtons(1, this.pagesNumber - 3, false);
           break;
         default:
           if (this.currentPage === 3) {
-            this.dots[1].classList.add(`${this.blockName}__dots_active`);
-            this.dots[0].classList.remove(`${this.blockName}__dots_active`);
+            this._toggleDots({ onIndexes: [1], offIndexes: [0] });
           } else if (this.currentPage === this.pagesNumber - 2) {
-            this.dots[0].classList.add(`${this.blockName}__dots_active`);
-            this.dots[1].classList.remove(`${this.blockName}__dots_active`);
+            this._toggleDots({ onIndexes: [0], offIndexes: [1] });
           } else {
-            this.dots.forEach((dots) => dots.classList.add(`${this.blockName}__dots_active`));
+            this._toggleDots({ onIndexes: [0, 1] });
           }
-          this._togglePageButtons(this.currentPage - 2, this.currentPage + 2, 'inline-flex');
-          this._togglePageButtons(1, this.currentPage - 2, 'none');
-          this._togglePageButtons(this.currentPage + 1, this.pagesNumber - 1, 'none');
+          this._togglePageButtons(this.currentPage - 2, this.currentPage + 2, true);
+          this._togglePageButtons(1, this.currentPage - 2, false);
+          this._togglePageButtons(this.currentPage + 1, this.pagesNumber - 1, false);
       }
+    }
+  }
+
+  _toggleDots({ onIndexes, offIndexes }) {
+    if (onIndexes) {
+      onIndexes.forEach((onIndex) => this.dots[onIndex].classList.add(`${this.blockName}__dots_active`));
+    }
+    if (offIndexes) {
+      offIndexes.forEach((offIndex) => this.dots[offIndex].classList.remove(`${this.blockName}__dots_active`));
     }
   }
 
   _togglePageButtons(first, last, display) {
     Array.from(this.pageBtns).slice(first, last).forEach((pageBtn) => {
-      const tmp = pageBtn;
-      tmp.style.display = display;
+      if (display) {
+        pageBtn.classList.remove(`${this.blockName}__page_hidden`);
+      } else {
+        pageBtn.classList.add(`${this.blockName}__page_hidden`);
+      }
     });
   }
 }
 
-function renderElements() {
-  const elements = document.querySelectorAll('.js-pagination');
-  elements.forEach((element) => new Pagination(element));
+function renderBlocks() {
+  const blocks = document.querySelectorAll('.js-pagination');
+  blocks.forEach((block) => new Pagination(block));
 }
 
-export default renderElements();
+export default renderBlocks();
