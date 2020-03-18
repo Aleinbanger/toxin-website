@@ -5,15 +5,19 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 1.07rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__header:hover &__icon {
+    color: $color_main-75;
   }
 
   &__title {
     display: inline-block;
-    font-family: $font-family_h3;
-    font-size: $font-size_h3;
-    font-weight: bold;
     color: $color_main;
+    font-family: $font-family_h3;
+    font-weight: bold;
+    font-size: $font-size_h3;
     text-transform: uppercase;
   }
 
@@ -37,28 +41,20 @@
       visibility: hidden;
       height: 0;
       opacity: 0;
-
-      .list-checkbox__item {
-        margin-bottom: 0;
-      }
     }
+  }
+
+  &__list_inactive &__item {
+    margin-bottom: 0;
   }
 
   &__item {
-    margin-bottom: 0.71rem;
+    margin-bottom: 1.05rem;
     transition: all 0.3s ease-in-out;
   }
-}
 
-.js-list-checkbox {
-  .list-checkbox__header {
+  .js-list-checkbox &__header {
     user-select: none;
     cursor: pointer;
-
-    &:hover {
-      .list-checkbox__icon {
-        color: $color_main-75;
-      }
-    }
   }
 }

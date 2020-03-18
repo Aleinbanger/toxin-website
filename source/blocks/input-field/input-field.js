@@ -1,14 +1,14 @@
 import Inputmask from 'inputmask';
 
 class InputField {
-  constructor(element) {
-    this.element = element;
+  constructor(block) {
+    this.block = block;
     this._initialize();
   }
 
   _initialize() {
     this.blockName = 'input-field';
-    this.field = this.element.querySelector(`.${this.blockName}__field`);
+    this.field = this.block.querySelector(`.js-${this.blockName}__field`);
     this._applyMask();
   }
 
@@ -17,9 +17,9 @@ class InputField {
   }
 }
 
-function renderElements() {
-  const elements = document.querySelectorAll('.js-input-field');
-  elements.forEach((element) => new InputField(element));
+function renderBlocks() {
+  const blocks = document.querySelectorAll('.js-input-field');
+  blocks.forEach((block) => new InputField(block));
 }
 
-export default renderElements();
+export default renderBlocks();

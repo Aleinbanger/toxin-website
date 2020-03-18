@@ -1,4 +1,4 @@
-mixin button-like({likeCount=0, active=false})
+mixin button-like({ likeCount=0, active=false })
   -
     const blockName = "button-like";
     let icon = "favorite_border";
@@ -10,5 +10,5 @@ mixin button-like({likeCount=0, active=false})
     - icon = "favorite"
 
   button&attributes(attributes)
-    i(class=`material-icons ${blockName}__icon`) #{icon}
-    span(class=`${blockName}__counter`) #{likeCount}
+    i(class=`material-icons ${blockName}__icon js-${blockName}__icon`) #{icon}
+    span(class=`${blockName}__counter js-${blockName}__counter`) #{likeCount}

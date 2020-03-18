@@ -8,5 +8,5 @@ mixin subscription({ labelText })
 
   form(action="#mock-address" method="post" class=wrapperClass)
     +input-field({inpType: "email", labelText: labelText})(required)
-    div(class=`${blockName}__button`)
+    span(class=`${blockName}__button`)
       +button({btnType: "submit", btnStyle: "as-text as-text_gradient", withArrow: true})

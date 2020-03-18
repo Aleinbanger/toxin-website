@@ -1,19 +1,19 @@
 class Rating {
-  constructor(element) {
-    this.element = element;
+  constructor(block) {
+    this.block = block;
     this._initialize();
   }
 
   _initialize() {
     this.blockName = 'rating';
-    this.value = Number(this.element.title);
+    this.icons = this.block.querySelectorAll(`.js-${this.blockName}__icon`);
+    this.value = Number(this.block.title);
     this._displayRating();
   }
 
   _displayRating() {
-    const icons = this.element.querySelectorAll(`.${this.blockName}__icon`);
     let j = this.value;
-    icons.forEach((icon) => {
+    this.icons.forEach((icon) => {
       const i = icon;
       i.textContent = (j > 0) ? 'star' : 'star_border';
       j -= 1;
@@ -21,9 +21,9 @@ class Rating {
   }
 }
 
-function renderElements() {
-  const elements = document.querySelectorAll('.js-rating');
-  elements.forEach((element) => new Rating(element));
+function renderBlocks() {
+  const blocks = document.querySelectorAll('.js-rating');
+  blocks.forEach((block) => new Rating(block));
 }
 
-export default renderElements();
+export default renderBlocks();

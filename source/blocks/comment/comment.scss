@@ -1,47 +1,36 @@
 .comment {
   display: flex;
-  flex-direction: column;
   width: 100%;
+  color: $color_main-75;
   font-family: $font-family_body;
   font-size: $font-size_body;
-  line-height: 24px;
-  color: $color_main-75;
+  line-height: 171%;
 
   &__header {
     display: flex;
-    margin-bottom: 10px;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 1rem;
   }
 
   &__picture {
-    width: 48px;
-    height: 48px;
-    margin-right: 10px;
-    border: 2px solid $color_back;
+    width: 4.8rem;
+    height: 4.8rem;
+    margin-bottom: 1.2rem;
+    border: 0.2rem solid $color_back;
     border-radius: 50%;
-    box-shadow: 0 10px 20px $color_main-10;
+    box-shadow: 0 1rem 2rem $color_main-10;
     user-select: none;
   }
 
   &__title {
     display: flex;
     flex-direction: column;
+    margin-bottom: 1.2rem;
   }
 
   &__name {
     font-weight: bold;
     text-transform: capitalize;
-  }
-
-  &__body {
-    position: relative;
-    display: flex;
-  }
-
-  &__like {
-    position: absolute;
-  }
-
-  &__text {
-    margin-left: 58px;
   }
 }

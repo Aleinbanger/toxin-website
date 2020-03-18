@@ -14,11 +14,11 @@
 @include fontFace('Material Icons', '../fonts/material-design-icons-3.0.1/MaterialIcons-Regular');
 
 .material-icons {
+  display: inline-block;
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
-  font-size: 24px;
-  display: inline-block;
+  font-size: 2.4rem;
   line-height: 1;
   text-transform: none;
   letter-spacing: normal;
@@ -28,6 +28,7 @@
 
   /* Support for all WebKit browsers. */
   -webkit-font-smoothing: antialiased;
+
   /* Support for Safari and Chrome. */
   text-rendering: optimizeLegibility;
 

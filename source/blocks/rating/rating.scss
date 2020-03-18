@@ -3,10 +3,9 @@
   user-select: none;
 
   &__icon {
-    color: $color_prim;
     background: $color-grad_prim;
-    -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent; // WebKit only
+    color: $color_prim;
   }
 }

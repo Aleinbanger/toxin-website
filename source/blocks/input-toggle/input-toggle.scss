@@ -1,46 +1,41 @@
+$width_toggle: 4rem;
+$height_toggle: 2rem;
+$width_toggle-mark: 1.2rem;
+
 .input-toggle {
   position: relative;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  width: max-content;
-  min-height: 20px;
-  padding-left: 40px + 10px;
+  min-height: $height_toggle;
+  padding-left: $width_toggle + 1rem;
+  color: $color_main-75;
   font-family: $font-family_body;
   font-size: $font-size_body;
-  line-height: 20px;
-  color: $color_main-75;
+  line-height: $height_toggle;
   cursor: pointer;
 
-  &:hover {
-    .input-toggle__box {
-      border-color: $color_main-50;
-    }
+  &:hover &__box {
+    border-color: $color_main-50;
   }
 
-  input {
+  &__state {
     position: absolute;
     top: 0;
     left: 0;
-    width: 0;
-    height: 0;
     opacity: 0;
+  }
 
-    &:focus {
-      ~ .input-toggle__box {
-        border-color: $color_main-50;
-      }
-    }
+  &__state:focus ~ &__box {
+    box-shadow: 0 0 0.5rem $color_prim;
+  }
 
-    &:checked {
-      ~ .input-toggle__box {
-        border-color: $color_prim;
-        padding-left: 22px;
+  &__state:checked ~ &__box {
+    border-color: $color_prim;
+    padding-left: $width_toggle - $width_toggle-mark - 0.4rem - 2*0.1rem;
+  }
 
-        .input-toggle__mark {
-          background: $color-grad_prim;
-        }
-      }
-    }
+  &__state:checked ~ &__box &__mark {
+    background: $color-grad_prim;
   }
 
   &__box {
@@ -50,19 +45,18 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    width: 40px;
-    height: 20px;
-    padding: 4px;
-    background: $color_back;
-    border: 1px solid $color_main-25;
-    border-radius: 10px;
+    width: $width_toggle;
+    height: $height_toggle;
+    padding: 0.4rem;
+    border: 0.1rem solid $color_main-25;
+    border-radius: 1rem;
     transition: padding 0.3s ease-in-out;
   }
 
   &__mark {
-    min-width: 12px;
-    min-height: 12px;
-    border-radius: 50%;
+    min-width: $width_toggle-mark;
+    min-height: $width_toggle-mark;
     background: $color_main-25;
+    border-radius: 50%;
   }
 }

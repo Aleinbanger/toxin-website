@@ -1,25 +1,23 @@
 .list-bullet {
-  margin: 0;
-  padding: 0;
   list-style: none;
 
   &__item {
     display: flex;
     align-items: baseline;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
+    color: $color_main-75;
     font-family: $font-family_body;
     font-size: $font-size_body;
-    line-height: 24px;
-    color: $color_main-75;
+    line-height: 171%;
 
     &::before {
       content: '';
       display: inline-block;
-      width: 10px;
-      height: 10px;
-      min-width: 10px;
-      min-height: 10px;
-      margin-right: 10px;
+      width: 1rem;
+      height: 1rem;
+      min-width: 1rem;
+      min-height: 1rem;
+      margin-right: 1rem;
       background: $color_main-25;
       border-radius: 50%;
     }

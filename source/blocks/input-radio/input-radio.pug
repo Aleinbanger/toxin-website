@@ -1,11 +1,12 @@
-mixin input-radio({labelText=""})
+mixin input-radio({ labelText="" })
   -
     const blockName = "input-radio";
     const wrapperClass = [blockName];
     attributes.type = "radio";
+    attributes.class = `${blockName}__state`;
 
   label(class=wrapperClass)
     input&attributes(attributes)
-    span #{labelText}
+    span(class=`${blockName}__text`) #{labelText}
     div(class=`${blockName}__box`)
       div(class=`${blockName}__mark`)

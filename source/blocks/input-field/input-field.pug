@@ -1,4 +1,4 @@
-mixin input-field({inpType="text", labelText})
+mixin input-field({ inpType="text", labelText })
   -
     const blockName = "input-field";
     const wrapperClass = [blockName];
@@ -15,6 +15,7 @@ mixin input-field({inpType="text", labelText})
       - attributes.placeholder = "Пароль"
     when "mask-date"
       - wrapperClass.push(`js-${blockName}`)
+      - attributes.class.push(`js-${blockName}__field`)
       - attributes.type = "text"
       - attributes.placeholder = "ДД.ММ.ГГГГ"
       - attributes["data-inputmask"] = "'alias': 'datetime'"

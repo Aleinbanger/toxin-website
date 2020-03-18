@@ -2,33 +2,35 @@
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
-  width: 40px;
-  height: 20px;
-  padding: 0 5px;
+  width: 4rem;
+  height: 2rem;
+  padding: 0 0.5rem;
   background: $color_back;
   background-origin: border-box;
-  border: solid 1px $color_main-25;
-  border-radius: 10px;
-  font-family: $font-family_body;
-  font-size: 10px;
+  border: solid 0.1rem $color_main-25;
+  border-radius: 1rem;
   color: $color_main-25;
+  font-family: $font-family_h3;
+  font-size: 1rem;
   user-select: none;
   outline: none;
   cursor: pointer;
 
-  &:focus,
+  &:focus {
+    box-shadow: 0 0 0.5rem $color_prim;
+  }
+
   &:hover {
     border-color: $color_main-50;
   }
 
   &__icon {
-    margin-right: 5px;
-    font-size: 10px;
+    margin-right: 0.5rem;
+    font-size: 1rem;
   }
 
   &_active {
     background-image: linear-gradient($color_back, $color_back), $color-grad_prim;
-    -webkit-background-clip: padding-box, border-box;
     background-clip: padding-box, border-box;
     border-color: transparent;
     color: $color_prim;

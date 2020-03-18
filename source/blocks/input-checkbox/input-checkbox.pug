@@ -1,8 +1,10 @@
-mixin input-checkbox({labelText="", labelDescription, inpStyle, addAttributes})
+mixin input-checkbox({ labelText="", labelDescription, inpStyle, addAttributes })
   -
     const blockName = "input-checkbox";
     const wrapperClass = [blockName];
     attributes.type = "checkbox";
+    attributes.class = `${blockName}__state`;
+
     for (let attr in addAttributes) {
       attributes[attr] = addAttributes[attr];
     }
@@ -12,7 +14,7 @@ mixin input-checkbox({labelText="", labelDescription, inpStyle, addAttributes})
 
   label(class=wrapperClass) #{labelText}
     if (labelDescription && /rich/gi.test(inpStyle))
-      span #{labelDescription}
+      span(class=`${blockName}__description`) #{labelDescription}
     input&attributes(attributes)
     div(class=`${blockName}__box`)
       div(class=`${blockName}__mark`)

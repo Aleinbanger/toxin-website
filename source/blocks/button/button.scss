@@ -6,19 +6,19 @@
   vertical-align: middle;
   width: 100%;
   height: 100%;
-  max-width: 320px;
-  max-height: 44px;
-  min-width: 87px;
-  min-height: 34px;
-  padding: 0 1.2rem;
+  max-width: 32rem;
+  max-height: 4.4rem;
+  min-width: 8.7rem;
+  min-height: 3.4rem;
+  padding: 0 1.6rem;
   background: $color-grad_prim;
   background-origin: border-box;
-  border: solid 2px transparent;
-  border-radius: 22px;
-  font-family: $font-family_h3;
-  font-size: $font-size_h3;
-  font-weight: bold;
+  border: solid 0.2rem transparent;
+  border-radius: 2.2rem;
   color: $color_back;
+  font-family: $font-family_h3;
+  font-weight: bold;
+  font-size: $font-size_h3;
   text-transform: uppercase;
   text-decoration: none;
   user-select: none;
@@ -42,7 +42,6 @@
 
   &_ghost {
     background-image: linear-gradient($color_back, $color_back), $color-grad_prim;
-    -webkit-background-clip: padding-box, border-box;
     background-clip: padding-box, border-box;
     color: $color_prim;
 
@@ -70,36 +69,32 @@
     border-radius: 0;
     color: $color_prim;
 
-    .button__arrow {
-      position: static;
-    }
-
     &_faint {
       color: $color_main-50;
     }
 
     &_gradient {
       background: $color-grad_prim;
-      -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent; // WebKit only
     }
   }
 
-  &_page {
-    width: 40px;
-    height: 40px;
-    min-width: 40px;
-    min-height: 40px;
+  &_as-page {
+    width: 4rem;
+    height: 4rem;
+    min-width: 4rem;
+    min-height: 4rem;
     padding: 0;
     border-radius: 50%;
-
-    .button__arrow {
-      position: static;
-    }
 
     &_alt {
       background-image: $color-grad_sec;
     }
+  }
+
+  &_as-text &__arrow,
+  &_as-page &__arrow {
+    position: static;
   }
 }

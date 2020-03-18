@@ -1,48 +1,43 @@
+$width_radio: 2rem;
+$height_radio: 2rem;
+
 .input-radio {
   position: relative;
   display: inline-flex;
   align-items: center;
-  min-height: 20px;
-  padding-left: 20px + 10px;
+  min-height: $height_radio;
+  padding-left: $width_radio + 1rem;
+  color: $color_main-50;
   font-family: $font-family_body;
   font-size: $font-size_body;
-  line-height: 20px;
-  color: $color_main-50;
+  line-height: $height_radio;
   cursor: pointer;
 
-  &:hover {
-    .input-radio__box {
-      border-color: $color_main-50;
-    }
+  &:hover &__box {
+    border-color: $color_main-50;
   }
 
-  input {
+  &__state {
     position: absolute;
     top: 0;
     left: 0;
-    width: 0;
-    height: 0;
     opacity: 0;
+  }
 
-    &:focus {
-      ~ .input-radio__box {
-        border-color: $color_main-50;
-      }
-    }
+  &__state:focus ~ &__box {
+    box-shadow: 0 0 0.5rem $color_prim;
+  }
 
-    &:checked {
-      ~ .input-radio__box {
-        border-color: $color_prim;
+  &__state:checked ~ &__text {
+    color: $color_main-75;
+  }
 
-        .input-radio__mark {
-          display: block;
-        }
-      }
+  &__state:checked ~ &__box {
+    border-color: $color_prim;
+  }
 
-      ~ span {
-        color: $color_main-75;
-      }
-    }
+  &__state:checked ~ &__box &__mark {
+    display: block;
   }
 
   &__box {
@@ -52,18 +47,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 20px;
-    height: 20px;
-    background: $color_back;
-    border: 1px solid $color_main-25;
+    width: $width_radio;
+    height: $height_radio;
+    border: 0.1rem solid $color_main-25;
     border-radius: 50%;
   }
 
   &__mark {
     display: none;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
+    width: 1.2rem;
+    height: 1.2rem;
     background: $color-grad_prim;
+    border-radius: 50%;
   }
 }

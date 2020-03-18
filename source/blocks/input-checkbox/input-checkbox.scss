@@ -1,45 +1,47 @@
+$width_checkbox: 2rem;
+$height_checkbox: 2rem;
+
 .input-checkbox {
   position: relative;
   display: inline-flex;
   align-items: center;
-  width: 100%;
-  min-height: 20px;
-  padding-left: 20px + 10px;
+  min-height: $height_checkbox;
+  padding-left: $width_checkbox + 1rem;
+  color: $color_main-50;
   font-family: $font-family_body;
   font-size: $font-size_body;
-  line-height: 20px;
-  color: $color_main-50;
+  line-height: $height_checkbox;
   cursor: pointer;
 
-  &:hover {
-    .input-checkbox__box {
-      border-color: $color_main-50;
-    }
+  &:hover &__box {
+    border-color: $color_main-50;
   }
 
-  input {
+  &__description {
+    padding-top: 0.5rem;
+    color: $color_main-50;
+    font-weight: normal;
+    font-size: $font-size_h3;
+    line-height: 117%;
+  }
+
+  &__state {
     position: absolute;
     top: 0;
     left: 0;
-    width: 0;
-    height: 0;
     opacity: 0;
+  }
 
-    &:focus {
-      ~ .input-checkbox__box {
-        border-color: $color_main-50;
-      }
-    }
+  &__state:focus ~ &__box {
+    box-shadow: 0 0 0.5rem $color_prim;
+  }
 
-    &:checked {
-      ~ .input-checkbox__box {
-        border-color: $color_prim;
+  &__state:checked ~ &__box {
+    border-color: $color_prim;
+  }
 
-        .input-checkbox__mark {
-          display: block;
-        }
-      }
-    }
+  &__state:checked ~ &__box &__mark {
+    display: block;
   }
 
   &__box {
@@ -49,27 +51,24 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 20px;
-    height: 20px;
-    background: $color_back;
-    border: 1px solid $color_main-25;
-    border-radius: 4px;
+    width: $width_checkbox;
+    height: $height_checkbox;
+    border: 0.1rem solid $color_main-25;
+    border-radius: 0.4rem;
   }
 
   &__mark {
     display: none;
-    width: 6px;
-    height: 8px;
-    margin-bottom: 2px;
+    width: 0.6rem;
+    height: 0.8rem;
+    margin-bottom: 0.2rem;
     background: linear-gradient($color_back, $color_back), $color-grad_prim;
     background-origin: border-box;
-    -webkit-background-clip: padding-box, border-box;
     background-clip: padding-box, border-box;
-    border: solid 2px transparent;
+    border: solid 0.2rem transparent;
     border-top: 0;
     border-left: 0;
     transform: rotate(45deg);
-    -webkit-backface-visibility: hidden;
     backface-visibility: hidden; // engaging a more accurate render in the graphics engine to avoid outlines
   }
 
@@ -77,15 +76,7 @@
     flex-direction: column;
     align-items: flex-start;
     height: max-content;
-    font-weight: bold;
     color: $color_main-75;
-
-    span {
-      padding-top: 5px;
-      font-size: $font-size_h3;
-      font-weight: normal;
-      line-height: 1rem;
-      color: $color_main-50;
-    }
+    font-weight: bold;
   }
 }

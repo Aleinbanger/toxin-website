@@ -1,8 +1,9 @@
-mixin input-toggle({labelText=""})
+mixin input-toggle({ labelText="" })
   -
     const blockName = "input-toggle";
     const wrapperClass = [blockName];
     attributes.type = "checkbox";
+    attributes.class = `${blockName}__state`;
 
   label(class=wrapperClass) #{labelText}
     input&attributes(attributes)
