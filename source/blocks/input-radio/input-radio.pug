@@ -1,9 +1,13 @@
-mixin input-radio({ labelText="" })
+mixin input-radio({ labelText="", addAttributes })
   -
     const blockName = "input-radio";
     const wrapperClass = [blockName];
     attributes.type = "radio";
     attributes.class = `${blockName}__state`;
+
+    for (let attr in addAttributes) {
+      attributes[attr] = addAttributes[attr];
+    }
 
   label(class=wrapperClass)
     input&attributes(attributes)

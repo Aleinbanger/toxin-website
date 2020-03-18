@@ -30,11 +30,14 @@ block content
           })
 
       .form-elements__item
-        h3.form-elements__title Radio Buttons
-        .form-elements__radio
-          +input-radio({labelText: "Мужчина"})(name="sex" checked)
-        .form-elements__radio
-          +input-radio({labelText: "Женщина"})(name="sex")
+        +list-radio({
+          radioName: "sex",
+          listTitle: "Radio Buttons",
+          listItems: [
+            {labelText: "Мужчина", addAttributes: {checked: true}},
+            {labelText: "Женщина"}
+          ]
+        })
 
       .form-elements__item
         h3.form-elements__title Toggle

@@ -1,0 +1,14 @@
+include ../../blocks/input-radio/input-radio.pug
+
+mixin list-radio({ radioName="default", listItems=[], listTitle })
+  -
+    const blockName = "list-radio";
+    const wrapperClass = [blockName];
+
+  div(class=wrapperClass)
+    if (listTitle)
+      span(class=`${blockName}__title`) #{listTitle}
+    ul(class=`${blockName}__list`)
+      each item in listItems
+        li(class=`${blockName}__item`)
+          +input-radio(item)(name=radioName)

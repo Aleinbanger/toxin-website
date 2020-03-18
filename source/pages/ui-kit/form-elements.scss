@@ -8,13 +8,13 @@
   max-height: 1853px;
   padding: 140px;
   background: url('../pages/ui-kit/img/ui-kit__logo.svg') no-repeat 30px 30px;
-  background-size: 48px 48px;
+  background-size: 4.8rem 4.8rem;
 
   &__column {
     width: 320px;
 
     &_shifted {
-      margin-left: 50px;
+      margin-left: 5rem;
     }
 
     &_wide {
@@ -24,7 +24,7 @@
 
   &__item {
     width: 100%;
-    margin-bottom: 40px;
+    margin-bottom: 4rem;
   }
 
   &__title {
@@ -32,11 +32,11 @@
     font-size: $font-size_h3;
     color: $color_main;
     text-transform: uppercase;
-    margin-bottom: 15px;
+    margin-bottom: 1.6rem;
   }
 
   &__text-field {
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
   }
 
   &__checkbox-list {
@@ -47,28 +47,23 @@
     }
   }
 
-  &__radio {
-    display: inline-block;
-    margin-right: 20px;
-  }
-
   &__toggle {
-    margin-bottom: 14px;
+    margin-bottom: 1.4rem;
   }
 
   &__like-button {
     display: inline-block;
-    margin-right: 10px;
+    margin-right: 1rem;
   }
 
   &__rate-button {
     display: inline-block;
-    margin-right: 20px;
+    margin-right: 2rem;
   }
 
   &__button {
     height: 44px;
-    margin-bottom: 30px;
+    margin-bottom: 3rem;
 
     &_small {
       width: 99px;
@@ -76,7 +71,7 @@
 
     &_inline {
       display: inline-block;
-      margin-right: 20px;
+      margin-right: 2rem;
       margin-bottom: 0;
     }
   }

@@ -1,0 +1,22 @@
+.list-radio {
+  width: 100%;
+
+  &__title {
+    display: inline-block;
+    margin-bottom: 1.6rem;
+    color: $color_main;
+    font-family: $font-family_h3;
+    font-weight: bold;
+    font-size: $font-size_h3;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    display: inline-block;
+    margin-right: 2rem;
+  }
+}
