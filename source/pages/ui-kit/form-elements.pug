@@ -81,6 +81,47 @@ block content
 
     .form-elements__column
       .form-elements__item
+        +dropdown-list({
+          labelText: "Dropdown",
+          inpPlaceholder: "Какие удобства",
+          inpName: "features",
+          listItems: [
+            {title: "спальни", names: ["спальня", "спальни", "спален"], value: 2, minValue: 0, maxValue: 3},
+            {title: "кровати", names: ["кровать", "кровати", "кроватей"], value: 2, minValue: 0, maxValue: 6},
+            {title: "ванные комнаты", names: ["ванная комната", "ванные комнаты", "ванных комнат"], value: 0, minValue: 0, maxValue: 2}
+          ]
+        })
+
+    .form-elements__column
+      .form-elements__item
+        +dropdown-list({
+          withButtons: true,
+          labelText: "Dropdown",
+          inpPlaceholder: "Сколько гостей",
+          inpName: "guests",
+          listItems: [
+            {combined: true, title: "взрослые", names: ["гость", "гостя", "гостей"], value: 0, minValue: 0, maxValue: 10},
+            {combined: true, title: "дети", names: ["гость", "гостя", "гостей"], value: 0, minValue: 0, maxValue: 10},
+            {title: "младенцы", names: ["младенец", "младенца", "младенцев"], value: 0, minValue: 0, maxValue: 10}
+          ]
+        })
+
+    .form-elements__column
+      .form-elements__item
+        +dropdown-list({
+          withButtons: true,
+          labelText: "Dropdown",
+          inpPlaceholder: "Сколько гостей",
+          inpName: "guests",
+          listItems: [
+            {combined: true, title: "взрослые", names: ["гость", "гостя", "гостей"], value: 2, minValue: 0, maxValue: 10},
+            {combined: true, title: "дети", names: ["гость", "гостя", "гостей"], value: 1, minValue: 0, maxValue: 10},
+            {title: "младенцы", names: ["младенец", "младенца", "младенцев"], value: 0, minValue: 0, maxValue: 10}
+          ]
+        })
+
+    .form-elements__column
+      .form-elements__item
         .form-elements__checkbox-list.form-elements__checkbox-list_wide
           +list-checkbox({
             expandable: true,
