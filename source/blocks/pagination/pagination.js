@@ -1,28 +1,23 @@
 class Pagination {
   constructor(block) {
     this.block = block;
+    this.blockName = this.block.classList[0];
     this._initialize();
     this._bindEventListeners();
   }
 
   _initialize() {
-    this.blockName = 'pagination';
     this.pageBtns = this.block.querySelectorAll(`.js-${this.blockName}__page`);
     this.dots = this.block.querySelectorAll(`.js-${this.blockName}__dots`);
     this.nextBtn = this.block.querySelector(`.js-${this.blockName}__button-next`);
     this.counter = this.block.querySelector(`.js-${this.blockName}__counter`);
-    this.itemsNumber = this.block.dataset.itemsNumber;
-    this.itemsPerPage = this.block.dataset.itemsPerPage;
-    this.pagesNumber = Math.ceil(this.itemsNumber / this.itemsPerPage);
-    this._displayPageButtons();
-  }
-
-  _displayPageButtons() {
-    this.currentPage = 1;
-    this.counter.textContent = `1 \u2013 ${this.itemsPerPage}`;
-    this.pageBtns[0].classList.add(`${this.blockName}__page_current`);
-    this._toggleNextButton();
-    this._rearrangePageButtons();
+    this.state = {
+      currentPage: 1,
+      itemsNumber: Number(this.block.dataset.itemsNumber),
+      itemsPerPage: Number(this.block.dataset.itemsPerPage),
+    };
+    this.state.pagesNumber = Math.ceil(this.state.itemsNumber / this.state.itemsPerPage);
+    this._renderState();
   }
 
   _bindEventListeners() {
@@ -33,37 +28,35 @@ class Pagination {
   }
 
   _handlePageButtonClick(event) {
-    const pageBtn = event.currentTarget;
-    this._clearCurrentState();
-    pageBtn.classList.add(`${this.blockName}__page_current`);
-    this.currentPage = Array.from(this.pageBtns).indexOf(pageBtn) + 1;
+    this.state.currentPage = Array.from(this.pageBtns).indexOf(event.currentTarget) + 1;
+    this._renderState();
+  }
+
+  _handleNextButtonClick() {
+    if (this.state.currentPage < this.state.pagesNumber) {
+      this.pageBtns[this.state.currentPage].click();
+    }
+  }
+
+  _renderState() {
+    this.pageBtns.forEach((pageBtn) => {
+      pageBtn.classList.remove(`${this.blockName}__page_current`);
+    });
+    this.pageBtns[this.state.currentPage - 1].classList.add(`${this.blockName}__page_current`);
     this._updateCounter();
     this._toggleNextButton();
     this._rearrangePageButtons();
   }
 
-  _handleNextButtonClick() {
-    const pageBtn = this.pageBtns[this.currentPage];
-    if (this.currentPage < this.pagesNumber) {
-      pageBtn.click();
-    }
-  }
-
-  _clearCurrentState() {
-    this.pageBtns.forEach((pageBtn) => {
-      pageBtn.classList.remove(`${this.blockName}__page_current`);
-    });
-  }
-
   _updateCounter() {
-    let counterLast = this.itemsPerPage * this.currentPage;
-    counterLast = (counterLast > this.itemsNumber) ? this.itemsNumber : counterLast;
-    this.counter.textContent = `${this.itemsPerPage * (this.currentPage - 1) + 1} \u2013 ${counterLast}`;
+    let counterLast = this.state.itemsPerPage * this.state.currentPage;
+    counterLast = (counterLast > this.state.itemsNumber) ? this.state.itemsNumber : counterLast;
+    this.counter.textContent = `${this.state.itemsPerPage * (this.state.currentPage - 1) + 1} \u2013 ${counterLast}`;
   }
 
   _toggleNextButton() {
-    const nextBtn = this.nextBtn.querySelector('.button');
-    if (this.currentPage < this.pagesNumber) {
+    const nextBtn = this.nextBtn.querySelector('button');
+    if (this.state.currentPage < this.state.pagesNumber) {
       nextBtn.disabled = false;
     } else {
       nextBtn.disabled = true;
@@ -71,31 +64,31 @@ class Pagination {
   }
 
   _rearrangePageButtons() {
-    if (this.pagesNumber > 5) {
-      switch (this.currentPage) {
+    if (this.state.pagesNumber > 5) {
+      switch (this.state.currentPage) {
         case 1:
         case 2:
           this._toggleDots({ onIndexes: [1], offIndexes: [0] });
-          this._togglePageButtons(1, this.pagesNumber - 3, true);
-          this._togglePageButtons(3, this.pagesNumber - 1, false);
+          this._togglePageButtons(1, this.state.pagesNumber - 3, true);
+          this._togglePageButtons(3, this.state.pagesNumber - 1, false);
           break;
-        case this.pagesNumber:
-        case this.pagesNumber - 1:
+        case this.state.pagesNumber:
+        case this.state.pagesNumber - 1:
           this._toggleDots({ onIndexes: [0], offIndexes: [1] });
-          this._togglePageButtons(3, this.pagesNumber - 1, true);
-          this._togglePageButtons(1, this.pagesNumber - 3, false);
+          this._togglePageButtons(3, this.state.pagesNumber - 1, true);
+          this._togglePageButtons(1, this.state.pagesNumber - 3, false);
           break;
         default:
-          if (this.currentPage === 3) {
+          if (this.state.currentPage === 3) {
             this._toggleDots({ onIndexes: [1], offIndexes: [0] });
-          } else if (this.currentPage === this.pagesNumber - 2) {
+          } else if (this.state.currentPage === this.state.pagesNumber - 2) {
             this._toggleDots({ onIndexes: [0], offIndexes: [1] });
           } else {
             this._toggleDots({ onIndexes: [0, 1] });
           }
-          this._togglePageButtons(this.currentPage - 2, this.currentPage + 2, true);
-          this._togglePageButtons(1, this.currentPage - 2, false);
-          this._togglePageButtons(this.currentPage + 1, this.pagesNumber - 1, false);
+          this._togglePageButtons(this.state.currentPage - 2, this.state.currentPage + 2, true);
+          this._togglePageButtons(1, this.state.currentPage - 2, false);
+          this._togglePageButtons(this.state.currentPage + 1, this.state.pagesNumber - 1, false);
       }
     }
   }
@@ -112,9 +105,9 @@ class Pagination {
   _togglePageButtons(first, last, display) {
     Array.from(this.pageBtns).slice(first, last).forEach((pageBtn) => {
       if (display) {
-        pageBtn.classList.remove(`${this.blockName}__page_hidden`);
+        pageBtn.classList.remove(`${this.blockName}__page_inactive`);
       } else {
-        pageBtn.classList.add(`${this.blockName}__page_hidden`);
+        pageBtn.classList.add(`${this.blockName}__page_inactive`);
       }
     });
   }

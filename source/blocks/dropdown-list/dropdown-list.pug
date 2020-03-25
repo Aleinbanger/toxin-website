@@ -1,7 +1,7 @@
 include ../../blocks/input-field/input-field.pug
 include ../../blocks/button/button.pug
 
-mixin dropdown-list({ listItems=[], labelText, inpName, inpPlaceholder, withButtons })
+mixin dropdown-list({ listItems=[], labelText, inpName, inpPlaceholder, withButtons=false, active=false })
   -
     const blockName = 'dropdown-list';
     const wrapperClass = [blockName, `js-${blockName}`];
@@ -17,7 +17,7 @@ mixin dropdown-list({ listItems=[], labelText, inpName, inpPlaceholder, withButt
   if (withButtons)
     - wrapperClass.push(`${blockName}_wide`)
 
-  div(class=wrapperClass)
+  div(class=wrapperClass, data-active=active)
     if (labelText)
       label(class=`${blockName}__label`) #{labelText}
     div(class=inputClass)
@@ -25,18 +25,14 @@ mixin dropdown-list({ listItems=[], labelText, inpName, inpPlaceholder, withButt
       i(class=iconClass) expand_more
     div(class=listClass)
       each item in listItems
-        -
-          const itemAttributes = {
-            'class': itemClass,
-            'data-names': item.names.join(','),
-            'data-value': item.value,
-            'data-min-value': item.minValue,
-            'data-max-value': item.maxValue
-          };
-          if (item.combined) {
-            itemAttributes['data-combined'] = 'true';
-          }
-        div&attributes(itemAttributes)
+        div(
+          class=itemClass,
+          data-names=item.names.join(','),
+          data-value=item.value,
+          data-min-value=item.minValue,
+          data-max-value=item.maxValue,
+          data-combined=item.combined
+        )
           span(class=`${blockName}__item-name`) #{item.title}
           span(class=`${blockName}__item-controls`)
             button(class=itemBtnClass) -
@@ -45,6 +41,6 @@ mixin dropdown-list({ listItems=[], labelText, inpName, inpPlaceholder, withButt
       if (withButtons)
         div(class=`${blockName}__buttons`)
           div(class=resetBtnClass)
-            +button({ btnText: "Очистить", btnStyle: "as-text as-text_faint" })
+            +button({ btnText: 'Очистить', btnStyle: 'as-text as-text_faint' })
           div(class=acceptBtnClass)
-            +button({ btnText: "Применить", btnStyle: "as-text" })
+            +button({ btnText: 'Применить', btnStyle: 'as-text' })

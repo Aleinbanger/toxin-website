@@ -1,8 +1,8 @@
-mixin input-checkbox({ labelText="", labelDescription, inpStyle, addAttributes })
+mixin input-checkbox({ labelText='', labelDescription, inpStyle, addAttributes })
   -
-    const blockName = "input-checkbox";
+    const blockName = 'input-checkbox';
     const wrapperClass = [blockName];
-    attributes.type = "checkbox";
+    attributes.type = 'checkbox';
     attributes.class = `${blockName}__state`;
 
     for (let attr in addAttributes) {

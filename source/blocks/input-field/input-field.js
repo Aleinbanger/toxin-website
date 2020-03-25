@@ -3,11 +3,11 @@ import Inputmask from 'inputmask';
 class InputField {
   constructor(block) {
     this.block = block;
+    this.blockName = this.block.classList[0];
     this._initialize();
   }
 
   _initialize() {
-    this.blockName = 'input-field';
     this.field = this.block.querySelector(`.js-${this.blockName}__field`);
     this._applyMask();
   }

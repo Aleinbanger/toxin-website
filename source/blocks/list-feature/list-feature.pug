@@ -1,22 +1,23 @@
 mixin list-feature({ listItems=[] })
   -
-    const blockName = "list-feature";
+    const blockName = 'list-feature';
     const wrapperClass = [blockName];
+    const iconClass = ['material-icons', `${blockName}__icon`];
     let icon;
 
   ul(class=wrapperClass)
     each item in listItems
       case item.text
-        when "Комфорт"
-          - icon = "insert_emoticon"
-        when "Удобство"
-          - icon = "location_city"
-        when "Уют"
-          - icon = "whatshot"
+        when 'Комфорт'
+          - icon = 'insert_emoticon'
+        when 'Удобство'
+          - icon = 'location_city'
+        when 'Уют'
+          - icon = 'whatshot'
         default
-          - icon = "stars"
+          - icon = 'stars'
       li(class=`${blockName}__item`)
-        i(class=`material-icons ${blockName}__icon`) #{icon}
+        i(class=iconClass) #{icon}
         div(class=`${blockName}__text`)
           span(class=`${blockName}__title`) #{item.text}
           span(class=`${blockName}__description`) #{item.description}

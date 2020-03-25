@@ -1,10 +1,11 @@
 include ../../blocks/input-checkbox/input-checkbox.pug
 
-mixin list-checkbox({ listItems=[], listTitle="", expandable=false })
+mixin list-checkbox({ listItems=[], listTitle='', expandable=false, active=false })
   -
-    const blockName = "list-checkbox";
+    const blockName = 'list-checkbox';
     const wrapperClass = [blockName];
     const headerClass = [`${blockName}__header`];
+    const iconClass = ['material-icons', `${blockName}__icon`, `js-${blockName}__icon`];
     const listClass = [`${blockName}__list`];
 
   if (expandable)
@@ -12,11 +13,11 @@ mixin list-checkbox({ listItems=[], listTitle="", expandable=false })
     - headerClass.push(`js-${blockName}__header`)
     - listClass.push(`js-${blockName}__list`)
 
-  div(class=wrapperClass)
+  div(class=wrapperClass, data-active=active)
     div(class=headerClass)
       span(class=`${blockName}__title`) #{listTitle}
       if (expandable)
-        i(class=`material-icons ${blockName}__icon js-${blockName}__icon`) expand_more
+        i(class=iconClass) expand_more
     ul(class=listClass)
       each item in listItems
         li(class=`${blockName}__item`)

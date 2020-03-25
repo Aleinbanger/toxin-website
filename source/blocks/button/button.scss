@@ -25,7 +25,10 @@
   outline: none;
   cursor: pointer;
 
-  &:focus,
+  &:focus {
+    box-shadow: 0 0 0.5rem $color_prim;
+  }
+
   &:hover {
     opacity: 0.5;
   }
@@ -45,7 +48,6 @@
     background-clip: padding-box, border-box;
     color: $color_prim;
 
-    &:focus,
     &:hover {
       background-image: linear-gradient($color_back, $color_back), $color-grad_prim-50;
       opacity: 1;
@@ -69,6 +71,10 @@
     border-radius: 0;
     color: $color_prim;
 
+    &:focus {
+      box-shadow: 0 0 0.1rem 0.1rem $color_prim;
+    }
+
     &_faint {
       color: $color_main-50;
     }
@@ -90,6 +96,10 @@
 
     &_alt {
       background-image: $color-grad_sec;
+
+      &:focus {
+        box-shadow: 0 0 0.5rem $color_sec;
+      }
     }
   }
 

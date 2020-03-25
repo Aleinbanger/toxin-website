@@ -3,10 +3,10 @@ include ../../blocks/button/button.pug
 
 mixin subscription({ labelText })
   -
-    const blockName = "subscription";
+    const blockName = 'subscription';
     const wrapperClass = [blockName];
 
-  form(action="#mock-address" method="post" class=wrapperClass)
-    +input-field({inpType: "email", labelText: labelText})(required)
+  form(class=wrapperClass, action='#mock-address', method='post')
+    +input-field({ inpType: 'email', labelText: labelText })(required)
     span(class=`${blockName}__button`)
-      +button({btnType: "submit", btnStyle: "as-text as-text_gradient", withArrow: true})
+      +button({ btnType: 'submit', btnStyle: 'as-text as-text_gradient', withArrow: true })

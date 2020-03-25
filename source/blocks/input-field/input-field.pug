@@ -1,28 +1,28 @@
-mixin input-field({ inpType="text", labelText })
+mixin input-field({ inpType='text', labelText })
   -
-    const blockName = "input-field";
+    const blockName = 'input-field';
     const wrapperClass = [blockName];
     attributes.class = [`${blockName}__field`];
 
   case inpType
-    when "email"
+    when 'email'
       - attributes.type = inpType
-      - attributes.name = "email"
-      - attributes.placeholder = "Email"
-    when "password"
+      - attributes.name = 'email'
+      - attributes.placeholder = 'Email'
+    when 'password'
       - attributes.type = inpType
-      - attributes.name = "password"
-      - attributes.placeholder = "Пароль"
-    when "mask-date"
+      - attributes.name = 'password'
+      - attributes.placeholder = 'Пароль'
+    when 'mask-date'
       - wrapperClass.push(`js-${blockName}`)
       - attributes.class.push(`js-${blockName}__field`)
-      - attributes.type = "text"
-      - attributes.placeholder = "ДД.ММ.ГГГГ"
-      - attributes["data-inputmask"] = "'alias': 'datetime'"
-      - attributes["data-inputmask-inputFormat"] = "dd.mm.yyyy"
-      - attributes["data-inputmask-placeholder"] = "ДД.ММ.ГГГГ"
+      - attributes.type = 'text'
+      - attributes.placeholder = 'ДД.ММ.ГГГГ'
+      - attributes['data-inputmask'] = "'alias': 'datetime'"
+      - attributes['data-inputmask-inputFormat'] = 'dd.mm.yyyy'
+      - attributes['data-inputmask-placeholder'] = 'ДД.ММ.ГГГГ'
     default
-      - attributes.type = "text"
+      - attributes.type = 'text'
 
   div(class=wrapperClass)
     if (labelText)

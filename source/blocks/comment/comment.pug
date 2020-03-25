@@ -1,15 +1,19 @@
 include ../../blocks/button-like/button-like.pug
 
-mixin comment({ userName="", userPicture="comment__picture_default.png", date="", text="", likeCount=0, likeActive=false })
+mixin comment({ userName='', userPicture='comment__picture_default.png', date='', text='', likeCount=0, likeActive=false })
   -
-    const blockName = "comment";
+    const blockName = 'comment';
     const wrapperClass = [blockName];
 
   div(class=wrapperClass)
     div(class=`${blockName}__header`)
-      img(class=`${blockName}__picture` alt="Profile picture" src=`../../blocks/comment/img/${userPicture}`)
+      img(
+        class=`${blockName}__picture`,
+        alt='Profile picture',
+        src=`../../blocks/comment/img/${userPicture}`
+      )
       span(class=`${blockName}__like`)
-        +button-like({likeCount: likeCount, active: likeActive})
+        +button-like({ likeCount: likeCount, active: likeActive })
     div(class=`${blockName}__body`)
       div(class=`${blockName}__title`)
         span(class=`${blockName}__name`) #{userName}
