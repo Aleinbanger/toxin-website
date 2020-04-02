@@ -8,3 +8,4 @@ import '../blocks/list-checkbox/list-checkbox';
 import '../blocks/rating/rating';
 import '../blocks/pagination/pagination';
 import '../blocks/dropdown-list/dropdown-list';
+import '../blocks/dropdown-date/dropdown-date';

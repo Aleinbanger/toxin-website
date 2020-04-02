@@ -14,6 +14,7 @@ $color_prim: #BC9CFF;
 $color_sec: #6FCF97;
 $color-grad_prim: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 $color-grad_prim-50: linear-gradient(180deg, rgba($color: #BC9CFF, $alpha: 0.5) 0%, rgba($color: #8BA4F9, $alpha: 0.5) 100%);
+$color-grad_prim-25: linear-gradient(180deg, rgba($color: #BC9CFF, $alpha: 0.25) 0%, rgba($color: #8BA4F9, $alpha: 0.25) 100%);
 $color-grad_sec: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 
 $color_main-75: rgba($color: $color_main, $alpha: 0.75);

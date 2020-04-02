@@ -1,0 +1,27 @@
+include ../../blocks/input-field/input-field.pug
+
+mixin dropdown-date({ labelTexts, inpNames, active=false })
+  -
+    const blockName = 'dropdown-date';
+    const wrapperClass = [blockName, `js-${blockName}`];
+    const inputClass = [`${blockName}__input`, `js-${blockName}__input`];
+    const secInputClass = [`${blockName}__input`, `js-${blockName}__input-sec`, `${blockName}__input_small`];
+    const iconClass = ['material-icons', `${blockName}__icon`, `js-${blockName}__icon`];
+    let inpPlaceholder = 'ДД.ММ \u2013 ДД.ММ';
+
+  if (inpNames.length > 1)
+    - inputClass.push(`${blockName}__input_small`)
+    - inpPlaceholder = 'ДД.ММ.ГГГГ'
+
+  if (!labelTexts[1])
+    - labelTexts[1] = labelTexts[0]
+
+  div(class=wrapperClass, data-active=active)
+    div(class=`${blockName}__inputs`)
+      div(class=inputClass)
+        +input-field({labelText: labelTexts[0]})(name=inpNames[0], placeholder=inpPlaceholder, readonly)
+        i(class=iconClass) expand_more
+      if (inpNames.length > 1)
+        div(class=secInputClass)
+          +input-field({labelText: labelTexts[1]})(name=inpNames[1], placeholder=inpPlaceholder, readonly)
+          i(class=iconClass) expand_more

@@ -1,0 +1,215 @@
+@import 'node_modules/air-datepicker/dist/css/datepicker';
+
+.dropdown-date {
+  width: 100%;
+
+  &__inputs {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__input {
+    position: relative;
+    flex: 1;
+    max-width: 26.6rem;
+    cursor: pointer;
+
+    &:hover input {
+      border-color: $color_main-50;
+    }
+
+    input {
+      padding-right: 4.5rem;
+      text-overflow: ellipsis;
+      cursor: pointer;
+    }
+
+    &_active input {
+      border-color: $color_main-50;
+    }
+
+    &_small {
+      max-width: 15rem;
+    }
+  }
+
+  &__input:hover &__icon {
+    color: $color_main-75;
+  }
+
+  &__icon {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    color: $color_main-50;
+    user-select: none;
+    pointer-events: none;
+    transition: transform 0.3s ease-in-out;
+
+    &_active {
+      transform: rotate(-180deg);
+    }
+  }
+
+  &__datepicker.datepicker {
+    box-sizing: border-box;
+    width: 32rem;
+    padding: 2rem;
+    border: 0.1rem solid $color_main-25;
+    border-radius: 0.4rem;
+    box-shadow: 0 1rem 2rem $color_main-5;
+    color: $color_main;
+    font-family: $font-family_h3;
+    font-size: $font-size_h3;
+    user-select: none;
+
+    .datepicker--pointer {
+      display: none;
+    }
+
+    .datepicker--nav {
+      min-height: 2.4rem;
+      margin-bottom: 3rem;
+      padding: 0;
+      border: 0;
+    }
+
+    .datepicker--nav-title {
+      width: max-content;
+      font-family: $font-family_h2;
+      font-size: $font-size_h2;
+      font-weight: bold;
+
+      &:hover {
+        background: $color-grad_prim-25;
+      }
+    }
+
+    .datepicker--nav-action {
+      width: max-content;
+      color: $color_prim;
+
+      &:hover {
+        background: none;
+        opacity: 0.5;
+      }
+    }
+
+    .datepicker--content {
+      padding: 0;
+    }
+
+    .datepicker--days-names {
+      margin: 0;
+    }
+
+    .datepicker--day-name {
+      height: 4rem;
+      color: $color_prim;
+      font-family: $font-family_h3;
+      font-size: $font-size_h3;
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+
+    .datepicker--cell {
+      color: $color_main-50;
+
+      &:hover {
+        background: $color-grad_prim-25;
+      }
+    }
+
+    .datepicker--cell-day {
+      height: 4rem;
+      border-radius: 50%;
+    }
+
+    .datepicker--cell-day.-other-month-,
+    .datepicker--cell-year.-other-decade- {
+      color: $color_main-25;
+    }
+
+    .datepicker--cell.-current- {
+      background: $color-grad_sec;
+      color: $color_back;
+      font-weight: bold;
+    }
+
+    .datepicker--cell.-in-range- {
+      background: $color-grad_prim-25;
+      border-radius: 0;
+    }
+
+    .datepicker--cell.-range-from- {
+      background: $color-grad_prim;
+    }
+
+    .datepicker--cell.-range-to- {
+      background: $color-grad_prim;
+    }
+
+    .datepicker--cell.-range-from-::after {
+      content: '';
+      position: absolute;
+      right: -1px;
+      z-index: -1;
+      display: inline-block;
+      width: 2rem;
+      height: 4rem;
+      background: $color-grad_prim-25;
+    }
+
+    .datepicker--cell.-selected-.-range-from-::after {
+      right: 0;
+    }
+
+    .datepicker--cell.-range-to-::before {
+      content: '';
+      position: absolute;
+      left: -1px;
+      z-index: -1;
+      display: inline-block;
+      width: 2rem;
+      height: 4rem;
+      background: $color-grad_prim-25;
+    }
+
+    .datepicker--cell.-selected-.-range-to-::before {
+      left: 0;
+    }
+
+    .datepicker--cell.-selected- {
+      background: $color-grad_prim;
+      color: $color_back;
+      font-weight: bold;
+    }
+
+    .datepicker--buttons {
+      justify-content: space-between;
+      margin-top: 2rem;
+      padding: 0;
+      border: 0;
+    }
+
+    .datepicker--button {
+      flex: 0;
+      //width: min-content;
+      height: auto;
+      color: $color_main-50;
+      font-family: $font-family_h3;
+      font-size: $font-size_h3;
+      font-weight: bold;
+      text-transform: uppercase;
+
+      &:hover {
+        background: none;
+        opacity: 0.5;
+      }
+    }
+
+    .datepicker--button[data-action='hide'] {
+      color: $color_prim;
+    }
+  }
+}
