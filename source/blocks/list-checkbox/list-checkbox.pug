@@ -14,7 +14,7 @@ mixin list-checkbox({ listItems=[], listTitle='', expandable=false, active=false
     - listClass.push(`js-${blockName}__list`)
 
   div(class=wrapperClass, data-active=active)
-    div(class=headerClass)
+    div(class=headerClass, tabindex=1)
       span(class=`${blockName}__title`) #{listTitle}
       if (expandable)
         i(class=iconClass) expand_more

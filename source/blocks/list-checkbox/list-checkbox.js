@@ -17,12 +17,26 @@ class ListCheckbox {
   }
 
   _bindEventListeners() {
-    this.header.addEventListener('click', () => this._handleHeaderClick());
+    this.header.addEventListener('mousedown', (event) => this._handleHeaderClick(event));
+    this.header.addEventListener('focusin', () => this._handleHeaderFocus());
   }
 
-  _handleHeaderClick() {
-    this.state.active = !this.state.active;
-    this._renderState();
+  _handleHeaderClick(event) {
+    if (document.activeElement === this.header) {
+      this.state.active = !this.state.active;
+      this._renderState();
+    } else if (this.state.active) {
+      event.preventDefault();
+      this.state.active = false;
+      this._renderState();
+    }
+  }
+
+  _handleHeaderFocus() {
+    if (!this.state.active) {
+      this.state.active = true;
+      this._renderState();
+    }
   }
 
   _renderState() {

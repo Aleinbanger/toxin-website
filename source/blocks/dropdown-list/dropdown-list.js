@@ -29,7 +29,8 @@ class DropdownList {
   }
 
   _bindEventListeners() {
-    this.input.addEventListener('click', () => this._handleInputClick());
+    this.input.addEventListener('mousedown', (event) => this._handleInputClick(event));
+    this.input.addEventListener('focusin', () => this._handleInputFocus());
     document.addEventListener('click', (event) => this._handleOutsideClick(event));
     if (this.resetBtn) {
       this.resetBtn.addEventListener('click', () => this._handleResetButtonClick());
@@ -39,14 +40,28 @@ class DropdownList {
     }
   }
 
-  _handleInputClick() {
-    this.state.active = !this.state.active;
-    this._renderState();
+  _handleInputClick(event) {
+    const input = this.input.querySelector('input');
+    if (document.activeElement === input) {
+      this.state.active = !this.state.active;
+      this._renderState();
+    } else if (this.state.active) {
+      event.preventDefault();
+      this.state.active = false;
+      this._renderState();
+    }
+  }
+
+  _handleInputFocus() {
+    if (!this.state.active) {
+      this.state.active = true;
+      this._renderState();
+    }
   }
 
   _handleOutsideClick(event) {
     const isClickInside = this.block.contains(event.target);
-    if (!isClickInside) {
+    if (!isClickInside && this.state.active) {
       this.state.active = false;
       this._renderState();
     }
@@ -62,6 +77,7 @@ class DropdownList {
   }
 
   _handleAcceptButtonClick() {
+    this.state.active = false;
     this._renderState();
   }
 

@@ -18,10 +18,8 @@ mixin dropdown-list({ listItems=[], labelText, inpName, inpPlaceholder, withButt
     - wrapperClass.push(`${blockName}_wide`)
 
   div(class=wrapperClass, data-active=active)
-    if (labelText)
-      label(class=`${blockName}__label`) #{labelText}
     div(class=inputClass)
-      +input-field({})(name=inpName, placeholder=inpPlaceholder, readonly)
+      +input-field({labelText: labelText})(name=inpName, placeholder=inpPlaceholder, readonly)
       i(class=iconClass) expand_more
     div(class=listClass)
       each item in listItems
