@@ -90,6 +90,16 @@ block content
 
     .form-elements__column
       .form-elements__item
+        +slider-range({
+          labelText: "Range Slider",
+          inpName: "price-range",
+          minValue: 0,
+          maxValue: 15000,
+          startAt: 5000,
+          endAt: 10000,
+        })
+
+      .form-elements__item
         h3.form-elements__title Buttons
         .form-elements__button.form-elements__button_small
           +button({btnText: "Click me"})

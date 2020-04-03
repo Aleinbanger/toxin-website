@@ -1,0 +1,55 @@
+@import 'node_modules/ion-rangeslider/css/ion.rangeSlider';
+
+.slider-range {
+  max-width: 26.6rem;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-family: $font-family_h3;
+    font-size: $font-size_h3;
+    text-transform: uppercase;
+  }
+
+  &__label {
+    display: inline-block;
+    font-weight: bold;
+  }
+
+  &__counter {
+    color: $color_main-50;
+  }
+
+  .irs.irs--round {
+    position: relative;
+    height: 3rem;
+
+    .irs-line {
+      top: 1.8rem;
+      height: 0.6rem;
+      background: $color_back;
+      border: 0.1rem solid $color_main-25;
+      border-radius: 0.3rem;
+      cursor: pointer;
+    }
+
+    .irs-bar {
+      top: 1.8rem;
+      height: 0.6rem;
+      background: $color-grad_sec;
+      cursor: pointer;
+    }
+
+    .irs-handle {
+      top: 1.3rem;
+      width: 1.6rem;
+      height: 1.6rem;
+      background: $color-grad_sec;
+      border: 0.2rem solid $color_back;
+      border-radius: 50%;
+      box-shadow: none;
+      cursor: pointer;
+    }
+  }
+}

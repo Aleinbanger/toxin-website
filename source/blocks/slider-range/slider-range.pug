@@ -1,0 +1,21 @@
+mixin slider-range({ labelText, inpName, sliderType='double', minValue, maxValue, startAt, endAt })
+  -
+    const blockName = 'slider-range';
+    const wrapperClass = [blockName, `js-${blockName}`];
+    const inputClass = [`${blockName}__input`, `js-${blockName}__input`];
+    const counterClass = [`${blockName}__counter`, `js-${blockName}__counter`];
+
+  div(class=wrapperClass)
+    div(class=`${blockName}__header`)
+      if (labelText)
+        label(class=`${blockName}__label`) #{labelText}
+      span(class=counterClass)
+    input(
+      class=inputClass,
+      name=inpName,
+      data-type=sliderType,
+      data-min=minValue,
+      data-max=maxValue,
+      data-from=startAt,
+      data-to=endAt
+    )
