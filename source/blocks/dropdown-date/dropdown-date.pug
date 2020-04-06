@@ -1,6 +1,6 @@
 include ../../blocks/input-field/input-field.pug
 
-mixin dropdown-date({ labelTexts, inpNames, active=false })
+mixin dropdown-date({ labelTexts, inpNames, startAt, endAt, minDate, active=false })
   -
     const blockName = 'dropdown-date';
     const wrapperClass = [blockName, `js-${blockName}`];
@@ -16,7 +16,13 @@ mixin dropdown-date({ labelTexts, inpNames, active=false })
   if (!labelTexts[1])
     - labelTexts[1] = labelTexts[0]
 
-  div(class=wrapperClass, data-active=active)
+  div(
+    class=wrapperClass,
+    data-active=active,
+    data-start-at=startAt,
+    data-end-at=endAt,
+    data-min-date=minDate
+  )
     div(class=`${blockName}__inputs`)
       div(class=inputClass)
         +input-field({labelText: labelTexts[0]})(name=inpNames[0], placeholder=inpPlaceholder, readonly)

@@ -1,10 +1,12 @@
 .list-checkbox {
   width: 100%;
+  min-height: 6.4rem;
 
   &__header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 0.5rem;
     outline: none;
   }
 
@@ -34,7 +36,7 @@
 
   &__list {
     list-style: none;
-    padding-top: 1.6rem;
+    padding-top: 1.2rem;
     transform-origin: 0 0;
     transition: all 0.3s ease-in-out;
 
@@ -53,11 +55,12 @@
   }
 
   &__item {
-    margin-bottom: 1.05rem;
+    margin-bottom: 1rem;
     transition: all 0.3s ease-in-out;
   }
 
   .js-list-checkbox &__header {
+    margin-bottom: 0;
     user-select: none;
     cursor: pointer;
   }

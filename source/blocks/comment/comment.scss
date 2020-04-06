@@ -4,7 +4,7 @@
   color: $color_main-75;
   font-family: $font-family_body;
   font-size: $font-size_body;
-  line-height: 171%;
+  line-height: 172%;
 
   &__header {
     display: flex;
@@ -16,7 +16,7 @@
   &__picture {
     width: 4.8rem;
     height: 4.8rem;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
     border: 0.2rem solid $color_back;
     border-radius: 50%;
     box-shadow: 0 1rem 2rem $color_main-10;
@@ -26,7 +26,7 @@
   &__title {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
   }
 
   &__name {

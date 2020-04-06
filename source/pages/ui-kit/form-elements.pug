@@ -13,19 +13,19 @@ block content
         .form-elements__text-field
           +input-field({labelText: "Text field"})(value="This is pretty awesome")
         .form-elements__text-field
-          +input-field({inpType: "mask-date", labelText: "Masked Text Field"})
-        .form-elements__text-field
           +dropdown-list({
-          withButtons: true,
-          labelText: "Dropdown",
-          inpPlaceholder: "Сколько гостей",
-          inpName: "guests",
-          listItems: [
-            {combined: true, title: "взрослые", names: ["гость", "гостя", "гостей"], value: 0, minValue: 0, maxValue: 10},
-            {combined: true, title: "дети", names: ["гость", "гостя", "гостей"], value: 0, minValue: 0, maxValue: 10},
-            {title: "младенцы", names: ["младенец", "младенца", "младенцев"], value: 0, minValue: 0, maxValue: 10}
-          ],
-        })
+            withButtons: true,
+            labelText: "Dropdown",
+            inpPlaceholder: "Сколько гостей",
+            inpName: "guests",
+            listItems: [
+              {combined: true, title: "взрослые", names: ["гость", "гостя", "гостей"], value: 0, minValue: 0, maxValue: 10},
+              {combined: true, title: "дети", names: ["гость", "гостя", "гостей"], value: 0, minValue: 0, maxValue: 10},
+              {title: "младенцы", names: ["младенец", "младенца", "младенцев"], value: 0, minValue: 0, maxValue: 10}
+            ],
+          })
+        .form-elements__text-field
+          +input-field({inpType: "mask-date", labelText: "Masked Text Field"})
 
       .form-elements__item
         .form-elements__text-field
@@ -39,23 +39,24 @@ block content
           +dropdown-date({
             labelTexts: ["Filter Date Dropdown"],
             inpNames: ["date-range"],
+            startAt: "2019, 8, 19",
+            endAt: "2019, 8, 23",
           })
 
       .form-elements__item
-        .form-elements__text-field
+        .form-elements__subscription
           +subscription({labelText: "Subscription Text Field"})
 
-    .form-elements__column.form-elements__column_shifted
-      .form-elements__item
-        .form-elements__checkbox-list
-          +list-checkbox({
-            listTitle: "Checkbox Buttons",
-            listItems: [
-              {labelText: "Можно курить"},
-              {labelText: "Можно с питомцами", addAttributes: {checked: true, name: "test"}},
-              {labelText: "Можно пригласить гостей (до 10 человек)", addAttributes: {checked: true}}
-            ]
-          })
+    .form-elements__column.form-elements__column_shifted-right
+      .form-elements__checkbox-list
+        +list-checkbox({
+          listTitle: "Checkbox Buttons",
+          listItems: [
+            {labelText: "Можно курить"},
+            {labelText: "Можно с питомцами", addAttributes: {checked: true, name: "test"}},
+            {labelText: "Можно пригласить гостей (до 10 человек)", addAttributes: {checked: true}}
+          ]
+        })
 
       .form-elements__item
         +list-radio({
@@ -67,7 +68,7 @@ block content
           ]
         })
 
-      .form-elements__item
+      .form-elements__toggle-group
         h3.form-elements__title Toggle
         .form-elements__toggle
           +input-toggle({labelText: "Получать спецпредложения"})(checked)
@@ -89,12 +90,12 @@ block content
           +rating({value: 5})
 
     .form-elements__column
-      .form-elements__item
+      .form-elements__slider
         +slider-range({
           labelText: "Range Slider",
           inpName: "price-range",
-          minValue: 0,
-          maxValue: 15000,
+          minValue: 600,
+          maxValue: 15200,
           startAt: 5000,
           endAt: 10000,
         })
@@ -119,31 +120,31 @@ block content
 
     .form-elements__column
       .form-elements__item
-        +dropdown-list({
-          labelText: "Dropdown",
-          inpPlaceholder: "Какие удобства",
-          inpName: "features",
-          listItems: [
-            {title: "спальни", names: ["спальня", "спальни", "спален"], value: 2, minValue: 0, maxValue: 3},
-            {title: "кровати", names: ["кровать", "кровати", "кроватей"], value: 2, minValue: 0, maxValue: 6},
-            {title: "ванные комнаты", names: ["ванная комната", "ванные комнаты", "ванных комнат"], value: 0, minValue: 0, maxValue: 2}
-          ]
-        })
+        .form-elements__text-field
+          +dropdown-list({
+            labelText: "Dropdown",
+            inpPlaceholder: "Какие удобства",
+            inpName: "features",
+            listItems: [
+              {title: "спальни", names: ["спальня", "спальни", "спален"], value: 2, minValue: 0, maxValue: 3},
+              {title: "кровати", names: ["кровать", "кровати", "кроватей"], value: 2, minValue: 0, maxValue: 6},
+              {title: "ванные комнаты", names: ["ванная комната", "ванные комнаты", "ванных комнат"], value: 0, minValue: 0, maxValue: 2}
+            ]
+          })
+        .form-elements__text-field
+          +dropdown-list({
+            labelText: "Dropdown",
+            inpPlaceholder: "Какие удобства",
+            inpName: "features",
+            listItems: [
+              {title: "спальни", names: ["спальня", "спальни", "спален"], value: 2, minValue: 0, maxValue: 3},
+              {title: "кровати", names: ["кровать", "кровати", "кроватей"], value: 2, minValue: 0, maxValue: 6},
+              {title: "ванные комнаты", names: ["ванная комната", "ванные комнаты", "ванных комнат"], value: 0, minValue: 0, maxValue: 2}
+            ],
+            active: true
+          })
 
-      .form-elements__item
-        +dropdown-list({
-          labelText: "Dropdown",
-          inpPlaceholder: "Какие удобства",
-          inpName: "features",
-          listItems: [
-            {title: "спальни", names: ["спальня", "спальни", "спален"], value: 2, minValue: 0, maxValue: 3},
-            {title: "кровати", names: ["кровать", "кровати", "кроватей"], value: 2, minValue: 0, maxValue: 6},
-            {title: "ванные комнаты", names: ["ванная комната", "ванные комнаты", "ванных комнат"], value: 0, minValue: 0, maxValue: 2}
-          ],
-          active: true
-        })
-
-    .form-elements__column.form-elements__column_shifted
+    .form-elements__column.form-elements__column_shifted-right
       .form-elements__item
         +dropdown-list({
           withButtons: true,
@@ -174,62 +175,53 @@ block content
         })
 
     .form-elements__column
-      .form-elements__item
-        .form-elements__checkbox-list.form-elements__checkbox-list_wide
-          +list-checkbox({
-            expandable: true,
-            listTitle: "Expandable Checkbox List",
-            listItems: [
-              {labelText: "Завтрак"},
-              {labelText: "Письменный стол", addAttributes: {checked: true}},
-              {labelText: "Стул для кормления", addAttributes: {checked: true}},
-              {labelText: "Кроватка", addAttributes: {checked: true}},
-              {labelText: "Телевизор"},
-              {labelText: "Шампунь"},
-              {labelText: "Телевизор"},
-              {labelText: "Шампунь"}
-            ]
-          })
+      .form-elements__checkbox-list.form-elements__checkbox-list_wide
+        +list-checkbox({
+          expandable: true,
+          listTitle: "Expandable Checkbox List",
+          listItems: [
+            {labelText: "Завтрак"},
+            {labelText: "Письменный стол", addAttributes: {checked: true}},
+            {labelText: "Стул для кормления", addAttributes: {checked: true}},
+            {labelText: "Кроватка", addAttributes: {checked: true}},
+          ]
+        })
+        +list-checkbox({
+          expandable: true,
+          listTitle: "Expandable Checkbox List",
+          listItems: [
+            {labelText: "Завтрак"},
+            {labelText: "Письменный стол", addAttributes: {checked: true}},
+            {labelText: "Стул для кормления", addAttributes: {checked: true}},
+            {labelText: "Кроватка", addAttributes: {checked: true}},
+            {labelText: "Телевизор"},
+            {labelText: "Шампунь"},
+            {labelText: "Телевизор"},
+            {labelText: "Шампунь"}
+          ],
+          active: true
+        })
 
-      .form-elements__item
-        .form-elements__checkbox-list.form-elements__checkbox-list_wide
-          +list-checkbox({
-            expandable: true,
-            listTitle: "Expandable Checkbox List",
-            listItems: [
-              {labelText: "Завтрак"},
-              {labelText: "Письменный стол", addAttributes: {checked: true}},
-              {labelText: "Стул для кормления", addAttributes: {checked: true}},
-              {labelText: "Кроватка", addAttributes: {checked: true}},
-              {labelText: "Телевизор"},
-              {labelText: "Шампунь"},
-              {labelText: "Телевизор"},
-              {labelText: "Шампунь"}
-            ],
-            active: true
-          })
+    .form-elements__column.form-elements__column_shifted-right.form-elements__column_shifted-down
+      .form-elements__checkbox-list.form-elements__checkbox-list_wide
+        +list-checkbox({
+          listTitle: "Rich Checkbox Buttons",
+          listItems: [
+            {
+              inpStyle: "rich",
+              labelText: "Широкий коридор",
+              labelDescription: "Ширина коридоров в номере не менее 91 см."
+            },
+            {
+              inpStyle: "rich",
+              labelText: "Помощник для инвалидов",
+              labelDescription: "На 1 этаже вас встретит специалист  и проводит до номера."
+            }
+          ]
+        })
 
-    .form-elements__column.form-elements__column_shifted
-      .form-elements__item
-        .form-elements__checkbox-list.form-elements__checkbox-list_wide
-          +list-checkbox({
-            listTitle: "Rich Checkbox Buttons",
-            listItems: [
-              {
-                inpStyle: "rich",
-                labelText: "Широкий коридор",
-                labelDescription: "Ширина коридоров в номере не менее 91 см."
-              },
-              {
-                inpStyle: "rich",
-                labelText: "Помощник для инвалидов",
-                labelDescription: "На 1 этаже вас встретит специалист  и проводит до номера."
-              }
-            ]
-          })
-
-    .form-elements__column
-      .form-elements__item
+    .form-elements__column.form-elements__column_shifted-down
+      .form-elements__bullet-list
         h3.form-elements__title Bullet List
         +list-bullet({
           listItems: [
@@ -248,8 +240,8 @@ block content
           ]
         })
 
-    .form-elements__column.form-elements__column_shifted.form-elements__column_wide
-      .form-elements__item
+    .form-elements__column.form-elements__column_shifted-right.form-elements__column_wide
+      .form-elements__comment
         +comment({
           userName: "Мурад сарафанов",
           userPicture: "comment__picture_male-1.png",

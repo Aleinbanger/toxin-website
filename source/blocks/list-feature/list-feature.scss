@@ -7,7 +7,7 @@
     display: flex;
     align-items: center;
     margin-bottom: 2rem;
-    padding-bottom: 1.7rem;
+    padding-bottom: 2rem;
     border-bottom: 0.1rem solid $color_main-10;
   }
 
@@ -25,10 +25,11 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: 4.8rem;
     color: $color_main-75;
     font-family: $font-family_body;
     font-size: $font-size_body;
-    line-height: 171%;
+    line-height: 172%;
   }
 
   &__title {

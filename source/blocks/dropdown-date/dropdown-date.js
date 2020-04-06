@@ -14,9 +14,13 @@ class DropdownDate {
     this.icons = this.block.querySelectorAll(`.js-${this.blockName}__icon`);
     this.state = {
       active: Boolean(this.block.dataset.active),
+      startAt: this.block.dataset.startAt,
+      endAt: this.block.dataset.endAt,
+      minDate: this.block.dataset.minDate,
     };
     this._renderDatepicker();
     this._renderState();
+    this._selectDate(this.state.startAt, this.state.endAt);
   }
 
   _renderDatepicker() {
@@ -29,7 +33,7 @@ class DropdownDate {
         days: 'MM yyyy',
       },
       dateFormat: 'd M',
-      minDate: new Date(),
+      disableNavWhenOutOfRange: false,
       range: true,
       multipleDatesSeparator: ' \u2013 ',
       clearButton: true,
@@ -39,6 +43,11 @@ class DropdownDate {
         }
       },
     };
+    if (this.state.minDate === 'today') {
+      options.minDate = new Date();
+    } else if (this.state.minDate) {
+      options.minDate = new Date(this.state.minDate);
+    }
     if (this.secInput) {
       options.dateFormat = 'dd.mm.yyyy';
       options.onSelect = (formattedDate) => {
@@ -121,6 +130,17 @@ class DropdownDate {
         this.secInput.classList.remove(`${this.blockName}__input_active`);
       }
     }
+  }
+
+  _selectDate(from, to) {
+    const date = [];
+    if (from) {
+      date.push(new Date(from));
+      if (to) {
+        date.push(new Date(to));
+      }
+    }
+    this.$datepicker.data('datepicker').selectDate(date);
   }
 }
 
