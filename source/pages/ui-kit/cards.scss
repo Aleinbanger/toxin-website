@@ -1,0 +1,12 @@
+.cards {
+  display: flex;
+  justify-content: space-between;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1440px;
+  max-height: 1350px;
+  margin: auto;
+  padding: 15rem 14rem 14rem;
+  background: #F4F4F6 url('../pages/ui-kit/img/ui-kit__logo.svg') 3rem 3rem/4.8rem 4.8rem no-repeat;
+}

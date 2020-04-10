@@ -1,0 +1,16 @@
+extends ./_layout.pug
+
+block append variables
+  - const pageTitle = 'Cards'
+
+block append mixins
+  include ../../blocks/card-search/card-search.pug
+  include ../../blocks/card-signup/card-signup.pug
+  include ../../blocks/card-signin/card-signin.pug
+
+block content
+
+  .cards
+    +card-search({})
+    +card-signup({})
+    +card-signin({})

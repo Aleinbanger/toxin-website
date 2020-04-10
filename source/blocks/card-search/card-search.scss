@@ -1,0 +1,29 @@
+.card-search {
+  width: 100%;
+  max-width: 38rem;
+  max-height: 37.4rem;
+  padding: 4rem 1rem 3rem;
+  background: $color_back;
+  border: 0.1rem solid $color_main-10;
+  border-radius: 0.4rem;
+  box-shadow: 0 0 2.5rem $color_main-25;
+
+  &__form {
+    max-width: 32rem;
+    margin: auto;
+  }
+
+  &__title {
+    margin-bottom: 2rem;
+    line-height: 3rem;
+  }
+
+  &__form-item {
+    margin-bottom: 2rem;
+  }
+
+  &__form-button {
+    height: 5.5rem;
+    padding-top: 1.1rem;
+  }
+}

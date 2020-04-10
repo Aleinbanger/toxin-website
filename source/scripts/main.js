@@ -10,3 +10,5 @@ import '../blocks/pagination/pagination';
 import '../blocks/dropdown-list/dropdown-list';
 import '../blocks/dropdown-date/dropdown-date';
 import '../blocks/slider-range/slider-range';
+
+import '../blocks/card-search/card-search';

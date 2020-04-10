@@ -33,9 +33,9 @@ mixin dropdown-list({ listItems=[], labelText, inpName, inpPlaceholder, withButt
         )
           span(class=`${blockName}__item-name`) #{item.title}
           span(class=`${blockName}__item-controls`)
-            button(class=itemBtnClass) -
+            button(class=itemBtnClass, type='button') -
             span(class=itemCounterClass) #{item.value}
-            button(class=itemBtnClass) +
+            button(class=itemBtnClass, type='button') +
       if (withButtons)
         div(class=`${blockName}__buttons`)
           div(class=resetBtnClass)

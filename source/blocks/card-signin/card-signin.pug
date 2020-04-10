@@ -1,0 +1,24 @@
+include ../../blocks/input-field/input-field.pug
+include ../../blocks/button/button.pug
+
+mixin card-signin({ titleText='Войти' })
+  -
+    const blockName = 'card-signin';
+    const wrapperClass = [blockName];
+    const formClass = [`${blockName}__form`];
+    const formItemClass = [`${blockName}__form-item`];
+
+  div(class=wrapperClass)
+    form(class=formClass, action='#mock-address', method='post')
+      h1(class=`${blockName}__title`) #{titleText}
+      div(class=formItemClass)
+        div(class=`${blockName}__form-subitem`)
+          +input-field({ inpType: 'email' })(required)
+        div(class=`${blockName}__form-subitem`)
+          +input-field({ inpType: 'password' })(required)
+      div(class=`${blockName}__form-button`)
+        +button({ btnType: 'submit', btnText: 'Войти', withArrow: true })
+    div(class=`${blockName}__footer`)
+      span(class=`${blockName}__footer-text`) Нет аккаунта на Toxin?
+      span(class=`${blockName}__footer-button`)
+        +button({ btnType: 'link', btnText: 'Создать', btnStyle: 'ghost' })(href='#mock-address')

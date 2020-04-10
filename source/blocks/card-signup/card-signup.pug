@@ -1,0 +1,43 @@
+include ../../blocks/input-field/input-field.pug
+include ../../blocks/list-radio/list-radio.pug
+include ../../blocks/input-toggle/input-toggle.pug
+include ../../blocks/button/button.pug
+
+mixin card-signup({ titleText='Регистрация аккаунта' })
+  -
+    const blockName = 'card-signup';
+    const wrapperClass = [blockName];
+    const formClass = [`${blockName}__form`];
+    const formItemClass = [`${blockName}__form-item`];
+
+  div(class=wrapperClass)
+    form(class=formClass, action='#mock-address', method='post')
+      h1(class=`${blockName}__title`) #{titleText}
+      div(class=formItemClass)
+        div(class=`${blockName}__form-subitem`)
+          +input-field({})(name='first-name', placeholder='Имя', required)
+        div(class=`${blockName}__form-subitem`)
+          +input-field({})(name='last-name', placeholder='Фамилия', required)
+        div(class=`${blockName}__form-subitem`)
+          +list-radio({
+            radioName: 'sex',
+            listItems: [
+              {labelText: 'Мужчина', addAttributes: {checked: true}},
+              {labelText: 'Женщина'}
+            ]
+          })
+      div(class=formItemClass)
+        +input-field({ inpType: 'mask-date', labelText: 'Дата рождения' })(name='birthday', required)
+      div(class=formItemClass)
+        div(class=`${blockName}__form-subitem`)
+          +input-field({ inpType: 'email', labelText: 'Данные для входа в сервис' })(required)
+        div(class=`${blockName}__form-subitem`)
+          +input-field({ inpType: 'password' })(required)
+        div(class=`${blockName}__form-subitem`)
+          +input-toggle({ labelText: 'Получать спецпредложения' })(name='special-offers')
+      div(class=`${blockName}__form-button`)
+        +button({ btnType: 'submit', btnText: 'Перейти к оплате', withArrow: true })
+    div(class=`${blockName}__footer`)
+      span(class=`${blockName}__footer-text`) Уже есть аккаунт на Toxin
+      span(class=`${blockName}__footer-button`)
+        +button({ btnType: 'link', btnText: 'Войти', btnStyle: 'ghost' })(href='#mock-address')

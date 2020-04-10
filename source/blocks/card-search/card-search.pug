@@ -1,0 +1,34 @@
+include ../../blocks/dropdown-date/dropdown-date.pug
+include ../../blocks/dropdown-list/dropdown-list.pug
+include ../../blocks/button/button.pug
+
+mixin card-search({ titleText='Найдём номера под ваши пожелания' })
+  -
+    const blockName = 'card-search';
+    const wrapperClass = [blockName, `js-${blockName}`];
+    const formClass = [`${blockName}__form`, `js-${blockName}__form`];
+    const formItemClass = [`${blockName}__form-item`, `js-${blockName}__form-item`];
+
+  div(class=wrapperClass)
+    form(class=formClass, action='#mock-address', method='post')
+      h1(class=`${blockName}__title`) #{titleText}
+      div(class=formItemClass, data-required=true)
+        +dropdown-date({
+          labelTexts: ['Прибытие', 'Выезд'],
+          inpNames: ['date-arrival', 'date-departure'],
+          minDate: 'today',
+        })
+      div(class=formItemClass, data-required=true)
+        +dropdown-list({
+          withButtons: true,
+          labelText: 'Dropdown',
+          inpPlaceholder: 'Сколько гостей',
+          inpName: 'guests',
+          listItems: [
+            {combined: true, title: 'взрослые', names: ['гость', 'гостя', 'гостей'], value: 0, minValue: 0, maxValue: 10},
+            {combined: true, title: 'дети', names: ['гость', 'гостя', 'гостей'], value: 0, minValue: 0, maxValue: 10},
+            {title: 'младенцы', names: ['младенец', 'младенца', 'младенцев'], value: 0, minValue: 0, maxValue: 10}
+          ],
+        })
+      div(class=`${blockName}__form-button`)
+        +button({ btnType: 'submit', btnText: 'Подобрать номер', withArrow: true })

@@ -6,6 +6,7 @@
 @import 'global';
 
 @import '../pages/ui-kit/form-elements';
+@import '../pages/ui-kit/cards';
 
 @import '../pages/website/index';
 @import '../pages/website/search-room';
@@ -27,3 +28,7 @@
 @import '../blocks/dropdown-list/dropdown-list';
 @import '../blocks/dropdown-date/dropdown-date';
 @import '../blocks/slider-range/slider-range';
+
+@import '../blocks/card-search/card-search';
+@import '../blocks/card-signup/card-signup';
+@import '../blocks/card-signin/card-signin';
