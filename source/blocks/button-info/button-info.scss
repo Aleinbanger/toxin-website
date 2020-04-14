@@ -1,0 +1,46 @@
+.button-info {
+  position: relative;
+  display: inline-block;
+  color: $color_main-25;
+  font-family: $font-family_h3;
+  font-size: $font-size_h3;
+
+  &__icon {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    border: 0.1rem solid $color_main-25;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: bold;
+    user-select: none;
+    cursor: help;
+
+    &:hover {
+      border-color: $color_main-50;
+      color: $color_main-50;
+    }
+  }
+
+  &__icon:hover ~ &__text {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &__text {
+    position: absolute;
+    top: -100%;
+    z-index: 1;
+    display: inline-block;
+    min-width: 10rem;
+    margin-left: 0.5rem;
+    padding: 0.5rem;
+    background: $color_back;
+    border-radius: 0.4rem;
+    box-shadow: 0 0 0.5rem $color_main-25;
+    color: $color_main-50;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+}

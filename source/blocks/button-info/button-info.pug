@@ -1,0 +1,8 @@
+mixin button-info({ infoText='' })
+  -
+    const blockName = 'button-info';
+    const wrapperClass = [blockName];
+
+  span(class=wrapperClass)
+    span(class=`${blockName}__icon`) i
+    span(class=`${blockName}__text`) #{infoText}

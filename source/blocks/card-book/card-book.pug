@@ -1,0 +1,82 @@
+include ../../blocks/dropdown-date/dropdown-date.pug
+include ../../blocks/dropdown-list/dropdown-list.pug
+include ../../blocks/button/button.pug
+include ../../blocks/button-info/button-info.pug
+
+mixin card-book({ roomNumber=0, isLuxury=false, roomPrice=0, discountPrice=0, servicePrice=0, addServicePrice=0 })
+  -
+    const blockName = 'card-book';
+    const wrapperClass = [blockName, `js-${blockName}`];
+    const formClass = [`${blockName}__form`, `js-${blockName}__form`];
+    const roomNumberClass = [`${blockName}__header-room-number`, `js-${blockName}__room-number`];
+    const roomTypeClass = [`${blockName}__header-room-type`, `js-${blockName}__room-type`];
+    const roomPriceClass = [`${blockName}__header-room-price`, `js-${blockName}__room-price`];
+    const formItemClass = [`${blockName}__form-item`, `js-${blockName}__form-item`];
+
+  div(
+    class=wrapperClass,
+    data-room-number=roomNumber,
+    data-room-luxury=isLuxury,
+    data-room-price=roomPrice,
+    data-discount=discountPrice,
+    data-service-price=servicePrice,
+    data-add-service-price=addServicePrice
+  )
+    form(class=formClass, action='#mock-address', method='post')
+      div(class=`${blockName}__header`)
+        span(class=`${blockName}__header-title`)
+          | № 
+          input(class=roomNumberClass, size='2', readonly, name='room-number', value=roomNumber)
+          if (isLuxury)
+            span(class=roomTypeClass) Люкс
+        span(class=`${blockName}__header-description`)
+          span(class=roomPriceClass) #{roomPrice}&#8381;
+          |  в сутки
+      div(class=formItemClass, data-required=true)
+        +dropdown-date({
+          labelTexts: ['Прибытие', 'Выезд'],
+          inpNames: ['date-arrival', 'date-departure'],
+          minDate: 'today',
+        })
+      div(class=formItemClass, data-required=true)
+        +dropdown-list({
+          withButtons: true,
+          labelText: 'Dropdown',
+          inpPlaceholder: 'Сколько гостей',
+          inpName: 'guests',
+          listItems: [
+            {combined: true, title: 'взрослые', names: ['гость', 'гостя', 'гостей'], value: 0, minValue: 0, maxValue: 10},
+            {combined: true, title: 'дети', names: ['гость', 'гостя', 'гостей'], value: 0, minValue: 0, maxValue: 10},
+            {title: 'младенцы', names: ['младенец', 'младенца', 'младенцев'], value: 0, minValue: 0, maxValue: 10}
+          ],
+        })
+      div(class=`${blockName}__invoice`)
+        div(class=`${blockName}__invoice-item`)
+          span(class=`${blockName}__invoice-item-name`)
+            span(class=`js-${blockName}__room-price`) #{roomPrice}&#8381;
+            |  x 
+            span(class=`js-${blockName}__room-days`) 0 суток
+          span(class=`js-${blockName}__room-price-total`) 0&#8381;
+        div(class=`${blockName}__invoice-item`)
+          span(class=`${blockName}__invoice-item-name`)
+            | Сбор за услуги: скидка 
+            span(class=`js-${blockName}__discount`) #{discountPrice}&#8381;
+          span(class=`${blockName}__invoice-item-info`)
+            +button-info({
+              infoText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+            })
+          span(class=`js-${blockName}__service-price`) #{servicePrice}&#8381;
+        div(class=`${blockName}__invoice-item`)
+          span(class=`${blockName}__invoice-item-name`)
+            | Сбор за дополнительные услуги
+          span(class=`${blockName}__invoice-item-info`)
+            +button-info({
+              infoText: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+            })
+          span(class=`js-${blockName}__addservice-price`) #{addServicePrice}&#8381;
+        div(class=`${blockName}__invoice-total`)
+          | Итого
+          span(class=`${blockName}__invoice-total-dots`)
+          span(class=`js-${blockName}__total-price`) 0&#8381;
+      div(class=`${blockName}__form-button`)
+        +button({ btnType: 'submit', btnText: 'Забронировать', withArrow: true })

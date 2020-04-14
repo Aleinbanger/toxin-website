@@ -1,0 +1,106 @@
+.card-book {
+  width: 100%;
+  max-width: 38rem;
+  max-height: 51.1rem;
+  padding: 4rem 1rem 3rem;
+  background: $color_back;
+  border: 0.1rem solid $color_main-10;
+  border-radius: 0.4rem;
+  box-shadow: 0 0 2.5rem $color_main-25;
+
+  &__form {
+    max-width: 32rem;
+    margin: auto;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    height: 3rem;
+    align-items: flex-end;
+    margin-bottom: 2rem;
+  }
+
+  &__header-title {
+    display: inline-block;
+    height: 3rem;
+    font-weight: bold;
+  }
+
+  &__header-room-number {
+    background: $color_back;
+    border: 0;
+    outline: none;
+    color: $color_main;
+    font-family: $font-family_h1;
+    font-size: $font-size_h1;
+    font-weight: bold;
+  }
+
+  &__header-room-type {
+    margin-left: 0.2rem;
+    color: $color_prim;
+    font-size: $font-size_h3;
+    text-transform: uppercase;
+  }
+
+  &__header-description {
+    display: inline-block;
+    height: 2rem;
+    color: $color_main-50;
+    font-family: $font-family_h3;
+    font-size: $font-size_h3;
+    line-height: 2rem;
+  }
+
+  &__header-room-price {
+    font-size: $font-size_body;
+    font-weight: bold;
+  }
+
+  &__form-item {
+    margin-bottom: 2rem;
+  }
+
+  &__invoice-item {
+    display: flex;
+    justify-content: space-between;
+    min-height: 2.4rem;
+    margin-bottom: 1rem;
+    color: $color_main-75;
+    line-height: 2rem;
+  }
+
+  &__invoice-item-name {
+    width: 21.4rem;
+  }
+
+  &__invoice-item-info {
+    display: inline-block;
+    margin-left: 0.5rem;
+    margin-right: auto;
+  }
+
+  &__invoice-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    font-family: $font-family_h2;
+    font-size: $font-size_h2;
+    font-weight: bold;
+    line-height: 2.4rem;
+  }
+
+  &__invoice-total-dots {
+    display: inline-block;
+    width: 100%;
+    margin: 0 0.5rem;
+    border-bottom: 0.1rem dotted $color_main-25;
+  }
+
+  &__form-button {
+    height: 4.4rem;
+  }
+}

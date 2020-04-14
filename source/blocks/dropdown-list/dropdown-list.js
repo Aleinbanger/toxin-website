@@ -116,12 +116,13 @@ class DropdownList {
     });
     const input = this.input.querySelector('input');
     input.value = this.state.totalValue.join(', ');
+    input.dispatchEvent(new Event('change', { bubbles: true }));
   }
 
   _toggleResetButton() {
     if (this.resetBtn) {
       const input = this.input.querySelector('input');
-      if (input.value === '') {
+      if (!input.value) {
         this.resetBtn.classList.add(`${this.blockName}__btn_inactive`);
       } else {
         this.resetBtn.classList.remove(`${this.blockName}__btn_inactive`);

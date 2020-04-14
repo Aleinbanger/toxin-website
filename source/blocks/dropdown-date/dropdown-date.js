@@ -130,6 +130,7 @@ class DropdownDate {
         this.secInput.classList.remove(`${this.blockName}__input_active`);
       }
     }
+    this.input.querySelector('input').dispatchEvent(new Event('change', { bubbles: true }));
   }
 
   _selectDate(from, to) {

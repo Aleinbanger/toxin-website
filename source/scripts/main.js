@@ -12,3 +12,4 @@ import '../blocks/dropdown-date/dropdown-date';
 import '../blocks/slider-range/slider-range';
 
 import '../blocks/card-search/card-search';
+import '../blocks/card-book/card-book';

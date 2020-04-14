@@ -7,6 +7,7 @@ block append mixins
   include ../../blocks/card-search/card-search.pug
   include ../../blocks/card-signup/card-signup.pug
   include ../../blocks/card-signin/card-signin.pug
+  include ../../blocks/card-book/card-book.pug
 
 block content
 
@@ -14,3 +15,11 @@ block content
     +card-search({})
     +card-signup({})
     +card-signin({})
+    +card-book({
+      roomNumber: 888,
+      isLuxury: true,
+      roomPrice: 9990,
+      discountPrice: 2179,
+      servicePrice: 0,
+      addServicePrice: 300,
+    })
