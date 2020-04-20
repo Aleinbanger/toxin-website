@@ -3,20 +3,20 @@ include ../../blocks/dropdown-list/dropdown-list.pug
 include ../../blocks/button/button.pug
 include ../../blocks/button-info/button-info.pug
 
-mixin card-book({ roomNumber=0, isLuxury=false, roomPrice=0, discountPrice=0, servicePrice=0, addServicePrice=0 })
+mixin card-book({ roomNumber=0, roomIsLuxury=false, roomPrice=0, discountPrice=0, servicePrice=0, addServicePrice=0 })
   -
     const blockName = 'card-book';
     const wrapperClass = [blockName, `js-${blockName}`];
     const formClass = [`${blockName}__form`, `js-${blockName}__form`];
-    const roomNumberClass = [`${blockName}__header-room-number`, `js-${blockName}__room-number`];
-    const roomTypeClass = [`${blockName}__header-room-type`, `js-${blockName}__room-type`];
+    const roomNumberClass = [`${blockName}__header-room-number`];
+    const roomTypeClass = [`${blockName}__header-room-type`];
     const roomPriceClass = [`${blockName}__header-room-price`, `js-${blockName}__room-price`];
     const formItemClass = [`${blockName}__form-item`, `js-${blockName}__form-item`];
 
   div(
     class=wrapperClass,
     data-room-number=roomNumber,
-    data-room-luxury=isLuxury,
+    data-room-luxury=roomIsLuxury,
     data-room-price=roomPrice,
     data-discount=discountPrice,
     data-service-price=servicePrice,
@@ -27,7 +27,7 @@ mixin card-book({ roomNumber=0, isLuxury=false, roomPrice=0, discountPrice=0, se
         span(class=`${blockName}__header-title`)
           | № 
           input(class=roomNumberClass, size='2', readonly, name='room-number', value=roomNumber)
-          if (isLuxury)
+          if (roomIsLuxury)
             span(class=roomTypeClass) Люкс
         span(class=`${blockName}__header-description`)
           span(class=roomPriceClass) #{roomPrice}&#8381;

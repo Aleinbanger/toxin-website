@@ -8,18 +8,57 @@ block append mixins
   include ../../blocks/card-signup/card-signup.pug
   include ../../blocks/card-signin/card-signin.pug
   include ../../blocks/card-book/card-book.pug
+  include ../../blocks/card-room/card-room.pug
 
 block content
 
   .cards
-    +card-search({})
-    +card-signup({})
-    +card-signin({})
-    +card-book({
-      roomNumber: 888,
-      isLuxury: true,
-      roomPrice: 9990,
-      discountPrice: 2179,
-      servicePrice: 0,
-      addServicePrice: 300,
-    })
+    .cards__column
+      .cards__item
+        +card-search({})
+      .cards__item
+      +card-signup({})
+
+    .cards__column
+      .cards__item
+        +card-book({
+          roomNumber: 888,
+          roomIsLuxury: true,
+          roomPrice: 9990,
+          discountPrice: 2179,
+          servicePrice: 0,
+          addServicePrice: 300,
+        })
+      .cards__item
+        +card-signin({})
+
+    .cards__column.cards__column_narrow
+      .cards__item
+        +card-room({
+          roomNumber: 888,
+          roomIsLuxury: true,
+          roomPrice: 9990,
+          roomRating: 5,
+          roomReviews: 145,
+          crslBaseSrc: '../../blocks/card-room/img',
+          crslImgSrcList: [
+            'image_1.png',
+            'image_2.png',
+            'image_3.png',
+            'image_4.png'
+          ],
+        })
+      .cards__item
+        +card-room({
+          roomNumber: 840,
+          roomPrice: 9900,
+          roomRating: 4,
+          roomReviews: 65,
+          crslBaseSrc: '../../blocks/card-room/img',
+          crslImgSrcList: [
+            'image_5.png',
+            'image_5.png',
+            'image_5.png',
+            'image_5.png'
+          ],
+        })

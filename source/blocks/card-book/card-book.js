@@ -1,4 +1,6 @@
 import CardForm from '../../scripts/card-form';
+import '../dropdown-date/dropdown-date';
+import '../dropdown-list/dropdown-list';
 
 class CardBook extends CardForm {
   _initialize() {
@@ -6,7 +8,6 @@ class CardBook extends CardForm {
     this.formItems = this.form.querySelectorAll(`.js-${this.blockName}__form-item`);
     this.roomDaysCounter = this.block.querySelector(`.js-${this.blockName}__room-days`);
     this.state = {
-      roomNumber: Number(this.block.dataset.roomNumber),
       roomPrice: Number(this.block.dataset.roomPrice),
       discount: Number(this.block.dataset.discount),
       servicePrice: Number(this.block.dataset.servicePrice),

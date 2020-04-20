@@ -12,4 +12,6 @@ import '../blocks/dropdown-date/dropdown-date';
 import '../blocks/slider-range/slider-range';
 
 import '../blocks/card-search/card-search';
+import '../blocks/card-signup/card-signup';
 import '../blocks/card-book/card-book';
+import '../blocks/card-room/card-room';

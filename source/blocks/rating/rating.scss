@@ -1,8 +1,9 @@
 .rating {
-  display: inline-block;
+  display: inline-flex;
   user-select: none;
 
   &__icon {
+    display: inline-block;
     background: $color-grad_prim;
     background-clip: text;
     -webkit-text-fill-color: transparent; // WebKit only

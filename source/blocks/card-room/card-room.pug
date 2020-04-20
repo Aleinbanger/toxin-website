@@ -1,0 +1,41 @@
+include ../../blocks/carousel/carousel.pug
+include ../../blocks/rating/rating.pug
+
+mixin card-room({ roomHref='#mock-address', roomNumber=0, roomIsLuxury=false, roomPrice=0, roomRating=0, roomReviews=0, crslBaseSrc='', crslImgSrcList=[] })
+  -
+    const blockName = 'card-room';
+    const wrapperClass = [blockName, `js-${blockName}`];
+    const roomNumberClass = [`${blockName}__header-room-number`];
+    const roomTypeClass = [`${blockName}__header-room-type`];
+    const roomPriceClass = [`${blockName}__header-room-price`, `js-${blockName}__room-price`];
+    const roomRatingClass = [`${blockName}__footer-room-rating`, `js-${blockName}__room-rating`];
+
+  div(
+    class=wrapperClass,
+    data-room-number=roomNumber,
+    data-room-luxury=roomIsLuxury,
+    data-room-price=roomPrice,
+    data-room-rating=roomRating,
+    data-room-reviews=roomReviews
+  )
+    div(class=`${blockName}__carousel`)
+      +carousel({
+        baseSrc: crslBaseSrc,
+        imgSrcList: crslImgSrcList,
+      })
+    a(class=`${blockName}__info`, href=roomHref)
+      div(class=`${blockName}__info-header`)
+        span(class=`${blockName}__header-title`)
+          | № 
+          span(class=roomNumberClass) #{roomNumber}
+          if (roomIsLuxury)
+            span(class=roomTypeClass) Люкс
+        span(class=`${blockName}__header-description`)
+          span(class=roomPriceClass) #{roomPrice}&#8381;
+          |  в сутки
+      div(class=`${blockName}__info-footer`)
+        span(class=roomRatingClass)
+          +rating({ value: roomRating })
+        span(class=`${blockName}__footer-room-reviews`)
+          b(class=`js-${blockName}__room-reviews`) #{roomReviews}
+          |  Отзывов

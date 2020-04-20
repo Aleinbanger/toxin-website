@@ -29,3 +29,4 @@ function renderBlocks() {
 }
 
 export default renderBlocks();
+export { Rating };

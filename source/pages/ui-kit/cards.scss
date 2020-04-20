@@ -1,12 +1,30 @@
 .cards {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-content: flex-start;
   flex-wrap: wrap;
   width: 100%;
   max-width: 1440px;
-  max-height: 1350px;
   margin: auto;
   padding: 15rem 14rem 14rem;
   background: #F4F4F6 url('../pages/ui-kit/img/ui-kit__logo.svg') 3rem 3rem/4.8rem 4.8rem no-repeat;
+
+  &__column {
+    width: 38rem;
+    margin-right: 4rem;
+    margin-bottom: 4rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &_narrow {
+      width: 32rem;
+    }
+  }
+
+  &__item {
+    width: 100%;
+    margin-bottom: 4rem;
+  }
 }
