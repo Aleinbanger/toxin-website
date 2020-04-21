@@ -42,7 +42,7 @@ $width_toggle-mark: 1.2rem;
     position: absolute;
     top: 0;
     left: 0;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: flex-start;
     width: $width_toggle;
@@ -54,6 +54,7 @@ $width_toggle-mark: 1.2rem;
   }
 
   &__mark {
+    display: inline-block;
     min-width: $width_toggle-mark;
     min-height: $width_toggle-mark;
     background: $color_main-25;

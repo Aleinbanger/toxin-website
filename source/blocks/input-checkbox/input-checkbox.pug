@@ -16,5 +16,5 @@ mixin input-checkbox({ labelText='', labelDescription, inpStyle, addAttributes }
     if (labelDescription && /rich/gi.test(inpStyle))
       span(class=`${blockName}__description`) #{labelDescription}
     input&attributes(attributes)
-    div(class=`${blockName}__box`)
-      div(class=`${blockName}__mark`)
+    span(class=`${blockName}__box`)
+      span(class=`${blockName}__mark`)

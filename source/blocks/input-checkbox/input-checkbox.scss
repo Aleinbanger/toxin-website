@@ -41,14 +41,14 @@ $height_checkbox: 2rem;
   }
 
   &__state:checked ~ &__box &__mark {
-    display: block;
+    display: inline-block;
   }
 
   &__box {
     position: absolute;
     top: 0;
     left: 0;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     width: $width_checkbox;

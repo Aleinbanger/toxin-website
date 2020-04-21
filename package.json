@@ -4,7 +4,7 @@
   "description": "",
   "main": "source/pages/website/index.pug",
   "scripts": {
-    "dev": "parcel source/pages/ui-kit/cards.pug",
+    "dev": "parcel source/pages/ui-kit/form-elements.pug",
     "build": "parcel build source/pages/website/index.pug --public-url ./"
   },
   "author": "Aleinbanger",

@@ -5,14 +5,13 @@
   flex-wrap: wrap;
   width: 100%;
   max-width: 1440px;
-  max-height: 1853px;
+  margin: auto;
   padding: 14.5rem 14.1rem 14rem 14rem;
-  background: url('../pages/ui-kit/img/ui-kit__logo.svg') no-repeat 30px 30px;
-  background-size: 4.8rem 4.8rem;
+  background: url('../pages/ui-kit/img/ui-kit__logo.svg') 3rem 3rem/4.8rem 4.8rem no-repeat;
 
   &__column {
-    width: 320px;
-    min-height: 315px;
+    width: 32rem;
+    min-height: 31.7rem;
 
     &_shifted-right {
       margin-left: 5.4rem;
@@ -23,12 +22,12 @@
     }
 
     &_wide {
-      width: 711px;
+      width: 71.1rem;
     }
   }
 
   &__item {
-    margin-bottom: 4.4rem;
+    margin-bottom: 4.2rem;
   }
 
   &__title {
@@ -40,19 +39,19 @@
   }
 
   &__text-field {
-    margin-bottom: 2.4rem;
+    margin-bottom: 1.96rem;
   }
 
   &__subscription {
-    margin-bottom: 10.2rem;
+    margin-bottom: 9.8rem;
   }
 
   &__checkbox-list {
-    width: 222px;
+    width: 22.2rem;
     margin-bottom: 4rem;
 
     &_wide {
-      width: 260px;
+      width: 26rem;
     }
   }
 
@@ -81,11 +80,11 @@
   }
 
   &__button {
-    height: 44px;
+    height: 4.4rem;
     margin-bottom: 3rem;
 
     &_small {
-      width: 99px;
+      width: 9.9rem;
     }
 
     &_inline {
@@ -101,7 +100,7 @@
   }
 
   &__bullet-list {
-    width: 260px;
+    width: 26rem;
   }
 
   &__comment {
