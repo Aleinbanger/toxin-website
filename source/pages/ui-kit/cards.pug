@@ -6,8 +6,9 @@ block append variables
 block append mixins
   include ../../blocks/card-search/card-search.pug
   include ../../blocks/card-signup/card-signup.pug
-  include ../../blocks/card-signin/card-signin.pug
   include ../../blocks/card-book/card-book.pug
+  include ../../blocks/card-signin/card-signin.pug
+  include ../../blocks/card-calendar/card-calendar.pug
   include ../../blocks/card-room/card-room.pug
 
 block content
@@ -33,6 +34,12 @@ block content
         +card-signin({})
 
     .cards__column.cards__column_narrow
+      .cards__item
+        +card-calendar({
+          startAt: '2019, 8, 19',
+          endAt: '2019, 8, 23',
+          todayDate: '2019, 8, 8',
+        })
       .cards__item
         +card-room({
           roomNumber: 888,

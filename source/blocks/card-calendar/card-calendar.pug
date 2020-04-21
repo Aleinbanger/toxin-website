@@ -1,0 +1,11 @@
+mixin card-calendar({ startAt, endAt, todayDate })
+  -
+    const blockName = 'card-calendar';
+    const wrapperClass = [blockName, `js-${blockName}`];
+
+  div(
+    class=wrapperClass,
+    data-start-at=startAt,
+    data-end-at=endAt,
+    data-today-date=todayDate
+  )
