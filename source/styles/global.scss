@@ -10,7 +10,15 @@ body {
   height: 100%;
   background: $color_back;
   color: $color_main;
-  font-size: 62.5%; // 1rem = 10 px
+  font-size: 62.5%; // 1rem = 10px
+
+  @media #{$breakpoint_mobile-l} {
+    font-size: 56.25%; // 1rem = 9px
+  }
+
+  @media #{$breakpoint_mobile-m} {
+    font-size: 50%; // 1rem = 8px
+  }
 }
 
 body {
@@ -32,4 +40,8 @@ h2 {
 h3 {
   font-family: $font-family_h3;
   font-size: $font-size_h3;
+}
+
+.material-icons {
+  font-size: 2.4rem;
 }

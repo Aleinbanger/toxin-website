@@ -1,0 +1,235 @@
+.header {
+  position: relative;
+  width: 100%;
+  padding: 1.3rem 1.5rem;
+  background: $color-back;
+  box-shadow: 0 1rem 2rem $color_main-5;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 116rem;
+    margin: auto;
+  }
+
+  &__logo {
+    height: 4rem;
+    margin-right: 1.5rem;
+  }
+
+  &__logo-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  &__navbar-button {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    background: $color-grad_prim;
+    background-clip: text;
+    -webkit-text-fill-color: transparent; // WebKit only
+    border: 0;
+    color: $color_prim;
+    outline: none;
+    cursor: pointer;
+
+    @media #{$breakpoint_laptop} {
+      display: inline-flex;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0.1rem 0.1rem $color_prim;
+    }
+
+    &:hover {
+      opacity: 0.5;
+    }
+
+    .material-icons {
+      font-size: 4rem;
+    }
+
+    &_active {
+      opacity: 0.5;
+    }
+  }
+
+  &__navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: $color-back;
+    transform-origin: 0 0;
+    transition: all 0.3s ease-in-out;
+
+    @media #{$breakpoint_laptop} {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      z-index: 1;
+      flex-direction: column;
+      min-width: 50%;
+      padding: 1rem;
+      box-shadow: -0.5rem 0.5rem 0.5rem $color_main-10;
+      visibility: hidden;
+      opacity: 0;
+      transform: scaleY(0);
+    }
+
+    @media #{$breakpoint_mobile-l} {
+      width: 100%;
+    }
+
+    &_active {
+      visibility: visible;
+      opacity: 1;
+      transform: scaleY(1);
+      transform-origin: 0 0;
+    }
+  }
+
+  &__navbar-list {
+    list-style: none;
+
+    @media #{$breakpoint_laptop} {
+      width: 100%;
+    }
+  }
+
+  &__navbar-list-item {
+    position: relative;
+    display: inline-block;
+
+    @media #{$breakpoint_laptop} {
+      display: block;
+      border-bottom: 0.1rem solid $color_main-25;
+    }
+  }
+
+  &__navbar-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem;
+    color: $color_main-50;
+    font-family: $font-family_body;
+    font-size: $font-size_body;
+    line-height: 2.4rem;
+    text-decoration: none;
+    text-transform: capitalize;
+    outline: none;
+    cursor: pointer;
+
+    &:focus {
+      box-shadow: 0 0 0.1rem 0.1rem $color_prim;
+    }
+
+    &:hover {
+      color: $color_prim;
+      opacity: 0.5;
+    }
+
+    &_bold {
+      color: $color_main-75;
+      font-weight: bold;
+    }
+  }
+
+  &__dropdown-icon {
+    user-select: none;
+    pointer-events: none;
+    transition: transform 0.3s ease-in-out;
+
+    &_active {
+      transform: rotate(-180deg);
+    }
+  }
+
+  &__dropdown-list {
+    position: absolute;
+    top: 110%;
+    z-index: 1;
+    width: max-content;
+    min-width: 100%;
+    padding: 0 1rem;
+    background: $color_back;
+    border-radius: 0.4rem;
+    box-shadow: 0 0.5rem 0.5rem $color_main-10;
+    list-style: none;
+    visibility: hidden;
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: 0 0;
+    transition: all 0.3s ease-in-out;
+
+    @media #{$breakpoint_laptop} {
+      position: static;
+      display: none;
+      background: none;
+      box-shadow: none;
+    }
+
+    &_active {
+      padding: 1rem;
+      visibility: visible;
+      opacity: 1;
+      transform: scaleY(1);
+      transform-origin: 0 0;
+
+      @media #{$breakpoint_laptop} {
+        display: block;
+      }
+    }
+  }
+
+  &__dropdown-list &__navbar-link {
+    padding: 0;
+  }
+
+  &__buttons {
+    display: flex;
+
+    @media #{$breakpoint_laptop} {
+      flex-direction: column;
+      width: 100%;
+      margin-top: 1rem;
+    }
+  }
+
+  &__button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    text-align: center;
+
+    @media #{$breakpoint_laptop} {
+      display: block;
+      width: 100%;
+      padding: 1rem 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  &__account {
+    margin-left: 2rem;
+    padding-left: 2rem;
+    border-left: 0.1rem solid $color_main-10;
+
+    @media #{$breakpoint_laptop} {
+      margin-left: 0;
+      padding-left: 0;
+      border-left: 0;
+    }
+  }
+
+  &__account &__navbar-link {
+    padding-right: 0;
+  }
+}

@@ -16,3 +16,5 @@ import '../blocks/card-signup/card-signup';
 import '../blocks/card-book/card-book';
 import '../blocks/card-room/card-room';
 import '../blocks/card-calendar/card-calendar';
+
+import '../blocks/header/header';

@@ -3,8 +3,24 @@ extends ./_layout.pug
 block append variables
   - const pageTitle = 'Form Elements'
 
-block content
+block append mixins
+  include ../../blocks/input-field/input-field.pug
+  include ../../blocks/input-toggle/input-toggle.pug
+  include ../../blocks/subscription/subscription.pug
+  include ../../blocks/button/button.pug
+  include ../../blocks/button-like/button-like.pug
+  include ../../blocks/rating/rating.pug
+  include ../../blocks/comment/comment.pug
+  include ../../blocks/list-bullet/list-bullet.pug
+  include ../../blocks/list-feature/list-feature.pug
+  include ../../blocks/list-checkbox/list-checkbox.pug
+  include ../../blocks/list-radio/list-radio.pug
+  include ../../blocks/pagination/pagination.pug
+  include ../../blocks/dropdown-list/dropdown-list.pug
+  include ../../blocks/dropdown-date/dropdown-date.pug
+  include ../../blocks/slider-range/slider-range.pug
 
+block content
   .form-elements
     .form-elements__column
       .form-elements__item

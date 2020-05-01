@@ -1,0 +1,49 @@
+include ../../blocks/subscription/subscription.pug
+
+mixin footer({ homeHref='#mock-address', mainText='', navbarItems=[], subscription, copyrightText='', twitterHref, facebookHref, instagramHref, style })
+  -
+    const blockName = 'footer';
+    const wrapperClass = [blockName];
+
+  if (style)
+    - wrapperClass.push(`${blockName}_${style}`)
+
+  footer(class=wrapperClass)
+    div(class=`${blockName}__wrapper`)
+      div(class=`${blockName}__grid`)
+        div(class=`${blockName}__item`)
+          a(class=`${blockName}__logo-link`, href=homeHref)
+            img(class=`${blockName}__logo`, src='../../blocks/footer/img/footer__logo.svg', alt='Toxin Logo')
+          p(class=`${blockName}__item-text`) #{mainText}
+        if (navbarItems)
+          nav(class=`${blockName}__navbar`)
+            each item in navbarItems
+              div(class=`${blockName}__navbar-item`)
+                h3(class=`${blockName}__item-title`) #{item.title}
+                ul(class=`${blockName}__navbar-list`)
+                  each listItem in item.list
+                    li(class=`${blockName}__navbar-list-item`)
+                      a(class=`${blockName}__navbar-link`, href=listItem.href) #{listItem.text}
+        if (subscription)
+          div(class=`${blockName}__item`)
+            h3(class=`${blockName}__item-title`) #{subscription.title}
+            p(class=`${blockName}__item-text`) #{subscription.text}
+            div(class=`${blockName}__subscription`)
+              +subscription({ actionLink: subscription.href, placeholderText: subscription.placeholder })
+
+    div(class=`${blockName}__wrapper`)
+      div(class=`${blockName}__container ${blockName}__container_centered`)
+        span(class=`${blockName}__copyright-text`)
+          script.
+            document.write(`Copyright &copy; ${new Date().getFullYear()} `);
+          | #{copyrightText}
+        div(class=`${blockName}__social-buttons`)
+          if (twitterHref)
+            a(class=`${blockName}__social-button`, href=twitterHref)
+              i(class='fab fa-twitter')
+          if (facebookHref)
+            a(class=`${blockName}__social-button`, href=facebookHref)
+              i(class='fab fa-facebook-square')
+          if (instagramHref)
+            a(class=`${blockName}__social-button`, href=instagramHref)
+              i(class='fab fa-instagram')

@@ -4,7 +4,7 @@
   "description": "",
   "main": "source/pages/website/index.pug",
   "scripts": {
-    "dev": "parcel source/pages/ui-kit/form-elements.pug",
+    "dev": "parcel source/pages/ui-kit/headers-footers.pug",
     "build": "parcel build source/pages/website/index.pug --public-url ./"
   },
   "author": "Aleinbanger",
@@ -28,11 +28,13 @@
     "stylelint-scss": "^3.16.0"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.0",
     "air-datepicker": "^2.2.3",
     "autoprefixer": "^9.7.5",
     "inputmask": "^5.0.3",
     "ion-rangeslider": "^2.3.1",
     "jquery": "^3.4.1",
+    "material-icons": "^0.3.1",
     "postcss-modules": "^1.5.0"
   },
   "browserslist": "> 0.25%, not dead"

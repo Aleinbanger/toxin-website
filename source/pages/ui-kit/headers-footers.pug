@@ -1,0 +1,89 @@
+extends ./_layout.pug
+
+block append variables
+  - const pageTitle = 'Headers & Footers'
+
+block append mixins
+  include ../../blocks/header/header.pug
+  include ../../blocks/footer/footer.pug
+
+block content
+  .headers-footers
+    .headers-footers__item
+      +header({
+        navbarList: [
+          { text: 'Home', href: '#mock-address', bold: true },
+          { text: 'About us', href: '#mock-address' },
+          { text: 'Services', dropdownList: [
+            { text: 'Service 1', href: '#mock-address' },
+            { text: 'Service 2', href: '#mock-address' },
+            { text: 'Service 3', href: '#mock-address' }
+          ] },
+          { text: 'Careers', href: '#mock-address' },
+          { text: 'News', href: '#mock-address' },
+          { text: 'Documentation', href: '#mock-address' },
+        ],
+        fstBtn: { text: 'Login', href: '#mock-address' },
+        sndBtn: { text: 'Register', href: '#mock-address' },
+      })
+
+    .headers-footers__item
+      +header({
+        navbarList: [
+          { text: 'Home', href: '#mock-address', bold: true },
+          { text: 'About us', href: '#mock-address' },
+          { text: 'Services', dropdownList: [
+            { text: 'Service 1', href: '#mock-address' },
+            { text: 'Service 2', href: '#mock-address' },
+            { text: 'Service 3', href: '#mock-address' }
+          ] },
+          { text: 'Careers', href: '#mock-address' },
+          { text: 'News', href: '#mock-address' },
+          { text: 'Documentation', href: '#mock-address' },
+        ],
+        loggedIn: true,
+        account: { text: 'Cosmin Negoita', href: '#mock-address' },
+      })
+
+    .headers-footers__item
+      +footer({
+        mainText: 'Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.',
+        navbarItems: [
+          { title: 'Navigation', list: [
+            { text: 'About Us', href: '#mock-address' },
+            { text: 'News', href: '#mock-address' },
+            { text: 'Support', href: '#mock-address' },
+            { text: 'Products', href: '#mock-address' }
+          ] },
+          { title: 'About us', list: [
+            { text: 'Who we are', href: '#mock-address' },
+            { text: 'Our teem', href: '#mock-address' },
+            { text: 'Careers', href: '#mock-address' },
+            { text: 'Investors', href: '#mock-address' }
+          ] },
+          { title: 'Support', list: [
+            { text: 'Documentation', href: '#mock-address' },
+            { text: 'Community', href: '#mock-address' },
+            { text: 'Get in Touch', href: '#mock-address' }
+          ] },
+        ],
+        subscription: {
+          title: 'Subscribe to our newsletter',
+          text: 'Receive our latest news and promotions in your inbox!',
+          href: '#mock-address',
+          placeholder: 'Your email address',
+        },
+        copyrightText: 'Toxin UI Kit. All rights reserved.',
+        twitterHref: '#mock-address',
+        facebookHref: '#mock-address',
+        instagramHref: '#mock-address',
+      })
+
+    .headers-footers__item
+      +footer({
+        style: 'creative',
+        mainText: 'Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.',
+        twitterHref: '#mock-address',
+        facebookHref: '#mock-address',
+        instagramHref: '#mock-address',
+      })

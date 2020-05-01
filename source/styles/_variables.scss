@@ -8,6 +8,12 @@ $font-size_h2: 1.9rem;
 $font-size_h3: 1.2rem;
 $font-size_body: 1.4rem;
 
+$breakpoint_laptop: 'screen and (max-width: 1024px)';
+$breakpoint_tablet: 'screen and (max-width: 768px)';
+$breakpoint_mobile-l: 'screen and (max-width: 425px)';
+$breakpoint_mobile-m: 'screen and (max-width: 375px)';
+$breakpoint_mobile-s: 'screen and (max-width: 320px)';
+
 $color_back: #FFF;
 $color_main: #1F2041;
 $color_prim: #BC9CFF;

@@ -10,31 +10,3 @@
 
 @include fontFace('Quicksand', '../fonts/quicksand-v19-latin/quicksand-v19-latin-regular');
 @include fontFace('Quicksand', '../fonts/quicksand-v19-latin/quicksand-v19-latin-700', normal, bold);
-
-@include fontFace('Material Icons', '../fonts/material-design-icons-3.0.1/MaterialIcons-Regular');
-
-.material-icons {
-  display: inline-block;
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 2.4rem;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
-
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
-
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
-
-  /* Support for IE. */
-  font-feature-settings: 'liga';
-}

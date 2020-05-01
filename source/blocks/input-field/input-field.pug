@@ -8,11 +8,13 @@ mixin input-field({ inpType='text', labelText })
     when 'email'
       - attributes.type = inpType
       - attributes.name = 'email'
-      - attributes.placeholder = 'Email'
+      if (!attributes.placeholder)
+        - attributes.placeholder = 'Email'
     when 'password'
       - attributes.type = inpType
       - attributes.name = 'password'
-      - attributes.placeholder = 'Пароль'
+      if (!attributes.placeholder)
+        - attributes.placeholder = 'Пароль'
     when 'mask-date'
       - wrapperClass.push(`js-${blockName}`)
       - attributes.class.push(`js-${blockName}__field`)

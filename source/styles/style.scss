@@ -7,6 +7,7 @@
 
 @import '../pages/ui-kit/form-elements';
 @import '../pages/ui-kit/cards';
+@import '../pages/ui-kit/headers-footers';
 
 @import '../pages/website/index';
 @import '../pages/website/search-room';
@@ -36,3 +37,6 @@
 @import '../blocks/card-book/card-book';
 @import '../blocks/card-room/card-room';
 @import '../blocks/card-calendar/card-calendar';
+
+@import '../blocks/header/header';
+@import '../blocks/footer/footer';

@@ -1,12 +1,12 @@
 include ../../blocks/input-field/input-field.pug
 include ../../blocks/button/button.pug
 
-mixin subscription({ labelText })
+mixin subscription({ actionLink='#mock-address', labelText, placeholderText })
   -
     const blockName = 'subscription';
     const wrapperClass = [blockName];
 
-  form(class=wrapperClass, action='#mock-address', method='post')
-    +input-field({ inpType: 'email', labelText: labelText })(required)
+  form(class=wrapperClass, action=actionLink, method='post')
+    +input-field({ inpType: 'email', labelText: labelText })(required, placeholder=placeholderText)
     span(class=`${blockName}__button`)
       +button({ btnType: 'submit', btnStyle: 'as-text as-text_gradient', withArrow: true })
