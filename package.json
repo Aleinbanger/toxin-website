@@ -2,10 +2,10 @@
   "name": "fsd-website",
   "version": "0.0.1",
   "description": "",
-  "main": "source/pages/website/index.pug",
+  "main": "source/pages/website/landing-page.pug",
   "scripts": {
-    "dev": "parcel source/pages/ui-kit/headers-footers.pug",
-    "build": "parcel build source/pages/website/index.pug --public-url ./"
+    "dev": "parcel source/pages/website/landing-page.pug",
+    "build": "parcel build source/pages/website/landing-page.pug --public-url ./"
   },
   "author": "Aleinbanger",
   "license": "MIT",

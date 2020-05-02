@@ -19,7 +19,7 @@
   &__grid {
     display: grid;
     grid-template-columns: minmax(10rem, 29rem) auto minmax(10rem, 34rem);
-    max-width: 116rem;
+    max-width: $width-container_main;
     margin: auto;
 
     @media #{$breakpoint_tablet} {
@@ -31,7 +31,7 @@
   &__container {
     display: flex;
     justify-content: space-between;
-    max-width: 116rem;
+    max-width: $width-container_main;
     margin: auto;
 
     &_centered {
@@ -103,7 +103,6 @@
   }
 
   &__navbar-item {
-    min-width: max-content;
     margin: 0 1rem;
   }
 
