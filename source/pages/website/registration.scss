@@ -1,0 +1,15 @@
+.registration {
+  width: 100%;
+  padding: 3rem 1.5rem 2.6rem;
+  background: $color_back url('../pages/website/img/registration__background.png') bottom/cover no-repeat;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: $width-container_main;
+    height: 100%;
+    margin: auto;
+  }
+}

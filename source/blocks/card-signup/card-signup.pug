@@ -3,7 +3,7 @@ include ../../blocks/list-radio/list-radio.pug
 include ../../blocks/input-toggle/input-toggle.pug
 include ../../blocks/button/button.pug
 
-mixin card-signup({ titleText='Регистрация аккаунта' })
+mixin card-signup({ formAction='#mock-address', titleText='Регистрация аккаунта', signinHref='#mock-address' })
   -
     const blockName = 'card-signup';
     const wrapperClass = [blockName];
@@ -11,7 +11,7 @@ mixin card-signup({ titleText='Регистрация аккаунта' })
     const formItemClass = [`${blockName}__form-item`];
 
   div(class=wrapperClass)
-    form(class=formClass, action='#mock-address', method='post')
+    form(class=formClass, action=formAction, method='post')
       h1(class=`${blockName}__title`) #{titleText}
       div(class=formItemClass)
         div(class=`${blockName}__form-subitem`)
@@ -40,4 +40,4 @@ mixin card-signup({ titleText='Регистрация аккаунта' })
     div(class=`${blockName}__footer`)
       span(class=`${blockName}__footer-text`) Уже есть аккаунт на Toxin
       span(class=`${blockName}__footer-button`)
-        +button({ btnType: 'link', btnText: 'Войти', btnStyle: 'ghost' })(href='#mock-address')
+        +button({ btnType: 'link', btnText: 'Войти', btnStyle: 'ghost' })(href=signinHref)

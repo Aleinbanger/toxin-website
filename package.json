@@ -4,7 +4,7 @@
   "description": "",
   "main": "source/pages/website/landing-page.pug",
   "scripts": {
-    "dev": "parcel source/pages/website/landing-page.pug",
+    "dev": "parcel source/pages/website/sign-in.pug",
     "build": "parcel build source/pages/website/landing-page.pug --public-url ./"
   },
   "author": "Aleinbanger",

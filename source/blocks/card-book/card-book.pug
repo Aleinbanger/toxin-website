@@ -3,7 +3,7 @@ include ../../blocks/dropdown-list/dropdown-list.pug
 include ../../blocks/button/button.pug
 include ../../blocks/button-info/button-info.pug
 
-mixin card-book({ roomNumber=0, roomIsLuxury=false, roomPrice=0, discountPrice=0, servicePrice=0, addServicePrice=0 })
+mixin card-book({ roomNumber=0, roomIsLuxury=false, roomPrice=0, discountPrice=0, servicePrice=0, addServicePrice=0, formAction='#mock-address' })
   -
     const blockName = 'card-book';
     const wrapperClass = [blockName, `js-${blockName}`];
@@ -22,7 +22,7 @@ mixin card-book({ roomNumber=0, roomIsLuxury=false, roomPrice=0, discountPrice=0
     data-service-price=servicePrice,
     data-add-service-price=addServicePrice
   )
-    form(class=formClass, action='#mock-address', method='post')
+    form(class=formClass, action=formAction, method='post')
       div(class=`${blockName}__header`)
         span(class=`${blockName}__header-title`)
           | № 

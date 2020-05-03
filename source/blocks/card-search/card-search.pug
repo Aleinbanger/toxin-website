@@ -2,7 +2,7 @@ include ../../blocks/dropdown-date/dropdown-date.pug
 include ../../blocks/dropdown-list/dropdown-list.pug
 include ../../blocks/button/button.pug
 
-mixin card-search({ titleText='Найдём номера под ваши пожелания' })
+mixin card-search({ formAction='#mock-address', titleText='Найдём номера под ваши пожелания' })
   -
     const blockName = 'card-search';
     const wrapperClass = [blockName, `js-${blockName}`];
@@ -10,7 +10,7 @@ mixin card-search({ titleText='Найдём номера под ваши пож�
     const formItemClass = [`${blockName}__form-item`, `js-${blockName}__form-item`];
 
   div(class=wrapperClass)
-    form(class=formClass, action='#mock-address', method='post')
+    form(class=formClass, action=formAction, method='post')
       h1(class=`${blockName}__title`) #{titleText}
       div(class=formItemClass, data-required=true)
         +dropdown-date({
