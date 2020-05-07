@@ -23,10 +23,4 @@ class Rating {
   }
 }
 
-function renderBlocks() {
-  const blocks = document.querySelectorAll('.js-rating');
-  blocks.forEach((block) => new Rating(block));
-}
-
-export default renderBlocks();
-export { Rating };
+export default Rating;

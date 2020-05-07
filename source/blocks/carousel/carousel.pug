@@ -8,13 +8,13 @@ mixin carousel({ baseSrc='', imgSrcList=[] })
     const indicatorClass = [`${blockName}__indicator`, `js-${blockName}__indicator`];
 
   div(class=wrapperClass)
-    div(class=`${blockName}__images`)
+    div(class=`${blockName}__images js-${blockName}__images`)
       each imgSrc, index in imgSrcList
         img(class=imageClass, src=`${baseSrc}/${imgSrc}`, alt=`Image ${index + 1}`)
     button(class=prevBtnClass, type='button')
       i.material-icons expand_more
     button(class=nextBtnClass, type='button')
       i.material-icons expand_more
-    div(class=`${blockName}__indicators`)
-      each imgSrc in imgSrcList
-        span(class=indicatorClass)
+    div(class=`${blockName}__indicators js-${blockName}__indicators`)
+      each imgSrc, index in imgSrcList
+        span(class=indicatorClass, data-image=index)

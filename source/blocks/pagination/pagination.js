@@ -6,8 +6,32 @@ class Pagination {
     this._bindEventListeners();
   }
 
+  populatePagination({ itemsNumber, itemsPerPage }) {
+    this.block.dataset.itemsNumber = itemsNumber;
+    this.block.dataset.itemsPerPage = itemsPerPage;
+    this.pageBtnsContainer.innerHTML = '';
+    const pagesNumber = Math.ceil(itemsNumber / itemsPerPage);
+    for (let i = 1; i <= pagesNumber; i += 1) {
+      const $pageBtn = $('<button>', {
+        class: `${this.blockName}__button-page js-${this.blockName}__button-page`,
+        'data-page': i,
+        text: i,
+      });
+      $pageBtn.appendTo(this.pageBtnsContainer);
+      if (i === 1 || i === pagesNumber - 1) {
+        const $dots = $('<i>', {
+          class: `${this.blockName}__dots js-${this.blockName}__dots`,
+          text: '...',
+        });
+        $dots.appendTo(this.pageBtnsContainer);
+      }
+    }
+    this._initialize();
+  }
+
   _initialize() {
-    this.pageBtns = this.block.querySelectorAll(`.js-${this.blockName}__page`);
+    this.pageBtnsContainer = this.block.querySelector(`.js-${this.blockName}__buttons-pages`);
+    this.pageBtns = this.block.querySelectorAll(`.js-${this.blockName}__button-page`);
     this.dots = this.block.querySelectorAll(`.js-${this.blockName}__dots`);
     this.nextBtn = this.block.querySelector(`.js-${this.blockName}__button-next`);
     this.counter = this.block.querySelector(`.js-${this.blockName}__counter`);
@@ -21,15 +45,15 @@ class Pagination {
   }
 
   _bindEventListeners() {
-    this.pageBtns.forEach((pageBtn) => {
-      pageBtn.addEventListener('click', (event) => this._handlePageButtonClick(event));
-    });
+    this.pageBtnsContainer.addEventListener('click', (event) => this._handlePageButtonClick(event));
     this.nextBtn.addEventListener('click', () => this._handleNextButtonClick());
   }
 
   _handlePageButtonClick(event) {
-    this.state.currentPage = Array.from(this.pageBtns).indexOf(event.currentTarget) + 1;
-    this._renderState();
+    if (Array.from(this.pageBtns).includes(event.target)) {
+      this.state.currentPage = Number(event.target.dataset.page);
+      this._renderState();
+    }
   }
 
   _handleNextButtonClick() {
@@ -40,9 +64,9 @@ class Pagination {
 
   _renderState() {
     this.pageBtns.forEach((pageBtn) => {
-      pageBtn.classList.remove(`${this.blockName}__page_current`);
+      pageBtn.classList.remove(`${this.blockName}__button-page_current`);
     });
-    this.pageBtns[this.state.currentPage - 1].classList.add(`${this.blockName}__page_current`);
+    this.pageBtns[this.state.currentPage - 1].classList.add(`${this.blockName}__button-page_current`);
     this._updateCounter();
     this._toggleNextButton();
     this._rearrangePageButtons();
@@ -51,7 +75,13 @@ class Pagination {
   _updateCounter() {
     let counterLast = this.state.itemsPerPage * this.state.currentPage;
     counterLast = (counterLast > this.state.itemsNumber) ? this.state.itemsNumber : counterLast;
-    this.counter.textContent = `${this.state.itemsPerPage * (this.state.currentPage - 1) + 1} \u2013 ${counterLast}`;
+    let counterText;
+    if (this.state.itemsNumber > 100) {
+      counterText = 'из 100+';
+    } else {
+      counterText = `из ${this.state.itemsNumber}`;
+    }
+    this.counter.textContent = `${this.state.itemsPerPage * (this.state.currentPage - 1) + 1} \u2013 ${counterLast} ${counterText}`;
   }
 
   _toggleNextButton() {
@@ -105,17 +135,12 @@ class Pagination {
   _togglePageButtons(first, last, display) {
     Array.from(this.pageBtns).slice(first, last).forEach((pageBtn) => {
       if (display) {
-        pageBtn.classList.remove(`${this.blockName}__page_inactive`);
+        pageBtn.classList.remove(`${this.blockName}__button-page_inactive`);
       } else {
-        pageBtn.classList.add(`${this.blockName}__page_inactive`);
+        pageBtn.classList.add(`${this.blockName}__button-page_inactive`);
       }
     });
   }
 }
 
-function renderBlocks() {
-  const blocks = document.querySelectorAll('.js-pagination');
-  blocks.forEach((block) => new Pagination(block));
-}
-
-export default renderBlocks();
+export default Pagination;

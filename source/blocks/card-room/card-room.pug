@@ -1,14 +1,17 @@
 include ../../blocks/carousel/carousel.pug
 include ../../blocks/rating/rating.pug
 
-mixin card-room({ roomHref='#mock-address', roomNumber=0, roomIsLuxury=false, roomPrice=0, roomRating=0, roomReviews=0, crslBaseSrc='', crslImgSrcList=[] })
+mixin card-room({ roomHref='#mock-address', roomNumber=0, roomIsLuxury=false, roomPrice=0, roomRating=0, roomReviews=0, crslBaseSrc='', crslImgSrcList=[], isTemplate=false })
   -
     const blockName = 'card-room';
     const wrapperClass = [blockName, `js-${blockName}`];
-    const roomNumberClass = [`${blockName}__header-room-number`];
-    const roomTypeClass = [`${blockName}__header-room-type`];
+    const roomNumberClass = [`${blockName}__header-room-number`, `js-${blockName}__room-number`];
+    const roomTypeClass = [`${blockName}__header-room-type`, `js-${blockName}__room-type`];
     const roomPriceClass = [`${blockName}__header-room-price`, `js-${blockName}__room-price`];
     const roomRatingClass = [`${blockName}__footer-room-rating`, `js-${blockName}__room-rating`];
+
+  if (isTemplate)
+    - wrapperClass.push(`${blockName}_hidden`)
 
   div(
     class=wrapperClass,
@@ -23,13 +26,15 @@ mixin card-room({ roomHref='#mock-address', roomNumber=0, roomIsLuxury=false, ro
         baseSrc: crslBaseSrc,
         imgSrcList: crslImgSrcList,
       })
-    a(class=`${blockName}__info`, href=roomHref)
+    a(class=`${blockName}__info js-${blockName}__info`, href=roomHref)
       div(class=`${blockName}__info-header`)
         span(class=`${blockName}__header-title`)
           | № 
           span(class=roomNumberClass) #{roomNumber}
           if (roomIsLuxury)
             span(class=roomTypeClass) Люкс
+          else
+            span(class=roomTypeClass)
         span(class=`${blockName}__header-description`)
           span(class=roomPriceClass) #{roomPrice}&#8381;
           |  в сутки

@@ -9,6 +9,12 @@
   border-radius: 0.4rem;
   box-shadow: 0 1rem 2rem $color_main-5;
   overflow: hidden;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 2rem $color_main-25;
+  }
 
   &__carousel {
     width: 100%;
@@ -84,5 +90,9 @@
     height: 1.8rem;
     color: $color_main-50;
     line-height: 1.8rem;
+  }
+
+  &_hidden {
+    display: none;
   }
 }

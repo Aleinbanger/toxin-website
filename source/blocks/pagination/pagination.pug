@@ -4,7 +4,7 @@ mixin pagination({ itemsNumber=1, itemsPerPage=1, baseHref='', addDescription=''
   -
     const blockName = 'pagination';
     const wrapperClass = [blockName, `js-${blockName}`];
-    const pageBtnClass = [`${blockName}__page`, `js-${blockName}__page`];
+    const pageBtnClass = [`${blockName}__button-page`, `js-${blockName}__button-page`];
     const dotsClass = [`${blockName}__dots`, `js-${blockName}__dots`];
     const nextBtnClass = [`${blockName}__button-next`, `js-${blockName}__button-next`];
     const counterClass = [`${blockName}__counter`, `js-${blockName}__counter`];
@@ -15,19 +15,23 @@ mixin pagination({ itemsNumber=1, itemsPerPage=1, baseHref='', addDescription=''
     data-items-number=itemsNumber,
     data-items-per-page=itemsPerPage
   )
-    div(class=`${blockName}__pages`)
-      - for (let i = 1; i <= pagesNumber; i++) {
-          a(class=pageBtnClass, href=`${baseHref}/page-${i}`) #{i}
-          if (i === 1 || i === pagesNumber - 1)
-            i(class=dotsClass) ...
-      - }
+    div(class=`${blockName}__buttons`)
+      span(class=`js-${blockName}__buttons-pages`)
+        - for (let i = 1; i <= pagesNumber; i++) {
+            if (baseHref)
+              a(class=pageBtnClass, href=`${baseHref}/page-${i}`) #{i}
+            else
+              button(class=pageBtnClass, data-page=i) #{i}
+            if (i === 1 || i === pagesNumber - 1)
+              i(class=dotsClass) ...
+        - }
       span(class=nextBtnClass)
         +button({ btnStyle: 'as-page as-page_alt', withArrow: true })
     div(class=`${blockName}__description`)
-      span(class=counterClass) 1 &ndash; #{itemsPerPage}
-      |  из
-      if (itemsNumber > 100)
-        |  100+
-      else
-        |  #{itemsNumber}
+      span(class=counterClass)
+        | 1 &ndash; #{itemsPerPage} из 
+        if (itemsNumber > 100)
+          | 100+
+        else
+          | #{itemsNumber}
       |  #{addDescription}
