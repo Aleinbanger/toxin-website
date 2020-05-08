@@ -109,12 +109,15 @@ class Pagination {
           this._togglePageButtons(1, this.state.pagesNumber - 3, false);
           break;
         default:
-          if (this.state.currentPage === 3) {
-            this._toggleDots({ onIndexes: [1], offIndexes: [0] });
-          } else if (this.state.currentPage === this.state.pagesNumber - 2) {
-            this._toggleDots({ onIndexes: [0], offIndexes: [1] });
-          } else {
-            this._toggleDots({ onIndexes: [0, 1] });
+          switch (this.state.currentPage) {
+            case 3:
+              this._toggleDots({ onIndexes: [1], offIndexes: [0] });
+              break;
+            case this.state.pagesNumber - 2:
+              this._toggleDots({ onIndexes: [0], offIndexes: [1] });
+              break;
+            default:
+              this._toggleDots({ onIndexes: [0, 1] });
           }
           this._togglePageButtons(this.state.currentPage - 2, this.state.currentPage + 2, true);
           this._togglePageButtons(1, this.state.currentPage - 2, false);

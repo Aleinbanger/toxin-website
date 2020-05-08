@@ -1,0 +1,706 @@
+{
+  "pagination": {
+    "itemsPerPage": 12
+  },
+  "rooms": [
+    {
+      "number": 888,
+      "luxury": true,
+      "price": 9990,
+      "rating": 5,
+      "reviews": 145,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "888_1",
+        "888_2",
+        "888_3",
+        "888_4"
+      ]
+    },
+    {
+      "number": 840,
+      "luxury": false,
+      "price": 9900,
+      "rating": 4,
+      "reviews": 65,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "840_1",
+        "840_1",
+        "840_1"
+      ]
+    },
+    {
+      "number": 980,
+      "luxury": true,
+      "price": 8500,
+      "rating": 3,
+      "reviews": 35,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "980_1",
+        "980_1"
+      ]
+    },
+    {
+      "number": 856,
+      "luxury": false,
+      "price": 7300,
+      "rating": 5,
+      "reviews": 19,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "856_1"
+      ]
+    },
+    {
+      "number": 740,
+      "luxury": false,
+      "price": 6000,
+      "rating": 4,
+      "reviews": 44,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "740_1"
+      ]
+    },
+    {
+      "number": 982,
+      "luxury": false,
+      "price": 5800,
+      "rating": 3,
+      "reviews": 56,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "982_1"
+      ]
+    },
+    {
+      "number": 678,
+      "luxury": false,
+      "price": 5500,
+      "rating": 5,
+      "reviews": 45,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "678_1"
+      ]
+    },
+    {
+      "number": 450,
+      "luxury": false,
+      "price": 5300,
+      "rating": 4,
+      "reviews": 39,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "450_1"
+      ]
+    },
+    {
+      "number": 350,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 77,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "350_1"
+      ]
+    },
+    {
+      "number": 666,
+      "luxury": false,
+      "price": 5000,
+      "rating": 5,
+      "reviews": 25,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "666_1"
+      ]
+    },
+    {
+      "number": 444,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 15,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "444_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    },
+    {
+      "number": 352,
+      "luxury": false,
+      "price": 5000,
+      "rating": 3,
+      "reviews": 55,
+      "href": "#mock-address",
+      "imgSrcList": [
+        "352_1"
+      ]
+    }
+  ]
+}
