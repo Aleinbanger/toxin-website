@@ -14,83 +14,88 @@ block append mixins
 block content
   main.search-room.js-search-room
     .search-room__container
-      form.search-room__filter(action='#mock-address', method='post')
-        .search-room__filter-item
-          +dropdown-date({
-            labelTexts: ['Даты пребывания в отеле'],
-            inpNames: ['date-range'],
-            minDate: 'today',
-          })
-        .search-room__filter-item
-          +dropdown-list({
-            withButtons: true,
-            labelText: 'Гости',
-            inpPlaceholder: 'Сколько гостей',
-            inpName: 'guests',
-            listItems: [
-              { combined: true, title: 'взрослые', names: ['гость', 'гостя', 'гостей'], value: 0, minValue: 0, maxValue: 5 },
-              { combined: true, title: 'дети', names: ['гость', 'гостя', 'гостей'], value: 0, minValue: 0, maxValue: 5 },
-              { title: 'младенцы', names: ['младенец', 'младенца', 'младенцев'], value: 0, minValue: 0, maxValue: 5 },
-            ],
-          })
-        .search-room__filter-item
-          +slider-range({
-            labelText: 'Диапазон цены',
-            inpName: 'price-range',
-            minValue: 0,
-            maxValue: 25000,
-          })
-        .search-room__filter-item
-          +list-checkbox({
-            listTitle: 'Checkbox Buttons',
-            listItems: [
-              { labelText: 'Можно курить', addAttributes: {name: 'smoking-allowed'} },
-              { labelText: 'Можно с питомцами', addAttributes: {name: 'pets-allowed'} },
-              { labelText: 'Можно пригласить гостей (до 10 человек)', addAttributes: {name: 'guests-allowed'} },
-            ]
-          })
-        .search-room__filter-item
-          +list-checkbox({
-            listTitle: 'Доступность',
-            listItems: [
-              {
-                inpStyle: 'rich',
-                labelText: 'Широкий коридор',
-                labelDescription: 'Ширина коридоров в номере не менее 91 см.',
-                addAttributes: {name: 'wide-hallway'},
-              },
-              {
-                inpStyle: 'rich',
-                labelText: 'Помощник для инвалидов',
-                labelDescription: 'На 1 этаже вас встретит специалист и проводит до номера.',
-                addAttributes: {name: 'personal-assistant'},
-              }
-            ]
-          })
-        .search-room__filter-item
-          +dropdown-list({
-            labelText: 'Удобства номера',
-            inpPlaceholder: 'Какие удобства',
-            inpName: 'features',
-            listItems: [
-              { title: 'спальни', names: ['спальня', 'спальни', 'спален'], value: 0, minValue: 0, maxValue: 3 },
-              { title: 'кровати', names: ['кровать', 'кровати', 'кроватей'], value: 0, minValue: 0, maxValue: 6 },
-              { title: 'ванные комнаты', names: ['ванная комната', 'ванные комнаты', 'ванных комнат'], value: 0, minValue: 0, maxValue: 2 },
-            ]
-          })
-        .search-room__filter-item
-          +list-checkbox({
-            expandable: true,
-            listTitle: 'Дополнительные удобства',
-            listItems: [
-              { labelText: 'Завтрак', addAttributes: {name: 'breakfast'} },
-              { labelText: 'Письменный стол', addAttributes: {name: 'desk'} },
-              { labelText: 'Стул для кормления', addAttributes: {name: 'children-chair'} },
-              { labelText: 'Кроватка', addAttributes: {name: 'children-bed'} },
-              { labelText: 'Телевизор', addAttributes: {name: 'tv'} },
-              { labelText: 'Шампунь', addAttributes: {name: 'shampoo'} },
-            ],
-          })
+      .search-room__filter-button.js-search-room__filter-button(tabindex=1)
+        i(class='material-icons') list
+      form.search-room__filter.js-search-room__filter(action='#mock-address', method='post')
+        .search-room__filter-container
+          .search-room__filter-item.search-room__filter-item_closest
+            +dropdown-date({
+              labelTexts: ['Даты пребывания в отеле'],
+              inpNames: ['date-range'],
+              minDate: 'today',
+            })
+          .search-room__filter-item
+            +dropdown-list({
+              withButtons: true,
+              labelText: 'Гости',
+              inpPlaceholder: 'Сколько гостей',
+              inpName: 'guests',
+              listItems: [
+                { combined: true, title: 'взрослые', names: ['гость', 'гостя', 'гостей'], value: 0, minValue: 0, maxValue: 5 },
+                { combined: true, title: 'дети', names: ['гость', 'гостя', 'гостей'], value: 0, minValue: 0, maxValue: 5 },
+                { title: 'младенцы', names: ['младенец', 'младенца', 'младенцев'], value: 0, minValue: 0, maxValue: 5 },
+              ],
+            })
+          .search-room__filter-item
+            +slider-range({
+              labelText: 'Диапазон цены',
+              inpName: 'price-range',
+              minValue: 0,
+              maxValue: 25000,
+            })
+            p.search-room__filter-item-description
+              | Стоимость за сутки пребывания в номере
+          .search-room__filter-item
+            +list-checkbox({
+              listTitle: 'Checkbox Buttons',
+              listItems: [
+                { labelText: 'Можно курить', addAttributes: {name: 'smoking-allowed'} },
+                { labelText: 'Можно с питомцами', addAttributes: {name: 'pets-allowed'} },
+                { labelText: 'Можно пригласить гостей (до 10 человек)', addAttributes: {name: 'guests-allowed'} },
+              ]
+            })
+          .search-room__filter-item.search-room__filter-item_closer
+            +list-checkbox({
+              listTitle: 'Доступность',
+              listItems: [
+                {
+                  inpStyle: 'rich',
+                  labelText: 'Широкий коридор',
+                  labelDescription: 'Ширина коридоров в номере не менее 91 см.',
+                  addAttributes: {name: 'wide-hallway'},
+                },
+                {
+                  inpStyle: 'rich',
+                  labelText: 'Помощник для инвалидов',
+                  labelDescription: 'На 1 этаже вас встретит специалист и проводит до номера.',
+                  addAttributes: {name: 'personal-assistant'},
+                }
+              ]
+            })
+          .search-room__filter-item.search-room__filter-item_closer
+            +dropdown-list({
+              labelText: 'Удобства номера',
+              inpPlaceholder: 'Какие удобства',
+              inpName: 'features',
+              listItems: [
+                { title: 'спальни', names: ['спальня', 'спальни', 'спален'], value: 0, minValue: 0, maxValue: 3 },
+                { title: 'кровати', names: ['кровать', 'кровати', 'кроватей'], value: 0, minValue: 0, maxValue: 6 },
+                { title: 'ванные комнаты', names: ['ванная комната', 'ванные комнаты', 'ванных комнат'], value: 0, minValue: 0, maxValue: 2 },
+              ]
+            })
+          .search-room__filter-item
+            +list-checkbox({
+              expandable: true,
+              listTitle: 'Дополнительные удобства',
+              listItems: [
+                { labelText: 'Завтрак', addAttributes: {name: 'breakfast'} },
+                { labelText: 'Письменный стол', addAttributes: {name: 'desk'} },
+                { labelText: 'Стул для кормления', addAttributes: {name: 'children-chair'} },
+                { labelText: 'Кроватка', addAttributes: {name: 'children-bed'} },
+                { labelText: 'Телевизор', addAttributes: {name: 'tv'} },
+                { labelText: 'Шампунь', addAttributes: {name: 'shampoo'} },
+              ],
+            })
       .search-room__results.js-search-room__results
         h1.search-room__results-title
           | Номера, которые мы для вас подобрали
