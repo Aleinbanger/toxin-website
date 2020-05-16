@@ -1,0 +1,14 @@
+.room-details {
+  width: 100%;
+  padding: 16.3rem 1.5rem;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: $width-container_main;
+    height: 100%;
+    margin: auto;
+  }
+}

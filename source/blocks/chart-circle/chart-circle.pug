@@ -1,0 +1,47 @@
+mixin chart-circle({ chartWeight=1, chartValues=[], chartTitles=[], total={}, legendShow=true })
+  -
+    const blockName = 'chart-circle';
+    const wrapperClass = [blockName, `js-${blockName}`];
+    const svgClass = [`${blockName}__svg`, `js-${blockName}__svg`];
+
+  div(
+    class=wrapperClass,
+    data-chart-weight=chartWeight,
+    data-chart-values=chartValues.join(','),
+    data-chart-titles=chartTitles.join(',')
+  )
+    div(class=`${blockName}__container js-${blockName}__container`)
+      svg(class=svgClass, viewBox='-1.1 -1.1 2.2 2.2')
+        defs
+          linearGradient(id='grad1', x1='0%', y1='0%', x2='100%', y2='0%')
+            stop(offset='0%', style='stop-color: #FFBA9C; stop-opacity: 1')
+            stop(offset='100%', style='stop-color: #FFE39C; stop-opacity:1')
+          linearGradient(id='grad2', x1='0%', y1='0%', x2='100%', y2='0%')
+            stop(offset='0%', style='stop-color: #66D2EA; stop-opacity: 1')
+            stop(offset='100%', style='stop-color: #6FCF97; stop-opacity: 1')
+          linearGradient(id='grad3', x1='0%', y1='0%', x2='100%', y2='0%')
+            stop(offset='0%', style='stop-color: #8BA4F9; stop-opacity: 1')
+            stop(offset='100%', style='stop-color: #BC9CFF; stop-opacity: 1')
+          linearGradient(id='grad4', x1='0%', y1='0%', x2='100%', y2='0%')
+            stop(offset='0%', style='stop-color: #3D4975; stop-opacity: 1')
+            stop(offset='100%', style='stop-color: #919191; stop-opacity: 1')
+
+      if (total.show)
+        div(class=`${blockName}__total`)
+          span(class=`js-${blockName}__total-value`) 0
+          span(class=`${blockName}__total-description js-${blockName}__total-description`)
+            | #{total.description}
+
+      each value, index in chartValues
+        span(class=`${blockName}__label js-${blockName}__label`, data-path-index=index+1)
+          svg(class=`${blockName}__legend-mark` viewBox='-1 -1 2 2')
+            circle(class=`${blockName}__path_${index + 1}` cx=0, cy=0, r=1)
+          | #{chartTitles[index]}: #{value}
+
+    if (legendShow)
+      ul(class=`${blockName}__legend js-${blockName}__legend`)
+        each title, index in chartTitles
+          li(class=`${blockName}__legend-item`)
+            svg(class=`${blockName}__legend-mark` viewBox='-1 -1 2 2')
+              circle(class=`${blockName}__path_${index + 1}` cx=0, cy=0, r=1)
+            | #{title}

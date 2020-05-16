@@ -20,3 +20,4 @@ import '../blocks/card-calendar/card-calendar';
 import '../blocks/header/header';
 
 import '../pages/website/search-room';
+import '../pages/website/room-details';

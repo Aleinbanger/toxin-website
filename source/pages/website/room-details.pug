@@ -1,0 +1,17 @@
+extends ./_layout.pug
+
+block append variables
+  - const pageTitle = "Room Details"
+
+block append mixins
+  include ../../blocks/chart-circle/chart-circle.pug
+
+block content
+  main.room-details
+    .room-details__container
+      +chart-circle({
+        chartWeight: 0.1,
+        chartValues: [130, 65, 65],
+        chartTitles: ['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован'],
+        total: { show: true, description: 'голосов' },
+      })
