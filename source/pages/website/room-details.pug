@@ -5,9 +5,10 @@ block append variables
 
 block append mixins
   include ../../blocks/chart-circle/chart-circle.pug
+  include ../../blocks/comment/comment.pug
 
 block content
-  main.room-details
+  main.room-details.js-room-details
     .room-details__container
       +chart-circle({
         chartWeight: 0.1,
@@ -15,3 +16,11 @@ block content
         chartTitles: ['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован'],
         total: { show: true, description: 'голосов' },
       })
+
+    .room-details__reviews.js-room-details__reviews
+      .room-details__reviews-header
+        h2.room-details__reviews-title
+          | Отзывы посетителей номера
+        span.room-details__reviews-counter.js-room-details__reviews-counter
+      .room-details__reviews-item.room-details__reviews-item_hidden
+        +comment({})

@@ -1,3 +1,5 @@
+@import '../../styles/variables';
+
 .room-details {
   width: 100%;
   padding: 16.3rem 1.5rem;
@@ -10,5 +12,25 @@
     max-width: $width-container_main;
     height: 100%;
     margin: auto;
+  }
+
+  &__reviews-header {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    margin-bottom: 1rem;
+    line-height: 2.4rem;
+  }
+
+  &__reviews-counter {
+    color: $color_main-50;
+  }
+
+  &__reviews-item {
+    padding: 1rem 0;
+
+    &_hidden {
+      display: none;
+    }
   }
 }

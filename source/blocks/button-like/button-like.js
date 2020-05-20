@@ -1,9 +1,17 @@
+import './button-like.scss';
+
 class ButtonLike {
   constructor(block) {
     this.block = block;
     this.blockName = this.block.classList[0];
     this._initialize();
     this._bindEventListeners();
+  }
+
+  updateState({ value, active }) {
+    this.state.value = value;
+    this.state.active = active;
+    this._renderState();
   }
 
   _initialize() {
@@ -49,9 +57,4 @@ class ButtonLike {
   }
 }
 
-function renderBlocks() {
-  const blocks = document.querySelectorAll('.js-button-like');
-  blocks.forEach((block) => new ButtonLike(block));
-}
-
-export default renderBlocks();
+export default ButtonLike;

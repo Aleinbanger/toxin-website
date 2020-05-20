@@ -1,5 +1,5 @@
-/* eslint-disable import/no-unresolved */
 /* eslint-disable global-require */
+/* eslint-disable import/no-unresolved */
 import CardRoom from '../../../blocks/card-room/card-room';
 import Pagination from '../../../blocks/pagination/pagination';
 

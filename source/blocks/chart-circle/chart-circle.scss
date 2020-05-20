@@ -1,7 +1,8 @@
 @import '../../styles/variables';
 
 $colors_chart-circle: url('#grad1'), url('#grad2'),
-  url('#grad3'), url('#grad4');
+  url('#grad3'), url('#grad4'), #F60000, #FF8C00,
+  #FE0, #4DE94C, #3783FF, #4815AA;
 
 .chart-circle {
   display: flex;
@@ -108,5 +109,4 @@ $colors_chart-circle: url('#grad1'), url('#grad2'),
       transform: scale(1);
     }
   }
-
 }
