@@ -6,22 +6,22 @@ class RoomDetails {
     this.block = block;
     this.blockName = this.block.classList[0];
     this._initialize();
+    this._bindEventListeners();
   }
 
   _initialize() {
+    this.images = this.block.querySelector(`.js-${this.blockName}__images`);
     this.chart = new ChartCircle(this.block.querySelector('.js-chart-circle'));
-    /*
-    this.chart.updateChart({
-      dataList: [
-        { value: 130, title: 'asd' },
-        { value: 65, title: 'zxc' },
-        { value: 65, title: 'qwe' },
-        { value: 65, title: 'rty' },
-      ],
-    });
-    */
-
     this.reviews = new RoomDetailsReviews(this.block.querySelector(`.js-${this.blockName}__reviews`));
+  }
+
+  _bindEventListeners() {
+    this.images.addEventListener('click', (event) => this._handleImageClick(event));
+  }
+
+  _handleImageClick(event) {
+    const image = event.target;
+    this.images.prepend(image);
   }
 }
 

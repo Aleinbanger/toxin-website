@@ -6,7 +6,6 @@ $colors_chart-circle: url('#grad1'), url('#grad2'),
 
 .chart-circle {
   display: flex;
-  justify-content: space-between;
   align-items: flex-end;
 
   &__container {
@@ -17,16 +16,19 @@ $colors_chart-circle: url('#grad1'), url('#grad2'),
 
   &__svg {
     height: 13rem;
+    margin: -0.5rem;
     transform: rotate(90deg) scale(-1, 1);
   }
 
   &__path {
     stroke: $color_back;
-    stroke-width: 0.03;
+    stroke-width: 0.05;
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
     transition: all 0.3s ease-in-out;
     cursor: pointer;
 
-    &_active {
+    &:hover {
       transform: scale(1.05);
     }
 
@@ -44,7 +46,7 @@ $colors_chart-circle: url('#grad1'), url('#grad2'),
 
   &__total {
     position: absolute;
-    top: 50%;
+    top: 47%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
@@ -69,15 +71,23 @@ $colors_chart-circle: url('#grad1'), url('#grad2'),
   }
 
   &__legend {
-    margin: 0 0 0.5rem 2.5rem;
+    margin-left: 3rem;
     list-style: none;
     color: $color_main-75;
     line-height: 2.4rem;
     text-transform: capitalize;
   }
 
+  &__legend-item {
+    display: flex;
+    align-items: baseline;
+  }
+
   &__legend-mark {
+    width: 1rem;
     height: 1rem;
+    min-width: 1rem;
+    min-height: 1rem;
     margin-right: 0.5rem;
     transform: rotate(-90deg);
   }

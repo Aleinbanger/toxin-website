@@ -1,26 +1,72 @@
 extends ./_layout.pug
 
 block append variables
-  - const pageTitle = "Room Details"
+  - const pageTitle = 'Room Details'
+  - const roomImgSrcList = ['./img/888_1.png', './img/888_2.png', './img/888_3.png']
 
 block append mixins
+  include ../../blocks/list-feature/list-feature.pug
   include ../../blocks/chart-circle/chart-circle.pug
+  include ../../blocks/card-book/card-book.pug
   include ../../blocks/comment/comment.pug
+  include ../../blocks/list-bullet/list-bullet.pug
 
 block content
   main.room-details.js-room-details
-    .room-details__container
-      +chart-circle({
-        chartWeight: 0.1,
-        chartValues: [130, 65, 65],
-        chartTitles: ['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован'],
-        total: { show: true, description: 'голосов' },
-      })
+    .room-details__images.js-room-details__images
+      each imgSrc in roomImgSrcList
+        img.room-details__images-item.js-room-details__images-item(
+          src=imgSrc, alt='Room picture')
 
-    .room-details__reviews.js-room-details__reviews
-      .room-details__reviews-header
-        h2.room-details__reviews-title
-          | Отзывы посетителей номера
-        span.room-details__reviews-counter.js-room-details__reviews-counter
-      .room-details__reviews-item.room-details__reviews-item_hidden
-        +comment({})
+    .room-details__wrapper
+      .room-details__container
+        .room-details__item
+          h2.room-details__title Сведения о номере
+          +list-feature({
+            listItems: [
+              {text: 'Комфорт', description: 'Шумопоглощающие стены'},
+              {text: 'Удобство', description: 'Окно в каждой из спален'},
+              {text: 'Уют', description: 'Номер оснащён камином'},
+            ]
+          })
+        .room-details__item
+          h2.room-details__title Впечатления от номера
+          +chart-circle({
+            chartWeight: 0.1,
+            chartValues: [130, 65, 65],
+            chartTitles: ['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован'],
+            total: { show: true, description: 'голосов' },
+          })
+        .room-details__card
+          +card-book({
+            roomNumber: 888,
+            roomIsLuxury: true,
+            roomPrice: 9990,
+            discountPrice: 2179,
+            servicePrice: 0,
+            addServicePrice: 300,
+          })
+
+        .room-details__reviews.js-room-details__reviews
+          .room-details__reviews-header
+            h2.room-details__title Отзывы посетителей номера
+            span.room-details__reviews-counter.js-room-details__reviews-counter
+          .room-details__reviews-item.room-details__reviews-item_hidden
+            +comment({})
+
+        .room-details__item.room-details__item_aligned-left
+          h2.room-details__title Правила
+          +list-bullet({
+            listItems: [
+              'Нельзя с питомцами',
+              'Без вечеринок и мероприятий',
+              'Время прибытия — после 13:00, а выезд до 12:00'
+            ]
+          })
+
+        .room-details__item.room-details__item_aligned-left
+          h2.room-details__title Отмена
+          p.room-details__text.
+            Бесплатная отмена в течение 48 ч.
+            После этого при отмене не позднее чем за 5 дн. до прибытия
+            вы получите полный возврат за вычетом сбора за услуги.

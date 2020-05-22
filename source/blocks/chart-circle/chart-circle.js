@@ -48,16 +48,12 @@ class ChartCircle {
       currentLabel.style.left = `${event.clientX - rect.left}px`;
       currentLabel.style.top = `${event.clientY - rect.top}px`;
       currentLabel.classList.add(`${this.blockName}__label_active`);
-      this.paths[currentPath - 1].classList.add(`${this.blockName}__path_active`);
     }
   }
 
   _handlePathMouseOut() {
     this.labels.forEach((label) => {
       label.classList.remove(`${this.blockName}__label_active`);
-    });
-    this.paths.forEach((path) => {
-      path.classList.remove(`${this.blockName}__path_active`);
     });
   }
 

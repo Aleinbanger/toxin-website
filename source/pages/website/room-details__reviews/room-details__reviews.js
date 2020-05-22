@@ -46,7 +46,7 @@ class RoomDetailsReviews {
       default:
         counterText = 'отзывов';
     }
-    this.counter.textContent = `${counterValue} ${counterText}`;
+    this.counter.textContent = `${counterValue}\u00A0${counterText}`;
   }
 }
 
