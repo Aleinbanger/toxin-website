@@ -21,3 +21,6 @@ import '../blocks/header/header';
 
 import '../pages/website/search-room';
 import '../pages/website/room-details';
+
+
+import '../blocks/footer/footer';
