@@ -21,7 +21,7 @@ block append mixins
   include ../../blocks/slider-range/slider-range.pug
 
 block content
-  .form-elements
+  .form-elements.js-form-elements
     .form-elements__column
       .form-elements__item
         .form-elements__text-field
@@ -44,14 +44,14 @@ block content
           +input-field({inpType: 'mask-date', labelText: 'Masked Text Field'})
 
       .form-elements__item
-        .form-elements__text-field
+        .form-elements__text-field.js-form-elements__dropdown-date
           +dropdown-date({
             labelTexts: ['Date Dropdown'],
             inpNames: ['date-arrival', 'date-departure'],
           })
 
       .form-elements__item
-        .form-elements__text-field
+        .form-elements__text-field.js-form-elements__dropdown-date
           +dropdown-date({
             labelTexts: ['Filter Date Dropdown'],
             inpNames: ['date-range'],
@@ -93,16 +93,16 @@ block content
 
       .form-elements__item
         h3.form-elements__title Like Button
-        .form-elements__like-button
+        .form-elements__like-button.js-form-elements__like-button
           +button-like({likeCount: 2})
-        .form-elements__like-button
+        .form-elements__like-button.js-form-elements__like-button
           +button-like({likeCount: 12, active: true})
 
       .form-elements__item
         h3.form-elements__title Rate Button
-        .form-elements__rate-button
+        .form-elements__rate-button.js-form-elements__rate-button
           +rating({value: 4})
-        .form-elements__rate-button
+        .form-elements__rate-button.js-form-elements__rate-button
           +rating({value: 5})
 
     .form-elements__column
@@ -131,7 +131,7 @@ block content
 
       .form-elements__item
         h3.form-elements__title Pagination
-        .form-elements__pagination
+        .form-elements__pagination.js-form-elements__pagination
           +pagination({itemsNumber: 180, itemsPerPage: 12, baseHref: '#mock-address', addDescription: 'вариантов аренды'})
 
     .form-elements__column
@@ -226,12 +226,12 @@ block content
             {
               inpStyle: 'rich',
               labelText: 'Широкий коридор',
-              labelDescription: 'Ширина коридоров в номере не менее 91 см.'
+              labelDescription: 'Ширина коридоров в номере не менее 91 см.'
             },
             {
               inpStyle: 'rich',
               labelText: 'Помощник для инвалидов',
-              labelDescription: 'На 1 этаже вас встретит специалист  и проводит до номера.'
+              labelDescription: 'На 1 этаже вас встретит специалист и проводит до номера.'
             }
           ]
         })
@@ -257,7 +257,7 @@ block content
         })
 
     .form-elements__column.form-elements__column_shifted-right.form-elements__column_wide
-      .form-elements__comment
+      .form-elements__comment.js-form-elements__comment
         +comment({
           userName: 'Мурад сарафанов',
           userPicture: 'comment__picture_male-1.png',

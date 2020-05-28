@@ -8,7 +8,7 @@
   width: 100%;
   max-width: 1440px;
   margin: auto;
-  padding: 14.5rem 14.1rem 14rem 14rem;
+  padding: 14.3rem 14.1rem 14rem;
   background: url('./img/ui-kit__logo.svg')
     3rem 3rem/4.8rem 4.8rem no-repeat;
 
@@ -30,19 +30,20 @@
   }
 
   &__item {
-    margin-bottom: 4.2rem;
+    margin-bottom: 4.1rem;
   }
 
   &__title {
+    margin-bottom: 1.5rem;
+    color: $color_main;
     font-family: $font-family_h3;
     font-size: $font-size_h3;
-    color: $color_main;
+    line-height: 1.5rem;
     text-transform: uppercase;
-    margin-bottom: 1.6rem;
   }
 
   &__text-field {
-    margin-bottom: 1.96rem;
+    margin-bottom: 2.1rem;
   }
 
   &__subscription {
@@ -59,7 +60,7 @@
   }
 
   &__toggle-group {
-    margin-bottom: 4.7rem;
+    margin-bottom: 4.6rem;
   }
 
   &__toggle {
@@ -78,8 +79,7 @@
 
   &__slider {
     width: 26.5rem;
-    margin-top: 0.1rem;
-    margin-bottom: 4.1rem;
+    margin-bottom: 4rem;
   }
 
   &__button {
@@ -87,7 +87,7 @@
     margin-bottom: 3rem;
 
     &_small {
-      width: 9.9rem;
+      width: 10.1rem;
     }
 
     &_inline {
@@ -99,7 +99,6 @@
 
   &__pagination {
     display: flex;
-    margin-top: -0.1rem;
   }
 
   &__bullet-list {

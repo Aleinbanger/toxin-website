@@ -12,7 +12,7 @@ block append mixins
   include ../../blocks/card-room/card-room.pug
 
 block content
-  .cards
+  .cards.js-cards
     .cards__column
       .cards__item
         +card-search({})
@@ -39,7 +39,7 @@ block content
           endAt: '2019, 8, 23',
           todayDate: '2019, 8, 8',
         })
-      .cards__item
+      .cards__item.js-cards__card-room
         +card-room({
           roomNumber: 888,
           roomIsLuxury: true,
@@ -54,7 +54,7 @@ block content
             'image_4.png'
           ],
         })
-      .cards__item
+      .cards__item.js-cards__card-room
         +card-room({
           roomNumber: 840,
           roomPrice: 9900,

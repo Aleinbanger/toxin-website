@@ -4,6 +4,7 @@
   "description": "",
   "main": "source/pages/website/landing-page.pug",
   "scripts": {
+    "dev": "parcel source/pages/ui-kit/form-elements.pug",
     "dev-landing": "parcel source/pages/website/landing-page.pug",
     "dev-search": "parcel source/pages/website/search-room.pug",
     "dev-room": "parcel source/pages/website/room-details.pug",
@@ -45,5 +46,5 @@
     "material-icons": "^0.3.1",
     "postcss-modules": "^1.5.0"
   },
-  "browserslist": "> 0.25%, not dead"
+  "browserslist": "defaults"
 }
