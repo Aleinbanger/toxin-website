@@ -1,4 +1,4 @@
-include ../../blocks/button-like/button-like.pug
+include ../button-like/button-like.pug
 
 mixin comment(options)
   -
@@ -10,7 +10,6 @@ mixin comment(options)
       text = '',
       likeCount = 0,
       likeActive = false,
-      isTemplate = false,
     } = options;
     const blockName = 'comment';
     const wrapperClass = [blockName, `js-${blockName}`];
@@ -22,7 +21,7 @@ mixin comment(options)
         alt='Profile picture',
         src=`${userPicturePath}/${userPicture}`
       )
-      span(class=`${blockName}__like`)
+      span(class=`${blockName}__like js-${blockName}__like`)
         +button-like({ likeCount: likeCount, active: likeActive })
     div(class=`${blockName}__body`)
       div(class=`${blockName}__title`)

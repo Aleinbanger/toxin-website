@@ -1,9 +1,11 @@
+import './dropdown-date.scss';
+
 import 'air-datepicker';
 
 class DropdownDate {
-  constructor(block) {
-    this.block = block;
-    this.blockName = this.block.classList[0];
+  constructor(wrapper) {
+    this.blockName = 'dropdown-date';
+    this.block = wrapper.querySelector(`.js-${this.blockName}`);
     this._initialize();
     this._bindEventListeners();
   }
@@ -55,8 +57,13 @@ class DropdownDate {
         $(this.secInput).find('input').val(formattedDate.split(' \u2013 ')[1]);
       };
     }
+
+    this.$acceptBtn = $('<span>', {
+      class: 'datepicker--button',
+      'data-action': 'hide',
+      text: 'Применить',
+    });
     this.$datepicker = $(this.input).find('input').datepicker(options);
-    this.$acceptBtn = $('<span class="datepicker--button" data-action="hide">Применить</span>');
   }
 
   _bindEventListeners() {
@@ -130,24 +137,20 @@ class DropdownDate {
         this.secInput.classList.remove(`${this.blockName}__input_active`);
       }
     }
+    this.state.selectedDates = this.$datepicker.data('datepicker').selectedDates;
     this.input.querySelector('input').dispatchEvent(new Event('change', { bubbles: true }));
   }
 
   _selectDate(from, to) {
-    const date = [];
     if (from) {
+      const date = [];
       date.push(new Date(from));
       if (to) {
         date.push(new Date(to));
       }
+      this.$datepicker.data('datepicker').selectDate(date);
     }
-    this.$datepicker.data('datepicker').selectDate(date);
   }
 }
 
-function renderBlocks() {
-  const blocks = document.querySelectorAll('.js-dropdown-date');
-  blocks.forEach((block) => new DropdownDate(block));
-}
-
-export default renderBlocks();
+export default DropdownDate;

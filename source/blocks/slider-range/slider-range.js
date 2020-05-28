@@ -1,9 +1,11 @@
+import './slider-range.scss';
+
 import 'ion-rangeslider';
 
 class SliderRange {
   constructor(block) {
+    this.blockName = 'slider-range';
     this.block = block;
-    this.blockName = this.block.classList[0];
     this._initialize();
   }
 

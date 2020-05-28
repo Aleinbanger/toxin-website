@@ -1,7 +1,10 @@
+@import '../../styles/variables';
+
 .sign-in {
   width: 100%;
   padding: 16.3rem 1.5rem;
-  background: $color_back url('../pages/website/img/sign-in__background.png') bottom/cover no-repeat;
+  background: $color_back url('./img/sign-in__background.png')
+    bottom/cover no-repeat;
 
   &__container {
     display: flex;

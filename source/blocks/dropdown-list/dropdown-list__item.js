@@ -1,7 +1,7 @@
 class DropdownListItem {
   constructor(element) {
+    this.elementName = 'dropdown-list__item';
     this.element = element;
-    this.elementName = this.element.classList[0];
     this._initialize();
     this._bindEventListeners();
   }

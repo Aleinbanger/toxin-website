@@ -1,10 +1,19 @@
-include ../../blocks/dropdown-date/dropdown-date.pug
-include ../../blocks/dropdown-list/dropdown-list.pug
-include ../../blocks/button/button.pug
-include ../../blocks/button-info/button-info.pug
+include ../dropdown-date/dropdown-date.pug
+include ../dropdown-list/dropdown-list.pug
+include ../button/button.pug
+include ../button-info/button-info.pug
 
-mixin card-book({ roomNumber=0, roomIsLuxury=false, roomPrice=0, discountPrice=0, servicePrice=0, addServicePrice=0, formAction='#mock-address' })
+mixin card-book(options)
   -
+    const {
+      roomNumber = 0,
+      roomIsLuxury = false,
+      roomPrice = 0,
+      discountPrice = 0,
+      servicePrice = 0,
+      addServicePrice = 0,
+      formAction = '#mock-address'
+    } = options;
     const blockName = 'card-book';
     const wrapperClass = [blockName, `js-${blockName}`];
     const formClass = [`${blockName}__form`, `js-${blockName}__form`];
@@ -26,13 +35,15 @@ mixin card-book({ roomNumber=0, roomIsLuxury=false, roomPrice=0, discountPrice=0
       div(class=`${blockName}__header`)
         span(class=`${blockName}__header-title`)
           | № 
-          input(class=roomNumberClass, size='2', readonly, name='room-number', value=roomNumber)
+          input(class=roomNumberClass, size='2', readonly,
+            name='room-number', value=roomNumber)
           if (roomIsLuxury)
             span(class=roomTypeClass) Люкс
         span(class=`${blockName}__header-description`)
           span(class=roomPriceClass) #{roomPrice}&#8381;
           |  в сутки
-      div(class=formItemClass, data-required=true)
+      div(class=formItemClass.concat(`js-${blockName}__dropdown-date`),
+        data-required=true)
         +dropdown-date({
           labelTexts: ['Прибытие', 'Выезд'],
           inpNames: ['date-arrival', 'date-departure'],
@@ -45,9 +56,23 @@ mixin card-book({ roomNumber=0, roomIsLuxury=false, roomPrice=0, discountPrice=0
           inpPlaceholder: 'Сколько гостей',
           inpName: 'guests',
           listItems: [
-            {combined: true, title: 'взрослые', names: ['гость', 'гостя', 'гостей'], value: 0, minValue: 0, maxValue: 10},
-            {combined: true, title: 'дети', names: ['гость', 'гостя', 'гостей'], value: 0, minValue: 0, maxValue: 10},
-            {title: 'младенцы', names: ['младенец', 'младенца', 'младенцев'], value: 0, minValue: 0, maxValue: 10}
+            {
+              combined: true,
+              title: 'взрослые',
+              names: ['гость', 'гостя', 'гостей'],
+              value: 0, minValue: 0, maxValue: 10,
+            },
+            {
+              combined: true,
+              title: 'дети',
+              names: ['гость', 'гостя', 'гостей'],
+              value: 0, minValue: 0, maxValue: 10,
+            },
+            {
+              title: 'младенцы',
+              names: ['младенец', 'младенца', 'младенцев'],
+              value: 0, minValue: 0, maxValue: 10,
+            }
           ],
         })
       div(class=`${blockName}__invoice`)

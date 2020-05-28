@@ -1,8 +1,8 @@
 /* eslint-disable no-alert */
 class CardForm {
-  constructor(block) {
+  constructor(blockName, block) {
+    this.blockName = blockName;
     this.block = block;
-    this.blockName = this.block.classList[0];
     this._initialize();
     this._bindEventListeners();
   }

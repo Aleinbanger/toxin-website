@@ -1,7 +1,7 @@
 class HeaderDropdown {
   constructor(element) {
-    this.element = element;
     this.elementName = 'header__dropdown';
+    this.element = element;
     this._initialize();
     this._bindEventListeners();
   }

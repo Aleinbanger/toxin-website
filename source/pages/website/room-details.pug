@@ -29,7 +29,7 @@ block content
               {text: 'Уют', description: 'Номер оснащён камином'},
             ]
           })
-        .room-details__item
+        .room-details__item.js-room-details__chart
           h2.room-details__title Впечатления от номера
           +chart-circle({
             chartWeight: 0.1,
@@ -51,7 +51,7 @@ block content
           .room-details__reviews-header
             h2.room-details__title Отзывы посетителей номера
             span.room-details__reviews-counter.js-room-details__reviews-counter
-          .room-details__reviews-item.room-details__reviews-item_hidden
+          .room-details__reviews-item.js-room-details__reviews-item.room-details__reviews-item_hidden
             +comment({})
 
         .room-details__item.room-details__item_aligned-left

@@ -1,9 +1,9 @@
 import './button-like.scss';
 
 class ButtonLike {
-  constructor(block) {
-    this.block = block;
-    this.blockName = this.block.classList[0];
+  constructor(wrapper) {
+    this.blockName = 'button-like';
+    this.block = wrapper.querySelector(`.js-${this.blockName}`);
     this._initialize();
     this._bindEventListeners();
   }

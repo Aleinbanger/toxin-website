@@ -1,9 +1,11 @@
+import './dropdown-list.scss';
+
 import DropdownListItem from './dropdown-list__item';
 
 class DropdownList {
   constructor(block) {
+    this.blockName = 'dropdown-list';
     this.block = block;
-    this.blockName = this.block.classList[0];
     this._initialize();
     this._bindEventListeners();
   }

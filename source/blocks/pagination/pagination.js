@@ -1,7 +1,9 @@
+import './pagination.scss';
+
 class Pagination {
-  constructor(block) {
-    this.block = block;
-    this.blockName = this.block.classList[0];
+  constructor(wrapper) {
+    this.blockName = 'pagination';
+    this.block = wrapper.querySelector(`.js-${this.blockName}`);
     this._initialize();
     this._bindEventListeners();
   }
@@ -52,6 +54,7 @@ class Pagination {
   _handlePageButtonClick(event) {
     if (Array.from(this.pageBtns).includes(event.target)) {
       this.state.currentPage = Number(event.target.dataset.page);
+      this.block.dispatchEvent(new Event('change', { bubbles: true }));
       this._renderState();
     }
   }

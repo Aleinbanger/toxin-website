@@ -1,1 +1,1 @@
-import '../input-field/input-field';
+import './card-signup.scss';

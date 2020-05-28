@@ -1,11 +1,19 @@
 {
   "name": "fsd-website",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "",
   "main": "source/pages/website/landing-page.pug",
   "scripts": {
-    "dev": "parcel source/pages/website/room-details.pug",
+    "dev-landing": "parcel source/pages/website/landing-page.pug",
+    "dev-search": "parcel source/pages/website/search-room.pug",
+    "dev-room": "parcel source/pages/website/room-details.pug",
+    "dev-registration": "parcel source/pages/website/registration.pug",
+    "dev-signin": "parcel source/pages/website/sign-in.pug",
     "build": "parcel build source/pages/website/landing-page.pug --public-url ./"
+  },
+  "alias": {
+    "blocks": "./source/blocks/",
+    "node_modules": "./node_modules"
   },
   "author": "Aleinbanger",
   "license": "MIT",

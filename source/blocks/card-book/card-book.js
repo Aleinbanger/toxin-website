@@ -1,11 +1,15 @@
+import './card-book.scss';
+
 import CardForm from '../../scripts/card-form';
-import '../dropdown-date/dropdown-date';
-import '../dropdown-list/dropdown-list';
+import DropdownDate from '../dropdown-date/dropdown-date';
 
 class CardBook extends CardForm {
+  constructor(block) {
+    super('card-book', block);
+  }
+
   _initialize() {
-    this.form = this.block.querySelector(`.js-${this.blockName}__form`);
-    this.formItems = this.form.querySelectorAll(`.js-${this.blockName}__form-item`);
+    super._initialize();
     this.roomDaysCounter = this.block.querySelector(`.js-${this.blockName}__room-days`);
     this.state = {
       roomPrice: Number(this.block.dataset.roomPrice),
@@ -14,6 +18,7 @@ class CardBook extends CardForm {
       addServicePrice: Number(this.block.dataset.addServicePrice),
     };
     this._renderPrices();
+    this._renderDropdownDate();
     this._renderState();
   }
 
@@ -30,8 +35,13 @@ class CardBook extends CardForm {
       .textContent = `${this.state.addServicePrice.toLocaleString('ru-RU')}\u20BD`;
   }
 
+  _renderDropdownDate() {
+    const dropdownDate = this.block.querySelector(`.js-${this.blockName}__dropdown-date`);
+    this.dropdownDate = new DropdownDate(dropdownDate);
+  }
+
   _bindEventListeners() {
-    this.form.addEventListener('submit', (event) => this._validateForm(event));
+    super._bindEventListeners();
     this.formItems.forEach((item) => {
       item.addEventListener('change', () => this._renderState());
     });
@@ -43,12 +53,8 @@ class CardBook extends CardForm {
   }
 
   _updateRoomDaysCounter() {
-    const from = this.block.querySelector('.js-dropdown-date__input input').value
-      .split('.').map((x) => Number(x));
-    const to = this.block.querySelector('.js-dropdown-date__input-sec input').value
-      .split('.').map((x) => Number(x));
-    const diff = new Date(to[2], to[1] - 1, to[0]) - new Date(from[2], from[1] - 1, from[0]);
-    this.state.roomDays = Math.round(diff / (1000 * 3600 * 24));
+    const [from, to] = this.dropdownDate.state.selectedDates;
+    this.state.roomDays = Math.round((to - from) / (1000 * 3600 * 24));
     if (this.state.roomDays) {
       let daysPluralForm;
       switch (this.state.roomDays) {

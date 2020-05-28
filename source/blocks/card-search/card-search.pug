@@ -1,6 +1,6 @@
-include ../../blocks/dropdown-date/dropdown-date.pug
-include ../../blocks/dropdown-list/dropdown-list.pug
-include ../../blocks/button/button.pug
+include ../dropdown-date/dropdown-date.pug
+include ../dropdown-list/dropdown-list.pug
+include ../button/button.pug
 
 mixin card-search({ formAction='#mock-address', titleText='Найдём номера под ваши пожелания' })
   -
@@ -12,7 +12,8 @@ mixin card-search({ formAction='#mock-address', titleText='Найдём номе
   div(class=wrapperClass)
     form(class=formClass, action=formAction, method='post')
       h1(class=`${blockName}__title`) #{titleText}
-      div(class=formItemClass, data-required=true)
+      div(class=formItemClass.concat(`js-${blockName}__dropdown-date`),
+        data-required=true)
         +dropdown-date({
           labelTexts: ['Прибытие', 'Выезд'],
           inpNames: ['date-arrival', 'date-departure'],
@@ -25,9 +26,23 @@ mixin card-search({ formAction='#mock-address', titleText='Найдём номе
           inpPlaceholder: 'Сколько гостей',
           inpName: 'guests',
           listItems: [
-            {combined: true, title: 'взрослые', names: ['гость', 'гостя', 'гостей'], value: 0, minValue: 0, maxValue: 10},
-            {combined: true, title: 'дети', names: ['гость', 'гостя', 'гостей'], value: 0, minValue: 0, maxValue: 10},
-            {title: 'младенцы', names: ['младенец', 'младенца', 'младенцев'], value: 0, minValue: 0, maxValue: 10}
+            {
+              combined: true,
+              title: 'взрослые',
+              names: ['гость', 'гостя', 'гостей'],
+              value: 0, minValue: 0, maxValue: 10,
+            },
+            {
+              combined: true,
+              title: 'дети',
+              names: ['гость', 'гостя', 'гостей'],
+              value: 0, minValue: 0, maxValue: 10,
+            },
+            {
+              title: 'младенцы',
+              names: ['младенец', 'младенца', 'младенцев'],
+              value: 0, minValue: 0, maxValue: 10,
+            }
           ],
         })
       div(class=`${blockName}__form-button`)

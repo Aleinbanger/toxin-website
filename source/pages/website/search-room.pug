@@ -18,7 +18,7 @@ block content
         i(class='material-icons') list
       form.search-room__filter.js-search-room__filter(action='#mock-address', method='post')
         .search-room__filter-container
-          .search-room__filter-item.search-room__filter-item_closest
+          .search-room__filter-item.search-room__filter-item_closest.js-search-room__dropdown-date
             +dropdown-date({
               labelTexts: ['Даты пребывания в отеле'],
               inpNames: ['date-range'],
@@ -100,7 +100,8 @@ block content
         h1.search-room__results-title
           | Номера, которые мы для вас подобрали
         .search-room__results-grid.search-room__results-grid_hidden.js-search-room__results-grid
-          +card-room({ isTemplate: true })
+          .search-room__results-card.js-search-room__results-card.search-room__results-card_hidden
+            +card-room({})
         .search-room__results-pagination.js-search-room__results-pagination
           +pagination({
             addDescription: 'вариантов аренды',

@@ -1,9 +1,13 @@
+/* eslint-disable import/no-unresolved */
+import './search-room.scss';
+
+import DropdownDate from 'blocks/dropdown-date/dropdown-date';
 import SearchRoomResults from './search-room__results/search-room__results';
 
 class SearchRoom {
   constructor(block) {
+    this.blockName = 'search-room';
     this.block = block;
-    this.blockName = this.block.classList[0];
     this._initialize();
     this._bindEventListeners();
   }
@@ -14,8 +18,14 @@ class SearchRoom {
     this.state = {
       filterActive: false,
     };
+    this._renderDropdownDate();
     this._renderResults();
     this._renderState();
+  }
+
+  _renderDropdownDate() {
+    const dropdownDate = this.block.querySelector(`.js-${this.blockName}__dropdown-date`);
+    this.dropdownDate = new DropdownDate(dropdownDate);
   }
 
   _renderResults() {

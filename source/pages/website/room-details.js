@@ -1,18 +1,25 @@
-import ChartCircle from '../../blocks/chart-circle/chart-circle';
+/* eslint-disable import/no-unresolved */
+import './room-details.scss';
+
+import ChartCircle from 'blocks/chart-circle/chart-circle';
 import RoomDetailsReviews from './room-details__reviews/room-details__reviews';
 
 class RoomDetails {
   constructor(block) {
+    this.blockName = 'room-details';
     this.block = block;
-    this.blockName = this.block.classList[0];
     this._initialize();
     this._bindEventListeners();
   }
 
   _initialize() {
     this.images = this.block.querySelector(`.js-${this.blockName}__images`);
-    this.chart = new ChartCircle(this.block.querySelector('.js-chart-circle'));
-    this.reviews = new RoomDetailsReviews(this.block.querySelector(`.js-${this.blockName}__reviews`));
+
+    const chart = this.block.querySelector(`.js-${this.blockName}__chart`);
+    this.chart = new ChartCircle(chart);
+
+    const reviews = this.block.querySelector(`.js-${this.blockName}__reviews`);
+    this.reviews = new RoomDetailsReviews(reviews);
   }
 
   _bindEventListeners() {

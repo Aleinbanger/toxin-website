@@ -1,3 +1,5 @@
+@import './mixins';
+
 @include fontFace('Montserrat', '../fonts/montserrat-v14-latin_cyrillic/montserrat-v14-latin_cyrillic-regular');
 @include fontFace('Montserrat', '../fonts/montserrat-v14-latin_cyrillic/montserrat-v14-latin_cyrillic-italic', italic, normal);
 @include fontFace('Montserrat', '../fonts/montserrat-v14-latin_cyrillic/montserrat-v14-latin_cyrillic-700', normal, bold);

@@ -1,9 +1,11 @@
+import './input-field.scss';
+
 import Inputmask from 'inputmask';
 
 class InputField {
   constructor(block) {
+    this.blockName = 'input-field';
     this.block = block;
-    this.blockName = this.block.classList[0];
     this._initialize();
   }
 

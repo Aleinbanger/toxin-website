@@ -1,7 +1,9 @@
+import './list-checkbox.scss';
+
 class ListCheckbox {
   constructor(block) {
+    this.blockName = 'list-checkbox';
     this.block = block;
-    this.blockName = this.block.classList[0];
     this._initialize();
     this._bindEventListeners();
   }

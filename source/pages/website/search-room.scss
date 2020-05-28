@@ -1,3 +1,5 @@
+@import '../../styles/variables';
+
 .search-room {
   width: 100%;
   padding: 3rem 1.5rem 7.6rem;
@@ -138,6 +140,12 @@
     gap: 2rem 1.2rem;
     width: 100%;
 
+    &_hidden {
+      display: none;
+    }
+  }
+
+  &__results-card {
     &_hidden {
       display: none;
     }

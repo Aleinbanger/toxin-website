@@ -1,12 +1,12 @@
 /* eslint-disable global-require */
 /* eslint-disable import/no-unresolved */
-import CardRoom from '../../../blocks/card-room/card-room';
-import Pagination from '../../../blocks/pagination/pagination';
+import CardRoom from 'blocks/card-room/card-room';
+import Pagination from 'blocks/pagination/pagination';
 
 class SearchRoomResults {
   constructor(element) {
+    this.elementName = 'search-room__results';
     this.element = element;
-    this.elementName = this.element.classList[0];
     this._initialize();
     this._bindEventListeners();
   }
@@ -15,8 +15,8 @@ class SearchRoomResults {
     this.resultsData = require('./search-room__results.json');
     this.resultsImages = require('./img/*.png');
     this.gridTemplate = this.element.querySelector(`.js-${this.elementName}-grid`);
-    this.cardRoomTemplate = this.gridTemplate.querySelector('.js-card-room');
-    this.pagination = this.element.querySelector('.js-pagination');
+    this.cardRoomTemplate = this.gridTemplate.querySelector(`.js-${this.elementName}-card`);
+    this.pagination = this.element.querySelector(`.js-${this.elementName}-pagination`);
     this.pages = [];
     this.state = {
       currentPage: 1,
@@ -34,14 +34,12 @@ class SearchRoomResults {
   }
 
   _bindEventListeners() {
-    this.pagination.addEventListener('click', (event) => this._handlePaginationClick(event));
+    this.pagination.addEventListener('change', () => this._handlePaginationChange());
   }
 
-  _handlePaginationClick(event) {
-    if (event.target.classList.contains('js-pagination__button-page')) {
-      this.state.currentPage = this.paginationObj.state.currentPage;
-      this._renderState();
-    }
+  _handlePaginationChange() {
+    this.state.currentPage = this.paginationObj.state.currentPage;
+    this._renderState();
   }
 
   _renderState() {
@@ -60,27 +58,26 @@ class SearchRoomResults {
       let toCard = this.state.itemsPerPage * pageNumber;
       toCard = (toCard > this.state.itemsNumber)
         ? this.state.itemsNumber : toCard;
+
       const $page = $('<div>', {
         class: `${this.elementName}-grid js-${this.elementName}-grid`,
         'data-page': pageNumber,
       });
       $page.insertBefore(this.gridTemplate);
-      this._populateResults($page, fromCard, toCard);
       this.pages.push($page[0]);
+      this._populateResults($page, fromCard, toCard);
     }
   }
 
   _populateResults($page, from, to) {
     this.resultsData.rooms.slice(from, to).forEach((room) => {
-      const $card = $(this.cardRoomTemplate).clone(true).removeClass('card-room_hidden');
-      const attributes = ['number', 'luxury', 'price', 'rating', 'reviews'];
-      attributes.forEach((attr) => $card.attr(`data-room-${attr}`, room[attr]));
-      $card.find('.js-card-room__info').attr('href', room.href);
-      $card.appendTo($page);
-      const cardObj = new CardRoom($card[0]);
+      const $cardEl = $(this.cardRoomTemplate).clone(true);
+      $cardEl.removeClass(`${this.elementName}-card_hidden`);
+      $cardEl.appendTo($page);
+
+      const cardObj = new CardRoom($cardEl[0]);
       const roomImgSrcList = room.imgSrcList.map((imgSrc) => this.resultsImages[imgSrc]);
-      cardObj.carousel.populateCarousel(roomImgSrcList);
-      cardObj.updateState();
+      cardObj.updateState(room, roomImgSrcList);
     });
   }
 }

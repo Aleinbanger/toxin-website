@@ -1,9 +1,11 @@
+import './header.scss';
+
 import HeaderDropdown from './header__dropdown';
 
 class Header {
   constructor(block) {
+    this.blockName = 'header';
     this.block = block;
-    this.blockName = this.block.classList[0];
     this._initialize();
     this._bindEventListeners();
   }

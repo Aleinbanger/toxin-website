@@ -1,9 +1,11 @@
+import './card-calendar.scss';
+
 import 'air-datepicker';
 
 class CardCalendar {
   constructor(block) {
+    this.blockName = 'card-calendar';
     this.block = block;
-    this.blockName = this.block.classList[0];
     this._initialize();
   }
 

@@ -1,7 +1,9 @@
+import './carousel.scss';
+
 class Carousel {
-  constructor(block) {
-    this.block = block;
-    this.blockName = this.block.classList[0];
+  constructor(wrapper) {
+    this.blockName = 'carousel';
+    this.block = wrapper.querySelector(`.js-${this.blockName}`);
     this._initialize();
     this._bindEventListeners();
   }
