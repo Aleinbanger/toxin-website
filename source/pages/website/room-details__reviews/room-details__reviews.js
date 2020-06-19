@@ -1,6 +1,7 @@
 /* eslint-disable global-require */
 /* eslint-disable import/no-unresolved */
 import Comment from 'blocks/comment/comment';
+import { requireAll } from 'scripts/utils';
 
 class RoomDetailsReviews {
   constructor(element) {
@@ -11,7 +12,7 @@ class RoomDetailsReviews {
 
   _initialize() {
     this.reviewsData = require('./room-details__reviews.json');
-    this.reviewsImages = require('./img/*.png');
+    this.reviewsImages = requireAll(require.context('./img/', true, /\.png$/));
     this.reviewTemplate = this.element.querySelector(`.js-${this.elementName}-item`);
     this.counter = this.element.querySelector(`.js-${this.elementName}-counter`);
     this._populateReviews();

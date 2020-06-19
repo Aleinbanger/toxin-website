@@ -5,8 +5,9 @@ import 'regenerator-runtime/runtime';
 
 import './jquery';
 import './icons';
+import { requireAll } from './utils';
 
 import '../styles/global.scss';
 
-require('../blocks/*/*.js');
-require('../pages/*/*.js');
+requireAll(require.context('../blocks/', true, /\.js$/));
+requireAll(require.context('../pages/', true, /\.js$/));

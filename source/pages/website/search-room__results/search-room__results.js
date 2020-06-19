@@ -2,6 +2,7 @@
 /* eslint-disable import/no-unresolved */
 import CardRoom from 'blocks/card-room/card-room';
 import Pagination from 'blocks/pagination/pagination';
+import { requireAll } from 'scripts/utils';
 
 class SearchRoomResults {
   constructor(element) {
@@ -13,7 +14,7 @@ class SearchRoomResults {
 
   _initialize() {
     this.resultsData = require('./search-room__results.json');
-    this.resultsImages = require('./img/*.png');
+    this.resultsImages = requireAll(require.context('./img/', true, /\.png$/));
     this.gridTemplate = this.element.querySelector(`.js-${this.elementName}-grid`);
     this.cardRoomTemplate = this.gridTemplate.querySelector(`.js-${this.elementName}-card`);
     this.pagination = this.element.querySelector(`.js-${this.elementName}-pagination`);

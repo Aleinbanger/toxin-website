@@ -24,7 +24,7 @@ mixin header(options)
     div(class=`${blockName}__container`)
       a(class=`${blockName}__logo-link`, href=homeHref)
         img(class=`${blockName}__logo`,
-          src='../../blocks/header/img/header__logo.svg', alt='Toxin Logo')
+          src=require('blocks/header/img/header__logo.svg').default, alt='Toxin Logo')
       button(class=navbarBtnClass, type='button')
         i(class='material-icons') menu
       nav(class=navbarClass)
