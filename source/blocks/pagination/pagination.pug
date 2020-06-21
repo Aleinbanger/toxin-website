@@ -16,10 +16,10 @@ mixin pagination({ itemsNumber=1, itemsPerPage=1, baseHref='', addDescription=''
     data-items-per-page=itemsPerPage
   )
     div(class=`${blockName}__buttons`)
-      span(class=`js-${blockName}__buttons-pages`)
+      span(class=`${blockName}__buttons-pages js-${blockName}__buttons-pages`)
         - for (let i = 1; i <= pagesNumber; i++) {
             if (baseHref)
-              a(class=pageBtnClass, href=`${baseHref}/page-${i}`) #{i}
+              a(class=pageBtnClass, data-page=i, href=`${baseHref}/page-${i}`) #{i}
             else
               button(class=pageBtnClass, data-page=i) #{i}
             if (i === 1 || i === pagesNumber - 1)

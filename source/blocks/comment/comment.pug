@@ -5,7 +5,6 @@ mixin comment(options)
     const {
       userName = '',
       userPicture = 'comment__picture_default.png',
-      userPicturePath = '../../blocks/comment/img',
       date = '',
       text = '',
       likeCount = 0,
@@ -19,7 +18,7 @@ mixin comment(options)
       img(
         class=`${blockName}__picture js-${blockName}__picture`,
         alt='Profile picture',
-        src=`${userPicturePath}/${userPicture}`
+        src=require(`blocks/comment/img/${userPicture}`).default
       )
       span(class=`${blockName}__like js-${blockName}__like`)
         +button-like({ likeCount: likeCount, active: likeActive })

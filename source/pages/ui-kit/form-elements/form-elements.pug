@@ -1,24 +1,24 @@
-extends ./_layout.pug
+extends ../_layout.pug
 
 block append variables
   - const pageTitle = 'Form Elements'
 
 block append mixins
-  include ../../blocks/input-field/input-field.pug
-  include ../../blocks/input-toggle/input-toggle.pug
-  include ../../blocks/subscription/subscription.pug
-  include ../../blocks/button/button.pug
-  include ../../blocks/button-like/button-like.pug
-  include ../../blocks/rating/rating.pug
-  include ../../blocks/comment/comment.pug
-  include ../../blocks/list-bullet/list-bullet.pug
-  include ../../blocks/list-feature/list-feature.pug
-  include ../../blocks/list-checkbox/list-checkbox.pug
-  include ../../blocks/list-radio/list-radio.pug
-  include ../../blocks/pagination/pagination.pug
-  include ../../blocks/dropdown-list/dropdown-list.pug
-  include ../../blocks/dropdown-date/dropdown-date.pug
-  include ../../blocks/slider-range/slider-range.pug
+  include ../../../blocks/input-field/input-field.pug
+  include ../../../blocks/input-toggle/input-toggle.pug
+  include ../../../blocks/subscription/subscription.pug
+  include ../../../blocks/button/button.pug
+  include ../../../blocks/button-like/button-like.pug
+  include ../../../blocks/rating/rating.pug
+  include ../../../blocks/comment/comment.pug
+  include ../../../blocks/list-bullet/list-bullet.pug
+  include ../../../blocks/list-feature/list-feature.pug
+  include ../../../blocks/list-checkbox/list-checkbox.pug
+  include ../../../blocks/list-radio/list-radio.pug
+  include ../../../blocks/pagination/pagination.pug
+  include ../../../blocks/dropdown-list/dropdown-list.pug
+  include ../../../blocks/dropdown-date/dropdown-date.pug
+  include ../../../blocks/slider-range/slider-range.pug
 
 block content
   .form-elements.js-form-elements
@@ -132,7 +132,7 @@ block content
       .form-elements__item
         h3.form-elements__title Pagination
         .form-elements__pagination.js-form-elements__pagination
-          +pagination({itemsNumber: 180, itemsPerPage: 12, baseHref: '#mock-address', addDescription: 'вариантов аренды'})
+          +pagination({itemsNumber: 180, itemsPerPage: 12, addDescription: 'вариантов аренды'})
 
     .form-elements__column
       .form-elements__item

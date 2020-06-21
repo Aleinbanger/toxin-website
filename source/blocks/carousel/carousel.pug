@@ -1,4 +1,4 @@
-mixin carousel({ baseSrc='', imgSrcList=[] })
+mixin carousel({ imgSrcList=[] })
   -
     const blockName = 'carousel';
     const wrapperClass = [blockName, `js-${blockName}`];
@@ -10,7 +10,7 @@ mixin carousel({ baseSrc='', imgSrcList=[] })
   div(class=wrapperClass)
     div(class=`${blockName}__images js-${blockName}__images`)
       each imgSrc, index in imgSrcList
-        img(class=imageClass, src=`${baseSrc}/${imgSrc}`, alt=`Image ${index + 1}`)
+        img(class=imageClass, src=imgSrc, alt=`Image ${index + 1}`)
     button(class=prevBtnClass, type='button')
       i.material-icons expand_more
     button(class=nextBtnClass, type='button')

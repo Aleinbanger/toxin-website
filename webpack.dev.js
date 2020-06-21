@@ -3,6 +3,8 @@ const common = require('./webpack.common');
 
 module.exports = merge(common, {
   mode: 'development',
+  devtool: 'none',
+
   module: {
     rules: [
       {
@@ -17,10 +19,10 @@ module.exports = merge(common, {
       {
         test: /\.s?css$/,
         use: [
-          'style-loader', // 3. Inject styles into DOM
-          'css-loader', // 2. Turns css into commonjs
+          'style-loader',
+          'css-loader',
           'postcss-loader',
-          'sass-loader', // 1. Turns sass into css
+          'sass-loader',
         ],
       },
     ],

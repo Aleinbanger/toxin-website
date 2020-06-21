@@ -10,7 +10,6 @@ mixin card-room(options)
       roomPrice = 0,
       roomRating = 0,
       roomReviews = 0,
-      crslBaseSrc = '',
       crslImgSrcList = [],
     } = options;
     const blockName = 'card-room';
@@ -30,7 +29,6 @@ mixin card-room(options)
   )
     div(class=`${blockName}__carousel js-${blockName}__carousel`)
       +carousel({
-        baseSrc: crslBaseSrc,
         imgSrcList: crslImgSrcList,
       })
     a(class=`${blockName}__info js-${blockName}__info`, href=roomHref)

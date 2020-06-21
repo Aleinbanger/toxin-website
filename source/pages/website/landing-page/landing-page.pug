@@ -1,10 +1,10 @@
-extends ./_layout.pug
+extends ../_layout.pug
 
 block append variables
   - const pageTitle = 'Landing Page'
 
 block append mixins
-  include ../../blocks/card-search/card-search.pug
+  include ../../../blocks/card-search/card-search.pug
 
 block content
   main.landing-page

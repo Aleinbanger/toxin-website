@@ -1,0 +1,12 @@
+extends ../_layout.pug
+
+block append variables
+  - const pageTitle = 'Sign In'
+
+block append mixins
+  include ../../../blocks/card-signin/card-signin.pug
+
+block content
+  main.sign-in
+    .sign-in__container
+      +card-signin({ formAction: '#mock-address', signupHref: './registration.html' })

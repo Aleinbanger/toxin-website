@@ -1,15 +1,15 @@
-extends ./_layout.pug
+extends ../_layout.pug
 
 block append variables
   - const pageTitle = 'Room Details'
-  - const roomImgSrcList = ['./img/888_1.png', './img/888_2.png', './img/888_3.png']
+  - const roomImgSrcList = [require('./img/888_1.png').default, require('./img/888_2.png').default, require('./img/888_3.png').default]
 
 block append mixins
-  include ../../blocks/list-feature/list-feature.pug
-  include ../../blocks/chart-circle/chart-circle.pug
-  include ../../blocks/card-book/card-book.pug
-  include ../../blocks/comment/comment.pug
-  include ../../blocks/list-bullet/list-bullet.pug
+  include ../../../blocks/list-feature/list-feature.pug
+  include ../../../blocks/chart-circle/chart-circle.pug
+  include ../../../blocks/card-book/card-book.pug
+  include ../../../blocks/comment/comment.pug
+  include ../../../blocks/list-bullet/list-bullet.pug
 
 block content
   main.room-details.js-room-details

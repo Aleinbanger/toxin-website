@@ -1,11 +1,11 @@
-extends ./_layout.pug
+extends ../_layout.pug
 
 block append variables
   - const pageTitle = 'Headers & Footers'
 
 block append mixins
-  include ../../blocks/header/header.pug
-  include ../../blocks/footer/footer.pug
+  include ../../../blocks/header/header.pug
+  include ../../../blocks/footer/footer.pug
 
 block content
   .headers-footers
