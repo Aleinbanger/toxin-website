@@ -25,7 +25,7 @@ mixin footer(options)
         div(class=`${blockName}__item`)
           a(class=`${blockName}__logo-link`, href=homeHref)
             img(class=`${blockName}__logo`,
-              src=require('blocks/footer/img/footer__logo.svg').default, alt='Toxin Logo')
+              src='~blocks/footer/img/footer__logo.svg', alt='Toxin Logo')
           p(class=`${blockName}__item-text`) #{mainText}
         if (navbarItems)
           nav(class=`${blockName}__navbar`)

@@ -8,15 +8,6 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
-        test: /\.pug$/,
-        use: {
-          loader: 'pug-loader',
-          options: {
-            pretty: true,
-          },
-        },
-      },
-      {
         test: /\.s?css$/,
         use: [
           'style-loader',

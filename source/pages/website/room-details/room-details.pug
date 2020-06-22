@@ -2,7 +2,7 @@ extends ../_layout.pug
 
 block append variables
   - const pageTitle = 'Room Details'
-  - const roomImgSrcList = [require('./img/888_1.png').default, require('./img/888_2.png').default, require('./img/888_3.png').default]
+  - const roomImgSrcList = ['./img/888_1.png', './img/888_2.png', './img/888_3.png']
 
 block append mixins
   include ../../../blocks/list-feature/list-feature.pug

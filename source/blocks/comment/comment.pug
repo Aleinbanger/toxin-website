@@ -18,7 +18,7 @@ mixin comment(options)
       img(
         class=`${blockName}__picture js-${blockName}__picture`,
         alt='Profile picture',
-        src=require(`blocks/comment/img/${userPicture}`).default
+        src=`~blocks/comment/img/${userPicture}`
       )
       span(class=`${blockName}__like js-${blockName}__like`)
         +button-like({ likeCount: likeCount, active: likeActive })

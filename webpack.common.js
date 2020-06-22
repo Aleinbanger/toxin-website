@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const PATHS = {
   src: path.resolve(__dirname, './source'),
-  dist: path.resolve(__dirname, './dist'),
+  build: path.resolve(__dirname, './build'),
   scripts: path.resolve(__dirname, './source/scripts'),
   styles: path.resolve(__dirname, './source/styles'),
   fonts: path.resolve(__dirname, './source/fonts'),
@@ -35,12 +35,24 @@ module.exports = {
   },
 
   output: {
-    filename: '[name].[contentHash].js',
-    path: PATHS.dist,
+    filename: 'js/[name].[contentHash].js',
+    path: PATHS.build,
   },
 
   module: {
     rules: [
+      {
+        test: /\.pug$/,
+        use: [
+          'html-loader',
+          'pug-html-loader',
+        ],
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: 'babel-loader',
+      },
       {
         test: /\.(woff2?|ttf|eot|svg)$/,
         exclude: [
@@ -51,7 +63,7 @@ module.exports = {
         use: {
           loader: 'file-loader',
           options: {
-            name: '[name].[hash].[ext]',
+            name: '[name].[contentHash].[ext]',
             outputPath: 'assets/fonts/',
           },
         },
@@ -60,20 +72,14 @@ module.exports = {
         test: /\.(svg|png|jpe?g|gif)$/,
         exclude: [
           PATHS.fonts,
+          /node_modules/,
         ],
         use: {
           loader: 'file-loader',
           options: {
-            name: '[name].[hash].[ext]',
+            name: '[name].[contentHash].[ext]',
             outputPath: 'assets/images/',
           },
-        },
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
         },
       },
     ],
