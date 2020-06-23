@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const PATHS = {
   src: path.resolve(__dirname, './source'),
@@ -9,6 +10,7 @@ const PATHS = {
   scripts: path.resolve(__dirname, './source/scripts'),
   styles: path.resolve(__dirname, './source/styles'),
   fonts: path.resolve(__dirname, './source/fonts'),
+  favicons: path.resolve(__dirname, './source/favicons'),
   blocks: path.resolve(__dirname, './source/blocks'),
   pages: {
     uikit: path.resolve(__dirname, './source/pages/ui-kit'),
@@ -23,10 +25,10 @@ const PAGES = {
 module.exports = {
   resolve: {
     alias: {
+      node_modules: path.resolve(__dirname, './node_modules'),
       scripts: PATHS.scripts,
       styles: PATHS.styles,
       blocks: PATHS.blocks,
-      node_modules: path.resolve(__dirname, './node_modules'),
     },
   },
 
@@ -55,10 +57,9 @@ module.exports = {
       },
       {
         test: /\.(woff2?|ttf|eot|svg)$/,
-        exclude: [
-          PATHS.blocks,
-          PATHS.pages.uikit,
-          PATHS.pages.website,
+        include: [
+          PATHS.fonts,
+          /node_modules/,
         ],
         use: {
           loader: 'file-loader',
@@ -70,9 +71,10 @@ module.exports = {
       },
       {
         test: /\.(svg|png|jpe?g|gif)$/,
-        exclude: [
-          PATHS.fonts,
-          /node_modules/,
+        include: [
+          PATHS.blocks,
+          PATHS.pages.uikit,
+          PATHS.pages.website,
         ],
         use: {
           loader: 'file-loader',
@@ -96,6 +98,11 @@ module.exports = {
         template: `${PATHS.pages.website}/${page}/${page}.pug`,
         filename: `${page}.html`,
       })),
+    new CopyPlugin({
+      patterns: [
+        { from: PATHS.favicons, to: 'assets/favicons/' },
+      ],
+    }),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
