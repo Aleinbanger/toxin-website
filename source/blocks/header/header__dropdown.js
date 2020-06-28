@@ -18,7 +18,7 @@ class HeaderDropdown {
   _bindEventListeners() {
     this.title.addEventListener('mousedown', (event) => this._handleTitleClick(event));
     this.title.addEventListener('focusin', () => this._handleTitleFocus());
-    document.addEventListener('click', (event) => this._handleOutsideClick(event));
+    this.handleOutsideClick = (event) => this._handleOutsideClick(event);
   }
 
   _handleTitleClick(event) {
@@ -49,9 +49,11 @@ class HeaderDropdown {
 
   _renderState() {
     if (this.state.active) {
+      document.addEventListener('click', this.handleOutsideClick);
       this.icon.classList.add(`${this.elementName}-icon_active`);
       this.list.classList.add(`${this.elementName}-list_active`);
     } else {
+      document.removeEventListener('click', this.handleOutsideClick);
       this.icon.classList.remove(`${this.elementName}-icon_active`);
       this.list.classList.remove(`${this.elementName}-list_active`);
     }

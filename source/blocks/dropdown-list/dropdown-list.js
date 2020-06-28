@@ -33,7 +33,8 @@ class DropdownList {
   _bindEventListeners() {
     this.input.addEventListener('mousedown', (event) => this._handleInputClick(event));
     this.input.addEventListener('focusin', () => this._handleInputFocus());
-    document.addEventListener('click', (event) => this._handleOutsideClick(event));
+    this.handleOutsideClick = (event) => this._handleOutsideClick(event);
+
     if (this.resetBtn) {
       this.resetBtn.addEventListener('click', () => this._handleResetButtonClick());
     }
@@ -85,10 +86,12 @@ class DropdownList {
 
   _renderState() {
     if (this.state.active) {
+      document.addEventListener('click', this.handleOutsideClick);
       this.input.classList.add(`${this.blockName}__input_active`);
       this.icon.classList.add(`${this.blockName}__icon_active`);
       this.list.classList.add(`${this.blockName}__list_active`);
     } else {
+      document.removeEventListener('click', this.handleOutsideClick);
       this.input.classList.remove(`${this.blockName}__input_active`);
       this.icon.classList.remove(`${this.blockName}__icon_active`);
       this.list.classList.remove(`${this.blockName}__list_active`);

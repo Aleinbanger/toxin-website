@@ -67,24 +67,12 @@ class DropdownDate {
   }
 
   _bindEventListeners() {
-    this.input.addEventListener('mousedown', (event) => this._handleInputClick(event));
     this.input.addEventListener('focusin', () => this._handleInputFocus());
+    this.handleOutsideClick = (event) => this._handleOutsideClick(event);
+
     this.$acceptBtn.on('click', () => this._handleAcceptButtonClick());
-    document.addEventListener('click', (event) => this._handleOutsideClick(event));
     if (this.secInput) {
       $(this.secInput).find('input').on('click', () => this._handleSecInputClick());
-    }
-  }
-
-  _handleInputClick(event) {
-    const input = this.input.querySelector('input');
-    if (document.activeElement === input) {
-      this.state.active = this.$datepicker.data('datepicker').visible;
-      this._renderState();
-    } else if (this.state.active) {
-      event.preventDefault();
-      this.state.active = this.$datepicker.data('datepicker').visible;
-      this._renderState();
     }
   }
 
@@ -93,12 +81,6 @@ class DropdownDate {
       this.state.active = this.$datepicker.data('datepicker').visible;
       this._renderState();
     }
-  }
-
-  _handleAcceptButtonClick() {
-    this.$datepicker.data('datepicker').visible = false;
-    this.state.active = this.$datepicker.data('datepicker').visible;
-    this._renderState();
   }
 
   _handleOutsideClick(event) {
@@ -115,6 +97,12 @@ class DropdownDate {
     }
   }
 
+  _handleAcceptButtonClick() {
+    this.$datepicker.data('datepicker').visible = false;
+    this.state.active = this.$datepicker.data('datepicker').visible;
+    this._renderState();
+  }
+
   _handleSecInputClick() {
     this.$datepicker.data('datepicker').visible = true;
     this.state.active = this.$datepicker.data('datepicker').visible;
@@ -123,6 +111,7 @@ class DropdownDate {
 
   _renderState() {
     if (this.state.active) {
+      document.addEventListener('click', this.handleOutsideClick);
       this.$datepicker.data('datepicker').show();
       this.input.classList.add(`${this.blockName}__input_active`);
       this.icons.forEach((icon) => icon.classList.add(`${this.blockName}__icon_active`));
@@ -130,6 +119,7 @@ class DropdownDate {
         this.secInput.classList.add(`${this.blockName}__input_active`);
       }
     } else {
+      document.removeEventListener('click', this.handleOutsideClick);
       this.$datepicker.data('datepicker').hide();
       this.input.classList.remove(`${this.blockName}__input_active`);
       this.icons.forEach((icon) => icon.classList.remove(`${this.blockName}__icon_active`));
