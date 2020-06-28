@@ -6,7 +6,8 @@
   "main": "./source/scripts/index.js",
   "scripts": {
     "dev": "webpack-dev-server  --config webpack.dev.js",
-    "prod": "webpack --config webpack.prod.js"
+    "prod": "webpack --config webpack.prod.js",
+    "deploy": "gh-pages -d build"
   },
   "author": "Aleinbanger",
   "license": "MIT",
@@ -26,6 +27,7 @@
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-proposal": "^2.3.0",
     "file-loader": "^6.0.0",
+    "gh-pages": "^3.1.0",
     "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.3.0",
     "mini-css-extract-plugin": "^0.9.0",
