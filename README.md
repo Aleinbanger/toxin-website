@@ -9,11 +9,11 @@ The first practical task for [FSD](https://www.fullstack-development.com/en) Fro
 ## Technologies
 The project is created with:
 * [Pug v.2.0.4](https://pugjs.org/)
-* [Sass v.1.26.3](https://sass-lang.com/)
+* [Sass v.1.26.10](https://sass-lang.com/)
 * [PostCSS Preset Env v.6.7.0](https://github.com/csstools/postcss-preset-env#readme)
 * [JavaScript ES6](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 * [jQuery v.3.5.1](https://jquery.com/)
-* [Babel v.7.9.0](https://babeljs.io/)
+* [Babel v.7.10.4](https://babeljs.io/)
 * [Webpack v.4.43.0](https://webpack.js.org/)
 
 The following jQuery plugins were used:
