@@ -1,0 +1,29 @@
+@import '~styles/variables';
+
+.index {
+  width: 100%;
+  max-width: 1440px;
+  margin: auto;
+  padding: 14.3rem 14.1rem 14rem;
+  background: url('./img/ui-kit__logo.svg')
+    3rem 3rem/4.8rem 4.8rem no-repeat;
+
+  &__title {
+    margin-bottom: 1.5rem;
+    line-height: 1.5rem;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    margin-bottom: 2rem;
+  }
+
+  &__link {
+    font-weight: bold;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
