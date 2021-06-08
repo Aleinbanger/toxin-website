@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 import './form-elements.scss';
 
 import ButtonLike from 'blocks/button-like/button-like';

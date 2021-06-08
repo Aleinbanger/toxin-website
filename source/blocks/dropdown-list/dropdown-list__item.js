@@ -1,3 +1,5 @@
+/* eslint-disable prefer-destructuring */
+
 class DropdownListItem {
   constructor(element) {
     this.elementName = 'dropdown-list__item';

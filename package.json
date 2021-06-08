@@ -1,14 +1,28 @@
 {
-  "name": "fsd-website",
   "private": true,
-  "main": "./source/scripts/index.js",
-  "scripts": {
-    "dev": "webpack-dev-server  --config webpack.dev.js",
-    "prod": "webpack --config webpack.prod.js",
-    "deploy": "gh-pages -d build"
-  },
+  "name": "toxin-website",
   "author": "Aleinbanger",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Aleinbanger/toxin-website.git"
+  },
+  "bugs": "https://github.com/Aleinbanger/toxin-website/issues",
+  "scripts": {
+    "dev": "webpack-dev-server  --config webpack.dev.js",
+    "stylelint": "npx stylelint **/*.scss",
+    "eslint": "eslint . --ext .js",
+    "prod": "webpack --config webpack.prod.js",
+    "deploy": "gh-pages -d build/"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.1",
+    "air-datepicker": "^2.2.3",
+    "inputmask": "^5.0.3",
+    "ion-rangeslider": "^2.3.1",
+    "jquery": "^3.5.1",
+    "material-icons": "^0.3.1"
+  },
   "devDependencies": {
     "@babel/core": "^7.10.4",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
@@ -46,13 +60,7 @@
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^4.2.2"
   },
-  "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.13.1",
-    "air-datepicker": "^2.2.3",
-    "inputmask": "^5.0.3",
-    "ion-rangeslider": "^2.3.1",
-    "jquery": "^3.5.1",
-    "material-icons": "^0.3.1"
-  },
-  "browserslist": "defaults"
+  "browserslist": [
+    "defaults"
+  ]
 }

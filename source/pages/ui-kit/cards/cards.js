@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 import './cards.scss';
 
 import CardRoom from 'blocks/card-room/card-room';

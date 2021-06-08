@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 import './search-room.scss';
 
 import DropdownDate from 'blocks/dropdown-date/dropdown-date';

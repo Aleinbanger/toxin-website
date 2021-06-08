@@ -1,5 +1,4 @@
 /* eslint-disable global-require */
-/* eslint-disable import/no-unresolved */
 import Comment from 'blocks/comment/comment';
 import { requireAll } from 'scripts/utils';
 

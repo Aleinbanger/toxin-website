@@ -1,18 +1,18 @@
 @import './mixins';
 
-@import '~node_modules/material-icons/iconfont/material-icons.css';
-@import '~node_modules/@fortawesome/fontawesome-free/css/fontawesome.css';
-@import '~node_modules/@fortawesome/fontawesome-free/css/brands.css';
+@import '~material-icons/iconfont/material-icons.css';
+@import '~@fortawesome/fontawesome-free/css/fontawesome.css';
+@import '~@fortawesome/fontawesome-free/css/brands.css';
 
-@include fontFace('Montserrat', '../fonts/montserrat-v14-latin_cyrillic/montserrat-v14-latin_cyrillic-regular');
-@include fontFace('Montserrat', '../fonts/montserrat-v14-latin_cyrillic/montserrat-v14-latin_cyrillic-italic', italic, normal);
-@include fontFace('Montserrat', '../fonts/montserrat-v14-latin_cyrillic/montserrat-v14-latin_cyrillic-700', normal, bold);
-@include fontFace('Montserrat', '../fonts/montserrat-v14-latin_cyrillic/montserrat-v14-latin_cyrillic-700italic', italic, bold);
+@include font-face('Montserrat', '../fonts/montserrat-v14-latin_cyrillic/montserrat-v14-latin_cyrillic-regular');
+@include font-face('Montserrat', '../fonts/montserrat-v14-latin_cyrillic/montserrat-v14-latin_cyrillic-italic', italic, normal);
+@include font-face('Montserrat', '../fonts/montserrat-v14-latin_cyrillic/montserrat-v14-latin_cyrillic-700', normal, bold);
+@include font-face('Montserrat', '../fonts/montserrat-v14-latin_cyrillic/montserrat-v14-latin_cyrillic-700italic', italic, bold);
 
-@include fontFace('Open Sans', '../fonts/open-sans-v17-latin_cyrillic/open-sans-v17-latin_cyrillic-regular');
-@include fontFace('Open Sans', '../fonts/open-sans-v17-latin_cyrillic/open-sans-v17-latin_cyrillic-italic', italic, normal);
-@include fontFace('Open Sans', '../fonts/open-sans-v17-latin_cyrillic/open-sans-v17-latin_cyrillic-700', normal, bold);
-@include fontFace('Open Sans', '../fonts/open-sans-v17-latin_cyrillic/open-sans-v17-latin_cyrillic-700italic', italic, bold);
+@include font-face('Open Sans', '../fonts/open-sans-v17-latin_cyrillic/open-sans-v17-latin_cyrillic-regular');
+@include font-face('Open Sans', '../fonts/open-sans-v17-latin_cyrillic/open-sans-v17-latin_cyrillic-italic', italic, normal);
+@include font-face('Open Sans', '../fonts/open-sans-v17-latin_cyrillic/open-sans-v17-latin_cyrillic-700', normal, bold);
+@include font-face('Open Sans', '../fonts/open-sans-v17-latin_cyrillic/open-sans-v17-latin_cyrillic-700italic', italic, bold);
 
-@include fontFace('Quicksand', '../fonts/quicksand-v19-latin/quicksand-v19-latin-regular');
-@include fontFace('Quicksand', '../fonts/quicksand-v19-latin/quicksand-v19-latin-700', normal, bold);
+@include font-face('Quicksand', '../fonts/quicksand-v19-latin/quicksand-v19-latin-regular');
+@include font-face('Quicksand', '../fonts/quicksand-v19-latin/quicksand-v19-latin-700', normal, bold);

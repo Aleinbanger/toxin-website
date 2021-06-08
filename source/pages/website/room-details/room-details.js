@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 import './room-details.scss';
 
 import ChartCircle from 'blocks/chart-circle/chart-circle';

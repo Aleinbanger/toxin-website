@@ -4,11 +4,9 @@ const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
-const PATHS = {
+const paths = {
   src: path.resolve(__dirname, './source'),
   build: path.resolve(__dirname, './build'),
-  scripts: path.resolve(__dirname, './source/scripts'),
-  styles: path.resolve(__dirname, './source/styles'),
   fonts: path.resolve(__dirname, './source/fonts'),
   favicons: path.resolve(__dirname, './source/favicons'),
   blocks: path.resolve(__dirname, './source/blocks'),
@@ -17,28 +15,26 @@ const PATHS = {
     website: path.resolve(__dirname, './source/pages/website'),
   },
 };
-const PAGES = {
-  uikit: fs.readdirSync(PATHS.pages.uikit),
-  website: fs.readdirSync(PATHS.pages.website),
+const pages = {
+  uikit: fs.readdirSync(paths.pages.uikit),
+  website: fs.readdirSync(paths.pages.website),
 };
 
 module.exports = {
+  context: paths.src,
+
   resolve: {
-    alias: {
-      node_modules: path.resolve(__dirname, './node_modules'),
-      scripts: PATHS.scripts,
-      styles: PATHS.styles,
-      blocks: PATHS.blocks,
-    },
+    extensions: ['.js'],
+    modules: [paths.src, 'node_modules'],
   },
 
   entry: {
-    main: `${PATHS.scripts}/index.js`,
+    main: './scripts/index.js',
   },
 
   output: {
     filename: 'js/[name].[contentHash].js',
-    path: PATHS.build,
+    path: paths.build,
   },
 
   module: {
@@ -47,7 +43,12 @@ module.exports = {
         test: /\.pug$/,
         use: [
           'html-loader',
-          'pug-html-loader',
+          {
+            loader: 'pug-html-loader',
+            options: {
+              basedir: paths.src,
+            },
+          },
         ],
       },
       {
@@ -58,7 +59,7 @@ module.exports = {
       {
         test: /\.(woff2?|ttf|eot|svg)$/,
         include: [
-          PATHS.fonts,
+          paths.fonts,
           /node_modules/,
         ],
         use: {
@@ -72,9 +73,9 @@ module.exports = {
       {
         test: /\.(svg|png|jpe?g|gif)$/,
         include: [
-          PATHS.blocks,
-          PATHS.pages.uikit,
-          PATHS.pages.website,
+          paths.blocks,
+          paths.pages.uikit,
+          paths.pages.website,
         ],
         use: {
           loader: 'file-loader',
@@ -88,24 +89,25 @@ module.exports = {
   },
 
   plugins: [
-    ...PAGES.uikit.filter((page) => !/layout/i.test(page))
+    ...pages.uikit.filter((page) => !/layout/i.test(page))
       .map((page) => new HtmlWebpackPlugin({
-        template: `${PATHS.pages.uikit}/${page}/${page}.pug`,
+        template: `${paths.pages.uikit}/${page}/${page}.pug`,
         filename: `${page}.html`,
       })),
-    ...PAGES.website.filter((page) => !/layout/i.test(page))
+    ...pages.website.filter((page) => !/layout/i.test(page))
       .map((page) => new HtmlWebpackPlugin({
-        template: `${PATHS.pages.website}/${page}/${page}.pug`,
+        template: `${paths.pages.website}/${page}/${page}.pug`,
         filename: `${page}.html`,
       })),
     new CopyPlugin({
       patterns: [
-        { from: PATHS.favicons, to: 'assets/favicons/' },
+        { from: paths.favicons, to: 'assets/favicons/' },
       ],
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
+      'window.$': 'jquery',
       'window.jQuery': 'jquery',
     }),
   ],
