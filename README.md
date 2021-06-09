@@ -8,7 +8,7 @@ The first practical task for [MetaLamp](https://en.metalamp.io/education) Fronte
 ***
 
 ## Table of contents
-* [Pages](#Pages)
+* [Getting Started](#Getting-Started)
   * [UI Kit](#UI-Kit)
   * [Website](#Website)
 * [Contributing](#Contributing)
@@ -18,7 +18,11 @@ The first practical task for [MetaLamp](https://en.metalamp.io/education) Fronte
 
 ***
 
-## Pages
+## Getting Started
+
+**Downloads:**
+[built pages](https://github.com/Aleinbanger/toxin-website/releases/download/v1.0.0/toxin-website.zip),
+[PerfectPixel screenshots](https://github.com/Aleinbanger/toxin-website/releases/download/v1.0.0/pp-screenshots.zip)
 
 ### UI Kit
 * [Form Elements](https://aleinbanger.github.io/toxin-website/form-elements)
