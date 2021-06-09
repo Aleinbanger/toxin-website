@@ -12,77 +12,82 @@ block content
     .headers-footers__item
       +header({
         navbarList: [
-          { text: 'Home', href: '#mock-address', bold: true },
-          { text: 'About us', href: '#mock-address' },
-          { text: 'Services', dropdownList: [
-            { text: 'Service 1', href: '#mock-address' },
-            { text: 'Service 2', href: '#mock-address' },
-            { text: 'Service 3', href: '#mock-address' }
+          { text: 'О нас', href: '#mock-address', bold: true },
+          { text: 'Услуги', dropdownList: [
+            { text: 'Услуга 1', href: '#mock-address' },
+            { text: 'Услуга 2', href: '#mock-address' },
+            { text: 'Услуга 3', href: '#mock-address' }
           ] },
-          { text: 'Careers', href: '#mock-address' },
-          { text: 'News', href: '#mock-address' },
-          { text: 'Documentation', href: '#mock-address' },
+          { text: 'Вакансии', href: '#mock-address' },
+          { text: 'Новости', href: '#mock-address' },
+          { text: 'Соглашения', dropdownList: [
+            { text: 'Соглашение 1', href: '#mock-address' },
+            { text: 'Соглашение 2', href: '#mock-address' }
+          ] },
         ],
-        fstBtn: { text: 'Login', href: '#mock-address' },
-        sndBtn: { text: 'Register', href: '#mock-address' },
+        fstBtn: { text: 'Войти', href: '#mock-address' },
+        sndBtn: { text: 'Зарегистрироваться', href: '#mock-address' },
+        homeHref: '#mock-address',
       })
 
     .headers-footers__item
       +header({
         navbarList: [
-          { text: 'Home', href: '#mock-address', bold: true },
-          { text: 'About us', href: '#mock-address' },
-          { text: 'Services', dropdownList: [
-            { text: 'Service 1', href: '#mock-address' },
-            { text: 'Service 2', href: '#mock-address' },
-            { text: 'Service 3', href: '#mock-address' }
+          { text: 'О нас', href: '#mock-address', bold: true },
+          { text: 'Услуги', dropdownList: [
+            { text: 'Услуга 1', href: '#mock-address' },
+            { text: 'Услуга 2', href: '#mock-address' },
+            { text: 'Услуга 3', href: '#mock-address' }
           ] },
-          { text: 'Careers', href: '#mock-address' },
-          { text: 'News', href: '#mock-address' },
-          { text: 'Documentation', href: '#mock-address' },
+          { text: 'Вакансии', href: '#mock-address' },
+          { text: 'Новости', href: '#mock-address' },
+          { text: 'Соглашения', dropdownList: [
+            { text: 'Соглашение 1', href: '#mock-address' },
+            { text: 'Соглашение 2', href: '#mock-address' }
+          ] },
         ],
         loggedIn: true,
-        account: { text: 'Cosmin Negoita', href: '#mock-address' },
+        account: { text: 'Юлий Цезарь', href: '#mock-address' },
       })
 
     .headers-footers__item
       +footer({
-        mainText: 'Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.',
+        mainText: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
         navbarItems: [
-          { title: 'Navigation', list: [
-            { text: 'About Us', href: '#mock-address' },
-            { text: 'News', href: '#mock-address' },
-            { text: 'Support', href: '#mock-address' },
-            { text: 'Products', href: '#mock-address' }
+          { title: 'Навигация', list: [
+            { text: 'О нас', href: '#mock-address' },
+            { text: 'Новости', href: '#mock-address' },
+            { text: 'Служба поддержки', href: '#mock-address' },
+            { text: 'Услуги', href: '#mock-address' }
           ] },
-          { title: 'About us', list: [
-            { text: 'Who we are', href: '#mock-address' },
-            { text: 'Our teem', href: '#mock-address' },
-            { text: 'Careers', href: '#mock-address' },
-            { text: 'Investors', href: '#mock-address' }
+          { title: 'О нас', list: [
+            { text: 'О сервисе', href: '#mock-address' },
+            { text: 'Наша команда', href: '#mock-address' },
+            { text: 'Вакансии', href: '#mock-address' },
+            { text: 'Инвесторы', href: '#mock-address' }
           ] },
-          { title: 'Support', list: [
-            { text: 'Documentation', href: '#mock-address' },
-            { text: 'Community', href: '#mock-address' },
-            { text: 'Get in Touch', href: '#mock-address' }
+          { title: 'Служба поддержки', list: [
+            { text: 'Соглашения', href: '#mock-address' },
+            { text: 'Сообщества', href: '#mock-address' },
+            { text: 'Связь с нами', href: '#mock-address' }
           ] },
         ],
         subscription: {
-          title: 'Subscribe to our newsletter',
-          text: 'Receive our latest news and promotions in your inbox!',
+          title: 'Подписка',
+          text: 'Получайте специальные предложения и новости сервиса',
           href: '#mock-address',
-          placeholder: 'Your email address',
         },
-        copyrightText: 'Toxin UI Kit. All rights reserved.',
+        copyrightText: 'Toxin отель. Все права защищены.',
         twitterHref: '#mock-address',
         facebookHref: '#mock-address',
         instagramHref: '#mock-address',
+        homeHref: '#mock-address',
       })
 
     .headers-footers__item
       +footer({
         style: 'creative',
-        mainText: 'Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.',
+        copyrightText: 'Toxin отель. Все права защищены.',
         twitterHref: '#mock-address',
         facebookHref: '#mock-address',
         instagramHref: '#mock-address',

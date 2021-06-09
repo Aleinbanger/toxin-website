@@ -4,15 +4,42 @@
 @import '~@fortawesome/fontawesome-free/css/fontawesome.css';
 @import '~@fortawesome/fontawesome-free/css/brands.css';
 
-@include font-face('Montserrat', '../fonts/montserrat-v14-latin_cyrillic/montserrat-v14-latin_cyrillic-regular');
-@include font-face('Montserrat', '../fonts/montserrat-v14-latin_cyrillic/montserrat-v14-latin_cyrillic-italic', italic, normal);
-@include font-face('Montserrat', '../fonts/montserrat-v14-latin_cyrillic/montserrat-v14-latin_cyrillic-700', normal, bold);
-@include font-face('Montserrat', '../fonts/montserrat-v14-latin_cyrillic/montserrat-v14-latin_cyrillic-700italic', italic, bold);
+@include font-face(
+  'Montserrat',
+  '../fonts/montserrat-v14-latin_cyrillic/montserrat-v14-latin_cyrillic-regular',
+);
+@include font-face(
+  'Montserrat',
+  '../fonts/montserrat-v14-latin_cyrillic/montserrat-v14-latin_cyrillic-italic',
+  italic, normal,
+);
+@include font-face(
+  'Montserrat',
+  '../fonts/montserrat-v14-latin_cyrillic/montserrat-v14-latin_cyrillic-700',
+  normal, bold,
+);
+@include font-face(
+  'Montserrat',
+  '../fonts/montserrat-v14-latin_cyrillic/montserrat-v14-latin_cyrillic-700italic',
+  italic, bold,
+);
 
-@include font-face('Open Sans', '../fonts/open-sans-v17-latin_cyrillic/open-sans-v17-latin_cyrillic-regular');
-@include font-face('Open Sans', '../fonts/open-sans-v17-latin_cyrillic/open-sans-v17-latin_cyrillic-italic', italic, normal);
-@include font-face('Open Sans', '../fonts/open-sans-v17-latin_cyrillic/open-sans-v17-latin_cyrillic-700', normal, bold);
-@include font-face('Open Sans', '../fonts/open-sans-v17-latin_cyrillic/open-sans-v17-latin_cyrillic-700italic', italic, bold);
-
-@include font-face('Quicksand', '../fonts/quicksand-v19-latin/quicksand-v19-latin-regular');
-@include font-face('Quicksand', '../fonts/quicksand-v19-latin/quicksand-v19-latin-700', normal, bold);
+@include font-face(
+  'Open Sans',
+  '../fonts/open-sans-v17-latin_cyrillic/open-sans-v17-latin_cyrillic-regular',
+);
+@include font-face(
+  'Open Sans',
+  '../fonts/open-sans-v17-latin_cyrillic/open-sans-v17-latin_cyrillic-italic',
+  italic, normal,
+);
+@include font-face(
+  'Open Sans',
+  '../fonts/open-sans-v17-latin_cyrillic/open-sans-v17-latin_cyrillic-700',
+  normal, bold,
+);
+@include font-face(
+  'Open Sans',
+  '../fonts/open-sans-v17-latin_cyrillic/open-sans-v17-latin_cyrillic-700italic',
+  italic, bold,
+);

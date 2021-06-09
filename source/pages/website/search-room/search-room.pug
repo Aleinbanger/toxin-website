@@ -47,14 +47,14 @@ block content
               | Стоимость за сутки пребывания в номере
           .search-room__filter-item
             +list-checkbox({
-              listTitle: 'Checkbox Buttons',
+              listTitle: 'Правила дома',
               listItems: [
                 { labelText: 'Можно курить', addAttributes: {name: 'smoking-allowed'} },
                 { labelText: 'Можно с питомцами', addAttributes: {name: 'pets-allowed'} },
                 { labelText: 'Можно пригласить гостей (до 10 человек)', addAttributes: {name: 'guests-allowed'} },
               ]
             })
-          .search-room__filter-item.search-room__filter-item_closer
+          .search-room__filter-item
             +list-checkbox({
               listTitle: 'Доступность',
               listItems: [

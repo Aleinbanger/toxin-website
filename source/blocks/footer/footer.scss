@@ -20,7 +20,7 @@
 
   &__grid {
     display: grid;
-    grid-template-columns: minmax(10rem, 29rem) auto minmax(10rem, 34rem);
+    grid-template-columns: minmax(10rem, 29rem) auto minmax(10rem, 30rem);
     max-width: $width-container_main;
     margin: auto;
 
@@ -105,7 +105,12 @@
   }
 
   &__navbar-item {
+    min-width: 15rem;
     margin: 0 1rem;
+
+    @media #{$breakpoint_tablet} {
+      min-width: 0;
+    }
   }
 
   &__navbar-list {
@@ -170,10 +175,11 @@
 
 
   &_creative &__wrapper {
+    padding-top: 12rem;
     padding-bottom: 0;
 
     &:last-child {
-      padding: 1rem 0 10rem;
+      padding: 0 0 10rem;
       border: 0;
     }
   }
@@ -196,6 +202,10 @@
     }
   }
 
+  &_creative &__item-text {
+    padding: 0.3rem 0;
+  }
+
   &_creative &__navbar {
     display: none;
   }
@@ -205,11 +215,12 @@
   }
 
   &_creative &__container_centered {
+    flex-direction: column;
     justify-content: center;
   }
 
   &_creative &__copyright-text {
-    display: none;
+    margin-bottom: 1rem;
   }
 
   &_creative &__social-button {

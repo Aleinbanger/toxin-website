@@ -10,7 +10,7 @@ $height_reviews: 30.7rem;
     position: relative;
     display: grid;
     grid-template-columns: 2.13fr 1fr;
-    grid-template-rows: 24.2rem 24.2rem;
+    grid-template-rows: 24.25rem 24.25rem;
     grid-template-areas:
       'item_1 item_2'
       'item_1 item_3';
@@ -18,7 +18,7 @@ $height_reviews: 30.7rem;
 
     @media #{$breakpoint_tablet} {
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 24.2rem 24.2rem;
+      grid-template-rows: 24.25rem 24.25rem;
       grid-template-areas:
         'item_1 item_1'
         'item_2 item_3';
