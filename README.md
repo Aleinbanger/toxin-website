@@ -54,6 +54,8 @@ The following jQuery plugins are used:
 * [Inputmask](https://github.com/RobinHerbots/Inputmask)
 * [Ion-RangeSlider](http://ionden.com/a/plugins/ion.rangeSlider/)
 
+The project uses the [BEM methodology](https://en.bem.info/methodology/) for markup and styles.
+
 ### Setup and Scripts
 
 * Clone the repository and install its dependencies:
@@ -65,6 +67,11 @@ The following jQuery plugins are used:
 * Launch dev-server:
   ```
   npm run dev
+  ```
+
+* Run ESLint:
+  ```
+  npm run eslint
   ```
 
 * Build the project:
