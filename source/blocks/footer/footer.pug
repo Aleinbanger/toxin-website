@@ -1,6 +1,6 @@
 include ../subscription/subscription.pug
 
-mixin footer(options)
+mixin footer(options = {})
   -
     const {
       homeHref = '#mock-address',
@@ -14,10 +14,7 @@ mixin footer(options)
       style,
     } = options;
     const blockName = 'footer';
-    const wrapperClass = [blockName];
-
-  if (style)
-    - wrapperClass.push(`${blockName}_${style}`)
+    const wrapperClass = [blockName, style && `${blockName}_${style}`];
 
   footer(class=wrapperClass)
     div(class=`${blockName}__wrapper`)

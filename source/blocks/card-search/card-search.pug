@@ -2,7 +2,7 @@ include ../dropdown-date/dropdown-date.pug
 include ../dropdown-list/dropdown-list.pug
 include ../button/button.pug
 
-mixin card-search({ formAction='#mock-address', titleText='Найдём номера под ваши пожелания' })
+mixin card-search({ formAction = '#mock-address', titleText = 'Найдём номера под ваши пожелания' } = {})
   -
     const blockName = 'card-search';
     const wrapperClass = [blockName, `js-${blockName}`];

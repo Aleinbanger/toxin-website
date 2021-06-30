@@ -1,18 +1,16 @@
-mixin button-like({ likeCount=0, active=false })
+mixin button-like({ likeCount = 0, active = false } = {})
   -
     const blockName = 'button-like';
-    attributes.type = 'button';
-    attributes.title = likeCount;
-    attributes['data-active'] = active;
-    attributes.class = [blockName, `js-${blockName}`];
-    const iconClass = ['material-icons', `${blockName}__icon`, `js-${blockName}__icon`]
-    let icon = 'favorite_border';
+    const blockAttributes = {
+      type: 'button',
+      class: [blockName, `js-${blockName}`, active && `${blockName}_active`],
+      title: likeCount,
+      'data-active': active,
+    };
+    const iconClass = ['material-icons', `${blockName}__icon`, `js-${blockName}__icon`];
     const counterClass = [`${blockName}__counter`, `js-${blockName}__counter`];
+    const icon = active ? 'favorite' : 'favorite_border';
 
-  if (active)
-    - attributes.class.push(`${blockName}_active`)
-    - icon = 'favorite'
-
-  button&attributes(attributes)
+  button&attributes(Object.assign({}, attributes, blockAttributes))
     i(class=iconClass) #{icon}
     span(class=counterClass) #{likeCount}

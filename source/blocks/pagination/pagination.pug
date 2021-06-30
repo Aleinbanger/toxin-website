@@ -1,6 +1,6 @@
 include ../button/button.pug
 
-mixin pagination({ itemsNumber=1, itemsPerPage=1, baseHref='', addDescription='' })
+mixin pagination({ itemsNumber = 1, itemsPerPage = 1, baseHref = '', addDescription = '' } = {})
   -
     const blockName = 'pagination';
     const wrapperClass = [blockName, `js-${blockName}`];

@@ -1,6 +1,6 @@
 include ../button/button.pug
 
-mixin header(options)
+mixin header(options = {})
   -
     const {
       homeHref = '#mock-address',
@@ -18,7 +18,7 @@ mixin header(options)
     const dropdownTitleClass = [`${blockName}__navbar-link`, `js-${blockName}__dropdown-title`];
     const dropdownIconClass = ['material-icons', `${blockName}__dropdown-icon`, `js-${blockName}__dropdown-icon`];
     const dropdownListClass = [`${blockName}__dropdown-list`, `js-${blockName}__dropdown-list`];
-    let navbarLinkClass = [`${blockName}__navbar-link`];
+    const navbarLinkClass = [`${blockName}__navbar-link`];
 
   header(class=wrapperClass)
     div(class=`${blockName}__container`)
@@ -30,18 +30,14 @@ mixin header(options)
       nav(class=navbarClass)
         ul(class=`${blockName}__navbar-list`)
           each item in navbarList
-            -
-              navbarLinkClass = [`${blockName}__navbar-link`]
-              if (item.bold) {
-                navbarLinkClass.push(`${blockName}__navbar-link_bold`)
-              }
             if (!item.dropdownList)
               li(class=`${blockName}__navbar-list-item`)
-                a(class=navbarLinkClass, href=item.href) #{item.text}
+                - const itemClass = navbarLinkClass.concat(item.bold && `${blockName}__navbar-link_bold`);
+                a(class=itemClass, href=item.href) #{item.text}
             else
               li(class=dropdownClass)
-                span(class=dropdownTitleClass, tabindex=0)
-                  | #{item.text}
+                - const itemClass = dropdownTitleClass.concat(item.bold && `${blockName}__navbar-link_bold`);
+                span(class=itemClass, tabindex=0) #{item.text}
                   i(class=dropdownIconClass) expand_more
                 ul(class=dropdownListClass)
                   each dropdownItem in item.dropdownList

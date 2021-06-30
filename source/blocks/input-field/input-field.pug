@@ -1,32 +1,35 @@
-mixin input-field({ inpType='text', labelText })
+mixin input-field({ inpType = 'text', labelText } = {})
   -
     const blockName = 'input-field';
+    const blockAttributes = {
+      class: [`${blockName}__field`],
+    };
     const wrapperClass = [blockName];
-    attributes.class = [`${blockName}__field`];
 
   case inpType
     when 'email'
-      - attributes.type = inpType
-      - attributes.name = 'email'
-      if (!attributes.placeholder)
-        - attributes.placeholder = 'Email'
+      -
+        blockAttributes.type = inpType;
+        blockAttributes.name = attributes.name || 'email';
+        blockAttributes.placeholder = attributes.placeholder || 'Email';
     when 'password'
-      - attributes.type = inpType
-      - attributes.name = 'password'
-      if (!attributes.placeholder)
-        - attributes.placeholder = 'Пароль'
+      -
+        blockAttributes.type = inpType;
+        blockAttributes.name = attributes.name || 'password';
+        blockAttributes.placeholder = attributes.placeholder || 'Пароль';
     when 'mask-date'
-      - wrapperClass.push(`js-${blockName}`)
-      - attributes.class.push(`js-${blockName}__field`)
-      - attributes.type = 'text'
-      - attributes.placeholder = 'ДД.ММ.ГГГГ'
-      - attributes['data-inputmask'] = "'alias': 'datetime'"
-      - attributes['data-inputmask-inputFormat'] = 'dd.mm.yyyy'
-      - attributes['data-inputmask-placeholder'] = 'ДД.ММ.ГГГГ'
+      -
+        wrapperClass.push(`js-${blockName}`);
+        blockAttributes.class.push(`js-${blockName}__field`);
+        blockAttributes.type = 'text';
+        blockAttributes.placeholder = attributes.placeholder || 'ДД.ММ.ГГГ';
+        blockAttributes['data-inputmask'] = "'alias': 'datetime'";
+        blockAttributes['data-inputmask-inputFormat'] = 'dd.mm.yyyy';
+        blockAttributes['data-inputmask-placeholder'] = 'ДД.ММ.ГГГГ';
     default
-      - attributes.type = 'text'
+      - blockAttributes.type = 'text';
 
   div(class=wrapperClass)
     if (labelText)
       label(class=`${blockName}__label`) #{labelText}
-    input&attributes(attributes)
+    input&attributes(Object.assign({}, attributes, blockAttributes))

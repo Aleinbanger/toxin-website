@@ -1,6 +1,6 @@
 include ../input-field/input-field.pug
 
-mixin dropdown-date({ labelTexts, inpNames, startAt, endAt, minDate, active=false })
+mixin dropdown-date({ labelTexts, inpNames, startAt, endAt, minDate, active = false } = {})
   -
     const blockName = 'dropdown-date';
     const wrapperClass = [blockName, `js-${blockName}`];

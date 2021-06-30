@@ -3,7 +3,7 @@ include ../list-radio/list-radio.pug
 include ../input-toggle/input-toggle.pug
 include ../button/button.pug
 
-mixin card-signup({ formAction='#mock-address', titleText='Регистрация аккаунта', signinHref='#mock-address' })
+mixin card-signup({ formAction = '#mock-address', titleText = 'Регистрация аккаунта', signinHref = '#mock-address' } = {})
   -
     const blockName = 'card-signup';
     const wrapperClass = [blockName];

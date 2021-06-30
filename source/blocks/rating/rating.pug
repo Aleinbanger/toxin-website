@@ -1,15 +1,12 @@
-mixin rating({ value=0 })
+mixin rating({ value = 0 } = {})
   -
     const blockName = 'rating';
     const wrapperClass = [blockName, `js-${blockName}`];
     const iconClass = ['material-icons', `${blockName}__icon`, `js-${blockName}__icon`];
-    let icon = 'star_border';
+    let icon;
 
   span(class=wrapperClass, title=`${value}`)
     - for (let i = 0, j = value; i < 5; i++, j--) {
-        if (j > 0)
-          - icon = 'star'
-        else
-          - icon = 'star_border'
+        - icon = j > 0 ? 'star' : 'star_border';
         i(class=iconClass) #{icon}
     - }

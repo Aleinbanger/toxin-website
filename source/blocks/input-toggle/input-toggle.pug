@@ -1,11 +1,13 @@
-mixin input-toggle({ labelText='' })
+mixin input-toggle({ labelText = '' } = {})
   -
     const blockName = 'input-toggle';
+    const blockAttributes = {
+      type: 'checkbox',
+      class: `${blockName}__state`,
+    };
     const wrapperClass = [blockName];
-    attributes.type = 'checkbox';
-    attributes.class = `${blockName}__state`;
 
   label(class=wrapperClass) #{labelText}
-    input&attributes(attributes)
+    input&attributes(Object.assign({}, attributes, blockAttributes))
     span(class=`${blockName}__box`)
       span(class=`${blockName}__mark`)

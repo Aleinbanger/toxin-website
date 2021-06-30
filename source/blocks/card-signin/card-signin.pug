@@ -1,7 +1,7 @@
 include ../input-field/input-field.pug
 include ../button/button.pug
 
-mixin card-signin({ formAction='#mock-address', titleText='Войти', signupHref='#mock-address' })
+mixin card-signin({ formAction = '#mock-address', titleText = 'Войти', signupHref = '#mock-address' } = {})
   -
     const blockName = 'card-signin';
     const wrapperClass = [blockName];

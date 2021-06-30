@@ -1,7 +1,7 @@
 include ../input-field/input-field.pug
 include ../button/button.pug
 
-mixin dropdown-list({ listItems=[], labelText, inpName, inpPlaceholder, withButtons=false, active=false })
+mixin dropdown-list({ listItems = [], labelText, inpName, inpPlaceholder, withButtons = false, active = false } = {})
   -
     const blockName = 'dropdown-list';
     const wrapperClass = [blockName, `js-${blockName}`];
