@@ -76,14 +76,11 @@ class Pagination {
   }
 
   _updateCounter() {
-    let counterLast = this.state.itemsPerPage * this.state.currentPage;
-    counterLast = (counterLast > this.state.itemsNumber) ? this.state.itemsNumber : counterLast;
-    let counterText;
-    if (this.state.itemsNumber > 100) {
-      counterText = 'из 100+';
-    } else {
-      counterText = `из ${this.state.itemsNumber}`;
-    }
+    const counterLastTmp = this.state.itemsPerPage * this.state.currentPage;
+    const counterLast = counterLastTmp > this.state.itemsNumber
+      ? this.state.itemsNumber : counterLastTmp;
+    const counterText = this.state.itemsNumber > 100
+      ? 'из 100+' : `из ${this.state.itemsNumber}`;
     this.counter.textContent = `${this.state.itemsPerPage * (this.state.currentPage - 1) + 1} \u2013 ${counterLast} ${counterText}`;
   }
 

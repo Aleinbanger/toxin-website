@@ -84,13 +84,12 @@ class DropdownDate {
   }
 
   _handleOutsideClick(event) {
-    let isClickInside = this.input.querySelector('input').contains(event.target)
-      || document.querySelector('.datepicker').contains(event.target);
-    if (this.secInput) {
-      isClickInside = this.input.querySelector('input').contains(event.target)
-        || this.secInput.querySelector('input').contains(event.target)
-        || document.querySelector('.datepicker').contains(event.target);
-    }
+    const input = this.input.querySelector('input');
+    const datepicker = document.querySelector('.datepicker');
+    const isClickInsideTmp = input.contains(event.target) || datepicker.contains(event.target);
+    const isClickInside = this.secInput
+      ? isClickInsideTmp || this.secInput.querySelector('input').contains(event.target)
+      : isClickInsideTmp;
     if (!isClickInside && this.state.active) {
       this.state.active = this.$datepicker.data('datepicker').visible;
       this._renderState();

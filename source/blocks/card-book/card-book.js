@@ -56,14 +56,7 @@ class CardBook extends CardForm {
     const [from, to] = this.dropdownDate.state.selectedDates;
     this.state.roomDays = Math.round((to - from) / (1000 * 3600 * 24));
     if (this.state.roomDays) {
-      let daysPluralForm;
-      switch (this.state.roomDays) {
-        case 1:
-          daysPluralForm = 'сутки';
-          break;
-        default:
-          daysPluralForm = 'суток';
-      }
+      const daysPluralForm = this.state.roomDays === 1 ? 'сутки' : 'суток';
       this.roomDaysCounter.textContent = `${this.state.roomDays} ${daysPluralForm}`;
     } else {
       this.roomDaysCounter.textContent = '0 суток';

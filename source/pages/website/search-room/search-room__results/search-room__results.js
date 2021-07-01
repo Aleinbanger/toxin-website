@@ -55,9 +55,9 @@ class SearchRoomResults {
     const isPageCreated = this.pages.some((p) => Number(p.dataset.page) === Number(pageNumber));
     if (!isPageCreated) {
       const fromCard = this.state.itemsPerPage * (pageNumber - 1);
-      let toCard = this.state.itemsPerPage * pageNumber;
-      toCard = (toCard > this.state.itemsNumber)
-        ? this.state.itemsNumber : toCard;
+      const toCardTmp = this.state.itemsPerPage * pageNumber;
+      const toCard = (toCardTmp > this.state.itemsNumber)
+        ? this.state.itemsNumber : toCardTmp;
 
       const $page = $('<div>', {
         class: `${this.elementName}-grid js-${this.elementName}-grid`,
