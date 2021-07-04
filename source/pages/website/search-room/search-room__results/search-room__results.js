@@ -52,12 +52,13 @@ class SearchRoomResults {
   }
 
   _createPage(pageNumber) {
-    const isPageCreated = this.pages.some((p) => Number(p.dataset.page) === Number(pageNumber));
+    const isPageCreated = this.pages
+      .some((page) => Number(page.dataset.page) === Number(pageNumber));
     if (!isPageCreated) {
-      const fromCard = this.state.itemsPerPage * (pageNumber - 1);
-      const toCardTmp = this.state.itemsPerPage * pageNumber;
-      const toCard = (toCardTmp > this.state.itemsNumber)
-        ? this.state.itemsNumber : toCardTmp;
+      const fromCardNumber = this.state.itemsPerPage * (pageNumber - 1);
+      const lastNumber = this.state.itemsPerPage * pageNumber;
+      const toCardNumber = (lastNumber > this.state.itemsNumber)
+        ? this.state.itemsNumber : lastNumber;
 
       const $page = $('<div>', {
         class: `${this.elementName}-grid js-${this.elementName}-grid`,
@@ -65,7 +66,7 @@ class SearchRoomResults {
       });
       $page.insertBefore(this.gridTemplate);
       this.pages.push($page[0]);
-      this._populateResults($page, fromCard, toCard);
+      this._populateResults($page, fromCardNumber, toCardNumber);
     }
   }
 

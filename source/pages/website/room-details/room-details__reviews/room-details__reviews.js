@@ -32,21 +32,24 @@ class RoomDetailsReviews {
   }
 
   _updateCounter() {
+    const getCounterText = (counterValue) => {
+      let counterText;
+      switch (counterValue) {
+        case 1:
+          counterText = 'отзыв';
+          break;
+        case 2:
+        case 3:
+        case 4:
+          counterText = 'отзыва';
+          break;
+        default:
+          counterText = 'отзывов';
+      }
+      return `${counterValue}\u00A0${counterText}`;
+    };
     const counterValue = this.reviewsData.reviews.length;
-    let counterText;
-    switch (counterValue) {
-      case 1:
-        counterText = 'отзыв';
-        break;
-      case 2:
-      case 3:
-      case 4:
-        counterText = 'отзыва';
-        break;
-      default:
-        counterText = 'отзывов';
-    }
-    this.counter.textContent = `${counterValue}\u00A0${counterText}`;
+    this.counter.textContent = getCounterText(counterValue);
   }
 }
 
