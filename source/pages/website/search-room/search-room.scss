@@ -21,7 +21,7 @@
 
   &__filter {
     width: 100%;
-    max-width: 26.6rem;
+    max-width: 27.6rem;
     height: 100%;
     transform-origin: 0 0;
     transition: all 0.3s ease-in-out;
@@ -101,6 +101,7 @@
   }
 
   &__filter-item {
+    max-width: 26.6rem;
     margin-bottom: 2.9rem;
 
     &_closer {
