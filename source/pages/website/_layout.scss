@@ -1,0 +1,17 @@
+@import '~styles/variables';
+
+.layout {
+  &__footer {
+    @media #{$breakpoint_tablet} {
+      display: none;
+    }
+
+    &_mobile {
+      display: none;
+
+      @media #{$breakpoint_tablet} {
+        display: block;
+      }
+    }
+  }
+}
