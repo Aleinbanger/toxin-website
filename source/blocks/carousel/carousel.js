@@ -1,5 +1,3 @@
-import './carousel.scss';
-
 class Carousel {
   constructor(wrapper) {
     this.blockName = 'carousel';

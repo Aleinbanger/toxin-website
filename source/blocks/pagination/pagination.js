@@ -1,5 +1,3 @@
-import './pagination.scss';
-
 class Pagination {
   constructor(wrapper) {
     this.blockName = 'pagination';

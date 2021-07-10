@@ -1,5 +1,3 @@
-import './slider-range.scss';
-
 import 'ion-rangeslider';
 
 class SliderRange {
@@ -32,9 +30,4 @@ class SliderRange {
   }
 }
 
-function renderBlocks() {
-  const blocks = document.querySelectorAll('.js-slider-range');
-  blocks.forEach((block) => new SliderRange(block));
-}
-
-export default renderBlocks();
+export default SliderRange;

@@ -1,6 +1,5 @@
-import './room-details.scss';
-
 import ChartCircle from 'blocks/chart-circle/ChartCircle';
+
 import RoomDetailsReviews from './room-details__reviews/RoomDetailsReviews';
 
 class RoomDetails {
@@ -31,9 +30,4 @@ class RoomDetails {
   }
 }
 
-function renderBlocks() {
-  const blocks = document.querySelectorAll('.js-room-details');
-  blocks.forEach((block) => new RoomDetails(block));
-}
-
-export default renderBlocks();
+export default RoomDetails;

@@ -1,5 +1,3 @@
-import './header.scss';
-
 import HeaderDropdown from './HeaderDropdown';
 
 class Header {
@@ -46,9 +44,4 @@ class Header {
   }
 }
 
-function renderBlocks() {
-  const blocks = document.querySelectorAll('.js-header');
-  blocks.forEach((block) => new Header(block));
-}
-
-export default renderBlocks();
+export default Header;

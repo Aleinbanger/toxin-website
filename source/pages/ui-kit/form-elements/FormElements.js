@@ -1,5 +1,3 @@
-import './form-elements.scss';
-
 import ButtonLike from 'blocks/button-like/ButtonLike';
 import Rating from 'blocks/rating/Rating';
 import Comment from 'blocks/comment/Comment';
@@ -31,9 +29,4 @@ class FormElements {
   }
 }
 
-function renderBlocks() {
-  const blocks = document.querySelectorAll('.js-form-elements');
-  blocks.forEach((block) => new FormElements(block));
-}
-
-export default renderBlocks();
+export default FormElements;

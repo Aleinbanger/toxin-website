@@ -1,5 +1,3 @@
-import './card-book.scss';
-
 import CardForm from '../../scripts/CardForm';
 import DropdownDate from '../dropdown-date/DropdownDate';
 
@@ -78,9 +76,4 @@ class CardBook extends CardForm {
   }
 }
 
-function renderBlocks() {
-  const blocks = document.querySelectorAll('.js-card-book');
-  blocks.forEach((block) => new CardBook(block));
-}
-
-export default renderBlocks();
+export default CardBook;

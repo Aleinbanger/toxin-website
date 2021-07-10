@@ -1,5 +1,3 @@
-import './card-search.scss';
-
 import CardForm from '../../scripts/CardForm';
 import DropdownDate from '../dropdown-date/DropdownDate';
 
@@ -19,9 +17,4 @@ class CardSearch extends CardForm {
   }
 }
 
-function renderBlocks() {
-  const blocks = document.querySelectorAll('.js-card-search');
-  blocks.forEach((block) => new CardSearch(block));
-}
-
-export default renderBlocks();
+export default CardSearch;

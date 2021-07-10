@@ -1,5 +1,3 @@
-import './input-field.scss';
-
 import Inputmask from 'inputmask';
 
 class InputField {
@@ -19,9 +17,4 @@ class InputField {
   }
 }
 
-function renderBlocks() {
-  const blocks = document.querySelectorAll('.js-input-field');
-  blocks.forEach((block) => new InputField(block));
-}
-
-export default renderBlocks();
+export default InputField;

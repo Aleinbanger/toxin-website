@@ -1,5 +1,3 @@
-import './dropdown-list.scss';
-
 import DropdownListItem from './DropdownListItem';
 
 class DropdownList {
@@ -136,9 +134,4 @@ class DropdownList {
   }
 }
 
-function renderBlocks() {
-  const blocks = document.querySelectorAll('.js-dropdown-list');
-  blocks.forEach((block) => new DropdownList(block));
-}
-
-export default renderBlocks();
+export default DropdownList;

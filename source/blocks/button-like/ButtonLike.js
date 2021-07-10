@@ -1,5 +1,3 @@
-import './button-like.scss';
-
 class ButtonLike {
   constructor(wrapper) {
     this.blockName = 'button-like';

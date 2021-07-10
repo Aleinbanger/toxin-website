@@ -1,5 +1,3 @@
-import './chart-circle.scss';
-
 class ChartCircle {
   constructor(wrapper) {
     this.blockName = 'chart-circle';

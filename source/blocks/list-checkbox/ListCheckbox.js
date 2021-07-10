@@ -1,5 +1,3 @@
-import './list-checkbox.scss';
-
 class ListCheckbox {
   constructor(block) {
     this.blockName = 'list-checkbox';
@@ -52,9 +50,4 @@ class ListCheckbox {
   }
 }
 
-function renderBlocks() {
-  const blocks = document.querySelectorAll('.js-list-checkbox');
-  blocks.forEach((block) => new ListCheckbox(block));
-}
-
-export default renderBlocks();
+export default ListCheckbox;

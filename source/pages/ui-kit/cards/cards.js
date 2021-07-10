@@ -1,5 +1,3 @@
-import './cards.scss';
-
 import CardRoom from 'blocks/card-room/CardRoom';
 
 class Cards {
@@ -15,9 +13,4 @@ class Cards {
   }
 }
 
-function renderBlocks() {
-  const blocks = document.querySelectorAll('.js-cards');
-  blocks.forEach((block) => new Cards(block));
-}
-
-export default renderBlocks();
+export default Cards;

@@ -1,5 +1,3 @@
-import './rating.scss';
-
 class Rating {
   constructor(wrapper) {
     this.blockName = 'rating';

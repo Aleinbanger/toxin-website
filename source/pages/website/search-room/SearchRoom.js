@@ -1,6 +1,5 @@
-import './search-room.scss';
-
 import DropdownDate from 'blocks/dropdown-date/DropdownDate';
+
 import SearchRoomResults from './search-room__results/SearchRoomResults';
 
 class SearchRoom {
@@ -52,9 +51,4 @@ class SearchRoom {
   }
 }
 
-function renderBlocks() {
-  const blocks = document.querySelectorAll('.js-search-room');
-  blocks.forEach((block) => new SearchRoom(block));
-}
-
-export default renderBlocks();
+export default SearchRoom;

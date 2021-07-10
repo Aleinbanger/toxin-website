@@ -1,5 +1,3 @@
-import './dropdown-date.scss';
-
 import 'air-datepicker';
 
 class DropdownDate {
