@@ -1,6 +1,6 @@
 /* eslint-disable global-require */
-import CardRoom from 'blocks/card-room/card-room';
-import Pagination from 'blocks/pagination/pagination';
+import CardRoom from 'blocks/card-room/CardRoom';
+import Pagination from 'blocks/pagination/Pagination';
 import { requireAll } from 'scripts/utils';
 
 class SearchRoomResults {

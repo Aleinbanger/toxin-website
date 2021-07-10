@@ -1,5 +1,5 @@
 /* eslint-disable global-require */
-import Comment from 'blocks/comment/comment';
+import Comment from 'blocks/comment/Comment';
 import { requireAll } from 'scripts/utils';
 
 class RoomDetailsReviews {

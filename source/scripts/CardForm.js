@@ -1,4 +1,5 @@
 /* eslint-disable no-alert */
+
 class CardForm {
   constructor(blockName, block) {
     this.blockName = blockName;

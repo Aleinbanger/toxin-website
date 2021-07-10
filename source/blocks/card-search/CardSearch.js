@@ -1,7 +1,7 @@
 import './card-search.scss';
 
-import CardForm from '../../scripts/card-form';
-import DropdownDate from '../dropdown-date/dropdown-date';
+import CardForm from '../../scripts/CardForm';
+import DropdownDate from '../dropdown-date/DropdownDate';
 
 class CardSearch extends CardForm {
   constructor(block) {

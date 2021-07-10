@@ -1,6 +1,6 @@
 import './cards.scss';
 
-import CardRoom from 'blocks/card-room/card-room';
+import CardRoom from 'blocks/card-room/CardRoom';
 
 class Cards {
   constructor(block) {

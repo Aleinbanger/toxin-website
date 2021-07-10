@@ -1,7 +1,7 @@
 import './room-details.scss';
 
-import ChartCircle from 'blocks/chart-circle/chart-circle';
-import RoomDetailsReviews from './room-details__reviews/room-details__reviews';
+import ChartCircle from 'blocks/chart-circle/ChartCircle';
+import RoomDetailsReviews from './room-details__reviews/RoomDetailsReviews';
 
 class RoomDetails {
   constructor(block) {

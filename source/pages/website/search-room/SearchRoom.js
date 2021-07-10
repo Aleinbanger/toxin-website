@@ -1,7 +1,7 @@
 import './search-room.scss';
 
-import DropdownDate from 'blocks/dropdown-date/dropdown-date';
-import SearchRoomResults from './search-room__results/search-room__results';
+import DropdownDate from 'blocks/dropdown-date/DropdownDate';
+import SearchRoomResults from './search-room__results/SearchRoomResults';
 
 class SearchRoom {
   constructor(block) {

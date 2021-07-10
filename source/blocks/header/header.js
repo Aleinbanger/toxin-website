@@ -1,6 +1,6 @@
 import './header.scss';
 
-import HeaderDropdown from './header__dropdown';
+import HeaderDropdown from './HeaderDropdown';
 
 class Header {
   constructor(block) {

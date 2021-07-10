@@ -1,6 +1,6 @@
 import './dropdown-list.scss';
 
-import DropdownListItem from './dropdown-list__item';
+import DropdownListItem from './DropdownListItem';
 
 class DropdownList {
   constructor(block) {

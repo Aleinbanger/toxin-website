@@ -1,7 +1,7 @@
 /* eslint-disable object-curly-newline */
 import './comment.scss';
 
-import ButtonLike from '../button-like/button-like';
+import ButtonLike from '../button-like/ButtonLike';
 
 class Comment {
   constructor(wrapper) {

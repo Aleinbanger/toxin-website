@@ -1,10 +1,10 @@
 import './form-elements.scss';
 
-import ButtonLike from 'blocks/button-like/button-like';
-import Rating from 'blocks/rating/rating';
-import Comment from 'blocks/comment/comment';
-import Pagination from 'blocks/pagination/pagination';
-import DropdownDate from 'blocks/dropdown-date/dropdown-date';
+import ButtonLike from 'blocks/button-like/ButtonLike';
+import Rating from 'blocks/rating/Rating';
+import Comment from 'blocks/comment/Comment';
+import Pagination from 'blocks/pagination/Pagination';
+import DropdownDate from 'blocks/dropdown-date/DropdownDate';
 
 class FormElements {
   constructor(block) {

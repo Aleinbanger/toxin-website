@@ -16,8 +16,8 @@ const paths = {
   },
 };
 const pages = {
-  uikit: fs.readdirSync(paths.pages.uikit),
-  website: fs.readdirSync(paths.pages.website),
+  uikit: fs.readdirSync(paths.pages.uikit).filter((page) => !/^_/i.test(page)),
+  website: fs.readdirSync(paths.pages.website).filter((page) => !/^_/i.test(page)),
 };
 
 module.exports = {
@@ -89,13 +89,11 @@ module.exports = {
   },
 
   plugins: [
-    ...pages.uikit.filter((page) => !/layout/i.test(page))
-      .map((page) => new HtmlWebpackPlugin({
+    ...pages.uikit.map((page) => new HtmlWebpackPlugin({
         template: `${paths.pages.uikit}/${page}/${page}.pug`,
         filename: `${page}.html`,
       })),
-    ...pages.website.filter((page) => !/layout/i.test(page))
-      .map((page) => new HtmlWebpackPlugin({
+    ...pages.website.map((page) => new HtmlWebpackPlugin({
         template: `${paths.pages.website}/${page}/${page}.pug`,
         filename: `${page}.html`,
       })),

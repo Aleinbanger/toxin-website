@@ -1,7 +1,7 @@
 import './card-room.scss';
 
-import Rating from '../rating/rating';
-import Carousel from '../carousel/carousel';
+import Rating from '../rating/Rating';
+import Carousel from '../carousel/Carousel';
 
 class CardRoom {
   constructor(wrapper) {
