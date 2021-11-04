@@ -95,7 +95,7 @@
     }
 
     &:focus {
-      box-shadow: 0 0 0.1rem 0.1rem $color_prim;
+      box-shadow: 0 0 0.1rem 0.1rem $color_first;
     }
   }
 
@@ -125,11 +125,11 @@
     outline: none;
 
     &:focus {
-      box-shadow: 0 0 0.1rem 0.1rem $color_prim;
+      box-shadow: 0 0 0.1rem 0.1rem $color_first;
     }
 
     &:hover {
-      color: $color_prim;
+      color: $color_first;
       opacity: 0.5;
     }
   }
@@ -153,15 +153,15 @@
     width: 2.4rem;
     height: 2.4rem;
     margin: 1rem;
-    background: $color-grad_prim;
+    background: $gradient_first;
     background-clip: text;
     -webkit-text-fill-color: transparent; // WebKit only
-    color: $color_prim;
+    color: $color_first;
     font-size: 2.4rem;
     outline: none;
 
     &:focus {
-      box-shadow: 0 0 0.1rem 0.1rem $color_prim;
+      box-shadow: 0 0 0.1rem 0.1rem $color_first;
     }
 
     &:hover {

@@ -1,17 +1,17 @@
-mixin button({ btnType = 'button', btnText = '', withArrow = false, btnStyle } = {})
+mixin button({ buttonType = 'button', buttonText = '', withArrow = false, buttonStyle } = {})
   -
     const blockName = 'button';
     const blockAttributes = {
-      type: btnType === 'link' ? undefined : btnType,
+      type: buttonType === 'link' ? undefined : buttonType,
       class: [blockName],
     };
     const iconClass = ['material-icons', `${blockName}__arrow`];
-    const btnTag = btnType === 'link' ? 'a' : 'button';
+    const buttonTag = buttonType === 'link' ? 'a' : 'button';
 
-  if (btnStyle)
-    each style in btnStyle.split(' ')
+  if (buttonStyle)
+    each style in buttonStyle.split(' ')
       - blockAttributes.class.push(`${blockName}_${style}`)
 
-  #{btnTag}&attributes(Object.assign({}, attributes, blockAttributes)) #{btnText}
+  #{buttonTag}&attributes(Object.assign({}, attributes, blockAttributes)) #{buttonText}
     if (withArrow)
       i(class=iconClass) arrow_forward

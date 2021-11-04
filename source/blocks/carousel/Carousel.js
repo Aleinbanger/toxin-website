@@ -26,8 +26,8 @@ class Carousel {
   _initialize() {
     this.imagesContainer = this.block.querySelector(`.js-${this.blockName}__images`);
     this.images = this.block.querySelectorAll(`.js-${this.blockName}__image`);
-    this.prevBtn = this.block.querySelector(`.js-${this.blockName}__button_prev`);
-    this.nextBtn = this.block.querySelector(`.js-${this.blockName}__button_next`);
+    this.prevButton = this.block.querySelector(`.js-${this.blockName}__button_prev`);
+    this.nextButton = this.block.querySelector(`.js-${this.blockName}__button_next`);
     this.indicatorsContainer = this.block.querySelector(`.js-${this.blockName}__indicators`);
     this.indicators = this.block.querySelectorAll(`.js-${this.blockName}__indicator`);
     this.state = {
@@ -57,18 +57,18 @@ class Carousel {
   }
 
   _disableButtons() {
-    this.prevBtn.classList.add(`${this.blockName}__button_hidden`);
-    this.nextBtn.classList.add(`${this.blockName}__button_hidden`);
+    this.prevButton.classList.add(`${this.blockName}__button_hidden`);
+    this.nextButton.classList.add(`${this.blockName}__button_hidden`);
   }
 
   _enableButtons() {
-    this.prevBtn.classList.remove(`${this.blockName}__button_hidden`);
-    this.nextBtn.classList.remove(`${this.blockName}__button_hidden`);
+    this.prevButton.classList.remove(`${this.blockName}__button_hidden`);
+    this.nextButton.classList.remove(`${this.blockName}__button_hidden`);
   }
 
   _bindEventListeners() {
-    this.prevBtn.addEventListener('click', () => this._handlePrevButtonClick());
-    this.nextBtn.addEventListener('click', () => this._handleNextButtonClick());
+    this.prevButton.addEventListener('click', () => this._handlePrevButtonClick());
+    this.nextButton.addEventListener('click', () => this._handleNextButtonClick());
     this.indicatorsContainer.addEventListener('click', (event) => this._handleIndicatorClick(event));
   }
 

@@ -35,11 +35,11 @@ $height_checkbox: 2rem;
   }
 
   &__state:focus ~ &__box {
-    box-shadow: 0 0 0.5rem $color_prim;
+    box-shadow: 0 0 0.5rem $color_first;
   }
 
   &__state:checked ~ &__box {
-    border-color: $color_prim;
+    border-color: $color_first;
   }
 
   &__state:checked ~ &__box &__mark {
@@ -64,7 +64,7 @@ $height_checkbox: 2rem;
     width: 0.6rem;
     height: 0.8rem;
     margin-bottom: 0.2rem;
-    background: linear-gradient($color_back, $color_back), $color-grad_prim;
+    background: linear-gradient($color_background, $color_background), $gradient_first;
     background-origin: border-box;
     background-clip: padding-box, border-box;
     border: solid 0.2rem transparent;

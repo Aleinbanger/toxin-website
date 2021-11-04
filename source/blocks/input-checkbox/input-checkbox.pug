@@ -1,4 +1,4 @@
-mixin input-checkbox({ labelText = '', labelDescription, inpStyle, addAttributes } = {})
+mixin input-checkbox({ labelText = '', labelDescription, inputStyle, addAttributes } = {})
   -
     const blockName = 'input-checkbox';
     const blockAttributes = {
@@ -7,8 +7,8 @@ mixin input-checkbox({ labelText = '', labelDescription, inpStyle, addAttributes
     };
     const wrapperClass = [blockName];
 
-  if (inpStyle)
-    each style in inpStyle.split(' ')
+  if (inputStyle)
+    each style in inputStyle.split(' ')
       - wrapperClass.push(`${blockName}_${style}`)
 
   label(class=wrapperClass) #{labelText}

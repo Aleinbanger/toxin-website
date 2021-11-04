@@ -7,6 +7,6 @@ mixin subscription({ actionLink = '#mock-address', labelText, placeholderText })
     const wrapperClass = [blockName];
 
   form(class=wrapperClass, action=actionLink, method='post')
-    +input-field({ inpType: 'email', labelText: labelText })(required, placeholder=placeholderText)
+    +input-field({ inputType: 'email', labelText: labelText })(required, placeholder=placeholderText)
     span(class=`${blockName}__button`)
-      +button({ btnType: 'submit', btnStyle: 'as-text as-text_gradient', withArrow: true })
+      +button({ buttonType: 'submit', buttonStyle: 'as-text as-text_gradient', withArrow: true })

@@ -1,7 +1,7 @@
 include ../input-field/input-field.pug
 include ../button/button.pug
 
-mixin dropdown-list({ listItems = [], labelText, inpName, inpPlaceholder, withButtons = false, active = false } = {})
+mixin dropdown-list({ listItems = [], labelText, inputName, inputPlaceholder, withButtons = false, active = false } = {})
   -
     const blockName = 'dropdown-list';
     const wrapperClass = [blockName, `js-${blockName}`];
@@ -9,17 +9,17 @@ mixin dropdown-list({ listItems = [], labelText, inpName, inpPlaceholder, withBu
     const iconClass = ['material-icons', `${blockName}__icon`, `js-${blockName}__icon`];
     const listClass = [`${blockName}__list`, `js-${blockName}__list`];
     const itemClass = [`${blockName}__item`, `js-${blockName}__item`];
-    const itemBtnClass = [`${blockName}__item-btn`, `js-${blockName}__item-btn`];
+    const itemButtonClass = [`${blockName}__item-button`, `js-${blockName}__item-button`];
     const itemCounterClass = [`${blockName}__item-counter`, `js-${blockName}__item-counter`];
-    const resetBtnClass = [`${blockName}__btn`, `js-${blockName}__btn_reset`];
-    const acceptBtnClass = [`${blockName}__btn`, `js-${blockName}__btn_accept`];
+    const resetButtonClass = [`${blockName}__button`, `js-${blockName}__button_reset`];
+    const acceptButtonClass = [`${blockName}__button`, `js-${blockName}__button_accept`];
 
   if (withButtons)
     - wrapperClass.push(`${blockName}_wide`)
 
   div(class=wrapperClass, data-active=active)
     div(class=inputClass)
-      +input-field({labelText: labelText})(name=inpName, placeholder=inpPlaceholder, readonly)
+      +input-field({labelText: labelText})(name=inputName, placeholder=inputPlaceholder, readonly)
       i(class=iconClass) expand_more
     div(class=listClass)
       each item in listItems
@@ -33,12 +33,12 @@ mixin dropdown-list({ listItems = [], labelText, inpName, inpPlaceholder, withBu
         )
           span(class=`${blockName}__item-name`) #{item.title}
           span(class=`${blockName}__item-controls`)
-            button(class=itemBtnClass, type='button') -
+            button(class=itemButtonClass, type='button') -
             span(class=itemCounterClass) #{item.value}
-            button(class=itemBtnClass, type='button') +
+            button(class=itemButtonClass, type='button') +
       if (withButtons)
         div(class=`${blockName}__buttons`)
-          div(class=resetBtnClass)
-            +button({ btnText: 'Очистить', btnStyle: 'as-text as-text_faint' })
-          div(class=acceptBtnClass)
-            +button({ btnText: 'Применить', btnStyle: 'as-text' })
+          div(class=resetButtonClass)
+            +button({ buttonText: 'Очистить', buttonStyle: 'as-text as-text_faint' })
+          div(class=acceptButtonClass)
+            +button({ buttonText: 'Применить', buttonStyle: 'as-text' })

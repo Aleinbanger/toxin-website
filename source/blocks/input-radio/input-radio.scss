@@ -27,7 +27,7 @@ $height_radio: 2rem;
   }
 
   &__state:focus ~ &__box {
-    box-shadow: 0 0 0.5rem $color_prim;
+    box-shadow: 0 0 0.5rem $color_first;
   }
 
   &__state:checked ~ &__text {
@@ -35,7 +35,7 @@ $height_radio: 2rem;
   }
 
   &__state:checked ~ &__box {
-    border-color: $color_prim;
+    border-color: $color_first;
   }
 
   &__state:checked ~ &__box &__mark {
@@ -59,7 +59,7 @@ $height_radio: 2rem;
     display: none;
     width: 1.2rem;
     height: 1.2rem;
-    background: $color-grad_prim;
+    background: $gradient_first;
     border-radius: 50%;
   }
 }

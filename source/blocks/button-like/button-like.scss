@@ -7,7 +7,7 @@
   width: 4rem;
   height: 2rem;
   padding: 0 0.5rem;
-  background: $color_back;
+  background: $color_background;
   background-origin: border-box;
   border: solid 0.1rem $color_main-25;
   border-radius: 1rem;
@@ -19,7 +19,7 @@
   cursor: pointer;
 
   &:focus {
-    box-shadow: 0 0 0.5rem $color_prim;
+    box-shadow: 0 0 0.5rem $color_first;
   }
 
   &:hover {
@@ -32,9 +32,9 @@
   }
 
   &_active {
-    background-image: linear-gradient($color_back, $color_back), $color-grad_prim;
+    background-image: linear-gradient($color_background, $color_background), $gradient_first;
     background-clip: padding-box, border-box;
     border-color: transparent;
-    color: $color_prim;
+    color: $color_first;
   }
 }

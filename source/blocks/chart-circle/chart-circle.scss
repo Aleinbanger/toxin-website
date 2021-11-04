@@ -21,7 +21,7 @@ $colors_chart-circle: url('#grad1'), url('#grad2'),
   }
 
   &__path {
-    stroke: $color_back;
+    stroke: $color_background;
     stroke-width: 0.05;
     backface-visibility: hidden;
     transform: translate3d(0, 0, 0);
@@ -41,7 +41,7 @@ $colors_chart-circle: url('#grad1'), url('#grad2'),
   }
 
   &__circle {
-    fill: $color_back;
+    fill: $color_background;
   }
 
   &__total {
@@ -54,9 +54,9 @@ $colors_chart-circle: url('#grad1'), url('#grad2'),
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    background: $color_back;
+    background: $color_background;
     border-radius: 50%;
-    color: $color_prim;
+    color: $color_first;
     font-family: $font-family_h1;
     font-weight: bold;
     font-size: $font-size_h1;
@@ -101,7 +101,7 @@ $colors_chart-circle: url('#grad1'), url('#grad2'),
     background: $color_main-75;
     border-radius: 0.5rem;
     box-shadow: 0 0 0.5rem $color_main;
-    color: $color_back;
+    color: $color_background;
     font-size: $font-size_h3;
     text-transform: capitalize;
     user-select: none;

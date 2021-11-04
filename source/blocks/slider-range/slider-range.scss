@@ -31,7 +31,7 @@
     .irs-line {
       top: 1.8rem;
       height: 0.6rem;
-      background: $color_back;
+      background: $color_background;
       border: 0.1rem solid $color_main-25;
       border-radius: 0.3rem;
       cursor: pointer;
@@ -40,7 +40,7 @@
     .irs-bar {
       top: 1.8rem;
       height: 0.6rem;
-      background: $color-grad_sec;
+      background: $gradient_second;
       cursor: pointer;
     }
 
@@ -48,8 +48,8 @@
       top: 1.3rem;
       width: 1.6rem;
       height: 1.6rem;
-      background: $color-grad_sec;
-      border: 0.2rem solid $color_back;
+      background: $gradient_second;
+      border: 0.2rem solid $color_background;
       border-radius: 50%;
       box-shadow: none;
       cursor: pointer;

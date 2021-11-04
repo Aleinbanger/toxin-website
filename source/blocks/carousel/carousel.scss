@@ -48,16 +48,16 @@
     height: 100%;
     background: none;
     border: 0;
-    color: $color_back;
+    color: $color_background;
     outline: none;
     cursor: pointer;
 
     &:hover {
-      background: $color-grad_prim-50;
+      background: $gradient_first-50;
     }
 
     &:focus {
-      box-shadow: 0 0 0.1rem 0.1rem $color_prim;
+      box-shadow: 0 0 0.1rem 0.1rem $color_first;
     }
 
     &_prev {
@@ -95,18 +95,18 @@
     width: 0.8rem;
     height: 0.8rem;
     margin-right: 0.4rem;
-    border: 0.1rem solid $color_back;
+    border: 0.1rem solid $color_background;
     border-radius: 50%;
     box-shadow: 0 0.5rem 0.5rem $color_main-25;
     cursor: pointer;
 
     &:hover {
-      background: $color_back;
+      background: $color_background;
       opacity: 0.5;
     }
 
     &_active {
-      background: $color_back;
+      background: $color_background;
 
       &:hover {
         opacity: 1;

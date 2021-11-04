@@ -12,8 +12,8 @@ class DropdownList {
     this.input = this.block.querySelector(`.js-${this.blockName}__input`);
     this.icon = this.input.querySelector(`.js-${this.blockName}__icon`);
     this.list = this.block.querySelector(`.js-${this.blockName}__list`);
-    this.resetBtn = this.list.querySelector(`.js-${this.blockName}__btn_reset`);
-    this.acceptBtn = this.list.querySelector(`.js-${this.blockName}__btn_accept`);
+    this.resetButton = this.list.querySelector(`.js-${this.blockName}__button_reset`);
+    this.acceptButton = this.list.querySelector(`.js-${this.blockName}__button_accept`);
     this.state = {
       totalValue: [],
       active: Boolean(this.block.dataset.active),
@@ -33,11 +33,11 @@ class DropdownList {
     this.input.addEventListener('focusin', () => this._handleInputFocus());
     this.handleOutsideClick = (event) => this._handleOutsideClick(event);
 
-    if (this.resetBtn) {
-      this.resetBtn.addEventListener('click', () => this._handleResetButtonClick());
+    if (this.resetButton) {
+      this.resetButton.addEventListener('click', () => this._handleResetButtonClick());
     }
-    if (this.acceptBtn) {
-      this.acceptBtn.addEventListener('click', () => this._handleAcceptButtonClick());
+    if (this.acceptButton) {
+      this.acceptButton.addEventListener('click', () => this._handleAcceptButtonClick());
     }
   }
 
@@ -123,12 +123,12 @@ class DropdownList {
   }
 
   _toggleResetButton() {
-    if (this.resetBtn) {
+    if (this.resetButton) {
       const input = this.input.querySelector('input');
       if (!input.value) {
-        this.resetBtn.classList.add(`${this.blockName}__btn_inactive`);
+        this.resetButton.classList.add(`${this.blockName}__button_inactive`);
       } else {
-        this.resetBtn.classList.remove(`${this.blockName}__btn_inactive`);
+        this.resetButton.classList.remove(`${this.blockName}__button_inactive`);
       }
     }
   }

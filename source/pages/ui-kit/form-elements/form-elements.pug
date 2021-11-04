@@ -25,15 +25,15 @@ block content
     .form-elements__column
       .form-elements__item
         .form-elements__text-field
-          +input-field({inpType: 'email', labelText: 'Text field'})
+          +input-field({inputType: 'email', labelText: 'Text field'})
         .form-elements__text-field
           +input-field({labelText: 'Text field'})(value='This is pretty awesome')
         .form-elements__text-field
           +dropdown-list({
             withButtons: true,
             labelText: 'Dropdown',
-            inpPlaceholder: 'Сколько гостей',
-            inpName: 'guests',
+            inputPlaceholder: 'Сколько гостей',
+            inputName: 'guests',
             listItems: [
               {combined: true, title: 'взрослые', names: ['гость', 'гостя', 'гостей'], value: 0, minValue: 0, maxValue: 10},
               {combined: true, title: 'дети', names: ['гость', 'гостя', 'гостей'], value: 0, minValue: 0, maxValue: 10},
@@ -41,20 +41,20 @@ block content
             ],
           })
         .form-elements__text-field
-          +input-field({inpType: 'mask-date', labelText: 'Masked Text Field'})
+          +input-field({inputType: 'mask-date', labelText: 'Masked Text Field'})
 
       .form-elements__item
         .form-elements__text-field.js-form-elements__dropdown-date
           +dropdown-date({
             labelTexts: ['Date Dropdown'],
-            inpNames: ['date-arrival', 'date-departure'],
+            inputNames: ['date-arrival', 'date-departure'],
           })
 
       .form-elements__item
         .form-elements__text-field.js-form-elements__dropdown-date
           +dropdown-date({
             labelTexts: ['Filter Date Dropdown'],
-            inpNames: ['date-range'],
+            inputNames: ['date-range'],
             startAt: '2019, 8, 19',
             endAt: '2019, 8, 23',
           })
@@ -109,7 +109,7 @@ block content
       .form-elements__slider
         +slider-range({
           labelText: 'Range Slider',
-          inpName: 'price-range',
+          inputName: 'price-range',
           minValue: 600,
           maxValue: 15200,
           startAt: 5000,
@@ -119,15 +119,15 @@ block content
       .form-elements__item
         h3.form-elements__title Buttons
         .form-elements__button.form-elements__button_small
-          +button({btnText: 'Click me'})
+          +button({buttonText: 'Click me'})
         .form-elements__button.form-elements__button_small
-          +button({btnText: 'Click me', btnStyle: 'ghost'})
+          +button({buttonText: 'Click me', buttonStyle: 'ghost'})
         .form-elements__button.form-elements__button_inline
-          +button({btnText: 'Click me', btnStyle: 'as-text'})
+          +button({buttonText: 'Click me', buttonStyle: 'as-text'})
         .form-elements__button.form-elements__button_inline
-          +button({btnText: 'Click me', btnStyle: 'as-text as-text_faint'})
+          +button({buttonText: 'Click me', buttonStyle: 'as-text as-text_faint'})
         .form-elements__button
-          +button({btnText: 'Перейти к оплате', withArrow: true})
+          +button({buttonText: 'Перейти к оплате', withArrow: true})
 
       .form-elements__item
         h3.form-elements__title Pagination
@@ -139,8 +139,8 @@ block content
         .form-elements__text-field
           +dropdown-list({
             labelText: 'Dropdown',
-            inpPlaceholder: 'Какие удобства',
-            inpName: 'features',
+            inputPlaceholder: 'Какие удобства',
+            inputName: 'features',
             listItems: [
               {title: 'спальни', names: ['спальня', 'спальни', 'спален'], value: 2, minValue: 0, maxValue: 3},
               {title: 'кровати', names: ['кровать', 'кровати', 'кроватей'], value: 2, minValue: 0, maxValue: 6},
@@ -150,8 +150,8 @@ block content
         .form-elements__text-field
           +dropdown-list({
             labelText: 'Dropdown',
-            inpPlaceholder: 'Какие удобства',
-            inpName: 'features',
+            inputPlaceholder: 'Какие удобства',
+            inputName: 'features',
             listItems: [
               {title: 'спальни', names: ['спальня', 'спальни', 'спален'], value: 2, minValue: 0, maxValue: 3},
               {title: 'кровати', names: ['кровать', 'кровати', 'кроватей'], value: 2, minValue: 0, maxValue: 6},
@@ -165,8 +165,8 @@ block content
         +dropdown-list({
           withButtons: true,
           labelText: 'Dropdown',
-          inpPlaceholder: 'Сколько гостей',
-          inpName: 'guests',
+          inputPlaceholder: 'Сколько гостей',
+          inputName: 'guests',
           listItems: [
             {combined: true, title: 'взрослые', names: ['гость', 'гостя', 'гостей'], value: 0, minValue: 0, maxValue: 10},
             {combined: true, title: 'дети', names: ['гость', 'гостя', 'гостей'], value: 0, minValue: 0, maxValue: 10},
@@ -180,8 +180,8 @@ block content
         +dropdown-list({
           withButtons: true,
           labelText: 'Dropdown',
-          inpPlaceholder: 'Сколько гостей',
-          inpName: 'guests',
+          inputPlaceholder: 'Сколько гостей',
+          inputName: 'guests',
           listItems: [
             {combined: true, title: 'взрослые', names: ['гость', 'гостя', 'гостей'], value: 2, minValue: 0, maxValue: 10},
             {combined: true, title: 'дети', names: ['гость', 'гостя', 'гостей'], value: 1, minValue: 0, maxValue: 10},
@@ -224,12 +224,12 @@ block content
           listTitle: 'Rich Checkbox Buttons',
           listItems: [
             {
-              inpStyle: 'rich',
+              inputStyle: 'rich',
               labelText: 'Широкий коридор',
               labelDescription: 'Ширина коридоров в номере не менее 91 см.'
             },
             {
-              inpStyle: 'rich',
+              inputStyle: 'rich',
               labelText: 'Помощник для инвалидов',
               labelDescription: 'На 1 этаже вас встретит специалист и проводит до номера.'
             }

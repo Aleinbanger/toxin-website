@@ -4,7 +4,7 @@
   width: 100%;
   max-width: 27rem;
   max-height: 25.8rem;
-  background: $color_back;
+  background: $color_background;
   border-radius: 0.4rem;
   box-shadow: 0 1rem 2rem $color_main-5;
   overflow: hidden;
@@ -27,7 +27,7 @@
     text-decoration: none;
 
     &:hover {
-      background: $color-grad_prim-25;
+      background: $gradient_first-25;
     }
   }
 
@@ -54,7 +54,7 @@
 
   &__header-room-type {
     margin-left: 0.9rem;
-    color: $color_prim;
+    color: $color_first;
     font-size: $font-size_h3;
     text-transform: uppercase;
   }

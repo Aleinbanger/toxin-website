@@ -16,15 +16,15 @@ mixin card-search({ formAction = '#mock-address', titleText = 'Найдём но
         data-required=true)
         +dropdown-date({
           labelTexts: ['Прибытие', 'Выезд'],
-          inpNames: ['date-arrival', 'date-departure'],
+          inputNames: ['date-arrival', 'date-departure'],
           minDate: 'today',
         })
       div(class=formItemClass, data-required=true)
         +dropdown-list({
           withButtons: true,
           labelText: 'Гости',
-          inpPlaceholder: 'Сколько гостей',
-          inpName: 'guests',
+          inputPlaceholder: 'Сколько гостей',
+          inputName: 'guests',
           listItems: [
             {
               combined: true,
@@ -46,4 +46,4 @@ mixin card-search({ formAction = '#mock-address', titleText = 'Найдём но
           ],
         })
       div(class=`${blockName}__form-button`)
-        +button({ btnType: 'submit', btnText: 'Подобрать номер', withArrow: true })
+        +button({ buttonType: 'submit', buttonText: 'Подобрать номер', withArrow: true })

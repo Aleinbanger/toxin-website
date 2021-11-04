@@ -32,22 +32,22 @@
     cursor: pointer;
 
     &:focus {
-      box-shadow: 0 0 0.5rem $color_prim;
+      box-shadow: 0 0 0.5rem $color_first;
     }
 
     &:hover {
-      background: $color-grad_prim-50;
-      color: $color_back;
+      background: $gradient_first-50;
+      color: $color_background;
       font-weight: bold;
     }
 
     &_current {
-      background: $color-grad_prim;
-      color: $color_back;
+      background: $gradient_first;
+      color: $color_background;
       font-weight: bold;
 
       &:hover {
-        background: $color-grad_prim;
+        background: $gradient_first;
       }
     }
 

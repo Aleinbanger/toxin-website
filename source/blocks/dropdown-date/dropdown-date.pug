@@ -1,14 +1,14 @@
 include ../input-field/input-field.pug
 
-mixin dropdown-date({ labelTexts = [], inpNames = [], startAt, endAt, minDate, active = false } = {})
+mixin dropdown-date({ labelTexts = [], inputNames = [], startAt, endAt, minDate, active = false } = {})
   -
     const blockName = 'dropdown-date';
-    const isDoubleInput = inpNames.length > 1;
+    const isDoubleInput = inputNames.length > 1;
     const wrapperClass = [blockName, `js-${blockName}`];
     const inputClass = [`${blockName}__input`, `js-${blockName}__input`, isDoubleInput && `${blockName}__input_small`];
-    const secInputClass = [`${blockName}__input`, `js-${blockName}__input-sec`, `${blockName}__input_small`];
+    const secondInputClass = [`${blockName}__input`, `js-${blockName}__input-second`, `${blockName}__input_small`];
     const iconClass = ['material-icons', `${blockName}__icon`, `js-${blockName}__icon`];
-    const inpPlaceholder = isDoubleInput ? 'ДД.ММ.ГГГГ' : 'ДД.ММ \u2013 ДД.ММ';
+    const inputPlaceholder = isDoubleInput ? 'ДД.ММ.ГГГГ' : 'ДД.ММ \u2013 ДД.ММ';
 
   div(
     class=wrapperClass,
@@ -19,9 +19,9 @@ mixin dropdown-date({ labelTexts = [], inpNames = [], startAt, endAt, minDate, a
   )
     div(class=`${blockName}__inputs`)
       div(class=inputClass)
-        +input-field({labelText: labelTexts[0]})(name=inpNames[0], placeholder=inpPlaceholder, readonly)
+        +input-field({labelText: labelTexts[0]})(name=inputNames[0], placeholder=inputPlaceholder, readonly)
         i(class=iconClass) expand_more
       if (isDoubleInput)
-        div(class=secInputClass)
-          +input-field({labelText: labelTexts[1] || labelTexts[0]})(name=inpNames[1], placeholder=inpPlaceholder, readonly)
+        div(class=secondInputClass)
+          +input-field({labelText: labelTexts[1] || labelTexts[0]})(name=inputNames[1], placeholder=inputPlaceholder, readonly)
           i(class=iconClass) expand_more

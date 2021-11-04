@@ -13,7 +13,7 @@ class Comment {
     this.userPicture.setAttribute('src', user.pictureSrc);
     this.date.textContent = date;
     this.text.textContent = text;
-    this.btnLike.updateState({ value: like.count, active: like.active });
+    this.buttonLike.updateState({ value: like.count, active: like.active });
   }
 
   _initialize() {
@@ -22,8 +22,8 @@ class Comment {
     this.date = this.block.querySelector(`.js-${this.blockName}__date`);
     this.text = this.block.querySelector(`.js-${this.blockName}__text`);
 
-    const btnLike = this.block.querySelector(`.js-${this.blockName}__like`);
-    this.btnLike = new ButtonLike(btnLike);
+    const buttonLike = this.block.querySelector(`.js-${this.blockName}__like`);
+    this.buttonLike = new ButtonLike(buttonLike);
   }
 }
 
