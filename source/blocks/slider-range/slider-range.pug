@@ -1,4 +1,4 @@
-mixin slider-range({ labelText, inpName, sliderType = 'double', minValue, maxValue, startAt, endAt })
+mixin slider-range({ labelText, inputName, sliderType = 'double', minValue, maxValue, startAt, endAt })
   -
     const blockName = 'slider-range';
     const wrapperClass = [blockName, `js-${blockName}`];
@@ -12,7 +12,7 @@ mixin slider-range({ labelText, inpName, sliderType = 'double', minValue, maxVal
       span(class=counterClass)
     input(
       class=inputClass,
-      name=inpName,
+      name=inputName,
       data-type=sliderType,
       data-min=minValue,
       data-max=maxValue,

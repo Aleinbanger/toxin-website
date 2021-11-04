@@ -3,7 +3,7 @@
 .search-room {
   width: 100%;
   padding: 3rem 1.5rem 7.6rem;
-  background: $color_back;
+  background: $color_background;
   border-bottom: 0.1rem solid $color_main-25;
 
   &__container {
@@ -32,7 +32,7 @@
       z-index: 10;
       max-width: 30rem;
       padding: 1.5rem;
-      background: $color-back;
+      background: $color_background;
       box-shadow: 1rem 0 1rem -1rem $color_main-25;
       visibility: hidden;
       opacity: 0;
@@ -62,10 +62,10 @@
     display: none;
     width: 100%;
     height: 100%;
-    background: $color-back;
+    background: $color_background;
     border: 0.1rem solid $color_main-25;
     border-radius: 0.4rem;
-    color: $color_prim;
+    color: $color_first;
     text-align: center;
     outline: none;
     cursor: pointer;
@@ -84,7 +84,7 @@
     }
 
     &:focus {
-      box-shadow: 0 0 0.1rem 0.1rem $color_prim;
+      box-shadow: 0 0 0.1rem 0.1rem $color_first;
     }
 
     &:hover {

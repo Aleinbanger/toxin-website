@@ -6,13 +6,13 @@ mixin header(options = {})
       homeHref = '#mock-address',
       navbarList = [],
       loggedIn = false,
-      fstBtn = {},
-      sndBtn = {},
+      firstButton = {},
+      secondButton = {},
       account = {},
     } = options;
     const blockName = 'header';
     const wrapperClass = [blockName, `js-${blockName}`];
-    const navbarBtnClass = [`${blockName}__navbar-button`, `js-${blockName}__navbar-button`];
+    const navbarButtonClass = [`${blockName}__navbar-button`, `js-${blockName}__navbar-button`];
     const navbarClass = [`${blockName}__navbar`, `js-${blockName}__navbar`];
     const dropdownClass = [`${blockName}__navbar-list-item`, `js-${blockName}__dropdown`];
     const dropdownTitleClass = [`${blockName}__navbar-link`, `js-${blockName}__dropdown-title`];
@@ -25,7 +25,7 @@ mixin header(options = {})
       a(class=`${blockName}__logo-link`, href=homeHref)
         img(class=`${blockName}__logo`,
           src='~blocks/header/img/header__logo.svg', alt='Toxin Logo')
-      button(class=navbarBtnClass, type='button')
+      button(class=navbarButtonClass, type='button')
         i(class='material-icons') menu
       nav(class=navbarClass)
         ul(class=`${blockName}__navbar-list`)
@@ -46,9 +46,9 @@ mixin header(options = {})
         if (!loggedIn)
           div(class=`${blockName}__buttons`)
             span(class=`${blockName}__button`)
-              +button({ btnType: 'link', btnText: fstBtn.text, btnStyle: 'ghost' })(href=fstBtn.href)
+              +button({ buttonType: 'link', buttonText: firstButton.text, buttonStyle: 'ghost' })(href=firstButton.href)
             span(class=`${blockName}__button`)
-              +button({ btnType: 'link', btnText: sndBtn.text })(href=sndBtn.href)
+              +button({ buttonType: 'link', buttonText: secondButton.text })(href=secondButton.href)
         else
           div(class=`${blockName}__account`)
             a(class=navbarLinkClass, href=account.href) #{account.text}

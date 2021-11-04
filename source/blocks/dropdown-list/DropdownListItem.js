@@ -26,7 +26,7 @@ class DropdownListItem {
   }
 
   _initialize() {
-    [this.minusBtn, this.plusBtn] = this.element.querySelectorAll(`.js-${this.elementName}-btn`);
+    [this.minusButton, this.plusButton] = this.element.querySelectorAll(`.js-${this.elementName}-button`);
     this.counter = this.element.querySelector(`.js-${this.elementName}-counter`);
     this.state = {
       name: '',
@@ -40,8 +40,8 @@ class DropdownListItem {
   }
 
   _bindEventListeners() {
-    this.minusBtn.addEventListener('click', () => this._handleMinusButtonClick());
-    this.plusBtn.addEventListener('click', () => this._handlePlusButtonClick());
+    this.minusButton.addEventListener('click', () => this._handleMinusButtonClick());
+    this.plusButton.addEventListener('click', () => this._handlePlusButtonClick());
   }
 
   _handleMinusButtonClick() {
@@ -69,12 +69,12 @@ class DropdownListItem {
 
   _toggleButtons() {
     if (this.state.value <= this.state.minValue) {
-      this.minusBtn.disabled = true;
+      this.minusButton.disabled = true;
     } else if (this.state.value >= this.state.maxValue) {
-      this.plusBtn.disabled = true;
+      this.plusButton.disabled = true;
     } else {
-      this.minusBtn.disabled = false;
-      this.plusBtn.disabled = false;
+      this.minusButton.disabled = false;
+      this.plusButton.disabled = false;
     }
   }
 }

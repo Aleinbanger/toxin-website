@@ -33,8 +33,8 @@ class CardCalendar {
       clearButton: true,
     };
     this.$datepicker = $(this.block).datepicker(options);
-    this.$acceptBtn = $('<span class="datepicker--button" data-action="hide">Применить</span>');
-    this.$datepicker.find('.datepicker--buttons').append(this.$acceptBtn);
+    this.$acceptButton = $('<span class="datepicker--button" data-action="hide">Применить</span>');
+    this.$datepicker.find('.datepicker--buttons').append(this.$acceptButton);
   }
 
   _selectDate(from, to, today) {

@@ -9,31 +9,31 @@ class Pagination {
   populatePagination({ itemsNumber, itemsPerPage }) {
     this.block.dataset.itemsNumber = itemsNumber;
     this.block.dataset.itemsPerPage = itemsPerPage;
-    this.pageBtnsContainer.innerHTML = '';
+    this.pageButtonsContainer.innerHTML = '';
     const pagesNumber = Math.ceil(itemsNumber / itemsPerPage);
     for (let i = 1; i <= pagesNumber; i += 1) {
-      const $pageBtn = $('<button>', {
+      const $pageButton = $('<button>', {
         class: `${this.blockName}__button-page js-${this.blockName}__button-page`,
         'data-page': i,
         text: i,
       });
-      $pageBtn.appendTo(this.pageBtnsContainer);
+      $pageButton.appendTo(this.pageButtonsContainer);
       if (i === 1 || i === pagesNumber - 1) {
         const $dots = $('<i>', {
           class: `${this.blockName}__dots js-${this.blockName}__dots`,
           text: '...',
         });
-        $dots.appendTo(this.pageBtnsContainer);
+        $dots.appendTo(this.pageButtonsContainer);
       }
     }
     this._initialize();
   }
 
   _initialize() {
-    this.pageBtnsContainer = this.block.querySelector(`.js-${this.blockName}__buttons-pages`);
-    this.pageBtns = this.block.querySelectorAll(`.js-${this.blockName}__button-page`);
+    this.pageButtonsContainer = this.block.querySelector(`.js-${this.blockName}__buttons-pages`);
+    this.pageButtons = this.block.querySelectorAll(`.js-${this.blockName}__button-page`);
     this.dots = this.block.querySelectorAll(`.js-${this.blockName}__dots`);
-    this.nextBtn = this.block.querySelector(`.js-${this.blockName}__button-next`);
+    this.nextButton = this.block.querySelector(`.js-${this.blockName}__button-next`);
     this.counter = this.block.querySelector(`.js-${this.blockName}__counter`);
     this.state = {
       currentPage: 1,
@@ -45,12 +45,12 @@ class Pagination {
   }
 
   _bindEventListeners() {
-    this.pageBtnsContainer.addEventListener('click', (event) => this._handlePageButtonClick(event));
-    this.nextBtn.addEventListener('click', () => this._handleNextButtonClick());
+    this.pageButtonsContainer.addEventListener('click', (event) => this._handlePageButtonClick(event));
+    this.nextButton.addEventListener('click', () => this._handleNextButtonClick());
   }
 
   _handlePageButtonClick(event) {
-    if (Array.from(this.pageBtns).includes(event.target)) {
+    if (Array.from(this.pageButtons).includes(event.target)) {
       this.state.currentPage = Number(event.target.dataset.page);
       this.block.dispatchEvent(new Event('change', { bubbles: true }));
       this._renderState();
@@ -59,15 +59,15 @@ class Pagination {
 
   _handleNextButtonClick() {
     if (this.state.currentPage < this.state.pagesNumber) {
-      this.pageBtns[this.state.currentPage].click();
+      this.pageButtons[this.state.currentPage].click();
     }
   }
 
   _renderState() {
-    this.pageBtns.forEach((pageBtn) => {
-      pageBtn.classList.remove(`${this.blockName}__button-page_current`);
+    this.pageButtons.forEach((pageButton) => {
+      pageButton.classList.remove(`${this.blockName}__button-page_current`);
     });
-    this.pageBtns[this.state.currentPage - 1].classList.add(`${this.blockName}__button-page_current`);
+    this.pageButtons[this.state.currentPage - 1].classList.add(`${this.blockName}__button-page_current`);
     this._updateCounter();
     this._toggleNextButton();
     this._rearrangePageButtons();
@@ -83,11 +83,11 @@ class Pagination {
   }
 
   _toggleNextButton() {
-    const nextBtn = this.nextBtn.querySelector('button');
+    const nextButton = this.nextButton.querySelector('button');
     if (this.state.currentPage < this.state.pagesNumber) {
-      nextBtn.disabled = false;
+      nextButton.disabled = false;
     } else {
-      nextBtn.disabled = true;
+      nextButton.disabled = true;
     }
   }
 
@@ -134,11 +134,11 @@ class Pagination {
   }
 
   _togglePageButtons(first, last, display) {
-    Array.from(this.pageBtns).slice(first, last).forEach((pageBtn) => {
+    Array.from(this.pageButtons).slice(first, last).forEach((pageButton) => {
       if (display) {
-        pageBtn.classList.remove(`${this.blockName}__button-page_inactive`);
+        pageButton.classList.remove(`${this.blockName}__button-page_inactive`);
       } else {
-        pageBtn.classList.add(`${this.blockName}__button-page_inactive`);
+        pageButton.classList.add(`${this.blockName}__button-page_inactive`);
       }
     });
   }

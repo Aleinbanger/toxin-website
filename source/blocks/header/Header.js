@@ -9,7 +9,7 @@ class Header {
   }
 
   _initialize() {
-    this.navbarBtn = this.block.querySelector(`.js-${this.blockName}__navbar-button`);
+    this.navbarButton = this.block.querySelector(`.js-${this.blockName}__navbar-button`);
     this.navbar = this.block.querySelector(`.js-${this.blockName}__navbar`);
     this.state = {
       navbarActive: false,
@@ -25,10 +25,10 @@ class Header {
   }
 
   _bindEventListeners() {
-    this.navbarBtn.addEventListener('click', () => this._handleNavbarBtnClick());
+    this.navbarButton.addEventListener('click', () => this._handleNavbarButtonClick());
   }
 
-  _handleNavbarBtnClick() {
+  _handleNavbarButtonClick() {
     this.state.navbarActive = !this.state.navbarActive;
     this._renderState();
   }
@@ -36,10 +36,10 @@ class Header {
   _renderState() {
     if (this.state.navbarActive) {
       this.navbar.classList.add(`${this.blockName}__navbar_active`);
-      this.navbarBtn.classList.add(`${this.blockName}__navbar-button_active`);
+      this.navbarButton.classList.add(`${this.blockName}__navbar-button_active`);
     } else {
       this.navbar.classList.remove(`${this.blockName}__navbar_active`);
-      this.navbarBtn.classList.remove(`${this.blockName}__navbar-button_active`);
+      this.navbarButton.classList.remove(`${this.blockName}__navbar-button_active`);
     }
   }
 }

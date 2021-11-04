@@ -13,12 +13,12 @@ mixin card-signin({ formAction = '#mock-address', titleText = 'Войти', sign
       h1(class=`${blockName}__title`) #{titleText}
       div(class=formItemClass)
         div(class=`${blockName}__form-subitem`)
-          +input-field({ inpType: 'email' })(required)
+          +input-field({ inputType: 'email' })(required)
         div(class=`${blockName}__form-subitem`)
-          +input-field({ inpType: 'password' })(required)
+          +input-field({ inputType: 'password' })(required)
       div(class=`${blockName}__form-button`)
-        +button({ btnType: 'submit', btnText: 'Войти', withArrow: true })
+        +button({ buttonType: 'submit', buttonText: 'Войти', withArrow: true })
     div(class=`${blockName}__footer`)
       span(class=`${blockName}__footer-text`) Нет аккаунта на Toxin?
       span(class=`${blockName}__footer-button`)
-        +button({ btnType: 'link', btnText: 'Создать', btnStyle: 'ghost' })(href=signupHref)
+        +button({ buttonType: 'link', buttonText: 'Создать', buttonStyle: 'ghost' })(href=signupHref)

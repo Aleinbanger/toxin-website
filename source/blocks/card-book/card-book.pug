@@ -46,15 +46,15 @@ mixin card-book(options = {})
         data-required=true)
         +dropdown-date({
           labelTexts: ['Прибытие', 'Выезд'],
-          inpNames: ['date-arrival', 'date-departure'],
+          inputNames: ['date-arrival', 'date-departure'],
           minDate: 'today',
         })
       div(class=formItemClass, data-required=true)
         +dropdown-list({
           withButtons: true,
           labelText: 'Гости',
-          inpPlaceholder: 'Сколько гостей',
-          inpName: 'guests',
+          inputPlaceholder: 'Сколько гостей',
+          inputName: 'guests',
           listItems: [
             {
               combined: true,
@@ -104,4 +104,4 @@ mixin card-book(options = {})
           span(class=`${blockName}__invoice-total-dots`)
           span(class=`js-${blockName}__total-price`) 0&#8381;
       div(class=`${blockName}__form-button`)
-        +button({ btnType: 'submit', btnText: 'Забронировать', withArrow: true })
+        +button({ buttonType: 'submit', buttonText: 'Забронировать', withArrow: true })

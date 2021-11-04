@@ -11,11 +11,11 @@
   max-width: 32rem;
   max-height: 4.4rem;
   padding: 0.9rem 1.8rem;
-  background: $color-grad_prim;
+  background: $gradient_first;
   background-origin: border-box;
   border: solid 0.2rem transparent;
   border-radius: 2.2rem;
-  color: $color_back;
+  color: $color_background;
   font-family: $font-family_h3;
   font-weight: bold;
   font-size: $font-size_h3;
@@ -26,7 +26,7 @@
   cursor: pointer;
 
   &:focus {
-    box-shadow: 0 0 0.5rem $color_prim;
+    box-shadow: 0 0 0.5rem $color_first;
   }
 
   &:hover {
@@ -44,17 +44,17 @@
   }
 
   &_ghost {
-    background-image: linear-gradient($color_back, $color_back), $color-grad_prim;
+    background-image: linear-gradient($color_background, $color_background), $gradient_first;
     background-clip: padding-box, border-box;
-    color: $color_prim;
+    color: $color_first;
 
     &:hover {
-      background-image: linear-gradient($color_back, $color_back), $color-grad_prim-50;
+      background-image: linear-gradient($color_background, $color_background), $gradient_first-50;
       opacity: 1;
     }
 
     &:disabled {
-      background-image: linear-gradient($color_back, $color_back), $color-grad_prim-50;
+      background-image: linear-gradient($color_background, $color_background), $gradient_first-50;
       opacity: 0.25;
       cursor: auto;
     }
@@ -69,10 +69,10 @@
     background: none;
     border: 0;
     border-radius: 0;
-    color: $color_prim;
+    color: $color_first;
 
     &:focus {
-      box-shadow: 0 0 0.1rem 0.1rem $color_prim;
+      box-shadow: 0 0 0.1rem 0.1rem $color_first;
     }
 
     &_faint {
@@ -80,7 +80,7 @@
     }
 
     &_gradient {
-      background: $color-grad_prim;
+      background: $gradient_first;
       background-clip: text;
       -webkit-text-fill-color: transparent; // WebKit only
     }
@@ -95,10 +95,10 @@
     border-radius: 50%;
 
     &_alt {
-      background-image: $color-grad_sec;
+      background-image: $gradient_second;
 
       &:focus {
-        box-shadow: 0 0 0.5rem $color_sec;
+        box-shadow: 0 0 0.5rem $color_second;
       }
     }
   }

@@ -3,17 +3,17 @@ mixin carousel({ imgSrcList = [] } = {})
     const blockName = 'carousel';
     const wrapperClass = [blockName, `js-${blockName}`];
     const imageClass = [`${blockName}__image`, `js-${blockName}__image`];
-    const prevBtnClass = [`${blockName}__button`, `${blockName}__button_prev`, `js-${blockName}__button_prev`];
-    const nextBtnClass = [`${blockName}__button`, `${blockName}__button_next`, `js-${blockName}__button_next`];
+    const prevButtonClass = [`${blockName}__button`, `${blockName}__button_prev`, `js-${blockName}__button_prev`];
+    const nextButtonClass = [`${blockName}__button`, `${blockName}__button_next`, `js-${blockName}__button_next`];
     const indicatorClass = [`${blockName}__indicator`, `js-${blockName}__indicator`];
 
   div(class=wrapperClass)
     div(class=`${blockName}__images js-${blockName}__images`)
       each imgSrc, index in imgSrcList
         img(class=imageClass, src=imgSrc, alt=`Image ${index + 1}`)
-    button(class=prevBtnClass, type='button')
+    button(class=prevButtonClass, type='button')
       i.material-icons expand_more
-    button(class=nextBtnClass, type='button')
+    button(class=nextButtonClass, type='button')
       i.material-icons expand_more
     div(class=`${blockName}__indicators js-${blockName}__indicators`)
       each imgSrc, index in imgSrcList

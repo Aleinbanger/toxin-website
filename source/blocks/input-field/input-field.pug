@@ -1,4 +1,4 @@
-mixin input-field({ inpType = 'text', labelText } = {})
+mixin input-field({ inputType = 'text', labelText } = {})
   -
     const blockName = 'input-field';
     const blockAttributes = {
@@ -6,15 +6,15 @@ mixin input-field({ inpType = 'text', labelText } = {})
     };
     const wrapperClass = [blockName];
 
-  case inpType
+  case inputType
     when 'email'
       -
-        blockAttributes.type = inpType;
+        blockAttributes.type = inputType;
         blockAttributes.name = attributes.name || 'email';
         blockAttributes.placeholder = attributes.placeholder || 'Email';
     when 'password'
       -
-        blockAttributes.type = inpType;
+        blockAttributes.type = inputType;
         blockAttributes.name = attributes.name || 'password';
         blockAttributes.placeholder = attributes.placeholder || 'Пароль';
     when 'mask-date'

@@ -21,10 +21,10 @@
 
   &__icon {
     margin-right: 1rem;
-    background: $color-grad_prim;
+    background: $gradient_first;
     background-clip: text;
     -webkit-text-fill-color: transparent; // WebKit only
-    color: $color_prim;
+    color: $color_first;
     font-size: 4.8rem;
     user-select: none;
   }

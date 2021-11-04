@@ -10,7 +10,7 @@ class DropdownDate {
 
   _initialize() {
     this.input = this.block.querySelector(`.js-${this.blockName}__input`);
-    this.secInput = this.block.querySelector(`.js-${this.blockName}__input-sec`);
+    this.secondInput = this.block.querySelector(`.js-${this.blockName}__input-second`);
     this.icons = this.block.querySelectorAll(`.js-${this.blockName}__icon`);
     this.state = {
       active: Boolean(this.block.dataset.active),
@@ -39,7 +39,7 @@ class DropdownDate {
       clearButton: true,
       onShow: (dp, animationCompleted) => {
         if (!animationCompleted) {
-          dp.$datepicker.find('.datepicker--buttons').append(this.$acceptBtn);
+          dp.$datepicker.find('.datepicker--buttons').append(this.$acceptButton);
         }
       },
     };
@@ -48,15 +48,15 @@ class DropdownDate {
     } else if (this.state.minDate) {
       options.minDate = new Date(this.state.minDate);
     }
-    if (this.secInput) {
+    if (this.secondInput) {
       options.dateFormat = 'dd.mm.yyyy';
       options.onSelect = (formattedDate) => {
         $(this.input).find('input').val(formattedDate.split(' \u2013 ')[0]);
-        $(this.secInput).find('input').val(formattedDate.split(' \u2013 ')[1]);
+        $(this.secondInput).find('input').val(formattedDate.split(' \u2013 ')[1]);
       };
     }
 
-    this.$acceptBtn = $('<span>', {
+    this.$acceptButton = $('<span>', {
       class: 'datepicker--button',
       'data-action': 'hide',
       text: 'Применить',
@@ -68,9 +68,9 @@ class DropdownDate {
     this.input.addEventListener('focusin', () => this._handleInputFocus());
     this.handleOutsideClick = (event) => this._handleOutsideClick(event);
 
-    this.$acceptBtn.on('click', () => this._handleAcceptButtonClick());
-    if (this.secInput) {
-      $(this.secInput).find('input').on('click', () => this._handleSecInputClick());
+    this.$acceptButton.on('click', () => this._handleAcceptButtonClick());
+    if (this.secondInput) {
+      $(this.secondInput).find('input').on('click', () => this._handleSecInputClick());
     }
   }
 
@@ -84,10 +84,10 @@ class DropdownDate {
   _handleOutsideClick(event) {
     const input = this.input.querySelector('input');
     const datepicker = document.querySelector('.datepicker');
-    const isClickInsideFstInput = input.contains(event.target);
-    const isClickInsideSecInput = this.secInput
-      ? this.secInput.querySelector('input').contains(event.target) : false;
-    const isClickInside = isClickInsideFstInput || isClickInsideSecInput
+    const isClickInFirstInput = input.contains(event.target);
+    const isClickInSecondInput = this.secondInput
+      ? this.secondInput.querySelector('input').contains(event.target) : false;
+    const isClickInside = isClickInFirstInput || isClickInSecondInput
       || datepicker.contains(event.target);
     if (!isClickInside && this.state.active) {
       this.state.active = this.$datepicker.data('datepicker').visible;
@@ -113,16 +113,16 @@ class DropdownDate {
       this.$datepicker.data('datepicker').show();
       this.input.classList.add(`${this.blockName}__input_active`);
       this.icons.forEach((icon) => icon.classList.add(`${this.blockName}__icon_active`));
-      if (this.secInput) {
-        this.secInput.classList.add(`${this.blockName}__input_active`);
+      if (this.secondInput) {
+        this.secondInput.classList.add(`${this.blockName}__input_active`);
       }
     } else {
       document.removeEventListener('click', this.handleOutsideClick);
       this.$datepicker.data('datepicker').hide();
       this.input.classList.remove(`${this.blockName}__input_active`);
       this.icons.forEach((icon) => icon.classList.remove(`${this.blockName}__icon_active`));
-      if (this.secInput) {
-        this.secInput.classList.remove(`${this.blockName}__input_active`);
+      if (this.secondInput) {
+        this.secondInput.classList.remove(`${this.blockName}__input_active`);
       }
     }
     this.state.selectedDates = this.$datepicker.data('datepicker').selectedDates;

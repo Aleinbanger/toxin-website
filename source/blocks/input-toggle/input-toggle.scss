@@ -28,16 +28,16 @@ $width_toggle-mark: 1.2rem;
   }
 
   &__state:focus ~ &__box {
-    box-shadow: 0 0 0.5rem $color_prim;
+    box-shadow: 0 0 0.5rem $color_first;
   }
 
   &__state:checked ~ &__box {
-    border-color: $color_prim;
+    border-color: $color_first;
     padding-left: $width_toggle - $width_toggle-mark - 0.4rem - 2*0.1rem;
   }
 
   &__state:checked ~ &__box &__mark {
-    background: $color-grad_prim;
+    background: $gradient_first;
   }
 
   &__box {

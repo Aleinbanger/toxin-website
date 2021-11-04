@@ -21,15 +21,15 @@ block content
           .search-room__filter-item.search-room__filter-item_closest.js-search-room__dropdown-date
             +dropdown-date({
               labelTexts: ['Даты пребывания в отеле'],
-              inpNames: ['date-range'],
+              inputNames: ['date-range'],
               minDate: 'today',
             })
           .search-room__filter-item
             +dropdown-list({
               withButtons: true,
               labelText: 'Гости',
-              inpPlaceholder: 'Сколько гостей',
-              inpName: 'guests',
+              inputPlaceholder: 'Сколько гостей',
+              inputName: 'guests',
               listItems: [
                 { combined: true, title: 'взрослые', names: ['гость', 'гостя', 'гостей'], value: 0, minValue: 0, maxValue: 5 },
                 { combined: true, title: 'дети', names: ['гость', 'гостя', 'гостей'], value: 0, minValue: 0, maxValue: 5 },
@@ -39,7 +39,7 @@ block content
           .search-room__filter-item
             +slider-range({
               labelText: 'Диапазон цены',
-              inpName: 'price-range',
+              inputName: 'price-range',
               minValue: 0,
               maxValue: 25000,
             })
@@ -59,13 +59,13 @@ block content
               listTitle: 'Доступность',
               listItems: [
                 {
-                  inpStyle: 'rich',
+                  inputStyle: 'rich',
                   labelText: 'Широкий коридор',
                   labelDescription: 'Ширина коридоров в номере не менее 91 см.',
                   addAttributes: {name: 'wide-hallway'},
                 },
                 {
-                  inpStyle: 'rich',
+                  inputStyle: 'rich',
                   labelText: 'Помощник для инвалидов',
                   labelDescription: 'На 1 этаже вас встретит специалист и проводит до номера.',
                   addAttributes: {name: 'personal-assistant'},
@@ -75,8 +75,8 @@ block content
           .search-room__filter-item.search-room__filter-item_closer
             +dropdown-list({
               labelText: 'Удобства номера',
-              inpPlaceholder: 'Какие удобства',
-              inpName: 'features',
+              inputPlaceholder: 'Какие удобства',
+              inputName: 'features',
               listItems: [
                 { title: 'спальни', names: ['спальня', 'спальни', 'спален'], value: 0, minValue: 0, maxValue: 3 },
                 { title: 'кровати', names: ['кровать', 'кровати', 'кроватей'], value: 0, minValue: 0, maxValue: 6 },
