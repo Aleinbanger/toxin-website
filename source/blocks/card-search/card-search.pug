@@ -8,17 +8,18 @@ mixin card-search({ formAction = '#mock-address', titleText = 'Найдём но
     const wrapperClass = [blockName, `js-${blockName}`];
     const formClass = [`${blockName}__form`, `js-${blockName}__form`];
     const formItemClass = [`${blockName}__form-item`, `js-${blockName}__form-item`];
+    const dropdownDateClass = [`${blockName}__dropdown-date`, `js-${blockName}__dropdown-date`];
 
   div(class=wrapperClass)
     form(class=formClass, action=formAction, method='post')
       h1(class=`${blockName}__title`) #{titleText}
-      div(class=formItemClass.concat(`js-${blockName}__dropdown-date`),
-        data-required=true)
-        +dropdown-date({
-          labelTexts: ['Прибытие', 'Выезд'],
-          inputNames: ['date-arrival', 'date-departure'],
-          minDate: 'today',
-        })
+      div(class=formItemClass, data-required=true)
+        div(class=dropdownDateClass)
+          +dropdown-date({
+            labelTexts: ['Прибытие', 'Выезд'],
+            inputNames: ['date-arrival', 'date-departure'],
+            minDate: 'today',
+          })
       div(class=formItemClass, data-required=true)
         +dropdown-list({
           withButtons: true,

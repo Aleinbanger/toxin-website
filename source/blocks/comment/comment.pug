@@ -12,21 +12,26 @@ mixin comment(options = {})
     } = options;
     const blockName = 'comment';
     const wrapperClass = [blockName, `js-${blockName}`];
+    const pictureClass = [`${blockName}__picture`, `js-${blockName}__picture`];
+    const likeClass = [`${blockName}__like`, `js-${blockName}__like`];
+    const nameClass = [`${blockName}__name`, `js-${blockName}__name`];
+    const dateClass = [`${blockName}__date`, `js-${blockName}__date`];
+    const textClass = [`${blockName}__text`, `js-${blockName}__text`];
 
   div(class=wrapperClass)
     div(class=`${blockName}__header`)
       img(
-        class=`${blockName}__picture js-${blockName}__picture`,
+        class=pictureClass,
         alt='Profile picture',
         src=`~blocks/comment/img/${userPicture}`
       )
-      span(class=`${blockName}__like js-${blockName}__like`)
+      span(class=likeClass)
         +button-like({ likeCount: likeCount, active: likeActive })
     div(class=`${blockName}__body`)
       div(class=`${blockName}__title`)
-        span(class=`${blockName}__name js-${blockName}__name`)
+        span(class=nameClass)
           | #{userName}
-        span(class=`${blockName}__date js-${blockName}__date`)
+        span(class=dateClass)
           | #{date}
-      span(class=`${blockName}__text js-${blockName}__text`)
+      span(class=textClass)
         | #{text}

@@ -29,14 +29,15 @@ block content
               {text: 'Уют', description: 'Номер оснащён камином'},
             ]
           })
-        .room-details__item.js-room-details__chart
-          h2.room-details__title Впечатления от номера
-          +chart-circle({
-            chartWeight: 0.1,
-            chartValues: [130, 65, 65],
-            chartTitles: ['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован'],
-            total: { show: true, description: 'голосов' },
-          })
+        .room-details__item
+          .room-details__chart.js-room-details__chart
+            h2.room-details__title Впечатления от номера
+            +chart-circle({
+              chartWeight: 0.1,
+              chartValues: [130, 65, 65],
+              chartTitles: ['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован'],
+              total: { show: true, description: 'голосов' },
+            })
         .room-details__card
           +card-book({
             roomNumber: 888,

@@ -10,14 +10,17 @@ mixin card-room(options = {})
       roomPrice = 0,
       roomRating = 0,
       roomReviews = 0,
-      crslImgSrcList = [],
+      carouselImgSrcList = [],
     } = options;
     const blockName = 'card-room';
     const wrapperClass = [blockName, `js-${blockName}`];
-    const roomNumberClass = [`${blockName}__header-room-number`, `js-${blockName}__room-number`];
-    const roomTypeClass = [`${blockName}__header-room-type`, `js-${blockName}__room-type`];
-    const roomPriceClass = [`${blockName}__header-room-price`, `js-${blockName}__room-price`];
-    const roomRatingClass = [`${blockName}__footer-room-rating`, `js-${blockName}__room-rating`];
+    const carouselClass = [`${blockName}__carousel`, `js-${blockName}__carousel`];
+    const infoClass = [`${blockName}__info`, `js-${blockName}__info`];
+    const roomNumberClass = [`${blockName}__room-number`, `js-${blockName}__room-number`];
+    const roomTypeClass = [`${blockName}__room-type`, `js-${blockName}__room-type`];
+    const roomPriceClass = [`${blockName}__room-price`, `js-${blockName}__room-price`];
+    const roomRatingClass = [`${blockName}__room-rating`, `js-${blockName}__room-rating`];
+    const roomReviewsClass = [`${blockName}__room-reviews`, `js-${blockName}__room-reviews`];
 
   div(
     class=wrapperClass,
@@ -27,25 +30,25 @@ mixin card-room(options = {})
     data-room-rating=roomRating,
     data-room-reviews=roomReviews
   )
-    div(class=`${blockName}__carousel js-${blockName}__carousel`)
+    div(class=carouselClass)
       +carousel({
-        imgSrcList: crslImgSrcList,
+        imgSrcList: carouselImgSrcList,
       })
-    a(class=`${blockName}__info js-${blockName}__info`, href=roomHref)
-      div(class=`${blockName}__info-header`)
-        span(class=`${blockName}__header-title`)
+    a(class=infoClass, href=roomHref)
+      div(class=`${blockName}__header`)
+        span(class=`${blockName}__title`)
           | № 
           span(class=roomNumberClass) #{roomNumber}
           if (roomIsLuxury)
             span(class=roomTypeClass) Люкс
           else
             span(class=roomTypeClass)
-        span(class=`${blockName}__header-description`)
+        span(class=`${blockName}__description`)
           span(class=roomPriceClass) #{roomPrice}&#8381;
           |  в сутки
-      div(class=`${blockName}__info-footer`)
+      div(class=`${blockName}__footer`)
         span(class=roomRatingClass)
           +rating({ value: roomRating })
-        span(class=`${blockName}__footer-room-reviews`)
-          b(class=`js-${blockName}__room-reviews`) #{roomReviews}
+        span(class=`${blockName}__room-reviews`)
+          b(class=roomReviewsClass) #{roomReviews}
           |  Отзывов

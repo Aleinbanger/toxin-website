@@ -5,6 +5,7 @@ mixin pagination({ itemsNumber = 1, itemsPerPage = 1, baseHref = '', addDescript
     const blockName = 'pagination';
     const wrapperClass = [blockName, `js-${blockName}`];
     const pageButtonClass = [`${blockName}__button-page`, `js-${blockName}__button-page`];
+    const pageButtonsClass = [`${blockName}__buttons-pages`, `js-${blockName}__buttons-pages`];
     const dotsClass = [`${blockName}__dots`, `js-${blockName}__dots`];
     const nextButtonClass = [`${blockName}__button-next`, `js-${blockName}__button-next`];
     const counterClass = [`${blockName}__counter`, `js-${blockName}__counter`];
@@ -16,7 +17,7 @@ mixin pagination({ itemsNumber = 1, itemsPerPage = 1, baseHref = '', addDescript
     data-items-per-page=itemsPerPage
   )
     div(class=`${blockName}__buttons`)
-      span(class=`${blockName}__buttons-pages js-${blockName}__buttons-pages`)
+      span(class=pageButtonsClass)
         - for (let i = 1; i <= pagesNumber; i++) {
             if (baseHref)
               a(class=pageButtonClass, data-page=i, href=`${baseHref}/page-${i}`) #{i}

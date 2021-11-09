@@ -44,20 +44,22 @@ block content
           +input-field({inputType: 'mask-date', labelText: 'Masked Text Field'})
 
       .form-elements__item
-        .form-elements__text-field.js-form-elements__dropdown-date
-          +dropdown-date({
-            labelTexts: ['Date Dropdown'],
-            inputNames: ['date-arrival', 'date-departure'],
-          })
+        .form-elements__text-field
+          .form-elements__dropdown-date.js-form-elements__dropdown-date
+            +dropdown-date({
+              labelTexts: ['Date Dropdown'],
+              inputNames: ['date-arrival', 'date-departure'],
+            })
 
       .form-elements__item
-        .form-elements__text-field.js-form-elements__dropdown-date
-          +dropdown-date({
-            labelTexts: ['Filter Date Dropdown'],
-            inputNames: ['date-range'],
-            startAt: '2019, 8, 19',
-            endAt: '2019, 8, 23',
-          })
+        .form-elements__text-field
+          .form-elements__dropdown-date.js-form-elements__dropdown-date
+            +dropdown-date({
+              labelTexts: ['Filter Date Dropdown'],
+              inputNames: ['date-range'],
+              startAt: '2019, 8, 19',
+              endAt: '2019, 8, 23',
+            })
 
       .form-elements__item
         .form-elements__subscription

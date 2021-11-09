@@ -14,16 +14,17 @@ block append mixins
 block content
   main.search-room.js-search-room
     .search-room__container
-      .search-room__filter-button.js-search-room__filter-button(tabindex=1)
+      .search-room__filter-button.js-search-room__filter-button(tabindex=0)
         i(class='material-icons') list
       form.search-room__filter.js-search-room__filter(action='#mock-address', method='post')
         .search-room__filter-container
-          .search-room__filter-item.search-room__filter-item_closest.js-search-room__dropdown-date
-            +dropdown-date({
-              labelTexts: ['Даты пребывания в отеле'],
-              inputNames: ['date-range'],
-              minDate: 'today',
-            })
+          .search-room__filter-item.search-room__filter-item_closest 
+            .search-room__dropdown-date.js-search-room__dropdown-date
+              +dropdown-date({
+                labelTexts: ['Даты пребывания в отеле'],
+                inputNames: ['date-range'],
+                minDate: 'today',
+              })
           .search-room__filter-item
             +dropdown-list({
               withButtons: true,

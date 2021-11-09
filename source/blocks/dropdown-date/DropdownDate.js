@@ -9,8 +9,7 @@ class DropdownDate {
   }
 
   _initialize() {
-    this.input = this.block.querySelector(`.js-${this.blockName}__input`);
-    this.secondInput = this.block.querySelector(`.js-${this.blockName}__input-second`);
+    [this.input, this.secondInput] = this.block.querySelectorAll(`.js-${this.blockName}__input`);
     this.icons = this.block.querySelectorAll(`.js-${this.blockName}__icon`);
     this.state = {
       active: Boolean(this.block.dataset.active),

@@ -39,30 +39,32 @@ block content
           endAt: '2019, 8, 23',
           todayDate: '2019, 8, 8',
         })
-      .cards__item.js-cards__card-room
-        +card-room({
-          roomNumber: 888,
-          roomIsLuxury: true,
-          roomPrice: 9990,
-          roomRating: 5,
-          roomReviews: 145,
-          crslImgSrcList: [
-            '~blocks/card-room/img/image_1.png',
-            '~blocks/card-room/img/image_2.png',
-            '~blocks/card-room/img/image_3.png',
-            '~blocks/card-room/img/image_4.png',
-          ],
-        })
-      .cards__item.js-cards__card-room
-        +card-room({
-          roomNumber: 840,
-          roomPrice: 9900,
-          roomRating: 4,
-          roomReviews: 65,
-          crslImgSrcList: [
-            '~blocks/card-room/img/image_5.png',
-            '~blocks/card-room/img/image_5.png',
-            '~blocks/card-room/img/image_5.png',
-            '~blocks/card-room/img/image_5.png',
-          ],
-        })
+      .cards__item
+        .cards__card-room.js-cards__card-room
+          +card-room({
+            roomNumber: 888,
+            roomIsLuxury: true,
+            roomPrice: 9990,
+            roomRating: 5,
+            roomReviews: 145,
+            carouselImgSrcList: [
+              '~blocks/card-room/img/image_1.png',
+              '~blocks/card-room/img/image_2.png',
+              '~blocks/card-room/img/image_3.png',
+              '~blocks/card-room/img/image_4.png',
+            ],
+          })
+      .cards__item
+        .cards__card-room.js-cards__card-room
+          +card-room({
+            roomNumber: 840,
+            roomPrice: 9900,
+            roomRating: 4,
+            roomReviews: 65,
+            carouselImgSrcList: [
+              '~blocks/card-room/img/image_5.png',
+              '~blocks/card-room/img/image_5.png',
+              '~blocks/card-room/img/image_5.png',
+              '~blocks/card-room/img/image_5.png',
+            ],
+          })

@@ -3,18 +3,13 @@ include ../input-checkbox/input-checkbox.pug
 mixin list-checkbox({ listItems = [], listTitle = '', expandable = false, active = false } = {})
   -
     const blockName = 'list-checkbox';
-    const wrapperClass = [blockName];
-    const headerClass = [`${blockName}__header`];
+    const wrapperClass = [blockName, expandable && `js-${blockName}`];
+    const headerClass = [`${blockName}__header`, expandable && `js-${blockName}__header`];
     const iconClass = ['material-icons', `${blockName}__icon`, `js-${blockName}__icon`];
-    const listClass = [`${blockName}__list`];
-
-  if (expandable)
-    - wrapperClass.push(`js-${blockName}`)
-    - headerClass.push(`js-${blockName}__header`)
-    - listClass.push(`js-${blockName}__list`)
+    const listClass = [`${blockName}__list`, expandable && `js-${blockName}__list`];
 
   div(class=wrapperClass, data-active=active)
-    div(class=headerClass, tabindex=1)
+    div(class=headerClass, tabindex=0)
       span(class=`${blockName}__title`) #{listTitle}
       if (expandable)
         i(class=iconClass) expand_more

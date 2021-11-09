@@ -2,7 +2,12 @@ mixin chart-circle({ chartWeight = 1, chartValues = [], chartTitles = [], total 
   -
     const blockName = 'chart-circle';
     const wrapperClass = [blockName, `js-${blockName}`];
+    const containerClass = [`${blockName}__container`, `js-${blockName}__container`];
     const svgClass = [`${blockName}__svg`, `js-${blockName}__svg`];
+    const totalValueClass = [`${blockName}__total-value`, `js-${blockName}__total-value`];
+    const totalDescriptionClass = [`${blockName}__total-description`, `js-${blockName}__total-description`];
+    const labelClass = [`${blockName}__label`, `js-${blockName}__label`];
+    const legendClass = [`${blockName}__legend`, `js-${blockName}__legend`];
 
   div(
     class=wrapperClass,
@@ -10,7 +15,7 @@ mixin chart-circle({ chartWeight = 1, chartValues = [], chartTitles = [], total 
     data-chart-values=chartValues.join(','),
     data-chart-titles=chartTitles.join(',')
   )
-    div(class=`${blockName}__container js-${blockName}__container`)
+    div(class=containerClass)
       svg(class=svgClass, viewBox='-1.05 -1.05 2.1 2.1')
         defs
           linearGradient(id='grad1', x1='0%', y1='0%', x2='100%', y2='0%')
@@ -28,18 +33,18 @@ mixin chart-circle({ chartWeight = 1, chartValues = [], chartTitles = [], total 
 
       if (total.show)
         div(class=`${blockName}__total`)
-          span(class=`js-${blockName}__total-value`) 0
-          span(class=`${blockName}__total-description js-${blockName}__total-description`)
+          span(class=totalValueClass) 0
+          span(class=totalDescriptionClass)
             | #{total.description}
 
       each value, index in chartValues
-        span(class=`${blockName}__label js-${blockName}__label`, data-path-index=index+1)
+        span(class=labelClass, data-path-index=index+1)
           svg(class=`${blockName}__legend-mark` viewBox='-1 -1 2 2')
             circle(class=`${blockName}__path_${index + 1}` cx=0, cy=0, r=1)
           | #{chartTitles[index]}: #{value}
 
     if (legendShow)
-      ul(class=`${blockName}__legend js-${blockName}__legend`)
+      ul(class=legendClass)
         each title, index in chartTitles
           li(class=`${blockName}__legend-item`)
             svg(class=`${blockName}__legend-mark` viewBox='-1 -1 2 2')

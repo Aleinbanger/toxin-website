@@ -31,7 +31,7 @@
     }
   }
 
-  &__info-header {
+  &__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,26 +40,26 @@
     border-bottom: 0.1rem solid $color_main-10;
   }
 
-  &__header-title {
+  &__title {
     display: inline-block;
     height: 2.4rem;
     font-weight: bold;
     line-height: 2.4rem;
   }
 
-  &__header-room-number {
+  &__room-number {
     font-family: $font-family_h2;
     font-size: $font-size_h2;
   }
 
-  &__header-room-type {
+  &__room-type {
     margin-left: 0.9rem;
     color: $color_first;
     font-size: $font-size_h3;
     text-transform: uppercase;
   }
 
-  &__header-description {
+  &__description {
     display: inline-block;
     height: 2rem;
     color: $color_main-50;
@@ -68,23 +68,23 @@
     line-height: 2rem;
   }
 
-  &__header-room-price {
+  &__room-price {
     font-size: $font-size_body;
     font-weight: bold;
   }
 
-  &__info-footer {
+  &__footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  &__footer-room-rating {
+  &__room-rating {
     display: inline-block;
     height: 2.4rem;
   }
 
-  &__footer-room-reviews {
+  &__room-reviews {
     display: inline-block;
     height: 1.8rem;
     color: $color_main-50;

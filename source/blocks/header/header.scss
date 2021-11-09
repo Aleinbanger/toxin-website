@@ -142,6 +142,10 @@
     }
   }
 
+  &__dropdown-title {
+    @extend .header__navbar-link;
+  }
+
   &__dropdown-icon {
     user-select: none;
     pointer-events: none;

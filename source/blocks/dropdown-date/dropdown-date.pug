@@ -6,7 +6,7 @@ mixin dropdown-date({ labelTexts = [], inputNames = [], startAt, endAt, minDate,
     const isDoubleInput = inputNames.length > 1;
     const wrapperClass = [blockName, `js-${blockName}`];
     const inputClass = [`${blockName}__input`, `js-${blockName}__input`, isDoubleInput && `${blockName}__input_small`];
-    const secondInputClass = [`${blockName}__input`, `js-${blockName}__input-second`, `${blockName}__input_small`];
+    const secondInputClass = [`${blockName}__input`, `js-${blockName}__input`, `${blockName}__input_small`];
     const iconClass = ['material-icons', `${blockName}__icon`, `js-${blockName}__icon`];
     const inputPlaceholder = isDoubleInput ? 'ДД.ММ.ГГГГ' : 'ДД.ММ \u2013 ДД.ММ';
 

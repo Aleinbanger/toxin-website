@@ -4,18 +4,15 @@ include ../button/button.pug
 mixin dropdown-list({ listItems = [], labelText, inputName, inputPlaceholder, withButtons = false, active = false } = {})
   -
     const blockName = 'dropdown-list';
-    const wrapperClass = [blockName, `js-${blockName}`];
+    const wrapperClass = [blockName, `js-${blockName}`, withButtons && `${blockName}_wide`];
     const inputClass = [`${blockName}__input`, `js-${blockName}__input`];
     const iconClass = ['material-icons', `${blockName}__icon`, `js-${blockName}__icon`];
     const listClass = [`${blockName}__list`, `js-${blockName}__list`];
     const itemClass = [`${blockName}__item`, `js-${blockName}__item`];
     const itemButtonClass = [`${blockName}__item-button`, `js-${blockName}__item-button`];
     const itemCounterClass = [`${blockName}__item-counter`, `js-${blockName}__item-counter`];
-    const resetButtonClass = [`${blockName}__button`, `js-${blockName}__button_reset`];
-    const acceptButtonClass = [`${blockName}__button`, `js-${blockName}__button_accept`];
-
-  if (withButtons)
-    - wrapperClass.push(`${blockName}_wide`)
+    const resetButtonClass = [`${blockName}__button`, `${blockName}__button_reset`, `js-${blockName}__button_reset`];
+    const acceptButtonClass = [`${blockName}__button`, `${blockName}__button_accept`, `js-${blockName}__button_accept`];
 
   div(class=wrapperClass, data-active=active)
     div(class=inputClass)
