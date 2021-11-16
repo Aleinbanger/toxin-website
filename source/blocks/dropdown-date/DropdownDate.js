@@ -64,16 +64,16 @@ class DropdownDate {
   }
 
   _bindEventListeners() {
-    this.input.addEventListener('focusin', () => this._handleInputFocus());
+    this.input.addEventListener('focusin', () => this._handleInputFocusIn());
     this.handleOutsideClick = (event) => this._handleOutsideClick(event);
 
     this.$acceptButton.on('click', () => this._handleAcceptButtonClick());
     if (this.secondInput) {
-      $(this.secondInput).find('input').on('click', () => this._handleSecInputClick());
+      $(this.secondInput).find('input').on('click', () => this._handleSecondInputClick());
     }
   }
 
-  _handleInputFocus() {
+  _handleInputFocusIn() {
     if (!this.state.active) {
       this.state.active = this.$datepicker.data('datepicker').visible;
       this._renderState();
@@ -100,7 +100,7 @@ class DropdownDate {
     this._renderState();
   }
 
-  _handleSecInputClick() {
+  _handleSecondInputClick() {
     this.$datepicker.data('datepicker').visible = true;
     this.state.active = this.$datepicker.data('datepicker').visible;
     this._renderState();

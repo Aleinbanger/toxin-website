@@ -41,8 +41,12 @@ class CardBook extends CardForm {
   _bindEventListeners() {
     super._bindEventListeners();
     this.formItems.forEach((item) => {
-      item.addEventListener('change', () => this._renderState());
+      item.addEventListener('change', () => this._handleFormItemChange());
     });
+  }
+
+  _handleFormItemChange() {
+    this._renderState();
   }
 
   _renderState() {

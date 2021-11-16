@@ -17,11 +17,11 @@ class ListCheckbox {
   }
 
   _bindEventListeners() {
-    this.header.addEventListener('mousedown', (event) => this._handleHeaderClick(event));
-    this.header.addEventListener('focusin', () => this._handleHeaderFocus());
+    this.header.addEventListener('mousedown', (event) => this._handleHeaderMouseDown(event));
+    this.header.addEventListener('focusin', () => this._handleHeaderFocusIn());
   }
 
-  _handleHeaderClick(event) {
+  _handleHeaderMouseDown(event) {
     if (document.activeElement === this.header) {
       this.state.active = !this.state.active;
       this._renderState();
@@ -32,7 +32,7 @@ class ListCheckbox {
     }
   }
 
-  _handleHeaderFocus() {
+  _handleHeaderFocusIn() {
     if (!this.state.active) {
       this.state.active = true;
       this._renderState();

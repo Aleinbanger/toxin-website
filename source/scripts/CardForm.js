@@ -14,7 +14,11 @@ class CardForm {
   }
 
   _bindEventListeners() {
-    this.form.addEventListener('submit', (event) => this._validateForm(event));
+    this.form.addEventListener('submit', (event) => this._handleFormSubmit(event));
+  }
+
+  _handleFormSubmit(event) {
+    this._validateForm(event);
   }
 
   _validateForm(event) {
