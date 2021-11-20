@@ -56,7 +56,8 @@ class CardBook extends CardForm {
 
   _updateRoomDaysCounter() {
     const [from, to] = this.dropdownDate.state.selectedDates;
-    this.state.roomDays = Math.round((to - from) / (1000 * 3600 * 24));
+    const millisecondsPerDay = 1000 * 3600 * 24;
+    this.state.roomDays = Math.round((to - from) / millisecondsPerDay);
     if (this.state.roomDays) {
       const daysPluralForm = this.state.roomDays === 1 ? 'сутки' : 'суток';
       this.roomDaysCounter.textContent = `${this.state.roomDays} ${daysPluralForm}`;
