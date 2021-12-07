@@ -10,7 +10,7 @@ mixin button({ buttonType = 'button', buttonText = '', withArrow = false, button
 
   if (buttonStyle)
     each style in buttonStyle.split(' ')
-      - blockAttributes.class.push(`${blockName}_${style}`)
+      - blockAttributes.class.push(`${blockName}_style_${style}`)
 
   #{buttonTag}&attributes(Object.assign({}, attributes, blockAttributes)) #{buttonText}
     if (withArrow)

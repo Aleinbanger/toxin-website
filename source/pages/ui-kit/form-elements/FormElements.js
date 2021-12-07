@@ -1,3 +1,4 @@
+import InputField from 'blocks/input-field/InputField';
 import ButtonLike from 'blocks/button-like/ButtonLike';
 import Rating from 'blocks/rating/Rating';
 import Comment from 'blocks/comment/Comment';
@@ -12,6 +13,9 @@ class FormElements {
   }
 
   _initialize() {
+    this.block.querySelectorAll(`.js-${this.blockName}__text-field_masked`)
+      .forEach((textField) => new InputField(textField));
+
     this.block.querySelectorAll(`.js-${this.blockName}__like-button`)
       .forEach((buttonLike) => new ButtonLike(buttonLike));
 

@@ -1,6 +1,6 @@
-@import '../../styles/variables';
-
 @import 'node_modules/air-datepicker/dist/css/datepicker';
+
+@import '../../styles/variables';
 
 .dropdown-date {
   width: 100%;
@@ -14,42 +14,9 @@
     position: relative;
     flex: 1;
     max-width: 26.7rem;
-    cursor: pointer;
 
-    &:hover input {
-      border-color: $color_main-50;
-    }
-
-    input {
-      padding-right: 4.5rem;
-      text-overflow: ellipsis;
-      cursor: pointer;
-    }
-
-    &_active input {
-      border-color: $color_main-50;
-    }
-
-    &_small {
+    &_size_small {
       max-width: 15rem;
-    }
-  }
-
-  &__input:hover &__icon {
-    color: $color_main-75;
-  }
-
-  &__icon {
-    position: absolute;
-    right: 1rem;
-    bottom: 1rem;
-    color: $color_main-50;
-    user-select: none;
-    pointer-events: none;
-    transition: transform 0.3s ease-in-out;
-
-    &_active {
-      transform: rotate(-180deg);
     }
   }
 

@@ -39,5 +39,34 @@
     &:hover {
       border-color: $color_main-50;
     }
+
+    &_style_dropdown {
+      padding-right: 4.5rem;
+      text-overflow: ellipsis;
+      cursor: pointer;
+    }
+
+    &_active {
+      border-color: $color_main-50;
+      border-radius: 0.4rem 0.4rem 0 0;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    color: $color_main-50;
+    user-select: none;
+    pointer-events: none;
+    transition: transform 0.3s ease-in-out;
+
+    &_active {
+      transform: rotate(-180deg);
+    }
+  }
+
+  &__field:hover ~ &__icon {
+    color: $color_main-75;
   }
 }

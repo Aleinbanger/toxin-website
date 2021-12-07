@@ -1,3 +1,4 @@
+import InputField from '../input-field/InputField';
 import DropdownListItem from './DropdownListItem';
 
 class DropdownList {
@@ -10,10 +11,10 @@ class DropdownList {
 
   _initialize() {
     this.input = this.block.querySelector(`.js-${this.blockName}__input`);
-    this.icon = this.input.querySelector(`.js-${this.blockName}__icon`);
+    this.inputField = new InputField(this.input);
     this.list = this.block.querySelector(`.js-${this.blockName}__list`);
-    this.resetButton = this.list.querySelector(`.js-${this.blockName}__button_reset`);
-    this.acceptButton = this.list.querySelector(`.js-${this.blockName}__button_accept`);
+    this.resetButton = this.list.querySelector(`.js-${this.blockName}__button[data-action="reset"]`);
+    this.acceptButton = this.list.querySelector(`.js-${this.blockName}__button[data-action="accept"]`);
     this.state = {
       totalValue: [],
       active: Boolean(this.block.dataset.active),
@@ -42,8 +43,7 @@ class DropdownList {
   }
 
   _handleInputMouseDown(event) {
-    const input = this.input.querySelector('input');
-    if (document.activeElement === input) {
+    if (document.activeElement === this.inputField.field) {
       this.state.active = !this.state.active;
       this._renderState();
     } else if (this.state.active) {
@@ -70,8 +70,8 @@ class DropdownList {
 
   _handleResetButtonClick() {
     this.items.forEach((item) => {
-      const i = item.element;
-      i.dataset.value = 0;
+      const { element } = item;
+      element.dataset.value = 0;
     });
     this._renderListItems();
     this._renderState();
@@ -85,15 +85,12 @@ class DropdownList {
   _renderState() {
     if (this.state.active) {
       document.addEventListener('click', this.handleOutsideClick);
-      this.input.classList.add(`${this.blockName}__input_active`);
-      this.icon.classList.add(`${this.blockName}__icon_active`);
       this.list.classList.add(`${this.blockName}__list_active`);
     } else {
       document.removeEventListener('click', this.handleOutsideClick);
-      this.input.classList.remove(`${this.blockName}__input_active`);
-      this.icon.classList.remove(`${this.blockName}__icon_active`);
       this.list.classList.remove(`${this.blockName}__list_active`);
     }
+    this.inputField.setState({ active: this.state.active });
     this._updateTotalValue();
     this._toggleResetButton();
   }
@@ -117,15 +114,12 @@ class DropdownList {
         this.state.totalValue.push(`${item.state.value} ${item.state.name}`);
       }
     });
-    const input = this.input.querySelector('input');
-    input.value = this.state.totalValue.join(', ');
-    input.dispatchEvent(new Event('change', { bubbles: true }));
+    this.inputField.setState({ value: this.state.totalValue.join(', ') });
   }
 
   _toggleResetButton() {
     if (this.resetButton) {
-      const input = this.input.querySelector('input');
-      if (!input.value) {
+      if (!this.inputField.state.value) {
         this.resetButton.classList.add(`${this.blockName}__button_inactive`);
       } else {
         this.resetButton.classList.remove(`${this.blockName}__button_inactive`);

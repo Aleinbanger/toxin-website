@@ -43,7 +43,7 @@
     right: 0.8rem;
   }
 
-  &_ghost {
+  &_style_ghost {
     background-image: linear-gradient($color_background, $color_background), $gradient_first;
     background-clip: padding-box, border-box;
     color: $color_first;
@@ -60,7 +60,7 @@
     }
   }
 
-  &_as-text {
+  &_style_text {
     width: max-content;
     height: max-content;
     min-width: 1rem;
@@ -74,19 +74,21 @@
     &:focus {
       box-shadow: 0 0 0.1rem 0.1rem $color_first;
     }
-
-    &_faint {
-      color: $color_main-50;
-    }
-
-    &_gradient {
-      background: $gradient_first;
-      background-clip: text;
-      -webkit-text-fill-color: transparent; // WebKit only
-    }
   }
 
-  &_as-page {
+  &_style_text-faint {
+    @extend .button_style_text;
+    color: $color_main-50;
+  }
+
+  &_style_text-gradient {
+    @extend .button_style_text;
+    background: $gradient_first;
+    background-clip: text;
+    -webkit-text-fill-color: transparent; // WebKit only
+  }
+
+  &_style_page {
     width: 4rem;
     height: 4rem;
     min-width: 4rem;
@@ -94,17 +96,22 @@
     padding: 0;
     border-radius: 50%;
 
-    &_alt {
-      background-image: $gradient_second;
-
-      &:focus {
-        box-shadow: 0 0 0.5rem $color_second;
-      }
+    &:focus {
+      box-shadow: 0 0 0.5rem $color_first;
     }
   }
 
-  &_as-text &__arrow,
-  &_as-page &__arrow {
+  &_style_page-alt {
+    @extend .button_style_page;
+    background-image: $gradient_second;
+
+    &:focus {
+      box-shadow: 0 0 0.5rem $color_second;
+    }
+  }
+
+  &_style_text &__arrow,
+  &_style_page &__arrow {
     position: static;
   }
 }

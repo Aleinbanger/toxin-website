@@ -36,7 +36,7 @@
     max-width: $width-container_main;
     margin: auto;
 
-    &_centered {
+    &_position_centered {
       align-items: center;
     }
   }
@@ -174,7 +174,7 @@
   }
 
 
-  &_creative &__wrapper {
+  &_style_creative &__wrapper {
     padding-top: 12rem;
     padding-bottom: 0;
 
@@ -184,11 +184,11 @@
     }
   }
 
-  &_creative &__grid {
+  &_style_creative &__grid {
     grid-template-columns: auto;
   }
 
-  &_creative &__item {
+  &_style_creative &__item {
     max-width: 56rem;
 
     &:first-child {
@@ -202,28 +202,28 @@
     }
   }
 
-  &_creative &__item-text {
+  &_style_creative &__item-text {
     padding: 0.3rem 0;
   }
 
-  &_creative &__navbar {
+  &_style_creative &__navbar {
     display: none;
   }
 
-  &_creative &__logo-link {
+  &_style_creative &__logo-link {
     margin-right: 0;
   }
 
-  &_creative &__container_centered {
+  &_style_creative &__container_position_centered {
     flex-direction: column;
     justify-content: center;
   }
 
-  &_creative &__copyright-text {
+  &_style_creative &__copyright-text {
     margin-bottom: 1rem;
   }
 
-  &_creative &__social-button {
+  &_style_creative &__social-button {
     margin: 1rem;
   }
 }

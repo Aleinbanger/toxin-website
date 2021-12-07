@@ -40,7 +40,7 @@ block content
               {title: 'младенцы', names: ['младенец', 'младенца', 'младенцев'], value: 0, minValue: 0, maxValue: 10}
             ],
           })
-        .form-elements__text-field
+        .form-elements__text-field.form-elements__text-field_masked.js-form-elements__text-field_masked
           +input-field({inputType: 'mask-date', labelText: 'Masked Text Field'})
 
       .form-elements__item
@@ -65,7 +65,7 @@ block content
         .form-elements__subscription
           +subscription({labelText: 'Subscription Text Field'})
 
-    .form-elements__column.form-elements__column_shifted-right
+    .form-elements__column.form-elements__column_shift_right
       .form-elements__checkbox-list
         +list-checkbox({
           listTitle: 'Checkbox Buttons',
@@ -120,14 +120,14 @@ block content
 
       .form-elements__item
         h3.form-elements__title Buttons
-        .form-elements__button.form-elements__button_small
+        .form-elements__button.form-elements__button_size_small
           +button({buttonText: 'Click me'})
-        .form-elements__button.form-elements__button_small
+        .form-elements__button.form-elements__button_size_small
           +button({buttonText: 'Click me', buttonStyle: 'ghost'})
-        .form-elements__button.form-elements__button_inline
-          +button({buttonText: 'Click me', buttonStyle: 'as-text'})
-        .form-elements__button.form-elements__button_inline
-          +button({buttonText: 'Click me', buttonStyle: 'as-text as-text_faint'})
+        .form-elements__button.form-elements__button_display_inline
+          +button({buttonText: 'Click me', buttonStyle: 'text'})
+        .form-elements__button.form-elements__button_display_inline
+          +button({buttonText: 'Click me', buttonStyle: 'text-faint'})
         .form-elements__button
           +button({buttonText: 'Перейти к оплате', withArrow: true})
 
@@ -162,7 +162,7 @@ block content
             active: true
           })
 
-    .form-elements__column.form-elements__column_shifted-right
+    .form-elements__column.form-elements__column_shift_right
       .form-elements__item
         +dropdown-list({
           withButtons: true,
@@ -193,7 +193,7 @@ block content
         })
 
     .form-elements__column
-      .form-elements__checkbox-list.form-elements__checkbox-list_wide
+      .form-elements__checkbox-list.form-elements__checkbox-list_width_wide
         +list-checkbox({
           expandable: true,
           listTitle: 'Expandable Checkbox List',
@@ -220,8 +220,8 @@ block content
           active: true
         })
 
-    .form-elements__column.form-elements__column_shifted-right.form-elements__column_shifted-down
-      .form-elements__checkbox-list.form-elements__checkbox-list_wide
+    .form-elements__column.form-elements__column_shift_right.form-elements__column_shift_down
+      .form-elements__checkbox-list.form-elements__checkbox-list_width_wide
         +list-checkbox({
           listTitle: 'Rich Checkbox Buttons',
           listItems: [
@@ -238,7 +238,7 @@ block content
           ]
         })
 
-    .form-elements__column.form-elements__column_shifted-down
+    .form-elements__column.form-elements__column_shift_down
       .form-elements__bullet-list
         h3.form-elements__title Bullet List
         +list-bullet({
@@ -258,7 +258,7 @@ block content
           ]
         })
 
-    .form-elements__column.form-elements__column_shifted-right.form-elements__column_wide
+    .form-elements__column.form-elements__column_shift_right.form-elements__column_width_wide
       .form-elements__comment.js-form-elements__comment
         +comment({
           userName: 'Мурад сарафанов',

@@ -26,8 +26,8 @@ class Carousel {
   _initialize() {
     this.imagesContainer = this.block.querySelector(`.js-${this.blockName}__images`);
     this.images = this.block.querySelectorAll(`.js-${this.blockName}__image`);
-    this.prevButton = this.block.querySelector(`.js-${this.blockName}__button_prev`);
-    this.nextButton = this.block.querySelector(`.js-${this.blockName}__button_next`);
+    this.prevButton = this.block.querySelector(`.js-${this.blockName}__button_type_prev`);
+    this.nextButton = this.block.querySelector(`.js-${this.blockName}__button_type_next`);
     this.indicatorsContainer = this.block.querySelector(`.js-${this.blockName}__indicators`);
     this.indicators = this.block.querySelectorAll(`.js-${this.blockName}__indicator`);
     this.state = {
@@ -110,12 +110,12 @@ class Carousel {
   _renderState() {
     this.images.forEach((image) => {
       image.classList.remove(`${this.blockName}__image_active`);
-      image.classList.remove(`${this.blockName}__image_prev`);
-      image.classList.remove(`${this.blockName}__image_next`);
+      image.classList.remove(`${this.blockName}__image_type_prev`);
+      image.classList.remove(`${this.blockName}__image_type_next`);
     });
     this.images[this.state.currentImage - 1].classList.add(`${this.blockName}__image_active`);
-    this.images[this.state.prevImage - 1].classList.add(`${this.blockName}__image_prev`);
-    this.images[this.state.nextImage - 1].classList.add(`${this.blockName}__image_next`);
+    this.images[this.state.prevImage - 1].classList.add(`${this.blockName}__image_type_prev`);
+    this.images[this.state.nextImage - 1].classList.add(`${this.blockName}__image_type_next`);
 
     this.indicators.forEach((indicator) => {
       indicator.classList.remove(`${this.blockName}__indicator_active`);

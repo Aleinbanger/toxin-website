@@ -32,7 +32,7 @@ mixin header(options = {})
           each item in navbarList
             li(class=`${blockName}__navbar-list-item`)
               if (!item.dropdownList)
-                - const itemClass = navbarLinkClass.concat(item.bold && `${blockName}__navbar-link_bold`);
+                - const itemClass = navbarLinkClass.concat(item.bold && `${blockName}__navbar-link_style_bold`);
                 a(class=itemClass, href=item.href) #{item.text}
               else
                 span(class=dropdownClass)

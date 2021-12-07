@@ -5,6 +5,7 @@ mixin input-field({ inputType = 'text', labelText } = {})
       class: [`${blockName}__field`],
     };
     const wrapperClass = [blockName];
+    const iconClass = ['material-icons', `${blockName}__icon`, `js-${blockName}__icon`];
 
   case inputType
     when 'email'
@@ -22,10 +23,16 @@ mixin input-field({ inputType = 'text', labelText } = {})
         wrapperClass.push(`js-${blockName}`);
         blockAttributes.class.push(`js-${blockName}__field`);
         blockAttributes.type = 'text';
-        blockAttributes.placeholder = attributes.placeholder || 'ДД.ММ.ГГГ';
+        blockAttributes.placeholder = attributes.placeholder || 'ДД.ММ.ГГГГ';
         blockAttributes['data-inputmask'] = "'alias': 'datetime'";
         blockAttributes['data-inputmask-inputFormat'] = 'dd.mm.yyyy';
         blockAttributes['data-inputmask-placeholder'] = 'ДД.ММ.ГГГГ';
+    when 'dropdown'
+      -
+        wrapperClass.push(`js-${blockName}`);
+        blockAttributes.class.push(`js-${blockName}__field`);
+        blockAttributes.class.push(`${blockName}__field_style_dropdown`);
+        blockAttributes.type = 'text';
     default
       - blockAttributes.type = 'text';
 
@@ -33,3 +40,5 @@ mixin input-field({ inputType = 'text', labelText } = {})
     if (labelText)
       label(class=`${blockName}__label`) #{labelText}
     input&attributes(Object.assign({}, attributes, blockAttributes))
+    if (inputType === 'dropdown')
+      i(class=iconClass) expand_more

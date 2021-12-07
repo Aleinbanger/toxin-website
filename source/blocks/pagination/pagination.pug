@@ -27,7 +27,7 @@ mixin pagination({ itemsNumber = 1, itemsPerPage = 1, baseHref = '', addDescript
               i(class=dotsClass) ...
         - }
       span(class=nextButtonClass)
-        +button({ buttonStyle: 'as-page as-page_alt', withArrow: true })
+        +button({ buttonStyle: 'page-alt', withArrow: true })
     div(class=`${blockName}__description`)
       span(class=counterClass)
         | 1 &ndash; #{itemsPerPage} из 

@@ -14,7 +14,7 @@ mixin footer(options = {})
       style,
     } = options;
     const blockName = 'footer';
-    const wrapperClass = [blockName, style && `${blockName}_${style}`];
+    const wrapperClass = [blockName, style && `${blockName}_style_${style}`];
 
   footer(class=wrapperClass)
     div(class=`${blockName}__wrapper`)
@@ -45,7 +45,7 @@ mixin footer(options = {})
               })
 
     div(class=`${blockName}__wrapper`)
-      div(class=`${blockName}__container ${blockName}__container_centered`)
+      div(class=`${blockName}__container ${blockName}__container_position_centered`)
         span(class=`${blockName}__copyright-text`)
           script.
             document.write(`Copyright &copy; ${new Date().getFullYear()} `);

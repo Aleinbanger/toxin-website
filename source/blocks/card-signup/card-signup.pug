@@ -6,9 +6,10 @@ include ../button/button.pug
 mixin card-signup({ formAction = '#mock-address', titleText = 'Регистрация аккаунта', signinHref = '#mock-address' } = {})
   -
     const blockName = 'card-signup';
-    const wrapperClass = [blockName];
+    const wrapperClass = [blockName, `js-${blockName}`];
     const formClass = [`${blockName}__form`];
     const formItemClass = [`${blockName}__form-item`];
+    const maskedInputClass = [`${blockName}__masked-input`, `js-${blockName}__masked-input`]
 
   div(class=wrapperClass)
     form(class=formClass, action=formAction, method='post')
@@ -27,7 +28,8 @@ mixin card-signup({ formAction = '#mock-address', titleText = 'Регистра�
             ]
           })
       div(class=formItemClass)
-        +input-field({ inputType: 'mask-date', labelText: 'Дата рождения' })(name='birthday', required)
+        div(class=maskedInputClass)
+          +input-field({ inputType: 'mask-date', labelText: 'Дата рождения' })(name='birthday', required)
       div(class=formItemClass)
         div(class=`${blockName}__form-subitem`)
           +input-field({ inputType: 'email', labelText: 'Данные для входа в сервис' })(required)

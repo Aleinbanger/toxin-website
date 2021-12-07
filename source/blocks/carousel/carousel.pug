@@ -4,8 +4,8 @@ mixin carousel({ imgSrcList = [] } = {})
     const wrapperClass = [blockName, `js-${blockName}`];
     const imagesClass = [`${blockName}__images`, `js-${blockName}__images`];
     const imageClass = [`${blockName}__image`, `js-${blockName}__image`];
-    const prevButtonClass = [`${blockName}__button`, `${blockName}__button_prev`, `js-${blockName}__button_prev`];
-    const nextButtonClass = [`${blockName}__button`, `${blockName}__button_next`, `js-${blockName}__button_next`];
+    const prevButtonClass = [`${blockName}__button`, `${blockName}__button_type_prev`, `js-${blockName}__button_type_prev`];
+    const nextButtonClass = [`${blockName}__button`, `${blockName}__button_type_next`, `js-${blockName}__button_type_next`];
     const indicatorsClass = [`${blockName}__indicators`, `js-${blockName}__indicators`];
     const indicatorClass = [`${blockName}__indicator`, `js-${blockName}__indicator`];
 
@@ -19,4 +19,4 @@ mixin carousel({ imgSrcList = [] } = {})
       i.material-icons expand_more
     div(class=indicatorsClass)
       each imgSrc, index in imgSrcList
-        span(class=indicatorClass, data-image=index)
+        span(class=indicatorClass, data-image=index+1)

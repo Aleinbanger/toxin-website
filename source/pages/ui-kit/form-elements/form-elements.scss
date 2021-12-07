@@ -16,15 +16,15 @@
     width: 32rem;
     min-height: 31.7rem;
 
-    &_shifted-right {
+    &_shift_right {
       margin-left: 5.4rem;
     }
 
-    &_shifted-down {
+    &_shift_down {
       margin-top: 0.6rem;
     }
 
-    &_wide {
+    &_width_wide {
       width: 71.1rem;
     }
   }
@@ -54,7 +54,7 @@
     width: 22.2rem;
     margin-bottom: 4rem;
 
-    &_wide {
+    &_width_wide {
       width: 26rem;
     }
   }
@@ -86,11 +86,11 @@
     height: 4.4rem;
     margin-bottom: 3rem;
 
-    &_small {
+    &_size_small {
       width: 10.1rem;
     }
 
-    &_inline {
+    &_display_inline {
       display: inline-block;
       margin-right: 2rem;
       margin-bottom: 0.2rem;
