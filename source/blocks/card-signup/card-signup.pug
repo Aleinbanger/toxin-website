@@ -16,9 +16,9 @@ mixin card-signup({ formAction = '#mock-address', titleText = 'Регистра�
       h1(class=`${blockName}__title`) #{titleText}
       div(class=formItemClass)
         div(class=`${blockName}__form-subitem`)
-          +input-field({})(name='first-name', placeholder='Имя', required)
+          +input-field()(name='first-name', placeholder='Имя', required)
         div(class=`${blockName}__form-subitem`)
-          +input-field({})(name='last-name', placeholder='Фамилия', required)
+          +input-field()(name='last-name', placeholder='Фамилия', required)
         div(class=`${blockName}__form-subitem`)
           +list-radio({
             radioName: 'sex',
