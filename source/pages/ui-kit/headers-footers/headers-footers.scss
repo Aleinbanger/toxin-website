@@ -1,10 +1,13 @@
 .headers-footers {
   width: 100%;
-  max-width: 1440px;
-  margin: auto;
-  padding: 14rem 0 13rem;
-  background: #F4F4F6 url('./img/ui-kit-logo.svg')
-    3rem 3rem/4.8rem 4.8rem no-repeat;
+
+  &__container {
+    max-width: 1440px;
+    margin: auto;
+    padding: 14rem 0 13rem;
+    background: #F4F4F6 url('./img/ui-kit-logo.svg')
+      3rem 3rem/4.8rem 4.8rem no-repeat;
+  }
 
   &__item {
     margin-bottom: 4rem;
