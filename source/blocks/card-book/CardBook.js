@@ -1,7 +1,7 @@
-import CardForm from '../../scripts/CardForm';
+import FormValidator from '../../scripts/helpers/FormValidator';
 import DropdownDate from '../dropdown-date/DropdownDate';
 
-class CardBook extends CardForm {
+class CardBook extends FormValidator {
   constructor(block) {
     super('card-book', block);
   }

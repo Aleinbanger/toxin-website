@@ -1,6 +1,6 @@
 /* eslint-disable no-alert */
 
-class CardForm {
+class FormValidator {
   constructor(blockName, block) {
     this.blockName = blockName;
     this.block = block;
@@ -31,4 +31,4 @@ class CardForm {
   }
 }
 
-export default CardForm;
+export default FormValidator;
